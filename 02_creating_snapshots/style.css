@@ -113,16 +113,23 @@ main section {
   margin-bottom: 20px;
   display: flex;
   flex-direction: row;
+  flex-wrap: nowrap;
 }
 
 .left-col {
-  width: auto;
+  max-width: 100%;
   margin-right: 10px;
 }
 
 .right-col {
-  width: auto;
+  max-width: 100%;
   margin-left: 10px;
+}
+
+@media (max-width: 900px) {
+  .row {
+    flex-wrap: wrap;
+  }
 }
 
 .row p em {
@@ -150,4 +157,20 @@ li strong {
 
 img {
   border-radius: 15px;
+}
+
+#git-workflow-1:hover {
+  box-shadow: 
+    var(--shadow-h-offset)
+    var(--shadow-v-offset)
+    var(--shadow-blur)
+    #e82d95;
+}
+
+#git-workflow-2:hover {
+  box-shadow: 
+    var(--shadow-h-offset)
+    var(--shadow-v-offset)
+    var(--shadow-blur)
+    #e14e12;
 }
