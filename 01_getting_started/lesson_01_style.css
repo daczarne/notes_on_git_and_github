@@ -110,16 +110,23 @@ main section {
   margin-bottom: 20px;
   display: flex;
   flex-direction: row;
+  flex-wrap: nowrap;
 }
 
 .left-col {
-  width: auto;
+  max-width: 100%;
   margin-right: 10px;
 }
 
 .right-col {
-  width: auto;
+  max-width: 100%;
   margin-left: 10px;
+}
+
+@media (max-width: 900px) {
+  .row {
+    flex-wrap: wrap;
+  }
 }
 
 .row p em {
