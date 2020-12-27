@@ -13,6 +13,9 @@
   --shadow-h-offset: 0;
   --shadow-v-offset: 0;
   --shadow-blur: 20px;
+  --git-bash: #b40099;
+  --git-green: #00a700;
+  --git-red: #9f0000;
 }
 
 * {
@@ -121,14 +124,12 @@ main section {
 }
 
 .left-col {
-  min-width: 33%;
   padding: 10px;
   display: flex;
   flex-direction: column;
 }
 
 .right-col {
-  min-width: 33%;
   padding: 10px;
   display: flex;
   flex-direction: column;
@@ -196,4 +197,20 @@ img {
     var(--shadow-v-offset)
     var(--shadow-blur)
     #e14e12;
+}
+
+.git-bash-img:hover {
+  box-shadow: 
+    var(--shadow-h-offset)
+    var(--shadow-v-offset)
+    var(--shadow-blur)
+    var(--git-bash);
+}
+
+.git-red {
+  color: var(--git-red);
+}
+
+.git-green {
+  color: var(--git-green);
 }
