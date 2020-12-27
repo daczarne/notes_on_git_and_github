@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "DM Mono", "Roboto", sans-serif;
+  background: #272727;
+  color: #fff;
+  font-size: 1.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  padding: 20px;
+  width: 100%;
+  background: #0e0b0b;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+header h1 {
+  color: #ff652f
+}
+
+main {
+  margin: 20px;
+  padding-top: 20px;
+}
+
+main section {
+  padding: 20px;
+}
+
+.row {
+  width: 100%;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: row;
+}
+
+.left-col {
+  width: auto;
+  margin-right: 10px;
+}
+
+.right-col {
+  width: auto;
+  margin-left: 10px;
+}
+
+.row p em {
+  color: #12a76e
+}
