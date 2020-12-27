@@ -1,6 +1,16 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&display=swap');
 
+:root {
+  --bg-color-main: #272727;
+  --bg-color-title: #0e0b0b;
+  --bg-color-btn: #f1f1f1;
+  --font-color-main: #fff;
+  --font-color-title: #ff652f;
+  --green: #12a76e;
+  --yellow: #ffff00;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -9,26 +19,79 @@
 
 body {
   font-family: "DM Mono", "Roboto", sans-serif;
-  background: #272727;
-  color: #fff;
+  background: var(--bg-color-main);
+  color: var(--font-color-main);
   font-size: 1.5rem;
   display: flex;
   flex-direction: column;
 }
 
+/* Header */
+.floating-div {
+  position: sticky;
+  top: 0;
+}
+
 header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
   padding: 20px;
   width: 100%;
-  background: #0e0b0b;
+  background: var(--bg-color-title);
+}
+
+header .title,
+header .btn {
+  width: 100%;
+}
+
+.title {
   display: flex;
+  flex-direction: row;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: space-around;
+  color: var(--font-color-title);
 }
 
-header h1 {
-  color: #ff652f
+.btn {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  padding: 8px 16px;
 }
 
+.btn a {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  text-decoration: none;
+  height: 55px;
+  width: 170px;
+}
+
+.previous,
+.next {
+  background-color: var(--bg-color-btn);
+  color: var(--bg-color-main);
+}
+
+.previous:hover,
+.next:hover {
+  background-color: var(--green);
+  color: var(--font-color-main);
+}
+
+.btn-disabled:hover {
+  background-color: var(--bg-color-btn);
+  color: var(--bg-color-main);
+  cursor: auto;
+}
+
+/* Main */
 main {
   margin: 20px;
   padding-top: 20px;
@@ -56,5 +119,20 @@ main section {
 }
 
 .row p em {
-  color: #12a76e
+  color: var(--green);
+}
+
+ul {
+  margin: 40px;
+  line-height: 1.5em;
+}
+
+li strong {
+  color: var(--font-color-title);
+}
+
+.code {
+  text-align: center;
+  margin: 20px;
+  color: var(--yellow);
 }
