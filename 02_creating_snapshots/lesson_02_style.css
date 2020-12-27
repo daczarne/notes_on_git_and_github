@@ -214,3 +214,11 @@ img {
 .git-green {
   color: var(--git-green);
 }
+
+.vscode-img:hover {
+  box-shadow: 
+    var(--shadow-h-offset)
+    var(--shadow-v-offset)
+    var(--shadow-blur)
+    var(--git-bash);
+}
