@@ -30,13 +30,13 @@
     <section>
 
       <div class="row">
-        <div class="left-col">
+        <div class="single-col">
           <p>When working with Git the normal workflow starts with making changes to files, or add new files, or delete old files that are no longer needed. Once we are done making changes, we <span class="inline-code">add</span> these files to the <em>Staging Area</em>. If we are satisfied with the changes, we will <span class="inline-code">commit</span> those changes into the <em>Repository</em>.</p>
         </div>
       </div>
 
       <div class="row">
-        <div class="right-col">
+        <div class="left-col">
           <p>Creating a <span class="inline-code">commit</span> is like taking a snapshot of our project. These spanshots are permanently stored in our repository. If there are changes that we don't want to add to the snapshot, we can unstage them and add them to a later snapshot.</p>
           <br>
           <p>To add a file to the staging area we use</p>
@@ -49,13 +49,13 @@
           </div>
           <p>Every <span class="inline-code">commit</span> should contain a meaningful message that explains what changes where made in that snapshot.</p>
         </div>
-        <div class="left-col">
+        <div class="right-col">
           <img src="../img/git-workflow-1.png" alt="git workflow 1" id="git-workflow-1">
         </div>
       </div>
 
       <div class="row">
-        <div class="left-col">
+        <div class="single-col">
           <p>Once we <span class="inline-code">commit</span> some changes the <em>Staging Area</em> does not get emptied. Think of it as the staging server of an application. Once we release a new version, the live and staging versions are the same, but that does not mean that there is no staging version.</p>
           <br>
           <p>If we make some new changes to a file, we need to <span class="inline-code">stage</span> the files again. The same is true when deleting files. If we delete a file from our working directory, we need to <span class="inline-code">stage</span> the deletion. To do it we use</p>
