@@ -2,14 +2,14 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&display=swap');
 
 :root {
-  --bg-color-main: #272727;
-  --bg-color-title: #0e0b0b;
-  --bg-color-btn: #f1f1f1;
-  --font-color-main: #fff;
-  --font-color-title: #ff652f;
-  --font-highlight: #12a76e; 
-  --btn-highlight: #12a76e;
-  --code: #ffff00;
+  --bg-color-main: #f5f5f5;
+  --bg-color-title: #d0d0d0;
+  --bg-color-btn: #fc4364;
+  --font-color-main: #000;
+  --font-color-title: #fc4364;
+  --highlight: #fc4364;
+  --btn-highlight: #f8c821;
+  --code: #4c3edc;
 }
 
 * {
@@ -120,7 +120,7 @@ main section {
 }
 
 .row p em {
-  color: var(--font-highlight);
+  color: var(--highlight);
 }
 
 ul {
