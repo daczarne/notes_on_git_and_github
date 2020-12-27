@@ -10,6 +10,9 @@
   --highlight: #fc4364;
   --btn-highlight: #f8c821;
   --code: #4c3edc;
+  --shadow-h-offset: 0;
+  --shadow-v-offset: 0;
+  --shadow-blur: 20px;
 }
 
 * {
@@ -132,8 +135,16 @@ li strong {
   color: var(--font-color-title);
 }
 
+.code,
+.inline-code {
+  color: var(--code);
+}
+
 .code {
   text-align: center;
   margin: 20px;
-  color: var(--code);
+}
+
+img {
+  border-radius: 15px;
 }
