@@ -10,6 +10,9 @@
   --font-highlight: #12a76e; 
   --btn-highlight: #12a76e;
   --code: #ffff00;
+  --shadow-h-offset: 0;
+  --shadow-v-offset: 0;
+  --shadow-blur: 20px;
 }
 
 * {
@@ -132,8 +135,40 @@ li strong {
   color: var(--font-color-title);
 }
 
+.code,
+.inline-code {
+  color: var(--code);
+}
+
 .code {
   text-align: center;
   margin: 20px;
-  color: var(--code);
+}
+
+img {
+  border-radius: 15px;
+}
+
+#what-is-git-1:hover {
+  box-shadow:
+    var(--shadow-h-offset)
+    var(--shadow-v-offset)
+    var(--shadow-blur)
+    #f5de63;
+}
+
+#what-is-git-2:hover {
+  box-shadow:
+    var(--shadow-h-offset)
+    var(--shadow-v-offset)
+    var(--shadow-blur)
+    #6b92f2;
+}
+
+#congifuring-git-1:hover {
+  box-shadow:
+    var(--shadow-h-offset)
+    var(--shadow-v-offset)
+    var(--shadow-blur)
+    #78e9a3;
 }
