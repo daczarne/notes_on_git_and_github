@@ -46,8 +46,11 @@ header {
   background: var(--bg-color-title);
 }
 
-header .title,
-header .btn {
+.btn {
+  width: 25%;
+}
+
+header .title {
   width: 100%;
 }
 
