@@ -31,7 +31,7 @@
 
       <div class="row">
         <div class="single-col">
-          <p>Sometimes we want Git not to track certain files. To handle this we use a special file "called" <em>.gitignore</em>. This file has no name, only an extension. We should place it in the root of our project. To create it we run</p>
+          <p>Sometimes we want Git not to track certain files. To handle this we use a special file "called" <em>.gitignore</em>. This file has no name, only an extension. We should place it at the root of our project. To create it we run</p>
           <div class="code">
             <code>touch .gitignore</code>
           </div>
@@ -58,7 +58,7 @@
 
       <div class="row">
         <div class="left-col">    
-          <p>As an example, let's create a <em>logs</em> sub-directory and add it to our gitignore file. First we create the sub-dir and and file inside that sub-dir with</p>
+          <p>As an example, let's create a <em>logs</em> sub-directory and add it to our gitignore file. First, we create the sub-dir and a file inside that sub-dir with</p>
           <div class="code">
             <code>mkdir logs && echo hello > logs/dev.log</code>
           </div>
@@ -87,7 +87,7 @@
           <div class="code">
             <code>git rm --cached -r <em>file_name</em></code>
           </div>
-          <p>Now you can commit this deletion and Git will stop tracking the file. Do not forget the <span class="inline-code">--cached</span> option or Git will remove the file both from the staging are and the working directory!!</p>
+          <p>Now you can commit this deletion and Git will stop tracking the file. Do not forget the <span class="inline-code">--cached</span> option or Git will remove the file both from the staging area and the working directory!!</p>
         </div>
       </div>
 

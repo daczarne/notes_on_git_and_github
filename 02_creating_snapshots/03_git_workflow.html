@@ -31,13 +31,13 @@
 
       <div class="row">
         <div class="single-col">
-          <p>When working with Git the normal workflow starts with making changes to files, or add new files, or delete old files that are no longer needed. Once we are done making changes, we <span class="inline-code">add</span> these files to the <em>Staging Area</em>. If we are satisfied with the changes, we will <span class="inline-code">commit</span> those changes into the <em>Repository</em>.</p>
+          <p>When working with Git the normal workflow starts with making changes to files, or add new files, or delete old files that are no longer needed. Once we are done making changes, we <span class="inline-code">add</span> these files to the <em>Staging Area</em>. If we are satisfied with the changes, we will <span class="inline-code">commit</span> those changes to the <em>Repository</em>.</p>
         </div>
       </div>
 
       <div class="row">
         <div class="left-col">
-          <p>Creating a <span class="inline-code">commit</span> is like taking a snapshot of our project. These spanshots are permanently stored in our repository. If there are changes that we don't want to add to the snapshot, we can unstage them and add them to a later snapshot.</p>
+          <p>Creating a <span class="inline-code">commit</span> is like taking a snapshot of our project. These snapshots are permanently stored in our repository. If there are changes that we don't want to add to the snapshot, we can un-stage them and add them to a later snapshot.</p>
           <br>
           <p>To add a file to the staging area we use</p>
           <div class="code">
@@ -47,7 +47,7 @@
           <div class="code">
             <code>git commit -m <em>"commit message"</em></code>
           </div>
-          <p>Every <span class="inline-code">commit</span> should contain a meaningful message that explains what changes where made in that snapshot.</p>
+          <p>Every <span class="inline-code">commit</span> should contain a meaningful message that explains what changes were made in that snapshot.</p>
         </div>
         <div class="right-col">
           <img src="../img/git-workflow-1.png" alt="git workflow 1" id="git-workflow-1">
@@ -62,7 +62,7 @@
           <div class="code">
             <code>git add <em>name_of_the_deleted_file</em></code>
           </div>
-          <p>Then we can permanently recorde this deletion by <span class="inline-code">commit</span>ing it.</p>
+          <p>Then we can permanently record this deletion by committing it with the following command:</p>
           <div class="code">
             <code>git commit -m <em>"commit message"</em></code>
           </div>
@@ -80,9 +80,9 @@
             <li>The <span class="inline-code">commit</span> message</li>
             <li>Date/Time</li>
             <li>Author</li>
-            <li>Complete snapshot of the project at the time the <span class="inline-code">commit</span> was created</li>
+            <li>A Complete snapshot of the project at the time the <span class="inline-code">commit</span> was created</li>
           </ul>
-          <p>Git can store the comeplete project snapshot because it compresses the files and dosen't store duplicates.</p>
+          <p>Git can store the complete project snapshot because it compresses the files and doesn’t store duplicates.</p>
         </div>
       </div>
 
