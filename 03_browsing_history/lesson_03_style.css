@@ -1,0 +1,230 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&display=swap');
+
+:root {
+  --bg-color-main: #045a8d;
+  --bg-color-title: #08306b;
+  --bg-color-btn: #f7fbff;
+  --font-color-main: #fff;
+  --font-color-title: #f7fbff;
+  --highlight: #000;
+  --btn-highlight: #238b45;
+  --code: #fffb0a;
+  --shadow-h-offset: 0;
+  --shadow-v-offset: 0;
+  --shadow-blur: 20px;
+  --git-bash: #fff;
+  --git-green: #00a700;
+  --git-red: #9f0000;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "DM Mono", sans-serif;
+  background: var(--bg-color-main);
+  color: var(--font-color-main);
+  font-size: 1.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header */
+.floating-div {
+  position: sticky;
+  top: 0;
+}
+
+header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  padding: 20px;
+  width: 100%;
+  background: var(--bg-color-title);
+}
+
+.btn {
+  width: 25%;
+}
+
+header .title {
+  width: 100%;
+}
+
+.title {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  color: var(--font-color-title);
+}
+
+.btn {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  padding: 8px 16px;
+}
+
+.btn a {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  text-decoration: none;
+  height: 55px;
+  width: 170px;
+}
+
+.previous,
+.next {
+  background-color: var(--bg-color-btn);
+  color: var(--bg-color-main);
+}
+
+.previous:hover,
+.next:hover {
+  background-color: var(--btn-highlight);
+  color: var(--font-color-main);
+}
+
+.btn-disabled:hover {
+  background-color: var(--bg-color-btn);
+  color: var(--bg-color-main);
+  cursor: auto;
+}
+
+/* Main */
+main {
+  margin: 20px;
+  padding-top: 20px;
+}
+
+main section {
+  padding: 20px;
+}
+
+.row {
+  width: 100%;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+
+.single-col {
+  width: 100%;
+}
+
+.center {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.left-col {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.right-col {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+@media (max-width: 900px) {
+  .row {
+    flex-wrap: wrap;
+  }
+}
+
+.example {
+  width: 100%;
+  margin: 10px 0 20px 0;
+}
+
+.example::before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 3px;
+  background: var(--font-color-title);
+}
+
+.row p em {
+  color: var(--highlight);
+}
+
+ul {
+  margin: 40px;
+  line-height: 1.5em;
+}
+
+li strong {
+  color: var(--font-color-title);
+}
+
+.code,
+.inline-code {
+  color: var(--code);
+}
+
+.code {
+  text-align: center;
+  margin: 20px;
+}
+
+img {
+  border-radius: 15px;
+  justify-self: center;
+  align-self: center;
+}
+
+#git-workflow-1:hover {
+  box-shadow: 
+    var(--shadow-h-offset)
+    var(--shadow-v-offset)
+    var(--shadow-blur)
+    #e82d95;
+}
+
+#git-workflow-2:hover {
+  box-shadow: 
+    var(--shadow-h-offset)
+    var(--shadow-v-offset)
+    var(--shadow-blur)
+    #e14e12;
+}
+
+.git-bash-img:hover {
+  box-shadow: 
+    var(--shadow-h-offset)
+    var(--shadow-v-offset)
+    var(--shadow-blur)
+    var(--git-bash);
+}
+
+.git-red {
+  color: var(--git-red);
+}
+
+.git-green {
+  color: var(--git-green);
+}
+
+.vscode-img:hover {
+  box-shadow: 
+    var(--shadow-h-offset)
+    var(--shadow-v-offset)
+    var(--shadow-blur)
+    var(--git-bash);
+}
