@@ -123,6 +123,13 @@ main section {
   width: 100%;
 }
 
+.center {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
 .left-col {
   padding: 10px;
   display: flex;
