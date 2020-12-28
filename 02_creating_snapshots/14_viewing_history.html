@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="lesson_02_style.css">
+  <link rel="shortcut icon" href="../assets/favicon.png" type="image/x-icon">
   <title>Viewing history</title>
 </head>
 <body>
@@ -20,7 +21,7 @@
       </div>
 
       <div class="btn">
-        <a href="#" class="next">Next &raquo;</a>
+        <a href="15_viewing_a_commit.html" class="next">Next &raquo;</a>
       </div>
 
     </header>
@@ -29,6 +30,31 @@
   <main>
     <section>
 
+      <div class="row">
+        <div class="left-col">
+          <p>We can browse the history of our repository by running</p>
+          <div class="code">
+            <code>git log</code>
+          </div>
+          This will print the last commits done on our repository starting from the newest one. The first line is the commit ID, then it shows us the author of that commit, the date and time at which the commit was done, and the one-line description for the commit.</p>
+          <br>
+          <p>To see more commits press the space bar. This will print the next page in the commit log. To quit, press <span class="inline-code">q</span>.</p>
+        </div>
+        <div class="right-col">
+          <img src="../img/viewing-history-1.png" alt="" class="git-bash-img">
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="right-col">
+          <img src="../img/viewing-history-2.png" alt="" class="git-bash-img">
+        </div>
+        <div class="left-col">
+          <p>We can add the <span class="inline-code">--oneline</span> option to tell Git to print a summary of the history. Git will show the last 7 characters of the commit ID, followed by the commit message.</p>
+          <br>
+          <p>If we want the commit history to be printed in reverse order (oldest first), we just need to add the <span class="inline-code">--reverse</span> option to our command.</p>
+        </div>
+      </div>
 
     </section>
   </main>
