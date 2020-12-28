@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="lesson_02_style.css">
+  <link rel="shortcut icon" href="../assets/favicon.png" type="image/x-icon">
+  <title>Restoring a file</title>
+</head>
+<body>
+
+  <div class="floating-div">
+    <header>
+
+      <div class="btn">
+        <a href="17_discarding_local_changes.html" class="previous">&laquo; Previous</a>
+      </div>
+
+      <div class="title">
+        <h1>Restoring a file</h1>
+      </div>
+
+      <div class="btn">
+        <a href="#" class="next">Next &raquo;</a>
+      </div>
+
+    </header>
+  </div>
+
+  <main>
+    <section>
+
+      <div class="row">
+        <div class="left-col">
+          <p>If we deleted a file and we want to restore it to the previous state we run</p>
+          <div class="code">
+            <code>git restore --source=HEAD~1 <em>file_path/file_name.ext</em></code>
+          </div>
+          <p>Here we are restoring a deleted file to the version that was available in the commit previous to deleting it. But we can use this strategy to any file from any point in the history of our repository.</p>
+        </div>
+        <div class="right-col">
+          <img src="../img/restoring-a-file-1.png" alt="" class="git-bash-img">
+        </div>
+      </div>
+
+      <div class="example"></div>
+
+      <div class="row">
+        <div class="left-col">
+          <img src="../img/restoring-a-file-2.png" alt="" class="git-bash-img">
+        </div>
+        <div class="right-col">
+          <p>As an exapmple, take a look at the image on the left. <em>file2.txt</em> has only one line in it, <span class="inline-code">sky</span>. Then we add <span class="inline-code">hello</span> and commit the changes, and finally we add <span class="inline-code">world</span> and commit the changes.</p>
+          <br>
+          <p><em>file2.txt</em> has not be deleted. It still exists in our working directory. So, say we want to revert <em>file2.txt</em> to a previous state when it only had the word <span class="inline-code">sky</span> in it. To do this we run</p>
+          <div class="code">
+            git restore --source=HEAD~2 file2.txt
+          </div>
+          <p>With this, Git will restore it to two steps behind the <span class="inline-code">HEAD</span> pointer of our repository, when the file only said <span class="inline-code">sky</span>. If we want to keep the changes as they were at this point in time, we can commit <em>file2.txt</em> to our repository.</p>
+        </div>
+      </div>
+
+    </section>
+  </main>
+  
+</body>
+</html>
