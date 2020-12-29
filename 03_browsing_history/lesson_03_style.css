@@ -7,7 +7,7 @@
   --font-color-main: #fff;
   --font-color-title: #f7fbff;
   --highlight: #000;
-  --btn-highlight: #238b45;
+  --btn-highlight: #dd1add;
   --code: #fffb0a;
   --shadow-h-offset: 0;
   --shadow-v-offset: 0;
@@ -162,6 +162,7 @@ main section {
 
 .row p em {
   color: var(--highlight);
+  text-shadow: 1px 1px black;
 }
 
 ul {
@@ -215,10 +216,12 @@ img {
 
 .git-red {
   color: var(--git-red);
+  background-color: #000;
 }
 
 .git-green {
   color: var(--git-green);
+  text-shadow: 1px 1px var(--git-green);
 }
 
 .vscode-img:hover {
@@ -227,4 +230,9 @@ img {
     var(--shadow-v-offset)
     var(--shadow-blur)
     var(--git-bash);
+}
+
+#viewing-the-history-3 {
+  max-width: 1400px;
+  max-height: 600px;
 }
