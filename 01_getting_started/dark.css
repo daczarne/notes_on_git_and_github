@@ -1,21 +1,21 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&display=swap');
 
 :root {
-  --bg-color-main: #f5f5f5;
-  --bg-color-title: #212338;
-  --bg-color-btn: #fc4364;
-  --font-color-main: #000;
-  --font-color-title: #fc4364;
-  --highlight: #fc4364;
-  --btn-highlight: #f8c821;
-  --code: #4c3edc;
+  --bg-color-main: #272727;
+  --bg-color-title: #0e0b0b;
+  --bg-color-btn: #f1f1f1;
+  --font-color-main: #fff;
+  --font-color-title: #ff652f;
+  --highlight: #12a76e; 
+  --btn-highlight: #12a76e;
+  --code: #ffff00;
   --shadow-h-offset: 0;
   --shadow-v-offset: 0;
   --shadow-blur: 20px;
-  --git-bash: #b40099;
   --git-green: #00a700;
   --git-red: #9f0000;
+  --git-aqua: #00bfba;
+  --link-color: #fc4364;
 }
 
 * {
@@ -25,7 +25,7 @@
 }
 
 body {
-  font-family: "DM Mono", "Roboto", sans-serif;
+  font-family: "DM Mono", sans-serif;
   background: var(--bg-color-main);
   color: var(--font-color-main);
   font-size: 1.5rem;
@@ -190,6 +190,30 @@ img {
   align-self: center;
 }
 
+#what-is-git-1:hover {
+  box-shadow:
+    var(--shadow-h-offset)
+    var(--shadow-v-offset)
+    var(--shadow-blur)
+    #f5de63;
+}
+
+#what-is-git-2:hover {
+  box-shadow:
+    var(--shadow-h-offset)
+    var(--shadow-v-offset)
+    var(--shadow-blur)
+    #6b92f2;
+}
+
+#congifuring-git-1:hover {
+  box-shadow:
+    var(--shadow-h-offset)
+    var(--shadow-v-offset)
+    var(--shadow-blur)
+    #78e9a3;
+}
+
 #git-workflow-1:hover {
   box-shadow: 
     var(--shadow-h-offset)
@@ -222,7 +246,37 @@ img {
   color: var(--git-green);
 }
 
+.git-aqua {
+  color: var(--git-aqua);
+  text-shadow: 1px 1px var(--git-aqua);
+}
+
 .vscode-img:hover {
+  box-shadow: 
+    var(--shadow-h-offset)
+    var(--shadow-v-offset)
+    var(--shadow-blur)
+    var(--git-bash);
+}
+
+#viewing-the-history-3 {
+  max-width: 1400px;
+  max-height: 600px;
+}
+
+a {
+  text-decoration: none;
+  color: var(--link-color);
+  text-shadow: 1px 1px var(--link-color);
+}
+
+#checking-out-a-commit-2:hover,
+#checking-out-a-commit-3:hover,
+#checking-out-a-commit-4:hover,
+#checking-out-a-commit-6:hover,
+#checking-out-a-commit-7:hover,
+#checking-out-a-commit-8:hover,
+#checking-out-a-commit-9:hover {
   box-shadow: 
     var(--shadow-h-offset)
     var(--shadow-v-offset)

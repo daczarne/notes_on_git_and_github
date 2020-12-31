@@ -192,6 +192,30 @@ img {
   align-self: center;
 }
 
+#what-is-git-1:hover {
+  box-shadow:
+    var(--shadow-h-offset)
+    var(--shadow-v-offset)
+    var(--shadow-blur)
+    #f5de63;
+}
+
+#what-is-git-2:hover {
+  box-shadow:
+    var(--shadow-h-offset)
+    var(--shadow-v-offset)
+    var(--shadow-blur)
+    #6b92f2;
+}
+
+#congifuring-git-1:hover {
+  box-shadow:
+    var(--shadow-h-offset)
+    var(--shadow-v-offset)
+    var(--shadow-blur)
+    #78e9a3;
+}
+
 #git-workflow-1:hover {
   box-shadow: 
     var(--shadow-h-offset)
