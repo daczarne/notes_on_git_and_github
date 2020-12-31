@@ -3,9 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="lesson_03_style.css">
-  <link rel="shortcut icon" href="../assets/favicon.png" type="image/x-icon">
-  <title>Aliases</title>
+  <link rel="stylesheet" href="../assets/css/light.css">
+  <link rel="shortcut icon" href="../assets/favicon/favicon.png" type="image/x-icon">  <title>Aliases</title>
 </head>
 <body>
 
@@ -36,7 +35,7 @@
           <div class="code">
             <code>git log --pretty=format:'%Cgreen%an%Creset committed %Cgreen%h%Creset on %Cgreen%cd%Creset'</code>
           </div>
-          <p>Here <span class="inline-code">%an</span> stands for <em>author name</em>, <span class="inline-code">%h</span> stands for <em>short hash</em>, and <span class="inline-code">%cd</span> stands for <em>commit date</em>. <span class="inline-code">%C</span> is for setting and resetting the color. You can check the complete list of posible placeholders and styles <a href="https://git-scm.com/docs/pretty-formats">here</a>.</p>
+          <p>Here <span class="inline-code">%an</span> stands for <em>author name</em>, <span class="inline-code">%h</span> stands for <em>short hash</em>, and <span class="inline-code">%cd</span> stands for <em>commit date</em>. <span class="inline-code">%C</span> is for setting and resetting the color. You can check the complete list of posible placeholders and styles <a class="here" href="https://git-scm.com/docs/pretty-formats">here</a>.</p>
         </div>
         <div class="right-col">
           <img src="../img/aliases-1.png" alt="" class="git-bash-img">
@@ -45,7 +44,7 @@
 
       <div class="row">
         <div class="left-col">
-          <img src="../img/aliases-2.png" alt="" class="vscode-img">
+          <img src="../img/aliases-2.png" alt="" class="git-bash-img">
         </div>
         <div class="right-col">
           <p>Of course typing all of this every time we want to use the command is very time consuming. But in Git we can set up aliases for any command we want (even the built in ones). First we need to define a new property in the <span class="inline-code">alias</span> section of the Git configuration. So we run:</p>
@@ -58,7 +57,7 @@
 
       <div class="row">
         <div class="single-col center">
-          <img src="../img/aliases-3.png" alt="">
+          <img src="../img/aliases-3.png" alt="" class="vscode-img">
         </div>
       </div>
 
