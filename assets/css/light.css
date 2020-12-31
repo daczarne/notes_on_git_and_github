@@ -264,10 +264,15 @@ img {
   max-height: 600px;
 }
 
-a {
+.here {
   text-decoration: none;
   color: var(--link-color);
   text-shadow: 1px 1px var(--link-color);
+}
+
+.here:hover {
+  background: var(--bg-color-title);
+  border-radius: 5px;
 }
 
 #checking-out-a-commit-2:hover,
