@@ -185,60 +185,6 @@ li strong {
   margin: 20px;
 }
 
-img {
-  border-radius: 15px;
-  justify-self: center;
-  align-self: center;
-}
-
-#what-is-git-1:hover {
-  box-shadow:
-    var(--shadow-h-offset)
-    var(--shadow-v-offset)
-    var(--shadow-blur)
-    #f5de63;
-}
-
-#what-is-git-2:hover {
-  box-shadow:
-    var(--shadow-h-offset)
-    var(--shadow-v-offset)
-    var(--shadow-blur)
-    #6b92f2;
-}
-
-#congifuring-git-1:hover {
-  box-shadow:
-    var(--shadow-h-offset)
-    var(--shadow-v-offset)
-    var(--shadow-blur)
-    #78e9a3;
-}
-
-#git-workflow-1:hover {
-  box-shadow: 
-    var(--shadow-h-offset)
-    var(--shadow-v-offset)
-    var(--shadow-blur)
-    #e82d95;
-}
-
-#git-workflow-2:hover {
-  box-shadow: 
-    var(--shadow-h-offset)
-    var(--shadow-v-offset)
-    var(--shadow-blur)
-    #e14e12;
-}
-
-.git-bash-img:hover {
-  box-shadow: 
-    var(--shadow-h-offset)
-    var(--shadow-v-offset)
-    var(--shadow-blur)
-    var(--git-bash);
-}
-
 .git-red {
   color: var(--git-red);
 }
@@ -252,19 +198,6 @@ img {
   text-shadow: 1px 1px var(--git-aqua);
 }
 
-.vscode-img:hover {
-  box-shadow: 
-    var(--shadow-h-offset)
-    var(--shadow-v-offset)
-    var(--shadow-blur)
-    var(--git-bash);
-}
-
-#viewing-the-history-3 {
-  max-width: 1400px;
-  max-height: 600px;
-}
-
 .here {
   text-decoration: none;
   color: var(--link-color);
@@ -276,28 +209,34 @@ img {
   border-radius: 5px;
 }
 
+/* Images */
+
+img {
+  border-radius: 15px;
+  justify-self: center;
+  align-self: center;
+}
+
+.git-bash-img:hover,
+.vscode-img:hover,
+.miro-img:hover,
+.custom-img:hover {
+  box-shadow: 
+    var(--shadow-h-offset)
+    var(--shadow-v-offset)
+    var(--shadow-blur)
+    var(--git-bash);
+}
+
 .miro-img {
   max-width: 600px;
 }
 
-.miro-img:hover {
-  box-shadow: 
-    var(--shadow-h-offset)
-    var(--shadow-v-offset)
-    var(--shadow-blur)
-    var(--git-bash);
+#git-workflow-1 {
+  max-width: 1000px !important;
 }
 
-#checking-out-a-commit-2:hover,
-#checking-out-a-commit-3:hover,
-#checking-out-a-commit-4:hover,
-#checking-out-a-commit-6:hover,
-#checking-out-a-commit-7:hover,
-#checking-out-a-commit-8:hover,
-#checking-out-a-commit-9:hover {
-  box-shadow: 
-    var(--shadow-h-offset)
-    var(--shadow-v-offset)
-    var(--shadow-blur)
-    var(--git-bash);
+#viewing-the-history-3 {
+  max-width: 1400px;
+  max-height: 600px;
 }
