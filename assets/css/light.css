@@ -175,6 +175,7 @@ li strong {
   color: var(--font-color-title);
 }
 
+/* Stylized fonts */
 .code,
 .inline-code {
   color: var(--code);
