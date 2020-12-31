@@ -276,6 +276,18 @@ img {
   border-radius: 5px;
 }
 
+.miro-img {
+  max-width: 600px;
+}
+
+.miro-img:hover {
+  box-shadow: 
+    var(--shadow-h-offset)
+    var(--shadow-v-offset)
+    var(--shadow-blur)
+    var(--git-bash);
+}
+
 #checking-out-a-commit-2:hover,
 #checking-out-a-commit-3:hover,
 #checking-out-a-commit-4:hover,
