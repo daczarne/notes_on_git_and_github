@@ -20,7 +20,7 @@
       </div>
 
       <div class="btn">
-        <a href="#" class="next">Next &raquo;</a>
+        <a href="12_viewing_the_history_of_a_file.html" class="next">Next &raquo;</a>
       </div>
 
     </header>
@@ -28,6 +28,23 @@
 
   <main>
     <section>
+
+      <div class="row">
+        <div class="left-col">
+          <p>We can find all the people who have contributed to our project for that we use</p>
+          <div class="code">
+            <code>git shortlog</code>
+          </div>
+          <p>This command can take several options. For example, <span class="inline-code">-n</span> will sort the output according to the number of commits, <span class="inline-code">-s</span> will suppress commit descriptions, <span class="inline-code">-e</span> will show the contributors’ email address, etc. You can check the entire list by running</p>
+          <div class="code">
+            <div>git shortlog -h</div>
+          </div>
+          <p>We can also filter the output using the <span class="inline-code">--before</span> and <span class="inline-code">--after</span> options.</p>
+        </div>
+        <div class="right-col">
+          <img src="../img/contributors-1.png" alt="" class="git-bash-img">
+        </div>
+      </div>
 
     </section>
   </main>
