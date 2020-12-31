@@ -15,6 +15,7 @@
   --git-bash: #fff;
   --git-green: #00a700;
   --git-red: #9f0000;
+  --git-aqua: #00bfba;
   --link-color: #fc4364;
 }
 
@@ -225,6 +226,11 @@ img {
   text-shadow: 1px 1px var(--git-green);
 }
 
+.git-aqua {
+  color: var(--git-aqua);
+  text-shadow: 1px 1px var(--git-aqua);
+}
+
 .vscode-img:hover {
   box-shadow: 
     var(--shadow-h-offset)
@@ -242,4 +248,18 @@ a {
   text-decoration: none;
   color: var(--link-color);
   text-shadow: 1px 1px var(--link-color);
+}
+
+#checking-out-a-commit-2:hover,
+#checking-out-a-commit-3:hover,
+#checking-out-a-commit-4:hover,
+#checking-out-a-commit-6:hover,
+#checking-out-a-commit-7:hover,
+#checking-out-a-commit-8:hover,
+#checking-out-a-commit-9:hover {
+  box-shadow: 
+    var(--shadow-h-offset)
+    var(--shadow-v-offset)
+    var(--shadow-blur)
+    var(--git-bash);
 }
