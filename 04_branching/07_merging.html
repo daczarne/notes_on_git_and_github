@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../assets/css/light.css">
+  <link rel="shortcut icon" href="../assets/favicon/favicon.png" type="image/x-icon">  <title>Merging</title>
+</head>
+<body>
+
+  <div class="floating-div">
+    <header>
+
+      <div class="btn">
+        <a href="06_stashing.html" class="previous">&laquo; Previous</a>
+      </div>
+
+      <div class="title">
+        <h1>Merging</h1>
+      </div>
+
+      <div class="btn">
+        <a href="08_fast_forward_merging.html" class="next">Next &raquo;</a>
+      </div>
+
+    </header>
+  </div>
+
+  <main>
+    <section>
+
+      <div class="row">
+        <div class="single-col">
+          <p>Merging is the action of bringing the changes in one branch onto another branch. In Git there are two types of mergers: <em>fast-forward merges</em>, and <em>3-way merges</em>. To make things clearer, suppose we have a branch called <span class="git-aqua">new-feature</span> that we want to merge into <span class="git-aqua">master</span>.</p>
+          <br>
+          <p>Git will use a fast-forward merge if <span class="git-aqua">master</span> and <span class="git-aqua">new-feature</span> have not diverged. This means that the last common commit for both branches is also the last commit on the <span class="git-aqua">master</span> branch. In this case, all Git has to do is move the <span class="git-aqua">master</span> pointer to the tip of the <span class="git-aqua">new-feature</span> branch.</p>
+          <br>
+          <p>If the branches have diverged, Git will use a 3-way merge. In this scenario, Git will look at three different commits (thus 3 -way merge). The last common ancestor to both branches and the tip in each branch. Then it will create a new commit (called <em>merge commit</em>) that integrates all changes.</p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="single-col">
+          <div class="grid-container">
+            <div class="fast-step-one">
+              <img class="merge-img" src="../img/merges-1.png">
+            </div>
+            <div class="fast-step-two">
+              <img class="merge-img" src="../img/merges-2.png">
+            </div>
+            <div class="fast-step-three">
+              <img class="merge-img" src="../img/merges-3.png">
+            </div>
+            <div class="three-step-one">
+              <img class="merge-img" src="../img/merges-4.png">
+            </div>
+            <div class="three-step-two">
+              <img class="merge-img" src="../img/merges-5.png">
+            </div>
+            <div class="three-step-three">
+              <img class="merge-img" src="../img/merges-6.png">
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+  </main>
+  
+</body>
+</html>
