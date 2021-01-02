@@ -288,6 +288,11 @@ img {
   border-top: 1px solid var(--border-color);
 }
 
+#vscode-merge-conflict {
+  max-width: 1000px;
+}
+
+/* Media queries */
 @media (max-width: 900px) {
 
   .row {
