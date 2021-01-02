@@ -386,7 +386,7 @@ img {
 }
 
 /* Media queries */
-@media (max-width: 900px) {
+@media (max-width: 1000px) {
 
   .row {
     flex-wrap: wrap;
@@ -405,39 +405,33 @@ img {
   }
 
   .fast-step-one {
-    grid-area: fast-step-one;
     border: none;
     border-bottom: 1px solid var(--border-color);
   }
 
   .fast-step-two {
-    grid-area: fast-step-two;
     border: none;
     border-top: 1px solid var(--border-color);
     border-bottom: 1px solid var(--border-color);
   }
 
   .fast-step-three {
-    grid-area: fast-step-three;
     border: none;
     border-top: 1px solid var(--border-color);
   }
 
   .three-step-one {
-    grid-area: three-step-one;
     border: none;
     border-bottom: 1px solid var(--border-color);
   }
 
   .three-step-two {
-    grid-area: three-step-two;
     border: none;
     border-top: 1px solid var(--border-color);
     border-bottom: 1px solid var(--border-color);
   }
 
   .three-step-three {
-    grid-area: three-step-three;
     border: none;
     border-top: 1px solid var(--border-color);
   }
@@ -453,25 +447,21 @@ img {
   }
 
   .reset-one {
-    grid-area: reset-one;
     border: none;
     border-bottom: 1px solid var(--border-color);
   }
 
   .reset-two {
-    grid-area: reset-two;
     border: none;
     border-top: 1px solid var(--border-color);
   }
 
   .revert-one {
-    grid-area: revert-one;
     border: none;
     border-bottom: 1px solid var(--border-color);
   }
 
   .revert-two {
-    grid-area: revert-two;
     border: none;
     border-top: 1px solid var(--border-color);
   }
