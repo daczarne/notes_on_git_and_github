@@ -237,7 +237,7 @@ img {
   max-height: 600px;
 }
 
-.grid-container {
+.grid-container-merging {
   display: grid;
   grid-template-areas: 
     "fast-step-one three-step-one"
@@ -292,6 +292,42 @@ img {
   max-width: 1000px;
 }
 
+.grid-containter-undoing-merge {
+  display: grid;
+  grid-template-areas: 
+    "reset-one revert-one"
+    "reset-two revert-two";
+  grid-template-columns: 50%;
+}
+
+.undoing-merge-img {
+  max-width: 100%;
+}
+
+.reset-one {
+  grid-area: reset-one;
+  border-right: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.reset-two {
+  grid-area: reset-two;
+  border-right: 1px solid var(--border-color);
+  border-top: 1px solid var(--border-color);
+}
+
+.revert-one {
+  grid-area: revert-one;
+  border-left: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.revert-two {
+  grid-area: revert-two;
+  border-top: 1px solid var(--border-color);
+  border-left: 1px solid var(--border-color);
+}
+
 /* Media queries */
 @media (max-width: 900px) {
 
@@ -299,7 +335,7 @@ img {
     flex-wrap: wrap;
   }
 
-  .grid-container {
+  .grid-container-merging {
     display: grid;
     grid-template-areas: 
       "fast-step-one"
@@ -345,6 +381,40 @@ img {
 
   .three-step-three {
     grid-area: three-step-three;
+    border: none;
+    border-top: 1px solid var(--border-color);
+  }
+
+  .grid-containter-undoing-merge {
+    display: grid;
+    grid-template-areas: 
+      "reset-one"
+      "reset-two"
+      "revert-one"
+      "revert-two";
+    grid-template-columns: 100%;
+  }
+
+  .reset-one {
+    grid-area: reset-one;
+    border: none;
+    border-bottom: 1px solid var(--border-color);
+  }
+
+  .reset-two {
+    grid-area: reset-two;
+    border: none;
+    border-top: 1px solid var(--border-color);
+  }
+
+  .revert-one {
+    grid-area: revert-one;
+    border: none;
+    border-bottom: 1px solid var(--border-color);
+  }
+
+  .revert-two {
+    grid-area: revert-two;
     border: none;
     border-top: 1px solid var(--border-color);
   }
