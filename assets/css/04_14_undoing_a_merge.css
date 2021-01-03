@@ -1,0 +1,70 @@
+
+.grid-containter-undoing-merge {
+  display: grid;
+  grid-template-areas: 
+    "reset-one revert-one"
+    "reset-two revert-two";
+  grid-template-columns: 50%;
+}
+
+.undoing-merge-img {
+  max-width: 100%;
+}
+
+.reset-one {
+  grid-area: reset-one;
+  border-right: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.reset-two {
+  grid-area: reset-two;
+  border-right: 1px solid var(--border-color);
+  border-top: 1px solid var(--border-color);
+}
+
+.revert-one {
+  grid-area: revert-one;
+  border-left: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.revert-two {
+  grid-area: revert-two;
+  border-top: 1px solid var(--border-color);
+  border-left: 1px solid var(--border-color);
+}
+
+@media (max-width: 1000px) {
+
+  .grid-containter-undoing-merge {
+    display: grid;
+    grid-template-areas: 
+      "reset-one"
+      "reset-two"
+      "revert-one"
+      "revert-two";
+    grid-template-columns: 100%;
+  }
+
+  .reset-one {
+    border: none;
+    border-bottom: 1px solid var(--border-color);
+  }
+
+  .reset-two {
+    border: none;
+    border-top: 1px solid var(--border-color);
+  }
+
+  .revert-one {
+    border: none;
+    border-bottom: 1px solid var(--border-color);
+  }
+
+  .revert-two {
+    border: none;
+    border-top: 1px solid var(--border-color);
+  }
+
+}

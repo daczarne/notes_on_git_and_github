@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
 
 :root {
   --bg-color-main: #045a8d;
@@ -26,7 +27,7 @@
 }
 
 body {
-  font-family: "DM Mono", sans-serif;
+  font-family: "DM Mono",  sans-serif;
   background: var(--bg-color-main);
   color: var(--font-color-main);
   font-size: 1.5rem;
@@ -143,12 +144,6 @@ main section {
   flex-direction: column;
 }
 
-@media (max-width: 900px) {
-  .row {
-    flex-wrap: wrap;
-  }
-}
-
 .example {
   width: 100%;
   margin: 10px 0 20px 0;
@@ -164,7 +159,6 @@ main section {
 
 .row p em {
   color: var(--highlight);
-  text-shadow: 1px 1px black;
 }
 
 ul {
@@ -176,6 +170,7 @@ li strong {
   color: var(--font-color-title);
 }
 
+/* Stylized fonts */
 .code,
 .inline-code {
   color: var(--code);
@@ -186,68 +181,12 @@ li strong {
   margin: 20px;
 }
 
-img {
-  border-radius: 15px;
-  justify-self: center;
-  align-self: center;
-}
-
-#what-is-git-1:hover {
-  box-shadow:
-    var(--shadow-h-offset)
-    var(--shadow-v-offset)
-    var(--shadow-blur)
-    #f5de63;
-}
-
-#what-is-git-2:hover {
-  box-shadow:
-    var(--shadow-h-offset)
-    var(--shadow-v-offset)
-    var(--shadow-blur)
-    #6b92f2;
-}
-
-#congifuring-git-1:hover {
-  box-shadow:
-    var(--shadow-h-offset)
-    var(--shadow-v-offset)
-    var(--shadow-blur)
-    #78e9a3;
-}
-
-#git-workflow-1:hover {
-  box-shadow: 
-    var(--shadow-h-offset)
-    var(--shadow-v-offset)
-    var(--shadow-blur)
-    #e82d95;
-}
-
-#git-workflow-2:hover {
-  box-shadow: 
-    var(--shadow-h-offset)
-    var(--shadow-v-offset)
-    var(--shadow-blur)
-    #e14e12;
-}
-
-.git-bash-img:hover {
-  box-shadow: 
-    var(--shadow-h-offset)
-    var(--shadow-v-offset)
-    var(--shadow-blur)
-    var(--git-bash);
-}
-
 .git-red {
   color: var(--git-red);
-  background-color: #000;
 }
 
 .git-green {
   color: var(--git-green);
-  text-shadow: 1px 1px var(--git-green);
 }
 
 .git-aqua {
@@ -255,35 +194,49 @@ img {
   text-shadow: 1px 1px var(--git-aqua);
 }
 
-.vscode-img:hover {
-  box-shadow: 
-    var(--shadow-h-offset)
-    var(--shadow-v-offset)
-    var(--shadow-blur)
-    var(--git-bash);
-}
-
-#viewing-the-history-3 {
-  max-width: 1400px;
-  max-height: 600px;
-}
-
-a {
+.here {
   text-decoration: none;
   color: var(--link-color);
   text-shadow: 1px 1px var(--link-color);
 }
 
-#checking-out-a-commit-2:hover,
-#checking-out-a-commit-3:hover,
-#checking-out-a-commit-4:hover,
-#checking-out-a-commit-6:hover,
-#checking-out-a-commit-7:hover,
-#checking-out-a-commit-8:hover,
-#checking-out-a-commit-9:hover {
+.here:hover {
+  background: var(--bg-color-title);
+  border-radius: 5px;
+}
+
+p a {
+  text-decoration: none;
+  color: var(--highlight);
+}
+
+/* Images */
+img {
+  border-radius: 15px;
+  justify-self: center;
+  align-self: center;
+}
+
+.git-bash-img:hover,
+.vscode-img:hover,
+.miro-img:hover,
+.custom-img:hover {
   box-shadow: 
     var(--shadow-h-offset)
     var(--shadow-v-offset)
     var(--shadow-blur)
     var(--git-bash);
+}
+
+.miro-img {
+  max-width: 600px;
+}
+
+/* Media queries */
+@media (max-width: 1000px) {
+
+  .row {
+    flex-wrap: wrap;
+  }
+
 }
