@@ -221,6 +221,7 @@ img {
 .git-bash-img:hover,
 .vscode-img:hover,
 .miro-img:hover,
+.github-img:hover,
 .custom-img:hover {
   box-shadow: 
     var(--shadow-h-offset)
@@ -231,6 +232,10 @@ img {
 
 .miro-img {
   max-width: 600px;
+}
+
+.github-img {
+  max-width: 1200px;
 }
 
 /* Media queries */
