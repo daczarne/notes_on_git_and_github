@@ -430,6 +430,31 @@ img {
   border-left: 1px solid var(--border-color);
 }
 
+.grid-container-collaboration-workflows {
+  display: grid;
+  grid-template-areas:
+    "collaboration-workflows-one collaboration-workflows-two";
+  grid-template-columns: 50% 50%;
+}
+
+.collaboration-workflows-img {
+  max-width: 100%;
+}
+
+.collaboration-workflows-one {
+  grid-area: collaboration-workflows-one;
+  border-right: 1px solid var(--border-color);
+}
+
+.collaboration-workflows-two {
+  grid-area: collaboration-workflows-two;
+  border-left: 1px solid var(--border-color);
+}
+
+#collaboration-workflows-3 {
+  min-width: 100% !important;
+}
+
 /* Media queries */
 @media (max-width: 1000px) {
 
@@ -559,6 +584,24 @@ img {
   }
 
   .cherry-picking-two {
+    border: none;
+    border-top: 1px solid var(--border-color);
+  }
+
+  .grid-container-collaboration-workflows {
+    display: grid;
+    grid-template-areas:
+      "collaboration-workflows-one"
+      "collaboration-workflows-two";
+    grid-template-columns: 100%;
+  }
+
+  .collaboration-workflows-one {
+    border: none;
+    border-bottom: 1px solid var(--border-color);
+  }
+
+  .collaboration-workflows-two {
     border: none;
     border-top: 1px solid var(--border-color);
   }
