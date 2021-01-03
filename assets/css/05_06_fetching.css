@@ -1,0 +1,79 @@
+
+.grid-container-fetching {
+  display: grid;
+  grid-template-areas: 
+    "fetching-one fetching-two"
+    "fetching-three fetching-four";
+  grid-template-columns: 50% 50%;
+}
+
+.fetching-img {
+  width: 100%;
+}
+
+.fetching-gh-img {
+  max-width: 500px;
+}
+
+.fetching-one {
+  grid-area: fetching-one;
+  border-right: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.fetching-two {
+  grid-area: fetching-two;
+  border-left: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.fetching-three {
+  grid-area: fetching-three;
+  border-right: 1px solid var(--border-color);
+  border-top: 1px solid var(--border-color);
+}
+
+.fetching-four {
+  grid-area: fetching-four;
+  border-left: 1px solid var(--border-color);
+  border-top: 1px solid var(--border-color);
+}
+
+#commit-button {
+  width: 4em;
+}
+
+@media (max-width: 1000px) {
+  .grid-container-fetching {
+    display: grid;
+    grid-template-areas: 
+      "fetching-one"
+      "fetching-two"
+      "fetching-three"
+      "fetching-four";
+    grid-template-columns: 100%;
+  }
+
+  .fetching-one {
+    border: none;
+    border-bottom: 1px solid var(--border-color);
+  }
+
+  .fetching-two {
+    border: none;
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+  }
+
+  .fetching-three {
+    border: none;
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+  }
+
+  .fetching-four {
+    border: none;
+    border-top: 1px solid var(--border-color);
+  }
+
+}
