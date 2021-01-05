@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../assets/css/light.css">
+  <link rel="shortcut icon" href="../assets/favicon/favicon.png" type="image/x-icon">  <title>Sharing branches</title>
+</head>
+<body>
+
+  <div class="floating-div">
+    <header>
+
+      <div class="btn">
+        <a href="11_releases.html" class="previous">&laquo; Previous</a>
+      </div>
+
+      <div class="title">
+        <h1>Sharing branches</h1>
+      </div>
+
+      <div class="btn">
+        <a href="14_pull_requests.html" class="next">Next &raquo;</a>
+      </div>
+
+    </header>
+  </div>
+
+  <main>
+    <section>
+
+      <div class="row">
+        <div class="left-col">
+          <p>By default, the branches we create locally, stay local. If we try to push a local branch onto the remote repository, Git will throw an error saying that <span class="inline-code">the current branch has no upstream branch</span>. If we run</p>
+          <div class="code">
+            <code>git branch -vv</code>
+          </div>
+          <p>Git will show us our local and remote tracking branches, and we can see which ones have an upstream and which ones don't.</p>
+          <br>
+          <p>You can see all remote tracking branches by running</p>
+          <div class="code">
+            <code>git branch -r</code>
+          </div>
+        </div>
+        <div class="right-col">
+          <img src="../img/sharing-branches-1.png" alt="" class="git-bash-img">
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="left-col">
+          <img src="../img/sharing-branches-2.png" alt="" class="git-bash-img">
+        </div>
+        <div class="right-col">
+          <p>To link a local branch to a remote branch, the first time we push, we have to run</p>
+          <div class="code">
+            <code>git push -u <em>remote</em> <em>branch_name</em></code>
+          </div>
+          <p>where <span class="inline-code">-u</span> is the short version of <span class="inline-code">--set-upstream</span>, <span class="inline-code">remote</span> is the name of the remote repository we want to push to, and <span class="inline-code">branch_name</span> is the name of the branch. If we want to push to the GitHub repository, then <span class="inline-code">remote</span> should be set to <span class="inline-code">origin</span>.</p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="left-col">
+          <p>Notice that, in this case, we pushed the branch, without anything new to commit. We just used the push command to the GitHub that there's a new pointer that we are going to be keeping track of.</p>
+          <br>
+          <p>We can see this by checking the log with</p>
+          <div class="code">
+            <code>git log --oneline --all --graph</code>
+          </div>
+          <p>or by checking the branches with</p>
+          <div class="code">
+            <code>git branch -vv</code>
+          </div>
+          <p>or by checking our remote tracking branches with</p>
+          <div class="code">
+            <code>git branch -r</code>
+          </div>
+        </div>
+        <div class="right-col">
+          <img src="../img/sharing-branches-3.png" alt="" class="git-bash-img">
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="left-col">
+          <img src="../img/sharing-branches-4.png" alt="" class="git-bash-img">
+        </div>
+        <div class="right-col">
+          <p>From now on, whenever we want to push local commits onto the remote tracking branch, we just use the <span class="inline-code">git push</span> command, the same as we did with the master branch.</p>
+          <br>
+          <p>When we push, Git will tell GitHub to store our commits and to move the remote <span class="git-red">feature</span> pointer to the new commit. It will also update the status of the remote tracking branch on our local repository.</p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="left-col">
+          <p>The same holds true for mergers. Once you are done working locally and merge your changes onto the local master branch, you can simply push, and Git and GitHub will sync up and moves the pointer accordingly (assuming no one else pushed to the remote between the time you pushed the branch and the time you are trying to push the merge. If that is the case, there might be conflicts for you to resolve).</p>
+        </div>
+        <div class="right-col">
+          <img src="../img/sharing-branches-5.png" alt="" class="git-bash-img">
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="left-col">
+          <img src="../img/sharing-branches-6.png" alt="" class="git-bash-img">
+        </div>
+        <div class="right-col">
+          <p>At some point, once we are done and merged your changes, you're going to need to delete your branch. To delete the remote branch, we run</p>
+          <div class="code">
+            <code>git push -d <em>remote</em> <em>branch_name</em> </code>
+          </div>
+          <p>But our local branch is still "linked" to the remote (it's not...that why Git it's telling us that the remote is gone and it's not showing up on our list of remote tracking branches, but the local branch still thinks it's there). Just remember to delete local branches too by running</p>
+          <div class="code">
+            <code>git branch -d <em>branch_name</em> </code>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="left-col">
+          <p>When collaborating on a branch, any person can create the remote branch from their local repository and push it like we just saw. Another way is to create them directly in GitHub.</p>
+          <br>
+          <p>All you have to do is to click on the button that says <em>main</em> and type the name of the new branch. When you press Enter, GitHub will create the new branch. </p>
+        </div>
+        <div class="right-col">
+          <img src="../img/sharing-branches-7.png" alt="" class="github-img">
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="left-col">
+          <img src="../img/sharing-branches-8.png" alt="" class="git-bash-img">
+        </div>
+        <div class="right-col">
+          <p>At this point, our local Git repository has no idea that a new branch was created on the remote repository. If we pull changes from the remote, Git will create a new remote tracking branch, but not a local branch. To do that we run</p>
+          <div class="code">
+            <code>git switch -C <em>branch_name</em> <em>remote/branch_name</em> </code>
+          </div>
+          <p>where <span class="inline-code">branch_name</span> is the name of our local branch and <span class="inline-code">remote/branch_name</span> is the name of the <span class="inline-code">remote</span> and the name of the <span class="inline-code">branch</span> that we wish to track in that <span class="inline-code">remote</span>. To make this a little bit more clear, take a look at the Git Bash image. Here what we are telling Git is that the local branch called <span class="inline-code">bugfix</span> should be paired with the remote tracking branch <span class="inline-code">origin/bugfix</span>.</p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="left-col">
+          <p>At some point, you and your teammates are going to finish working with that branch. Someone should now remove that branch from the origin (and his/her's local). If you are in charge of doing it, it's just as what we saw before.</p>
+          <br>
+          <p>If it's not you who's in charge of deleting the remote branch then: first, remember to switch to master on your local repository and bring in the changes with a pull. This will sync up your local repository. It should now show the merge commit your teammate did before deleting the remote branch.</p>
+          <br>
+          <p>Now, delete your local branch by running <span class="inline-code">git branch -d branch_name</span> just as before. If you now check your remote tracking branches, you'll see that the remote is still there. You need to prune it. To do so, run</p>
+          <div class="code">
+            <code>git remote prune origin</code>
+          </div>
+          <p>Notice that the above command does not mention any particular remote tracking branch. This is because it will get rid of all branches with no upstream set. To make sure everything went OK, run <span class="inline-code">git branch -r</span>, and the remote tracking branch should be gone now.</p>
+        </div>
+      </div>
+
+    </section>
+  </main>
+  
+</body>
+</html>
