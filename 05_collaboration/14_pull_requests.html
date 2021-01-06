@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../assets/css/light.css">
+  <link rel="stylesheet" href="../assets/css/05_14_pull_requests.css">
   <link rel="shortcut icon" href="../assets/favicon/favicon.png" type="image/x-icon">  <title>Pull requests</title>
 </head>
 <body>
@@ -29,6 +30,139 @@
   <main>
     <section>
 
+      <div class="row">
+        <div class="single-col">
+          <p>A <em>Pull Request</em> (from now on, PR) is a way of opening a discussion on a repository so that we can get feedback from other team members on our code. In many organizations, opening PRs to merge code into production or staging branches, and reviewing other's people code is mandatory, even for the most senior developers.</p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="left-col">
+          <p>To see a scenario, let's suppose we just created a new commit on a branch called <span class="git-aqua">bugfix</span> and we pushed it to the remote repository. If we now go to GitHub, we'll see the message to create a PR. To start creating a PR, click on it. Alternatively, you can go to the Pull Requests tab and start it from there.</p>
+        </div>
+        <div class="right-col">
+          <img src="../img/pull-requests-1.png" alt="" class="github-img pr-img">
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="single-col">
+          <p>You'll see a screen like the one below. First, we need to select two branches. The <em>base branch</em> is the branch that we want to merge our code into (here we'll choose main), our <em>compare branch</em> is the branch that has the code we want to merge into the <em>base branch</em> (in this case, I called the branch bugfix). Next to the branch selectors, GitHub is telling us that this branch can be merged without generating conflicts. This is will not always be the case. If GitHub tells us that there are conflicts that will have to be resolved that's OK, first our code needs to be approved by our teammates anyway.</p>
+          <br>
+          <p>Below that we can see the summary of changes. GitHub is telling us that this PR will include 1 commit, with changes to 1 file. After that, it shows us a graph of the involved commits. At the bottom we can see the diffs for the different files (you can toggle the views by pressing the Unsplit and Split buttons on the right). When you are done reviewing this page, click on <em>Create pull request</em>.</p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="single-col center">
+          <img src="../img/pull-requests-2.png" alt="" class="github-img">
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="single-col">
+          <p>In this new screen we need to first enter the PR's title. Because this PR has only 1 commit, GitHub used the commit message as a PR title. Usually you should change it to something more meaningful, related to the task at hand (like feature name or bugfix and the ID of the bugfix task).</p>
+          <br>
+          <p>In the details section of the PR you can write whatever you want. Usually we list the changes or functions that were implemented plus a short description of what they do. If there's any part of your code that you want your teammates to pay special attention to, this is where you should include that. When ready, click on the <em>Create pull request</em> button.</p>
+        </div>
+      </div>
+      
+      <div class="row">
+        <div class="single-col center">
+          <img src="../img/pull-requests-3.png" alt="" class="github-img">
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="left-col">
+          <p>Now, if a reviewer was not assigned automatically, you need to assign one. You can assign more than one too. The yellow dot next to each reviewer's name indicates that they are still to respond to the review request.</p>
+          <br>
+          <p>From now on we'll be changing roles in this demo playing the role of the creator of the PR and the reviewer, but I'll always use the pronoun you since in the real world you'll have to do both. When playing the PR creator's role the screen will be in dark theme. When playing the role of the reviewer it will be in light theme.</p>
+        </div>
+        <div class="right-col">
+          <img src="../img/pull-requests-4.png" alt="" class="github-img">
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="left-col">
+          <img src="../img/pull-requests-5.png" alt="" class="github-img">
+        </div>
+        <div class="right-col">
+          <p>When someone asks for their code to be reviewed by you, GitHub will send you an email. Upon logging into GitHub you'll see a message that says that a teammate requested a review from you. Click on the <em>Add your review</em> button.</p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="left-col">
+          <p>You can now add comments to every and any line of code you think needs one. When you hover over a line, a blue plus sign will appear. To add a comment click on it.</p>
+        </div>
+        <div class="right-col">
+          <img src="../img/pull-requests-6.png" alt="" class="github-img">
+          <br>
+          <img src="../img/pull-requests-7.png" alt="" class="github-img">
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="left-col">
+          <img src="../img/pull-requests-8.png" alt="" class="github-img">
+        </div>
+        <div class="right-col">
+          <p>After adding all of your comments, click on the <em>Review changes</em> button in the top-right corner. Here you can add a general message and approve, comment, or request changes from the PR owner (the teammate who submitted it).</p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="left-col">
+          <p>Let's got back to supposing that you are the person who created the PR. When the reviewer submits the review, you'll get an email from GitHub saying that your code has been review. Since in this case changes were requested, you'll see a red icon next to the reviewer’s name.</p>
+          <br>
+          <p>Next, you'll go back to the code, implement the requested changes (if you agree with them of course), and push the new commit onto the remote repository. Now you can request a new review by pressing the arrows next to the red icon.</p>
+        </div>
+        <div class="right-col">
+          <img src="../img/pull-requests-9.png" alt="" class="github-img">
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="left-col">
+          <img src="../img/pull-requests-10.png" alt="" class="github-img">
+        </div>
+        <div class="right-col">
+          <p>Back in the reviewer's role. You received an email from your teammate saying that there's a new version of the code. You review it again and since you are now OK with the code, you click on the <em>Viewed</em> button. Now you submit a new review, this time approving it.</p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="left-col">
+          <p>The person who submitted the PR will now see a green checkmark next to the reviewer's name. So now it's time to merge the PR onto the base branch.</p>
+        </div>
+        <div class="right-col">
+          <img src="../img/pull-requests-11.png" alt="" class="github-img">
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="left-col">
+          <img src="../img/pull-requests-12.png" alt="" class="github-img">
+        </div>
+        <div class="right-col">
+          <p>Back in the PR's discussion panel you'll see a <em>Merge pull request</em> at the bottom. Who should merge is something that depends on the type of project and the culture and rules of the organization. Some prefer that a person other than the one who opened the PR merges it, some prefer the person who created it to merge it. Just follow the rules and customs of your organization.</p>
+          <br>
+          <p>To merge, all you have to do is select the type of merge and click on the merge button.</p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="left-col">
+          <p>Once done, don't forget to delete the branch. To delete the remote branch you can just click on delete branch. To delete the local branch on your computer, remember to first pull, switch to main, and then delete and prune.</p>
+          <br>
+          <p>If you delete a branch by mistake don't worry. Once you click on the <em>Delete branch</em> button, it'll change to <em>Restore branch</em>.</p>
+        </div>
+        <div class="right-col">
+          <img src="../img/pull-requests-13.png" alt="" class="github-img">
+        </div>
+      </div>
 
     </section>
   </main>
