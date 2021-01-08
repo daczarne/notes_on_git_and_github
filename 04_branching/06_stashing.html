@@ -48,13 +48,13 @@
           <p>We can now finish our work, stage it and commit it.</p>
         </div>
         <div class="right-col">
-          <img src="../img/stashing-1.png" alt="" class="git-bash-img">
+          <img src="../assets/img/stashing-1.png" alt="" class="git-bash-img">
         </div>
       </div>
 
       <div class="row">
         <div class="left-col">
-          <img src="../img/stashing-2.png" alt="" class="miro-img">
+          <img src="../assets/img/stashing-2.png" alt="" class="miro-img">
         </div>
         <div class="right-col">
           <p>If you are left wondering how does this work, here's a simplified explanation. When we invoke <span class="inline-code">git stash</span> Git commits our changes and creates a new type of reference called a <em>stash</em> from where it can access that new commit (technically there are several commits involved depending on what we are stashing, you can read all about it <a href="https://www.atlassian.com/git/tutorials/saving-changes/git-stash#:~:text=Invoking%20git%20stash%20encodes%20any,files%20as%20an%20additional%20commit." class="here">here</a>).</p>
@@ -67,13 +67,13 @@
           <p>When we switch branches Git just moves the <em>HEAD</em> reference to the tip of that branch.</p>
         </div>
         <div class="right-col">
-          <img src="../img/stashing-3.png" alt="" class="miro-img">
+          <img src="../assets/img/stashing-3.png" alt="" class="miro-img">
         </div>
       </div>
 
       <div class="row">
         <div class="left-col">
-          <img src="../img/stashing-4.png" alt="" class="miro-img">
+          <img src="../assets/img/stashing-4.png" alt="" class="miro-img">
         </div>
         <div class="right-col">
           <p>Finally, when we <span class="inline-code">pop</span> our stashed commit, Git adds the content of that commit to the working directory in that branch.</p>
@@ -92,13 +92,13 @@
           <p>Git keeps track of which stash was added first and which one was added last. The stash at the top of the list is the one that was added last. When we run <span class="inline-code">git stash apply</span> (or pop) this is the stash that will be applied by default. But each stash has a unique identifier called <em>stash@{n}</em> where <em>n</em> is it's position on the stash stack. You can use this identifiers (or just the <em>n</em> number) to reference them when poping or applying.</p>
         </div>
         <div class="right-col">
-          <img src="../img/stashing-5.png" alt="" class="git-bash-img">
+          <img src="../assets/img/stashing-5.png" alt="" class="git-bash-img">
         </div>
       </div>
 
       <div class="row">
         <div class="left-col">
-          <img src="../img/stashing-6.png" alt="" class="git-bash-img">
+          <img src="../assets/img/stashing-6.png" alt="" class="git-bash-img">
         </div>
         <div class="right-col">
           <p>One place in which this references come in handly is when viewing the changes of a stash. When we have more than one stash we should check what's in a stash before applying in to the working directory. To do this we run</p>

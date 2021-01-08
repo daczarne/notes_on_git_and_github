@@ -36,7 +36,7 @@
           <p>In a nutshell, it works by doing a binary search though-out our repository. We'll tell Git of a <em>good</em> commit, and a <em>bad</em> commit and Git will help us zero-in the commit that caused the bug so that we can fix it.</p>
         </div>
         <div class="right-col">
-          <img src="../img/bisect-1.png" alt="" class="git-bash-img">
+          <img src="../assets/img/bisect-1.png" alt="" class="git-bash-img">
         </div>
       </div>
 
@@ -59,7 +59,7 @@
           <p>Now Git is telling us that we have 7 revisions left (7 commits to check instead of the total 16), and it's also telling us that we can get it done in 3 steps. Notice that Git Bash changed again and is not at commit <em>24e86ee</em>.</p>
         </div>
         <div class="right-col">
-          <img src="../img/bisect-2.png" alt="" class="git-bash-img">
+          <img src="../assets/img/bisect-2.png" alt="" class="git-bash-img">
         </div>
       </div>
 
@@ -76,7 +76,7 @@
 
       <div class="row">
         <div class="left-col">
-          <img src="../img/bisect-3.png" alt="" class="git-bash-img">
+          <img src="../assets/img/bisect-3.png" alt="" class="git-bash-img">
         </div>
         <div class="right-col">
           <p>Now Git is telling us that there are 3 revisions left and that it will take 2 steps to inspect them. Our <span class="git-aqua">HEAD</span> has now moved to commit <em>50db987</em>. If we look at the log again, we see that it has moved up. Our repository has once again been checked out to this commit. So we can test our application here and see if the bug is there or not. Again for this demo, we'll tell Git that this is a good commit. So again we run</p>
@@ -101,7 +101,7 @@
           </div>
         </div>
         <div class="right-col">
-          <img src="../img/bisect-4.png" alt="" class="git-bash-img">
+          <img src="../assets/img/bisect-4.png" alt="" class="git-bash-img">
         </div>
       </div>
 

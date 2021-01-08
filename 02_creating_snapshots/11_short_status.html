@@ -40,13 +40,13 @@
           <p>In this example, <em>file1.txt</em> is shown with a red <span class="git-red">M</span>. Git is telling us that this file has been modified, but that this modification is not in the staging area, only in the working directory. <em>file1.txt</em> has nothing in the left column since there are no changes in this file affecting its staging area status.</p>
         </div>
         <div class="right-col">
-          <img src="../img/short-status-1.png" alt="" class="git-bash-img">
+          <img src="../assets/img/short-status-1.png" alt="" class="git-bash-img">
         </div>
       </div>
 
       <div class="row">
         <div class="left-col">
-          <img src="../img/short-status-2.png" alt="" class="git-bash-img">
+          <img src="../assets/img/short-status-2.png" alt="" class="git-bash-img">
         </div>
         <div class="right-col">
           <p>If we stage <em>file1.txt</em> and run <span class="inline-code">git status -s</span> again, we see that now <em>file1.txt</em> has a green <span class="git-green">M</span> on the left column. This means that all the changes we had in the working area are not in the staging area. The right column is now empty because we don't have any other changes to add.</p>
@@ -58,13 +58,13 @@
           <p>Now let's make some more changes to <em>file1.txt</em> and run <span class="inline-code">git status -s</span> one more time. Git is now showing a green <span class="git-green">M</span> on the left-hand column and a red <span class="git-red">M</span> on the right-hand column. This means that there are staged changes and unstaged changes. To add the new changes to the staging area we just run <span class="inline-code">git add file1.txt</span>.</p>
         </div>
         <div class="right-col">
-          <img src="../img/short-status-3.png" alt="" class="git-bash-img">
+          <img src="../assets/img/short-status-3.png" alt="" class="git-bash-img">
         </div>
       </div>
 
       <div class="row">
         <div class="left-col">
-          <img src="../img/short-status-4.png" alt="" class="git-bash-img">
+          <img src="../assets/img/short-status-4.png" alt="" class="git-bash-img">
         </div>
         <div class="right-col">
           <p>Now let's take a look at <em>file2.txt</em>. This file has two red <span class="git-red">??</span> because its a new file. To add it to the staging area we just run <span class="inline-code">git add file2.txt</span>. Now the git status has a green <span class="git-green">A</span> on the left-hand side column. This means that the file is new, and it's in the staging area. We can go ahead and commit it if we are satisfied with the changes by running</p>
@@ -81,7 +81,7 @@
           <p>If at any time you run <span class="inline-code">git status -s</span> and there are no changes to neither the working nor the staging area, Git will show an empty line.</p>
         </div>
         <div class="right-col">
-          <img src="../img/short-status-5.png" alt="" class="git-bash-img">
+          <img src="../assets/img/short-status-5.png" alt="" class="git-bash-img">
         </div>
       </div>
 

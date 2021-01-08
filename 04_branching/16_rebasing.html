@@ -43,16 +43,16 @@
               <p class="rebase-title-text">Rebasing</p>
             </div>
             <div class="rebase-one">
-              <img src="../img/rebasing-1.png" alt="" class="rebase-img">
+              <img src="../assets/img/rebasing-1.png" alt="" class="rebase-img">
             </div>
             <div class="rebase-two">
-              <img src="../img/rebasing-2.png" alt="" class="rebase-img">
+              <img src="../assets/img/rebasing-2.png" alt="" class="rebase-img">
             </div>
             <div class="rebase-three">
-              <img src="../img/rebasing-3.png" alt="" class="rebase-img">
+              <img src="../assets/img/rebasing-3.png" alt="" class="rebase-img">
             </div>
             <div class="rebase-four">
-              <img src="../img/rebasing-4.png" alt="" class="rebase-img">
+              <img src="../assets/img/rebasing-4.png" alt="" class="rebase-img">
             </div>
           </div>
         </div>
@@ -67,13 +67,13 @@
           <p>When we rebase the <span class="git-aqua">feature</span> branch we will change its base commit from <em>6166e28</em> (which was the commit that our <span class="git-aqua">master</span> branch was at when we created the <span class="git-aqua">feature</span> branch), to commit <em>4104ec7</em> (which is the commit where <span class="git-aqua">master</span> is today).</p>
         </div>
         <div class="right-col">
-          <img src="../img/rebasing-5.png" alt="" class="git-bash-img">
+          <img src="../assets/img/rebasing-5.png" alt="" class="git-bash-img">
         </div>
       </div>
 
       <div class="row">
         <div class="left-col">
-          <img src="../img/rebasing-6.png" alt="" class="git-bash-img">
+          <img src="../assets/img/rebasing-6.png" alt="" class="git-bash-img">
         </div>
         <div class="right-col">
           <p>To rebase, make sure that you are on the target branch, in this case, <span class="git-aqua">feature</span>. Now we run</p>
@@ -91,13 +91,13 @@
           <p>We can checkout to the old commit <em>9795f10</em> and use the log to see the graph. The new tip of the rebased branch is in fact an entirely new commit. The old one still exists. But there are no pointers pointing to it, Git will Garbage Collect it.</p>
         </div>
         <div class="right-col">
-          <img src="../img/rebasing-7.png" alt="" class="git-bash-img">
+          <img src="../assets/img/rebasing-7.png" alt="" class="git-bash-img">
         </div>
       </div>
 
       <div class="row">
         <div class="left-col">
-          <img src="../img/rebasing-8.png" alt="" class="git-bash-img">
+          <img src="../assets/img/rebasing-8.png" alt="" class="git-bash-img">
         </div>
         <div class="right-col">
           <p>Back on the <span class="git-aqua">master</span> branch, we can now merge the <span class="git-aqua">feature</span> branch onto it and Git will resolve it with a fast-forward merge. If we check out the log again, we'll see that both branches are now pointing to the same commit.</p>

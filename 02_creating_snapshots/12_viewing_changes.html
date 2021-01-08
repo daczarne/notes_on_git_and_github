@@ -38,7 +38,7 @@
           <p>The first line of this output tells us that that <span class="inline-code">diff</span> utility was called to compare two versions of <em>file1.txt</em>. The copy prefixed with <span class="inline-code">a</span> is the old copy (the one we had in the last commit). The copy prefixed with <span class="inline-code">b</span> is the one we have in the staging area. Next, we have a legend with the IDs. After that, there's a line with <span class="inline-code">--- a/file1.txt</span> and another one with <span class="inline-code">+++ b/file1.txt</span>. Changes to the old copy are prefixed with minus signs and changes to the new copy are prefixed with plus signs. After that, there's a header with information about what parts of the files have changed. This is because Git will not show the entire file (if it's too long), just a chunk. Every chunk has a header that looks like that. The first part of the header says <span class="inline-code">-1,3</span>. This means Git is showing lines 1 through 3 of the old copy.</p>
         </div>
         <div class="right-col">
-          <img src="../img/viewing-changes-1.png" alt="" class="git-bash-img">
+          <img src="../assets/img/viewing-changes-1.png" alt="" class="git-bash-img">
         </div>
       </div>
 
@@ -56,7 +56,7 @@
 
       <div class="row">
         <div class="left-col">
-          <img src="../img/viewing-changes-2.png" alt="" class="git-bash-img">
+          <img src="../assets/img/viewing-changes-2.png" alt="" class="git-bash-img">
         </div>
         <div class="right-col">
           <p>If instead, we wish to compare files in the working area to files in the staging area, we use the same command but without the <span class="inline-code">--staged</span> option. So:</p>
@@ -90,7 +90,7 @@
           <p>This will open the Git settings in VS Code. You should see the commands we just run at the bottom of the file. Make sure that they are just as we typed them. So <em>tool = vscode</em> and <em>cmd = "code --wait --diff $LOCAL $REMOTE"</em>. If there are any mistakes, you can correct them there. Just remember to save your changes before closing.</p>
         </div>
         <div class="right-col">
-          <img src="../img/viewing-changes-3.png" alt="" class="vscode-img">
+          <img src="../assets/img/viewing-changes-3.png" alt="" class="vscode-img">
         </div>
       </div>
 
@@ -103,7 +103,7 @@
       <div class="row">
         <div class="single-col">
           <div class="center">
-            <img src="../img/viewing-changes-4.png" alt="" class="vscode-img">
+            <img src="../assets/img/viewing-changes-4.png" alt="" class="vscode-img">
           </div>
         </div>
       </div>
