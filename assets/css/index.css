@@ -1,0 +1,86 @@
+
+li{
+  margin-top: 30px;
+}
+
+.reference-item {
+  list-style-type: circle !important;
+}
+
+.jump-to-container {
+  display: grid;
+  grid-template-areas: 
+    "title title"
+    "git github";
+  grid-template-columns: 50% 50%;
+  width: 100%;
+}
+
+.jump-to-title-box {
+  grid-area: title;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.jump-to-title-text {
+  font-size: 2em;
+}
+
+.jump-to-subtitle-box {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.git-links {
+  grid-area: git;
+  width: 100%;
+  margin-right: 10px;
+}
+
+.github-links {
+  grid-area: github;
+  width: 100%;
+  margin-left: 10px;
+}
+
+.jump-to-subtitle-text {
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+.link-item {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.link-item:hover {
+  color: var(--font-color-title);
+  background: var(--bg-color-title);
+  text-shadow: 1px 1px var(--bg-color-title);
+}
+
+.link-item:hover > a {
+  color: var(--font-color-title);
+  background: var(--bg-color-title);
+  text-shadow: 1px 1px var(--bg-color-title);
+}
+
+.link-item > a {
+  font-size: 1.2em;
+  text-decoration: none;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  color: var(--font-color-main);
+}
+
+.fa-git-alt:hover {
+  color: #f14e32;
+}
+
+.fa-github:hover {
+  color: #008000;
+}
