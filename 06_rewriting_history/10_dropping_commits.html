@@ -31,28 +31,73 @@
 
       <div class="row">
         <div class="left-col">
-          <p></p>
+          <p>Now suppose that we want to drop commit <em>1736531</em>. To do this, we'll use interactive rebasing. As always, we should start our rebase process with the parent of that commit.</p>
+          <br>
+          <p>If we take a look at the content of that commit, we see that commit we introduced a new file called <em>terms.txt</em>. When we drop this commit we have two possible scenarios that we need to be carefull of. If a commit after that one touches that file, and we drop the commit where the file was introduced, then we will get a conflict when the rebasing operation reaches that point in which the file is edited and we will have to resolve it.</p>
+          <br>
+          <p>The worst case scenario is when no other commits touch that file, but our program needs it. In this case, we will never get a conflict while rebasing, but we will be introducing a bug in our program (possibly even a breaking bug). So be very careful when dropping commits.</p>
+          <br>
+          <p>To start the interactive rebase process we run</p>
+          <div class="code">
+            <code>git rebase -i 1736531^</code>
+          </div>
+          <p>The caret (^) means that we want to start at the parent of that commit.</p>
         </div>
         <div class="right-col">
-          <img src="../assets/img/" alt="" class="git-bash-img">
+          <img src="../assets/img/dropping-commits-1.png" alt="" class="git-bash-img">
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="single-col">
+          <p>Git will now open VS Code so that we can select the operation that we want to perform on each commit. Here we select the <em>drop</em> option for the commit that we want to drop. If you are now using GitLens, you can also just delete the line for that commit. Once we selected all the appropiet options for our commits, we save the file and close it.</p>
+        </div>
+      </div>
+      
+      <div class="row">
+        <div class="single-col center">
+          <img src="../assets/img/dropping-commits-2.png" alt="" class="vscode-img">
         </div>
       </div>
 
       <div class="row">
         <div class="left-col">
-          <img src="../assets/img/" alt="" class="git-bash-img">
+          <img src="../assets/img/dropping-commits-3.png" alt="" class="git-bash-img">
         </div>
         <div class="right-col">
-          <p></p>
+          <p>When we close the file, Git will move forward with the rebase operation. Take a look at the Git Bash image. It's telling us that we are at step 2 of 5 during the rebase process. So the commit that we wanted to drop has been dropped. The next commit edited that file, which now does not exist, so we get a conflict.</p>
+          <br>
+          <p>If we check the status, we can see that the <em>terms.txt</em> file is been deleted (hence the red <span class="git-red">D</span>) and modified (hence the red <span class="git-red">U</span>) at the same time. This is what's creating the conflict.</p>
         </div>
       </div>
 
       <div class="row">
         <div class="left-col">
-          <p></p>
+          <p>To solve this conflict we will use the mergetool. So we run</p>
+          <div class="code">
+            <code>git mergetool</code>
+          </div>
+          <p>Because I haven't configure a merge tool, Git will use one of the default ones. Git is now asking to choose between one of the two states of the file. In the local commit (the one we are moving out of) the file is deleted. In the remote commit (the one we are trying to move into) the file is modified. Here we choose to keep the file with the modifications, so we select <span class="inline-code">m</span>.</p>
+          <br>
+          <p>If we now check the status, we see that the <em>terms.txt</em> file is been added (since it was deleted in the previous commit). Notice that there's a new file called <em>terms.txt.orig</em>. This is a file created by the merge tool. Some delete them automatically, but even if the merge tool we are using does not, we can always so ourselves.</p>
+          <br>
+          <p>Since all conflicts have been resolved, when we run</p>
+          <div class="code">
+            <code>git rebase --continue</code>
+          </div>
+          <p>Git takes care of rebasing all other involved commits.</p>
         </div>
         <div class="right-col">
-          <img src="../assets/img/" alt="" class="git-bash-img">
+          <img src="../assets/img/dropping-commits-4.png" alt="" class="git-bash-img">
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="left-col">
+          <img src="../assets/img/dropping-commits-5.png" alt="" class="git-bash-img">
+        </div>
+        <div class="right-col">
+          <p>If we check the log, we can see that the commit is now gone and we have a much cleaner history.</p>
         </div>
       </div>
 
