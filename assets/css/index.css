@@ -55,6 +55,7 @@ li{
   display: flex;
   flex-direction: row;
   justify-content: center;
+  border-radius: 15px;
 }
 
 .link-item:hover {
