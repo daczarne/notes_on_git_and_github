@@ -48,6 +48,9 @@ li{
 
 .jump-to-subtitle-text {
   font-size: 2em;
+}
+
+.jump-to-subtitle-box {
   margin-bottom: 20px;
 }
 
@@ -84,4 +87,23 @@ li{
 
 .fa-github:hover {
   color: #008000;
+}
+
+/* Media queries */
+@media (max-width: 1000px) {
+
+  .jump-to-container {
+    display: grid;
+    grid-template-areas: 
+      "title"
+      "git"
+      "github";
+    grid-template-columns: 100%;
+    width: 100%;
+  }
+
+  .jump-to-subtitle-box {
+    margin-top: 20px;
+  }
+
 }
