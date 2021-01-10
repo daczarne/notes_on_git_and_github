@@ -237,15 +237,6 @@ img {
   max-width: 1200px;
 }
 
-/* Media queries */
-@media (max-width: 1000px) {
-
-  .row {
-    flex-wrap: wrap;
-  }
-
-}
-
 /* Footer */
 footer {
   display: flex;
@@ -263,4 +254,13 @@ footer {
 
 .go-home:hover {
   color: var(--font-color-title)
+}
+
+/* Media queries */
+@media (max-width: 1000px) {
+
+  .row {
+    flex-wrap: wrap;
+  }
+
 }
