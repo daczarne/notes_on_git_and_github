@@ -3,6 +3,10 @@ li{
   margin-top: 30px;
 }
 
+li>em {
+  color: var(--font-color-title);
+}
+
 .reference-item {
   list-style-type: circle !important;
 }
