@@ -17,26 +17,50 @@
 
 .fetching-one {
   grid-area: fetching-one;
-  border-right: 1px solid var(--border-color);
-  border-bottom: 1px solid var(--border-color);
+  border-right:
+    var(--img-border-width)
+    var(--img-border-style)
+    var(--border-color);
+  border-bottom:
+    var(--img-border-width)
+    var(--img-border-style)
+    var(--border-color);
 }
 
 .fetching-two {
   grid-area: fetching-two;
-  border-left: 1px solid var(--border-color);
-  border-bottom: 1px solid var(--border-color);
+  border-left:
+    var(--img-border-width)
+    var(--img-border-style)
+    var(--border-color);
+  border-bottom:
+    var(--img-border-width)
+    var(--img-border-style)
+    var(--border-color);
 }
 
 .fetching-three {
   grid-area: fetching-three;
-  border-right: 1px solid var(--border-color);
-  border-top: 1px solid var(--border-color);
+  border-right:
+    var(--img-border-width)
+    var(--img-border-style)
+    var(--border-color);
+  border-top:
+    var(--img-border-width)
+    var(--img-border-style)
+    var(--border-color);
 }
 
 .fetching-four {
   grid-area: fetching-four;
-  border-left: 1px solid var(--border-color);
-  border-top: 1px solid var(--border-color);
+  border-left:
+    var(--img-border-width)
+    var(--img-border-style)
+    var(--border-color);
+  border-top:
+    var(--img-border-width)
+    var(--img-border-style)
+    var(--border-color);
 }
 
 #commit-button {
@@ -56,24 +80,42 @@
 
   .fetching-one {
     border: none;
-    border-bottom: 1px solid var(--border-color);
+    border-bottom:
+      var(--img-border-width)
+      var(--img-border-style)
+      var(--border-color);
   }
 
   .fetching-two {
     border: none;
-    border-top: 1px solid var(--border-color);
-    border-bottom: 1px solid var(--border-color);
+    border-top:
+      var(--img-border-width)
+      var(--img-border-style)
+      var(--border-color);
+    border-bottom:
+      var(--img-border-width)
+      var(--img-border-style)
+      var(--border-color);
   }
 
   .fetching-three {
     border: none;
-    border-top: 1px solid var(--border-color);
-    border-bottom: 1px solid var(--border-color);
+    border-top:
+      var(--img-border-width)
+      var(--img-border-style)
+      var(--border-color);
+    border-bottom:
+      var(--img-border-width)
+      var(--img-border-style)
+      var(--border-color);
   }
 
   .fetching-four {
     border: none;
-    border-top: 1px solid var(--border-color);
+    border-top:
+      var(--img-border-width)
+      var(--img-border-style)
+      var(--border-color);
   }
 
 }

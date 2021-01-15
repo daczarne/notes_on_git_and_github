@@ -33,26 +33,50 @@
 
 .rebase-one {
   grid-area: rebase-one;
-  border-right: 1px solid var(--border-color);
-  border-bottom: 1px solid var(--border-color);
+  border-right:
+    var(--img-border-width)
+    var(--img-border-style)
+    var(--border-color);
+  border-bottom:
+    var(--img-border-width)
+    var(--img-border-style)
+    var(--border-color);
 }
 
 .rebase-two {
   grid-area: rebase-two;
-  border-bottom: 1px solid var(--border-color);
-  border-left: 1px solid var(--border-color);
+  border-bottom:
+    var(--img-border-width)
+    var(--img-border-style)
+    var(--border-color);
+  border-left:
+    var(--img-border-width)
+    var(--img-border-style)
+    var(--border-color);
 }
 
 .rebase-three {
   grid-area: rebase-three;
-  border-right: 1px solid var(--border-color);
-  border-top: 1px solid var(--border-color);
+  border-right:
+    var(--img-border-width)
+    var(--img-border-style)
+    var(--border-color);
+  border-top:
+    var(--img-border-width)
+    var(--img-border-style)
+    var(--border-color);
 }
 
 .rebase-four {
   grid-area: rebase-four;
-  border-left: 1px solid var(--border-color);
-  border-top: 1px solid var(--border-color);
+  border-left:
+    var(--img-border-width)
+    var(--img-border-style)
+    var(--border-color);
+  border-top:
+    var(--img-border-width)
+    var(--img-border-style)
+    var(--border-color);
 }
 
 @media (max-width: 1000px) {
@@ -70,24 +94,42 @@
 
   .rebase-one {
     border: none;
-    border-bottom: 1px solid var(--border-color);
+    border-bottom:
+      var(--img-border-width)
+      var(--img-border-style)
+      var(--border-color);
   }
 
   .rebase-two {
     border: none;
-    border-top: 1px solid var(--border-color);
-    border-bottom: 1px solid var(--border-color);
+    border-top:
+      var(--img-border-width)
+      var(--img-border-style)
+     var(--border-color);
+    border-bottom:
+      var(--img-border-width)
+      var(--img-border-style)
+      var(--border-color);
   }
 
   .rebase-three {
     border: none;
-    border-top: 1px solid var(--border-color);
-    border-bottom: 1px solid var(--border-color);
+    border-top:
+      var(--img-border-width)
+      var(--img-border-style)
+      var(--border-color);
+    border-bottom:
+      var(--img-border-width)
+      var(--img-border-style)
+      var(--border-color);
   }
 
   .rebase-four {
     border: none;
-    border-top: 1px solid var(--border-color);
+    border-top:
+      var(--img-border-width)
+      var(--img-border-style)
+      var(--border-color);
   }
 
 }

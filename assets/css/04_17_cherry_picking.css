@@ -32,12 +32,18 @@
 
 .cherry-picking-one {
   grid-area: cherry-picking-one;
-  border-right: 1px solid var(--border-color);
+  border-right:
+    var(--img-border-width)
+    var(--img-border-style)
+    var(--border-color);
 }
 
 .cherry-picking-two {
   grid-area: cherry-picking-two;
-  border-left: 1px solid var(--border-color);
+  border-left:
+    var(--img-border-width)
+    var(--img-border-style)
+    var(--border-color);
 }
 
 @media (max-width: 1000px) {
@@ -53,12 +59,18 @@
 
   .cherry-picking-one {
     border: none;
-    border-bottom: 1px solid var(--border-color);
+    border-bottom:
+      var(--img-border-width)
+      var(--img-border-style)
+      var(--border-color);
   }
 
   .cherry-picking-two {
     border: none;
-    border-top: 1px solid var(--border-color);
+    border-top:
+      var(--img-border-width)
+      var(--img-border-style)
+      var(--border-color);
   }
 
 }

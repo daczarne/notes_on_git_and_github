@@ -12,12 +12,18 @@
 
 .collaboration-workflows-one {
   grid-area: collaboration-workflows-one;
-  border-right: 1px solid var(--border-color);
+  border-right:
+    var(--img-border-width)
+    var(--img-border-style)
+    var(--border-color);
 }
 
 .collaboration-workflows-two {
   grid-area: collaboration-workflows-two;
-  border-left: 1px solid var(--border-color);
+  border-left:
+    var(--img-border-width)
+    var(--img-border-style)
+    var(--border-color);
 }
 
 #collaboration-workflows-3 {
@@ -36,12 +42,18 @@
 
   .collaboration-workflows-one {
     border: none;
-    border-bottom: 1px solid var(--border-color);
+    border-bottom:
+      var(--img-border-width)
+      var(--img-border-style)
+      var(--border-color);
   }
 
   .collaboration-workflows-two {
     border: none;
-    border-top: 1px solid var(--border-color);
+    border-top:
+      var(--img-border-width)
+      var(--img-border-style)
+      var(--border-color);
   }
 
 }

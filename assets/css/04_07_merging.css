@@ -14,40 +14,82 @@
 
 .fast-step-one {
   grid-area: fast-step-one;
-  border-right: 1px solid var(--border-color);
-  border-bottom: 1px solid var(--border-color);
+  border-right:
+    var(--img-border-width)
+    var(--img-border-style)
+    var(--border-color);
+  border-bottom:
+    var(--img-border-width)
+    var(--img-border-style)
+    var(--border-color);
 }
 
 .fast-step-two {
   grid-area: fast-step-two;
-  border-right: 1px solid var(--border-color);
-  border-bottom: 1px solid var(--border-color);
-  border-top: 1px solid var(--border-color);
+  border-right:
+    var(--img-border-width)
+    var(--img-border-style)
+    var(--border-color);
+  border-bottom:
+    var(--img-border-width)
+    var(--img-border-style)
+    var(--border-color);
+  border-top:
+    var(--img-border-width)
+    var(--img-border-style)
+    var(--border-color);
 }
 
 .fast-step-three {
   grid-area: fast-step-three;
-  border-right: 1px solid var(--border-color);
-  border-top: 1px solid var(--border-color);
+  border-right:
+    var(--img-border-width)
+    var(--img-border-style)
+    var(--border-color);
+  border-top:
+    var(--img-border-width)
+    var(--img-border-style)
+    var(--border-color);
 }
 
 .three-step-one {
   grid-area: three-step-one;
-  border-left: 1px solid var(--border-color);
-  border-bottom: 1px solid var(--border-color);
+  border-left:
+    var(--img-border-width)
+    var(--img-border-style)
+    var(--border-color);
+  border-bottom:
+    var(--img-border-width)
+    var(--img-border-style)
+    var(--border-color);
 }
 
 .three-step-two {
   grid-area: three-step-two;
-  border-left: 1px solid var(--border-color);
-  border-bottom: 1px solid var(--border-color);
-  border-top: 1px solid var(--border-color);
+  border-left:
+    var(--img-border-width)
+    var(--img-border-style)
+    var(--border-color);
+  border-bottom:
+    var(--img-border-width)
+    var(--img-border-style)
+    var(--border-color);
+  border-top:
+    var(--img-border-width)
+    var(--img-border-style)
+    var(--border-color);
 }
 
 .three-step-three {
   grid-area: three-step-three;
-  border-left: 1px solid var(--border-color);
-  border-top: 1px solid var(--border-color);
+  border-left:
+    var(--img-border-width)
+    var(--img-border-style)
+    var(--border-color);
+  border-top:
+    var(--img-border-width)
+    var(--img-border-style)
+    var(--border-color);
 }
 
 @media (max-width: 1000px) {
@@ -66,34 +108,58 @@
 
   .fast-step-one {
     border: none;
-    border-bottom: 1px solid var(--border-color);
+    border-bottom:
+      var(--img-border-width)
+      var(--img-border-style)
+      var(--border-color);
   }
 
   .fast-step-two {
     border: none;
-    border-top: 1px solid var(--border-color);
-    border-bottom: 1px solid var(--border-color);
+    border-top:
+      var(--img-border-width)
+      var(--img-border-style)
+      var(--border-color);
+    border-bottom:
+      var(--img-border-width)
+      var(--img-border-style)
+      var(--border-color);
   }
 
   .fast-step-three {
     border: none;
-    border-top: 1px solid var(--border-color);
+    border-top:
+      var(--img-border-width)
+      var(--img-border-style)
+      var(--border-color);
   }
 
   .three-step-one {
     border: none;
-    border-bottom: 1px solid var(--border-color);
+    border-bottom:
+      var(--img-border-width)
+      var(--img-border-style)
+      var(--border-color);
   }
 
   .three-step-two {
     border: none;
-    border-top: 1px solid var(--border-color);
-    border-bottom: 1px solid var(--border-color);
+    border-top:
+      var(--img-border-width)
+      var(--img-border-style)
+      var(--border-color);
+    border-bottom:
+      var(--img-border-width)
+      var(--img-border-style)
+      var(--border-color);
   }
 
   .three-step-three {
     border: none;
-    border-top: 1px solid var(--border-color);
+    border-top:
+      var(--img-border-width)
+      var(--img-border-style)
+      var(--border-color);
   }
 
 }

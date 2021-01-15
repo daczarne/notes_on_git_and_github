@@ -13,26 +13,50 @@
 
 .reset-one {
   grid-area: reset-one;
-  border-right: 1px solid var(--border-color);
-  border-bottom: 1px solid var(--border-color);
+  border-right:
+    var(--img-border-width)
+    var(--img-border-style)
+    var(--border-color);
+  border-bottom:
+    var(--img-border-width)
+    var(--img-border-style)
+    var(--border-color);
 }
 
 .reset-two {
   grid-area: reset-two;
-  border-right: 1px solid var(--border-color);
-  border-top: 1px solid var(--border-color);
+  border-right:
+    var(--img-border-width)
+    var(--img-border-style)
+    var(--border-color);
+  border-top:
+    var(--img-border-width)
+    var(--img-border-style)
+    var(--border-color);
 }
 
 .revert-one {
   grid-area: revert-one;
-  border-left: 1px solid var(--border-color);
-  border-bottom: 1px solid var(--border-color);
+  border-left:
+    var(--img-border-width)
+    var(--img-border-style)
+    var(--border-color);
+  border-bottom:
+    var(--img-border-width)
+    var(--img-border-style)
+    var(--border-color);
 }
 
 .revert-two {
   grid-area: revert-two;
-  border-top: 1px solid var(--border-color);
-  border-left: 1px solid var(--border-color);
+  border-top:
+    var(--img-border-width)
+    var(--img-border-style)
+    var(--border-color);
+  border-left:
+    var(--img-border-width)
+    var(--img-border-style)
+    var(--border-color);
 }
 
 @media (max-width: 1000px) {
@@ -49,22 +73,34 @@
 
   .reset-one {
     border: none;
-    border-bottom: 1px solid var(--border-color);
+    border-bottom:
+      var(--img-border-width)
+      var(--img-border-style)
+      var(--border-color);
   }
 
   .reset-two {
     border: none;
-    border-top: 1px solid var(--border-color);
+    border-top:
+      var(--img-border-width)
+      var(--img-border-style)
+      var(--border-color);
   }
 
   .revert-one {
     border: none;
-    border-bottom: 1px solid var(--border-color);
+    border-bottom:
+      var(--img-border-width)
+      var(--img-border-style)
+      var(--border-color);
   }
 
   .revert-two {
     border: none;
-    border-top: 1px solid var(--border-color);
+    border-top:
+      var(--img-border-width)
+      var(--img-border-style)
+      var(--border-color);
   }
 
 }
