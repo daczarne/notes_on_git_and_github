@@ -68,13 +68,20 @@ li>em {
 .link-item:hover {
   color: var(--font-color-title);
   background: var(--bg-color-title);
-  text-shadow: 1px 1px var(--bg-color-title);
+  text-shadow:
+    var(--text-h-shadow)
+    var(--text-v-shadow)
+    var(--bg-color-title);
 }
 
 .link-item:hover > a {
   color: var(--font-color-title);
   background: var(--bg-color-title);
-  text-shadow: 1px 1px var(--bg-color-title);
+  text-shadow:
+    var(--text-h-shadow)
+    var(--text-v-shadow)
+    var(--bg-color-title);
+  font-weight: bold;
 }
 
 .link-item > a {
