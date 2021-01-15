@@ -56,17 +56,41 @@
 
       <div class="row">
         <div class="single-col">
-          <p>If you are left wondering how does this work, here's a simplified explanation. When we invoke <span class="inline-code">git stash</span> Git commits our changes and creates a new type of reference called a <em>stash</em> from where it can access that new commit (technically there are several commits involved depending on what we are stashing, you can read all about it <a href="https://www.atlassian.com/git/tutorials/saving-changes/git-stash#:~:text=Invoking%20git%20stash%20encodes%20any,files%20as%20an%20additional%20commit." class="here">here</a>).</p>
-          <br>
-          <p>When we switch branches Git just moves the <em>HEAD</em> reference to the tip of that branch.</p>
-          <br>
-          <p>Finally, when we <span class="inline-code">pop</span> our stashed commit, Git adds the content of that commit to the working directory in that branch.</p>
-          <br>
-          <p>One thing to keep in mind here is the difference between <span class="inline-code">git stash pop</span> and <span class="inline-code">git stash apply</span>. They both add the content of the stash to the working directory of that branch, but while <span class="inline-code">pop</span> deletes the stash, <span class="inline-code">apply</span> does not.</p>
-        </div>
-        <col>
+          <p>If you are left wondering how does this work, here's a simplified explanation.</p>
+         </div>
       </div>
 
+      <div class="row">
+        <div class="single-col">
+          <div class="grid-container-stashing-explain">
+            <div class="stashing-step-one-explain">
+              <div class="number-box">
+                <p class="number-text">1</p>
+              </div>
+              <div class="content-box">
+                <p>When we invoke <span class="inline-code">git stash</span> Git commits our changes and creates a new type of reference called a <em>stash</em> from where it can access that new commit (technically there are several commits involved depending on what we are stashing, you can read all about it <a href="https://www.atlassian.com/git/tutorials/saving-changes/git-stash#:~:text=Invoking%20git%20stash%20encodes%20any,files%20as%20an%20additional%20commit." class="here">here</a>).</p>
+              </div>
+            </div>
+            <div class="stashing-step-two-explain">
+              <div class="number-box">
+                <p class="number-text">2</p>
+              </div>
+              <div class="content-box">
+                <p>When we switch branches Git just moves the <em>HEAD</em> reference to the tip of that branch.</p>
+              </div>
+            </div>
+            <div class="stashing-step-three-explain">
+              <div class="number-box">
+                <p class="number-text">3</p>
+              </div>
+              <div class="content-box">
+                <p>Finally, when we <span class="inline-code">pop</span> our stashed commit, Git adds the content of that commit to the working directory in that branch.</p>
+              </div>  
+            </div>
+          </div>
+        </div>
+      </div>
+          
       <div class="row">
         <div class="single-col">
           <div class="grid-container-stashing">
@@ -83,6 +107,12 @@
               <img class="stashing-img" src="../assets/img/stashing-5.png">
             </div>
           </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="single-col">
+          <p>One thing to keep in mind here is the difference between <span class="inline-code">git stash pop</span> and <span class="inline-code">git stash apply</span>. They both add the content of the stash to the working directory of that branch, but while <span class="inline-code">pop</span> deletes the stash, <span class="inline-code">apply</span> does not.</p>
         </div>
       </div>
 
