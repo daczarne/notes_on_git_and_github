@@ -13,6 +13,8 @@
   --shadow-h-offset: 0;
   --shadow-v-offset: 0;
   --shadow-blur: 20px;
+  --img-border-width: 1px;
+  --img-border-style: solid;
   --git-bash: #b40099;
   --git-green: #00a700;
   --git-red: #9f0000;
