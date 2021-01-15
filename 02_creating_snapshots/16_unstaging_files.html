@@ -35,10 +35,15 @@
           <div class="code">
             <code>git restore --staged <em>file_name.ext</em></code>
           </div>
-          <p>We can pass one filename, multiple files separated by a space, patterns such as <span class="inline-code">*.txt</span>, or a period to indicate all files. This tells Git to take the changes that are already in the staging area and revert them to the working directory. What Git is doing here under the hood is taking the last version of our file from the next environment. So, if we <span class="inline-code">restore</span> a file that is in the staging area, the last version from the next environment is the state of the file in the last commit. Git will take this version and place it in the staging area.</p>
         </div>
         <div class="right-col">
           <img src="../assets/img/unstaging-files-1.png" alt="" class="git-bash-img">
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="single-col">
+          <p>We can pass one filename, multiple files separated by a space, patterns such as <span class="inline-code">*.txt</span>, or a period to indicate all files. This tells Git to take the changes that are already in the staging area and revert them to the working directory. What Git is doing here under the hood is taking the last version of our file from the next environment. So, if we <span class="inline-code">restore</span> a file that is in the staging area, the last version from the next environment is the state of the file in the last commit. Git will take this version and place it in the staging area.</p>
         </div>
       </div>
 
