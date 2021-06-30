@@ -1,9 +1,8 @@
-
-li{
+li {
   margin-top: 30px;
 }
 
-li>em {
+li > em {
   color: var(--font-color-title);
 }
 
@@ -12,109 +11,50 @@ li>em {
 }
 
 .jump-to-container {
-  display: grid;
-  grid-template-areas: 
-    "title title"
-    "git github";
-  grid-template-columns: 50% 50%;
-  width: 100%;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0;
 }
 
 .jump-to-title-box {
-  grid-area: title;
-  margin-bottom: 20px;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
+  margin: 2rem;
 }
 
-.jump-to-title-text {
-  font-size: 2em;
-}
-
-.jump-to-subtitle-box {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-}
-
-.git-links {
-  grid-area: git;
-  width: 100%;
-  margin-right: 10px;
-}
-
-.github-links {
-  grid-area: github;
-  width: 100%;
-  margin-left: 10px;
-}
-
-.jump-to-subtitle-text {
-  font-size: 2em;
-}
-
-.jump-to-subtitle-box {
-  margin-bottom: 20px;
+.jump-to-links {
+  height: 2300px;
 }
 
 .link-item {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  border-radius: 15px;
+  border-radius: 10px;
+  font-size: 2rem;
+  margin: 0.5rem;
+  padding: 0.5rem;
+  transition: all 0.3s;
 }
 
-.link-item:hover {
-  color: var(--font-color-title);
-  background: var(--bg-color-title);
-  text-shadow:
-    var(--text-h-shadow)
-    var(--text-v-shadow)
-    var(--bg-color-title);
-}
-
-.link-item:hover > a {
-  color: var(--font-color-title);
-  background: var(--bg-color-title);
-  text-shadow:
-    var(--text-h-shadow)
-    var(--text-v-shadow)
-    var(--bg-color-title);
-  font-weight: bold;
-}
-
-.link-item > a {
-  font-size: 1.2em;
+.link-item a {
+  color: inherit;
   text-decoration: none;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  color: var(--font-color-main);
+  transition: inherit;
+  width: 100%;
 }
 
-.fa-git-alt:hover {
-  color: #f14e32;
+.link-item a i {
+  margin-right: 1rem;
 }
 
-.fa-github:hover {
-  color: #008000;
+.link-item:hover,
+.link-item a:hover {
+  background-color: var(--font-color-main);
+  color: var(--font-color-title);
 }
 
 /* Media queries */
-@media (max-width: 1000px) {
-
-  .jump-to-container {
-    display: grid;
-    grid-template-areas: 
-      "title"
-      "git"
-      "github";
-    grid-template-columns: 100%;
-    width: 100%;
-  }
-
+@media screen and (max-width: 1000px) {
   .jump-to-subtitle-box {
     margin-top: 20px;
   }
-
 }
