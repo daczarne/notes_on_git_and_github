@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../assets/css/light.css" />
+    <link
+      rel="stylesheet"
+      href="../assets/css/05_03_creating_a_github_repository.css"
+    />
+    <link
+      rel="shortcut icon"
+      href="../assets/favicon/favicon.png"
+      type="image/x-icon"
+    />
+    <title>Creating a GitHub repository</title>
+  </head>
+  <body>
+    <div class="floating-div">
+      <header>
+        <div class="btn">
+          <a href="45_collaboration_workflows.html" class="previous">
+            &laquo; Previous
+          </a>
+        </div>
+
+        <div class="title">
+          <h1>Creating a GitHub repository</h1>
+        </div>
+
+        <div class="btn">
+          <a href="47_cloning_a_repository.html" class="next">Next &raquo;</a>
+        </div>
+      </header>
+    </div>
+
+    <main>
+      <section>
+        <div class="row">
+          <div class="left-col">
+            <p>
+              When you log on to GitHub, you'll see your home page. On the
+              left-hand panel you can find your repositories (top) and your
+              teams (bottom). On the main panel you can see your recent activity
+              (top) and the recent activity of people you follow or repositories
+              you've stared. On the right-hand panel GitHub will recommend other
+              repositories you might be interested in.
+            </p>
+            <br />
+            <p>
+              To create a new repository on GitHub, login, and on the home page
+              click the
+              <img
+                src="../assets/img/creating-a-github-repository-2.png"
+                id="new-repo-icon"
+              />
+              icon on the left-hand side panel.
+            </p>
+          </div>
+          <div class="right-col">
+            <img src="../assets/img/creating-a-github-repository-1.png" />
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="right-col">
+            <img
+              src="../assets/img/creating-a-github-repository-3.png"
+              alt=""
+            />
+          </div>
+          <div class="left-col">
+            <p>
+              Here you can create a new repository. Mandatory fields have a red
+              asterisk next to them. If you've created
+              <em>template repositories</em> and want to create a new repository
+              based on one of your templates you can choose so at the top. A
+              <em>template repository</em> is a repository that already comes
+              with certain files and directories. Usually, you will create
+              templates for things you do quite often and that share some common
+              structure.
+            </p>
+            <br />
+            <p>
+              After choosing a <em>name</em> and (optionally) a
+              <em>description</em> for your repository, you need to choose
+              whether it will be public or private. Public repos can be seen by
+              anyone, but you can still manage who has <em>push access</em> to
+              them. Private repositories can only be seen by you and by those
+              with whom you choose to share it with (by adding them as
+              collaborators). You can manage different levels of privileges for
+              contributors on private repos.
+            </p>
+            <br />
+            <p>
+              Below this there are three checkboxes. The README file is a
+              Markdown file where you can explain how to use the repository. Its
+              content will be displayed on the repos code tab (more on that
+              later). I suggest you always create all repositories with a README
+              file. Next, you can choose to add a <em>.gitignore</em> file. If
+              you do so, a dropdown menu will appear where you can choose the
+              language. These are templates that already come with a list of the
+              files you should normally ignore when working on the selected
+              language. I suggest you always create all repos with a
+              <em>.gitignore file</em>.
+            </p>
+            <br />
+            <p>
+              Lastly, you can choose a template LICENSE file. These are usually
+              only used on open-source projects.
+            </p>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="left-col">
+            <p>
+              After clicking on the <em>Create Repository</em> button at the
+              bottom of the page, GitHub will create a new repository for you.
+              If you selected either a README, gitignore, or LICENSE then GitHub
+              will also create the first commit (with an
+              <em>Initial commit</em> message) and create those files for you.
+            </p>
+          </div>
+          <div class="right-col"></div>
+          <img src="../assets/img/creating-a-github-repository-4.png" alt="" />
+        </div>
+
+        <div class="row">
+          <div class="single-col">
+            <p>
+              If you need to add collaborators to the repository, go to
+              <em>Settings > Manage Access > Invite Collaborator</em>. You can
+              search for them by name, user name, or email address. Once you add
+              them, they will receive an invite via email where they can choose
+              to accept or ignore your invitation.
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <a class="go-home" href="../index.html"><i class="fas fa-home"></i></a>
+    </footer>
+
+    <script
+      src="https://kit.fontawesome.com/994cc6cf8e.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

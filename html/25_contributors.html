@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../assets/css/light.css" />
+    <link
+      rel="shortcut icon"
+      href="../assets/favicon/favicon.png"
+      type="image/x-icon"
+    />
+    <title>Contributors</title>
+  </head>
+  <body>
+    <div class="floating-div">
+      <header>
+        <div class="btn">
+          <a href="24_bisect.html" class="previous">&laquo; Previous</a>
+        </div>
+
+        <div class="title">
+          <h1>Contributors</h1>
+        </div>
+
+        <div class="btn">
+          <a href="26_viewing_the_history_of_a_file.html" class="next">
+            Next &raquo;
+          </a>
+        </div>
+      </header>
+    </div>
+
+    <main>
+      <section>
+        <div class="row">
+          <div class="left-col">
+            <p>
+              We can find all the people who have contributed to our project for
+              that we use
+            </p>
+            <div class="code">
+              <code>git shortlog</code>
+            </div>
+            <p>
+              This command can take several options. For example,
+              <span class="inline-code">-n</span> will sort the output according
+              to the number of commits, <span class="inline-code">-s</span> will
+              suppress commit descriptions,
+              <span class="inline-code">-e</span> will show the contributors’
+              email address, etc. You can check the entire list by running
+            </p>
+            <div class="code">
+              <div>git shortlog -h</div>
+            </div>
+            <p>
+              We can also filter the output using the
+              <span class="inline-code">--before</span> and
+              <span class="inline-code">--after</span> options.
+            </p>
+          </div>
+          <div class="right-col">
+            <img
+              src="../assets/img/contributors-1.png"
+              alt=""
+              class="git-bash-img"
+            />
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <a class="go-home" href="../index.html"><i class="fas fa-home"></i></a>
+    </footer>
+
+    <script
+      src="https://kit.fontawesome.com/994cc6cf8e.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

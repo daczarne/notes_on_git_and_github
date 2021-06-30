@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../assets/css/light.css" />
+    <link
+      rel="shortcut icon"
+      href="../assets/favicon/favicon.png"
+      type="image/x-icon"
+    />
+    <title>Viewing merged and unmerged branches</title>
+  </head>
+  <body>
+    <div class="floating-div">
+      <header>
+        <div class="btn">
+          <a href="36_three_way_merges.html" class="previous"
+            >&laquo; Previous</a
+          >
+        </div>
+
+        <div class="title">
+          <h1>Viewing merged and unmerged branches</h1>
+        </div>
+
+        <div class="btn">
+          <a href="38_merge_conflicts.html" class="next">Next &raquo;</a>
+        </div>
+      </header>
+    </div>
+
+    <main>
+      <section>
+        <div class="row">
+          <div class="single-col">
+            <p>
+              Sometimes we might forget to delete branches that have already
+              been merged into <span class="git-aqua">master</span>. To check
+              which branches have already been merged we use
+            </p>
+            <div class="code">
+              <code>git branch --merged</code>
+            </div>
+            <p>
+              Git will return the list of branches that have already been merged
+              into <span class="git-aqua">master</span>. Similarly, to check
+              which branches have not been merged we run
+            </p>
+            <div class="code">
+              <code>git branch --no-merged</code>
+            </div>
+            <p>
+              We can use these two commands with any pair of branches and Git
+              will show the list of branches that have merged or have not been
+              merged onto our current branch.
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <a class="go-home" href="../index.html"><i class="fas fa-home"></i></a>
+    </footer>
+
+    <script
+      src="https://kit.fontawesome.com/994cc6cf8e.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
