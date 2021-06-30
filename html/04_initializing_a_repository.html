@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../assets/css/light.css" />
+    <link
+      rel="shortcut icon"
+      href="../assets/favicon/favicon.png"
+      type="image/x-icon"
+    />
+    <title>Initializing a repository</title>
+  </head>
+  <body>
+    <div class="floating-div">
+      <header>
+        <div class="btn">
+          <a href="03_getting_help.html" class="previous">&laquo; Previous</a>
+        </div>
+
+        <div class="title">
+          <h1>Initializing a repository</h1>
+        </div>
+
+        <div class="btn">
+          <a href="05_git_workflow.html" class="next">Next &raquo;</a>
+        </div>
+      </header>
+    </div>
+
+    <main>
+      <section>
+        <div class="row">
+          <div class="single-col">
+            <p>
+              The first thing we need to do is creating a <em>directory</em> for
+              our project (a folder in your computer). You can put this
+              directory anywhere on your computer. To do so, open Git Bash and
+              run:
+            </p>
+            <div class="code">
+              <code>mkdir <em>directory_name</em></code>
+            </div>
+            Now to move into the directory use
+            <div class="code">
+              <code>cd <em>directory_name</em></code>
+            </div>
+            You can combine these two actions in one with
+            <span class="inline-code">&&</span>. So
+            <span class="inline-code">mkdir</span> and
+            <span class="inline-code">cd</span> become
+            <div class="code">
+              <code
+                >mkdir <em>directory_name</em> && cd
+                <em>directory_name</em></code
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="single-col">
+            <p>
+              Now that we have a directory, we need to initialize a new empty
+              repository. To do this, we run
+            </p>
+            <div class="code">
+              <code>git init</code>
+            </div>
+            <p>
+              You should see a message that says that an empty repository was
+              initialized and the path to the directory. Inside your directory,
+              you now have a sub-directory called
+              <span class="inline-code">.git</span>. This subdirectory is hidden
+              because you are not supposed to touch it. If you list all the
+              files in your directory with
+            </p>
+            <div class="code">
+              <code>ls</code>
+            </div>
+            <p>
+              you won't see the
+              <span class="inline-code">.git</span> sub-directory. To list it,
+              use
+            </p>
+            <div class="code">
+              <code>ls -a</code>
+            </div>
+            <p>
+              you can now see it (the <span class="inline-code">-a</span> flag
+              stands for <em>all</em>). You can open this sub-directory with
+            </p>
+            <div class="code">
+              <code>start .git</code>
+            </div>
+            <p>
+              If you corrupt or remove this directory, you will lose your
+              project's history. If you need to remove it, just run
+            </p>
+            <div class="code">
+              <code>rm -rf .git</code>
+            </div>
+          </div>
+        </div>
+
+        <div class="example"></div>
+
+        <div class="row">
+          <div class="single-col">
+            <p>
+              For now, let's create a new repository in a directory called
+              <em>Moon</em>. So first we run
+            </p>
+            <div class="code">
+              <code>mkdir Moon && cd Moon</code>
+            </div>
+            <p>
+              This created a folder on your machine and moved the Git Bash to
+              that folder. Now to create a repository in that folder we run
+            </p>
+            <div class="code">
+              <code>git init</code>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <a class="go-home" href="../index.html"><i class="fas fa-home"></i></a>
+    </footer>
+
+    <script
+      src="https://kit.fontawesome.com/994cc6cf8e.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

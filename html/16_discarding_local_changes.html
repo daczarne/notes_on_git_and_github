@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../assets/css/light.css" />
+    <link
+      rel="shortcut icon"
+      href="../assets/favicon/favicon.png"
+      type="image/x-icon"
+    />
+    <title>Discarding local changes</title>
+  </head>
+  <body>
+    <div class="floating-div">
+      <header>
+        <div class="btn">
+          <a href="15_unstaging_files.html" class="previous"
+            >&laquo; Previous</a
+          >
+        </div>
+
+        <div class="title">
+          <h1>Discarding local changes</h1>
+        </div>
+
+        <div class="btn">
+          <a href="17_restoring_a_file.html" class="next">Next &raquo;</a>
+        </div>
+      </header>
+    </div>
+
+    <main>
+      <section>
+        <div class="row">
+          <div class="left-col">
+            <p>
+              To discard local changes (ie changes in our working directory)
+              from a file that is already been tracked, we run
+            </p>
+            <div class="code">
+              <code>git restore <em>file_name.ext</em></code>
+            </div>
+            <p>
+              Same as before, Git will take the version of this file that is in
+              the next environment. Since we are on the working directory now,
+              the next environment is the staging area.
+            </p>
+            <br />
+            <p>
+              Note that <em>file3.txt</em> was not restored to its previous
+              state. This is because this file is new, so there is no previous
+              state. Going back to the "previous version" of this file means
+              deleting it. To do this we run
+            </p>
+            <div class="code">
+              <code>git clean -fd</code>
+            </div>
+          </div>
+          <div class="right-col">
+            <img
+              src="../assets/img/discarding-local-changes-1.png"
+              alt=""
+              class="git-bash-img"
+            />
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="single-col">
+            <p>
+              The <span class="inline-code">-fd</span> switch is necessary
+              because by default Git will not allow us to delete untracked files
+              (since they can not be recovered). The
+              <span class="inline-code">f</span> switch is mandatory here and it
+              means <span class="inline-code">force</span>. So we are forcing
+              Git to go ahead with the removal. The
+              <span class="inline-code">d</span> switch is necessary for
+              deleting entire untracked subdirectories.
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <a class="go-home" href="../index.html"><i class="fas fa-home"></i></a>
+    </footer>
+
+    <script
+      src="https://kit.fontawesome.com/994cc6cf8e.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

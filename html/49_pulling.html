@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../assets/css/light.css" />
+    <link
+      rel="shortcut icon"
+      href="../assets/favicon/favicon.png"
+      type="image/x-icon"
+    />
+    <title>Pulling</title>
+  </head>
+  <body>
+    <div class="floating-div">
+      <header>
+        <div class="btn">
+          <a href="48_fetching.html" class="previous">&laquo; Previous</a>
+        </div>
+
+        <div class="title">
+          <h1>Pulling</h1>
+        </div>
+
+        <div class="btn">
+          <a href="50_pushing.html" class="next">Next &raquo;</a>
+        </div>
+      </header>
+    </div>
+
+    <main>
+      <section>
+        <div class="row">
+          <div class="left-col">
+            <p>
+              Because syncing up the local and remote repositories is so common,
+              Git has a special command that will
+              <span class="inline-code">git fetch</span> and
+              <span class="inline-code">git merge origin/master</span> in one
+              line: <span class="inline-code">git pull</span>.
+            </p>
+            <br />
+            <p>
+              To see an example of this, I've created a new commit on GitHub.
+              Now we run
+            </p>
+            <div class="code">
+              <code>git pull</code>
+            </div>
+            <p>
+              In the Git Bash image, you can see how Git first fetched the
+              updates and then automatically performed a merge (fast-forward
+              merge in this case).
+            </p>
+          </div>
+          <div class="right-col">
+            <img
+              src="../assets/img/pulling-1.png"
+              alt=""
+              class="git-bash-img"
+            />
+          </div>
+        </div>
+
+        <div class="example"></div>
+
+        <div class="row">
+          <div class="single-col">
+            <p>
+              Since you will probably be working on teams, most of the time
+              updating your local repository will not be so straightforward
+              since while you were making commits on your local repository,
+              other team members were making commits on their local
+              repositories. Once done, you'll send your changes to the remote
+              (an action called <span class="inline-code">pushing</span> which
+              we'll cover next). But what happens if your local
+              <span class="git-green">main</span> branch and the remote
+              <span class="git-green">main</span> branch have diverge?
+            </p>
+            <br />
+            <p>
+              Because updating the local repository involves fetching the origin
+              and merging, the situations you may encounter are the same as when
+              you merge two local branches: either 1) the other person changed
+              some file which does not affect the files you are changing, or 2)
+              you both updated the same file and you'll have to resolve a merger
+              conflict when pulling.
+            </p>
+          </div>
+        </div>
+
+        <div class="example"></div>
+
+        <div class="row">
+          <div class="left-col">
+            <img
+              src="../assets/img/pulling-2.png"
+              alt=""
+              class="git-bash-img"
+            />
+          </div>
+          <div class="right-col">
+            <p>
+              Let's see first an example of the first situation: you changed
+              some files in your local repository that have not been changed in
+              the remote repository. To do this, first we go back to GitHub and
+              write yet another line in the <em>README.md</em> file. Then we
+              create a new local file and commit it. Finally, we
+              <span class="inline-code">git pull</span>.
+            </p>
+            <br />
+            <p>
+              Because our local and remote
+              <span class="git-green">main</span> branches had diverged, Git
+              used a three-way merge and created a merge commit.
+            </p>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="left-col">
+            <p>
+              Because this creates a non-linear history, some people prefer
+              using a <span class="inline-code">git pull --rebase</span>. To see
+              this, first we need to undo the merge commit. Then we run
+            </p>
+            <div class="code">
+              <code>git pull --rebase</code>
+            </div>
+            <p>Now we have a linear history, and there is no merge commit.</p>
+          </div>
+          <div class="right-col">
+            <img
+              src="../assets/img/pulling-3.png"
+              alt=""
+              class="git-bash-img"
+            />
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <a class="go-home" href="../index.html"><i class="fas fa-home"></i></a>
+    </footer>
+
+    <script
+      src="https://kit.fontawesome.com/994cc6cf8e.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../assets/css/light.css" />
+    <link
+      rel="shortcut icon"
+      href="../assets/favicon/favicon.png"
+      type="image/x-icon"
+    />
+    <title>Reverting commits</title>
+  </head>
+  <body>
+    <div class="floating-div">
+      <header>
+        <div class="btn">
+          <a href="59_undoing_commits.html" class="previous">
+            &laquo; Previous
+          </a>
+        </div>
+
+        <div class="title">
+          <h1>Reverting commits</h1>
+        </div>
+
+        <div class="btn">
+          <a href="61_recovering_commits.html" class="next">Next &raquo;</a>
+        </div>
+      </header>
+    </div>
+
+    <main>
+      <section>
+        <div class="row">
+          <div class="left-col">
+            <p>
+              If we have already shared our work with other people, then we
+              cannot rewrite its history. Other people may have already built
+              more features or fixed new bugs on top of our code and rewriting
+              the history of the project could break their work. For these
+              situations we use <span class="inline-code">git revert</span>.
+            </p>
+            <br />
+            <p>
+              Suppose we want to <span class="inline-code">revert</span> the
+              last commit. So we run
+            </p>
+            <div class="code">
+              <code>git revert HEAD</code>
+            </div>
+            <p>
+              Git will create a new commit after our
+              <span class="git-aqua">HEAD</span> that undoes all changes done in
+              the <span class="git-aqua">HEAD</span> commit. The message for
+              this commit will be <em>Revert "original_commit_message"</em>.
+            </p>
+            <br />
+            <p>
+              We can also revert earlier commits with
+              <span class="inline-code">git revert HEAD~n</span> where
+              <span class="inline-code">n</span> refers to the commit
+              <em>n</em> steps prior to <span class="git-aqua">HEAD</span>.
+            </p>
+          </div>
+          <div class="right-col">
+            <img
+              src="../assets/img/reverting-commits-1.png"
+              alt=""
+              class="git-bash-img"
+            />
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="left-col">
+            <img
+              src="../assets/img/reverting-commits-2.png"
+              alt=""
+              class="git-bash-img"
+            />
+          </div>
+          <div class="right-col">
+            <p>We can revert ranges of commits by running, for example</p>
+            <div class="code">
+              <code>git revert HEAD~3..HEAD</code>
+            </div>
+            <p>
+              With this, Git will revert all commits from
+              <span class="git-aqua">HEAD~2</span> to
+              <span class="git-aqua">HEAD</span>. So, Git will not include the
+              oldest commit. When we revert a range of commits, Git will revert
+              them one by one, starting from <span class="git-aqua">HEAD</span>.
+              At each commit, Git will open VSCode and ask us to supply a commit
+              message (or confirm the default one).
+            </p>
+            <br />
+            <p>
+              Because our last commit is <span class="git-aqua">HEAD</span>, we
+              can omit it and run
+              <span class="inline-code">git revert HEAD~3..</span> and Git will
+              start from the <span class="git-aqua">HEAD</span> pointer.
+            </p>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="left-col">
+            <p>
+              When reverting a range of commits, is better to produce only one
+              revert commit. This will leave us with a cleaner history. To do
+              so, we run
+            </p>
+            <div class="code">
+              <code>git revert --no-commit HEAD~3..</code>
+            </div>
+            <p>
+              With this, Git will figure out what changes need to be done, and
+              apply those changes to the staging area. We can review the changes
+              and then run
+            </p>
+            <div class="code">
+              <code>git revert --continue</code>
+            </div>
+            <p>
+              Git will open VS Code so that we can write our commit message. If
+              while reviewing the changes we realize that we don't want to go
+              ahead with the revert, we can run
+            </p>
+            <div class="code">
+              <code>git revert --abort</code>
+            </div>
+          </div>
+          <div class="right-col">
+            <img
+              src="../assets/img/reverting-commits-3.png"
+              alt=""
+              class="git-bash-img"
+            />
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <a class="go-home" href="../index.html"><i class="fas fa-home"></i></a>
+    </footer>
+
+    <script
+      src="https://kit.fontawesome.com/994cc6cf8e.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

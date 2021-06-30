@@ -1,5 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Roboto&display=swap");
 
 :root {
   /* Colors */
@@ -42,7 +42,7 @@ html {
 }
 
 body {
-  font-family: "DM Mono",  sans-serif;
+  font-family: "DM Mono", sans-serif;
   background: var(--bg-color-main);
   color: var(--font-color-main);
   font-size: 1.5rem;
@@ -211,19 +211,13 @@ li strong {
 
 .git-aqua {
   color: var(--git-aqua);
-  text-shadow:
-    var(--text-h-shadow)
-    var(--text-v-shadow)
-    var(--git-aqua);
+  text-shadow: var(--text-h-shadow) var(--text-v-shadow) var(--git-aqua);
 }
 
 .here {
   text-decoration: none;
   color: var(--link-color);
-  text-shadow:
-    var(--text-h-shadow)
-    var(--text-v-shadow)
-    var(--link-color);
+  text-shadow: var(--text-h-shadow) var(--text-v-shadow) var(--link-color);
 }
 
 .here:hover {
@@ -247,10 +241,7 @@ img {
 .vscode-img:hover,
 .github-img:hover,
 .custom-img:hover {
-  box-shadow: 
-    var(--shadow-h-offset)
-    var(--shadow-v-offset)
-    var(--shadow-blur)
+  box-shadow: var(--shadow-h-offset) var(--shadow-v-offset) var(--shadow-blur)
     var(--git-bash);
 }
 
@@ -276,19 +267,17 @@ footer {
 .go-home {
   text-emphasis: none;
   text-decoration: none;
-  color: var(--font-color-title)
+  color: var(--font-color-title);
 }
 
 .go-home:hover {
-  color: var(--btn-highlight)
+  color: var(--btn-highlight);
 }
 
 /* Media queries */
 @media (max-width: 1500px) {
-
   .row {
     flex-wrap: wrap;
     justify-content: center;
   }
-
 }

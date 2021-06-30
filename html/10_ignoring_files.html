@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../assets/css/light.css" />
+    <link
+      rel="shortcut icon"
+      href="../assets/favicon/favicon.png"
+      type="image/x-icon"
+    />
+    <title>Ignoring files</title>
+  </head>
+  <body>
+    <div class="floating-div">
+      <header>
+        <div class="btn">
+          <a href="09_renaming_or_moving_files.html" class="previous"
+            >&laquo; Previous</a
+          >
+        </div>
+
+        <div class="title">
+          <h1>Ignoring files</h1>
+        </div>
+
+        <div class="btn">
+          <a href="11_short_status.html" class="next">Next &raquo;</a>
+        </div>
+      </header>
+    </div>
+
+    <main>
+      <section>
+        <div class="row">
+          <div class="single-col">
+            <p>
+              Sometimes we want Git not to track certain files. To handle this
+              we use a special file "called" <em>.gitignore</em>. This file has
+              no name, only an extension. We should place it at the root of our
+              project. To create it we run
+            </p>
+            <div class="code">
+              <code>touch .gitignore</code>
+            </div>
+            <p>
+              If at the time of creating it we already have a file or
+              sub-directory that we want to add to it, we can use
+            </p>
+            <div class="code">
+              <code>echo <em>file_name.ext</em> > .gitignore</code>
+            </div>
+            <p>
+              If we already have a <em>.gitignore</em> file and we want to add a
+              new file to it (ie we want to append the
+              <em>.gitignore</em> file), we run
+            </p>
+            <div class="code">
+              <code>echo <em>new_file_name.ext</em> >> .gitignore</code>
+            </div>
+            <p>If we want to ignore an entire subdirectory, we run</p>
+            <div class="code">
+              <code>echo <em>dir_name/</em> >> .gitignore</code>
+            </div>
+            <p>
+              Once we've created our <em>.gitignore</em> file, we can inspect it
+              with VS Code by running
+            </p>
+            <div class="code">
+              <code>code .gitignore</code>
+            </div>
+          </div>
+        </div>
+
+        <div class="example"></div>
+
+        <div class="row">
+          <div class="left-col">
+            <p>
+              As an example, let's create a <em>logs</em> sub-directory and add
+              it to our gitignore file. First, we create the sub-dir and a file
+              inside that sub-dir with
+            </p>
+            <div class="code">
+              <code>mkdir logs && echo hello > logs/dev.log</code>
+            </div>
+            <p>
+              Now we add it to (and create) the <em>.gitignore</em> file by
+              running
+            </p>
+            <div class="code">
+              <code>echo logs/ > .gitignore</code>
+            </div>
+            <p>
+              Now, if we run a <span class="inline-code">git status</span>,
+              we'll see that the <em>.gitignore</em> file is only in the Working
+              Directory, so we'll
+              <span class="inline-code">git add .gitignore</span> and
+              <span class="inline-code"
+                >git commit -m "Add gitignore file"</span
+              >
+              to commit it to our Repository. But notice that we didn't stage
+              nor committed our <em>logs</em> sub-dir.
+            </p>
+          </div>
+          <div class="right-col">
+            <img
+              src="../assets/img/ignoring-files-1.png"
+              alt=""
+              class="git-bash-img"
+            />
+          </div>
+        </div>
+
+        <div class="example"></div>
+
+        <div class="row">
+          <div class="single-col">
+            <p>
+              Inside our <em>.gitignore</em> we can have as many items as we
+              want. We can add new files as <em>file_name.ext</em>, we can add
+              entire sub-directories as <em>sub-dir_name/</em>, or we can use
+              patterns. So, for example, adding <em>config.py</em> will cause
+              Git to ignore the file named <em>config.py</em>. Adding
+              <em>*.js</em> will cause Git to ignore all files with a
+              <em>.js</em> extension in our project. Adding
+              <em>logs/*.log</em> will cause Git to ignore all files with
+              extension <em>.log</em> in the <em>logs/</em> sub-dir, but not
+              other files in that sub-dir, nor files with the
+              <em>.log</em> extension in other directories inside our project.
+            </p>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="single-col">
+            <p>
+              Keep in mind that all of this only works if you haven't added a
+              file to the repository already. If you have, Git will keep on
+              tracking it. If you added a file to the repository and you now
+              want Git to stop tracking it, you need to remove it from the
+              staging area. To do this we'll use
+            </p>
+            <div class="code">
+              <code>git rm --cached -r <em>file_name</em></code>
+            </div>
+            <p>
+              Now you can commit this deletion and Git will stop tracking the
+              file. Do not forget the
+              <span class="inline-code">--cached</span> option or Git will
+              remove the file both from the staging area and the working
+              directory!!
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <a class="go-home" href="../index.html"><i class="fas fa-home"></i></a>
+    </footer>
+
+    <script
+      src="https://kit.fontawesome.com/994cc6cf8e.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

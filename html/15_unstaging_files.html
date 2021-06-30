@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../assets/css/light.css" />
+    <link
+      rel="shortcut icon"
+      href="../assets/favicon/favicon.png"
+      type="image/x-icon"
+    />
+    <title>Unstaging files</title>
+  </head>
+  <body>
+    <div class="floating-div">
+      <header>
+        <div class="btn">
+          <a href="14_viewing_a_commit.html" class="previous"
+            >&laquo; Previous</a
+          >
+        </div>
+
+        <div class="title">
+          <h1>Unstaging files</h1>
+        </div>
+
+        <div class="btn">
+          <a href="16_discarding_local_changes.html" class="next"
+            >Next &raquo;</a
+          >
+        </div>
+      </header>
+    </div>
+
+    <main>
+      <section>
+        <div class="row">
+          <div class="left-col">
+            <p>
+              Suppose that we've added some changes to the staging area but we
+              now realize that we shouldn't have. We want to un-stage our file
+              and get it back to the working area. To solve this we run
+            </p>
+            <div class="code">
+              <code>git restore --staged <em>file_name.ext</em></code>
+            </div>
+          </div>
+          <div class="right-col">
+            <img
+              src="../assets/img/unstaging-files-1.png"
+              alt=""
+              class="git-bash-img"
+            />
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="single-col">
+            <p>
+              We can pass one filename, multiple files separated by a space,
+              patterns such as <span class="inline-code">*.txt</span>, or a
+              period to indicate all files. This tells Git to take the changes
+              that are already in the staging area and revert them to the
+              working directory. What Git is doing here under the hood is taking
+              the last version of our file from the next environment. So, if we
+              <span class="inline-code">restore</span> a file that is in the
+              staging area, the last version from the next environment is the
+              state of the file in the last commit. Git will take this version
+              and place it in the staging area.
+            </p>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="left-col">
+            <img
+              src="../assets/img/unstaging-files-2.png"
+              alt=""
+              class="git-bash-img"
+            />
+          </div>
+          <div class="right-col">
+            <p>
+              Now suppose the file we want to restore is a new file, so it
+              didn't exist at the last commit. If we
+              <span class="inline-code">restore</span> this file, Git will take
+              the staging area version of it, and place it in the working
+              directory as a new untracked file.
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <a class="go-home" href="../index.html"><i class="fas fa-home"></i></a>
+    </footer>
+
+    <script
+      src="https://kit.fontawesome.com/994cc6cf8e.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
