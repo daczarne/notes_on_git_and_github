@@ -1,123 +1,199 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="../assets/css/light.css">
-  <link rel="shortcut icon" href="../assets/favicon/favicon.png" type="image/x-icon">  <title>Filtering the history</title>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../assets/css/light.css" />
+    <link
+      rel="shortcut icon"
+      href="../assets/favicon/favicon.png"
+      type="image/x-icon"
+    />
+    <title>Filtering the history</title>
+  </head>
+  <body>
+    <div class="floating-div">
+      <header>
+        <div class="btn">
+          <a href="18_viewing_the_history.html" class="previous"
+            >&laquo; Previous</a
+          >
+        </div>
 
-  <div class="floating-div">
-    <header>
+        <div class="title">
+          <h1>Filtering the history</h1>
+        </div>
 
-      <div class="btn">
-        <a href="03_viewing_the_history.html" class="previous">&laquo; Previous</a>
-      </div>
+        <div class="btn">
+          <a href="20_aliases.html" class="next">Next &raquo;</a>
+        </div>
+      </header>
+    </div>
 
-      <div class="title">
-        <h1>Filtering the history</h1>
-      </div>
-
-      <div class="btn">
-        <a href="06_aliases.html" class="next">Next &raquo;</a>
-      </div>
-
-    </header>
-  </div>
-
-  <main>
-    <section>
-      
-      <div class="row">
-        <div class="left-col">
-          <p>When browsing the history of a repository we'll usually want to filter commits.There are several filters that we can use along with the <span class="inline-code">git log</span> command. For example, to see the last 3 commits we run</p>
-          <div class="code">
-            <code>git log --online -3</code>
+    <main>
+      <section>
+        <div class="row">
+          <div class="left-col">
+            <p>
+              When browsing the history of a repository we'll usually want to
+              filter commits.There are several filters that we can use along
+              with the <span class="inline-code">git log</span> command. For
+              example, to see the last 3 commits we run
+            </p>
+            <div class="code">
+              <code>git log --online -3</code>
+            </div>
+            <br />
+            <p>
+              To filter by author we use the
+              <span class="inline-code">--author</span> option and pass the name
+              of the author. We can short the name in an unambiguous way.
+            </p>
+            <div class="code">
+              <code>git log --oneline --author="Daniel"</code>
+            </div>
           </div>
-          <br>
-          <p>To filter by author we use the <span class="inline-code">--author</span> option and pass the name of the author. We can short the name in an unambiguous way.</p>
-          <div class="code">
-            <code>git log --oneline --author="Daniel"</code>
+          <div class="right-col">
+            <img
+              src="../assets/img/filtering-the-history-1.png"
+              alt=""
+              class="git-bash-img"
+            />
           </div>
         </div>
-        <div class="right-col">
-          <img src="../assets/img/filtering-the-history-1.png" alt="" class="git-bash-img">
-        </div>
-      </div>
 
-      <div class="row">
-        <div class="left-col">
-          <img src="../assets/img/filtering-the-history-2.png" alt="" class="git-bash-img">
+        <div class="row">
+          <div class="left-col">
+            <img
+              src="../assets/img/filtering-the-history-2.png"
+              alt=""
+              class="git-bash-img"
+            />
+          </div>
+          <div class="right-col">
+            <p>
+              We have several ways of filtering by date. We use the
+              <span class="inline-code">--before</span> or
+              <span class="inline-code">--after</span> options. As a value we
+              can pass a date, a relative date. So, for example, if we run
+            </p>
+            <div class="code">
+              <code>git log --oneline --before="2020-08-17"</code>
+            </div>
+            <p>
+              Git will show us all commits done on or prior to August 17, 2020.
+              When using relative dates there are multiple options that Git will
+              understand. For example, if we run
+            </p>
+            <div class="code">
+              <code>git log --oneline --after="yesterday"</code>
+            </div>
+            <p>
+              Git will show us all commits done yesterday or today. If we run
+            </p>
+            <div class="code">
+              <code>git log --oneline --after="two weeks ago"</code>
+            </div>
+            <p>Git will return all commits done in the past two weeks.</p>
+          </div>
         </div>
-        <div class="right-col">
-          <p>We have several ways of filtering by date. We use the <span class="inline-code">--before</span> or <span class="inline-code">--after</span> options. As a value we can pass a date, a relative date. So, for example, if we run</p>
-          <div class="code">
-            <code>git log --oneline --before="2020-08-17"</code>
-          </div>
-          <p>Git will show us all commits done on or prior to August 17, 2020. When using relative dates there are multiple options that Git will understand. For example, if we run</p>
-          <div class="code">
-            <code>git log --oneline --after="yesterday"</code>
-          </div>
-          <p>Git will show us all commits done yesterday or today. If we run</p>
-          <div class="code">
-            <code>git log --oneline --after="two weeks ago"</code>
-          </div>
-          <p>Git will return all commits done in the past two weeks.</p>
-        </div>
-      </div>
 
-      <div class="row">
-        <div class="left-col">
-          <p>To find all commits that have a specific pattern in its message we use the <span class="inline-code">--grep</span> option. For example, if we want to find all commits that mention <em>app.py</em> we run</p>
-          <div class="code">
-            <code>git log --oneline --grep="app.py"</code>
+        <div class="row">
+          <div class="left-col">
+            <p>
+              To find all commits that have a specific pattern in its message we
+              use the <span class="inline-code">--grep</span> option. For
+              example, if we want to find all commits that mention
+              <em>app.py</em> we run
+            </p>
+            <div class="code">
+              <code>git log --oneline --grep="app.py"</code>
+            </div>
+            <p>
+              The <span class="inline-code">--grep</span> option will search for
+              the pattern in the commit message. Keep in mind that the search is
+              case sensitive.
+            </p>
+            <br />
+            <p>
+              Now suppose we want to find all commits that have added or removed
+              the declaration of the <em>hello()</em> function. To achieve this
+              we run
+            </p>
+            <div class="code">
+              <code>git log --oneline -S"hello()"</code>
+            </div>
+            <p>
+              We can also add the
+              <span class="inline-code">--patch</span> option to see what was
+              done in each of the invovled commits.
+            </p>
           </div>
-          <p>The <span class="inline-code">--grep</span> option will search for the pattern in the commit message. Keep in mind that the search is case sensitive.</p>
-          <br>
-          <p>Now suppose we want to find all commits that have added or removed the declaration of the <em>hello()</em> function. To achieve this we run</p>
-          <div class="code">
-            <code>git log --oneline -S"hello()"</code>
+          <div class="right-col">
+            <img
+              src="../assets/img/filtering-the-history-3.png"
+              alt=""
+              class="git-bash-img"
+            />
           </div>
-          <p>We can also add the <span class="inline-code">--patch</span> option to see what was done in each of the invovled commits.</p>
         </div>
-        <div class="right-col">
-          <img src="../assets/img/filtering-the-history-3.png" alt="" class="git-bash-img">
-        </div>
-      </div>
 
-      <div class="row">
-        <div class="left-col">
-
-        </div>
-        <div class="left-col">
-          <img src="../assets/img/filtering-the-history-4.png" alt="" class="git-bash-img">
-        </div>
-        <div class="right-col">
-          <p>We can also filter the history by a specific range of commits. First we need to get the IDs for the two commits. Then we run</p>
-          <div class="code">
-            <code>git log --oneline oldest_commit..newest_commit</code>
+        <div class="row">
+          <div class="left-col"></div>
+          <div class="left-col">
+            <img
+              src="../assets/img/filtering-the-history-4.png"
+              alt=""
+              class="git-bash-img"
+            />
           </div>
-          <p>Keep in mind that Git will look for commits greater than <span class="inline-code">oldest_commit</span> and less than or equal to <span class="inline-code">newest_commit</span>.</p>
+          <div class="right-col">
+            <p>
+              We can also filter the history by a specific range of commits.
+              First we need to get the IDs for the two commits. Then we run
+            </p>
+            <div class="code">
+              <code>git log --oneline oldest_commit..newest_commit</code>
+            </div>
+            <p>
+              Keep in mind that Git will look for commits greater than
+              <span class="inline-code">oldest_commit</span> and less than or
+              equal to <span class="inline-code">newest_commit</span>.
+            </p>
+          </div>
         </div>
-      </div>
 
-      <div class="row">
-        <div class="left-col">
-          <p>We can find all commits that touch a particular file or group of files. To do so we just pass the name or names of the files to <span class="inline-code">git log</span>. When doing this it's recomended to separate the last option passed to the <span class="inline-code">git log</span> command with <span class="inline-code">--</span> so that Git does not confuse options from filenames. Also, keep in mind that all options must be supplied before the filesnames.</p>
+        <div class="row">
+          <div class="left-col">
+            <p>
+              We can find all commits that touch a particular file or group of
+              files. To do so we just pass the name or names of the files to
+              <span class="inline-code">git log</span>. When doing this it's
+              recomended to separate the last option passed to the
+              <span class="inline-code">git log</span> command with
+              <span class="inline-code">--</span> so that Git does not confuse
+              options from filenames. Also, keep in mind that all options must
+              be supplied before the filesnames.
+            </p>
+          </div>
+          <div class="right-col">
+            <img
+              src="../assets/img/filtering-the-history-5.png"
+              alt=""
+              class="git-bash-img"
+            />
+          </div>
         </div>
-        <div class="right-col">
-          <img src="../assets/img/filtering-the-history-5.png" alt="" class="git-bash-img">
-        </div>
-      </div>
+      </section>
+    </main>
 
-    </section>
-  </main>
-  
-  <footer>
-    <a class="go-home" href="../index.html"><i class="fas fa-home"></i></a>
-  </footer>
-  
-  <script src="https://kit.fontawesome.com/994cc6cf8e.js" crossorigin="anonymous"></script>
-</body>
+    <footer>
+      <a class="go-home" href="../index.html"><i class="fas fa-home"></i></a>
+    </footer>
+
+    <script
+      src="https://kit.fontawesome.com/994cc6cf8e.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>

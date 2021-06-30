@@ -1,103 +1,171 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="../assets/css/light.css">
-  <link rel="stylesheet" href="../assets/css/06_05_undoing_commits.css">
-  <link rel="shortcut icon" href="../assets/favicon/favicon.png" type="image/x-icon">  <title>Undoing commits</title>
-</head>
-<body>
-
-  <div class="floating-div">
-    <header>
-
-      <div class="btn">
-        <a href="01_introduction.html" class="previous">&laquo; Previous</a>
-      </div>
-
-      <div class="title">
-        <h1>Undoing commits</h1>
-      </div>
-
-      <div class="btn">
-        <a href="06_reverting_commits.html" class="next">Next &raquo;</a>
-      </div>
-
-    </header>
-  </div>
-
-  <main>
-    <section>
-
-      <div class="row">
-        <div class="left-col">
-          <p>Suppose we have a repository that looks like the one on the image and we want to undo the last commit (<em>088455d</em>). Since this commit is only in our local repository, we use the <span class="inline-code">reset</span> command.</p>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../assets/css/light.css" />
+    <link rel="stylesheet" href="../assets/css/06_05_undoing_commits.css" />
+    <link
+      rel="shortcut icon"
+      href="../assets/favicon/favicon.png"
+      type="image/x-icon"
+    />
+    <title>Undoing commits</title>
+  </head>
+  <body>
+    <div class="floating-div">
+      <header>
+        <div class="btn">
+          <a href="58_introduction.html" class="previous">&laquo; Previous</a>
         </div>
-        <div class="right-col">
-          <img src="../assets/img/undoing-commits-1.png" alt="" class="git-bash-img">
+
+        <div class="title">
+          <h1>Undoing commits</h1>
         </div>
-      </div>
 
-      <div class="row">
-        <div class="single-col">
-          <p> This command has three options that you should know about:</p>
-          <ul>
-            <li class="uc-li"><span class="inline-code">--soft</span> removes from the repository only. This means that it undoes the <span class="inline-code">git commit</span> action, but our changes are still in the staging area.</li>
-
-            <li class="uc-li"><span class="inline-code">--mixed</span> removes from the repository and the staging area. This means that it undoes both <span class="inline-code">git commit</span> and <span class="inline-code">git add</span> action. Our changes will still be in our working directory.</li>
-
-            <li class="uc-li"><span class="inline-code">--hard</span> removes from the repository, the staging area, and the working directory. This means that we are getting rid of our work for good.</li>
-          </ul>
+        <div class="btn">
+          <a href="60_reverting_commits.html" class="next">Next &raquo;</a>
         </div>
-      </div>
+      </header>
+    </div>
 
-      <div class="row">
-        <div class="left-col">
-          <img src="../assets/img/undoing-commits-2.png" alt="" class="git-bash-img">
-        </div>
-        <div class="right-col">
-          <p>When we reset commits we need to supply the target position for the <span class="git-aqua">HEAD</span> pointer. In this case, since we are going to be working with the last commit, we should tell Git that the target commit for the <span class="git-aqua">HEAD</span> pointer is the commit before last. So we run</p>
-          <div class="code">
-            <code>git reset --soft HEAD~1</code>
+    <main>
+      <section>
+        <div class="row">
+          <div class="left-col">
+            <p>
+              Suppose we have a repository that looks like the one on the image
+              and we want to undo the last commit (<em>088455d</em>). Since this
+              commit is only in our local repository, we use the
+              <span class="inline-code">reset</span> command.
+            </p>
           </div>
-          <p>The last commit is now gone from our repository and we have changes that have already been staged and are ready to be committed. So it's as if we had never run <span class="inline-code">git commit</span> that last time.</p>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="left-col">
-          <p>If we instead want to remove changes from the repository and the staging area, then we run</p>
-          <div class="code">
-            <code>git reset --mixed HEAD~1</code>
+          <div class="right-col">
+            <img
+              src="../assets/img/undoing-commits-1.png"
+              alt=""
+              class="git-bash-img"
+            />
           </div>
-          <p>The <span class="inline-code">--mixed</span> option is the default, so you can omit it. Just as before, the commit is now gone from the repository. But this time notice that the changes are in the working directory only. They have not been staged.</p>
         </div>
-        <div class="right-col">
-          <img src="../assets/img/undoing-commits-3.png" alt="" class="git-bash-img">
-        </div>
-      </div>
 
-      <div class="row">
-        <div class="right-col">
-          <img src="../assets/img/undoing-commits-4.png" alt="" class="git-bash-img">
-        </div>
-        <div class="left-col">
-          <p>Lastly, if we want to remove changes from the repository, the staging area, and the working directory, then we run</p>
-          <div class="code">
-            <code>git reset --hard HEAD~1</code>
+        <div class="row">
+          <div class="single-col">
+            <p>This command has three options that you should know about:</p>
+            <ul>
+              <li class="uc-li">
+                <span class="inline-code">--soft</span> removes from the
+                repository only. This means that it undoes the
+                <span class="inline-code">git commit</span> action, but our
+                changes are still in the staging area.
+              </li>
+
+              <li class="uc-li">
+                <span class="inline-code">--mixed</span> removes from the
+                repository and the staging area. This means that it undoes both
+                <span class="inline-code">git commit</span> and
+                <span class="inline-code">git add</span> action. Our changes
+                will still be in our working directory.
+              </li>
+
+              <li class="uc-li">
+                <span class="inline-code">--hard</span> removes from the
+                repository, the staging area, and the working directory. This
+                means that we are getting rid of our work for good.
+              </li>
+            </ul>
           </div>
-          <p>Notice that now, when we run <span class="inline-code">git status -s</span> Git is staying that there's nothing there. This is because we just deleted our changes from everywhere. It's as if we had never written that code to begin with.</p>
         </div>
-      </div>
 
-    </section>
-  </main>
-  
-  <footer>
-    <a class="go-home" href="../index.html"><i class="fas fa-home"></i></a>
-  </footer>
-  
-  <script src="https://kit.fontawesome.com/994cc6cf8e.js" crossorigin="anonymous"></script>
-</body>
+        <div class="row">
+          <div class="left-col">
+            <img
+              src="../assets/img/undoing-commits-2.png"
+              alt=""
+              class="git-bash-img"
+            />
+          </div>
+          <div class="right-col">
+            <p>
+              When we reset commits we need to supply the target position for
+              the <span class="git-aqua">HEAD</span> pointer. In this case,
+              since we are going to be working with the last commit, we should
+              tell Git that the target commit for the
+              <span class="git-aqua">HEAD</span> pointer is the commit before
+              last. So we run
+            </p>
+            <div class="code">
+              <code>git reset --soft HEAD~1</code>
+            </div>
+            <p>
+              The last commit is now gone from our repository and we have
+              changes that have already been staged and are ready to be
+              committed. So it's as if we had never run
+              <span class="inline-code">git commit</span> that last time.
+            </p>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="left-col">
+            <p>
+              If we instead want to remove changes from the repository and the
+              staging area, then we run
+            </p>
+            <div class="code">
+              <code>git reset --mixed HEAD~1</code>
+            </div>
+            <p>
+              The <span class="inline-code">--mixed</span> option is the
+              default, so you can omit it. Just as before, the commit is now
+              gone from the repository. But this time notice that the changes
+              are in the working directory only. They have not been staged.
+            </p>
+          </div>
+          <div class="right-col">
+            <img
+              src="../assets/img/undoing-commits-3.png"
+              alt=""
+              class="git-bash-img"
+            />
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="right-col">
+            <img
+              src="../assets/img/undoing-commits-4.png"
+              alt=""
+              class="git-bash-img"
+            />
+          </div>
+          <div class="left-col">
+            <p>
+              Lastly, if we want to remove changes from the repository, the
+              staging area, and the working directory, then we run
+            </p>
+            <div class="code">
+              <code>git reset --hard HEAD~1</code>
+            </div>
+            <p>
+              Notice that now, when we run
+              <span class="inline-code">git status -s</span> Git is staying that
+              there's nothing there. This is because we just deleted our changes
+              from everywhere. It's as if we had never written that code to
+              begin with.
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <a class="go-home" href="../index.html"><i class="fas fa-home"></i></a>
+    </footer>
+
+    <script
+      src="https://kit.fontawesome.com/994cc6cf8e.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>

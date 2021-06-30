@@ -1,126 +1,220 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="../assets/css/light.css">
-  <link rel="shortcut icon" href="../assets/favicon/favicon.png" type="image/x-icon">  <title>Squashing commits</title>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../assets/css/light.css" />
+    <link
+      rel="shortcut icon"
+      href="../assets/favicon/favicon.png"
+      type="image/x-icon"
+    />
+    <title>Squashing commits</title>
+  </head>
+  <body>
+    <div class="floating-div">
+      <header>
+        <div class="btn">
+          <a href="66_reordering_commits.html" class="previous">
+            &laquo; Previous
+          </a>
+        </div>
 
-  <div class="floating-div">
-    <header>
+        <div class="title">
+          <h1>Squashing commits</h1>
+        </div>
 
-      <div class="btn">
-        <a href="12_reordering_commits.html" class="previous">&laquo; Previous</a>
-      </div>
+        <div class="btn">
+          <a href="14_splitting_a_commit.html" class="next">Next &raquo;</a>
+        </div>
+      </header>
+    </div>
 
-      <div class="title">
-        <h1>Squashing commits</h1>
-      </div>
-
-      <div class="btn">
-        <a href="14_splitting_a_commit.html" class="next">Next &raquo;</a>
-      </div>
-
-    </header>
-  </div>
-
-  <main>
-    <section>
-
-      <div class="row">
-        <div class="left-col">
-          <p>Now let's see how we can squash commits. Squashing commits is the process of taking two or more commits, and combining all the changes in those commits into a single commit. For example, here we will squash commits <em>78af47a</em>, <em>7f4e64b</em>, and <em>2a57b17</em> into a single commit. To do this, we use interactive rebasing. So we run</p>
-          <div class="code">
-            <code>git rebase -i ab0e842</code>
+    <main>
+      <section>
+        <div class="row">
+          <div class="left-col">
+            <p>
+              Now let's see how we can squash commits. Squashing commits is the
+              process of taking two or more commits, and combining all the
+              changes in those commits into a single commit. For example, here
+              we will squash commits <em>78af47a</em>, <em>7f4e64b</em>, and
+              <em>2a57b17</em> into a single commit. To do this, we use
+              interactive rebasing. So we run
+            </p>
+            <div class="code">
+              <code>git rebase -i ab0e842</code>
+            </div>
+            <p>
+              where commit <em>ab0e842</em> is the parent of the oldest commit
+              that we wish to squash.
+            </p>
           </div>
-          <p>where commit <em>ab0e842</em> is the parent of the oldest commit that we wish to squash.</p>
-        </div>
-        <div class="right-col">
-          <img src="../assets/img/squashing-commits-1.png" alt="" class="git-bash-img">
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="single-col">
-          <p>To squash two commits together we need to use the <em>squash</em> option in VS Code. Notice how GitLens is not showing us which commits will be squashed into which commit by simplifying the commit tree. One thing to remember here is that squashing is an operation that can only be performed between two consecutive commits. So once the rebasing starts, Git will first squash commit <em>7f4e64b</em> into commit <em>78af47a</em>, and then squash commit <em>2a57b17</em> into the new commit that it created for the first squashing. If we want to squash commits that are not consecutive to one another, then we first need to reorder the commits.</p>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="single-col center">
-          <img src="../assets/img/squashing-commits-2.png" alt="" class="vscode-img">
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="left-col">
-          <img src="../assets/img/squashing-commits-3.png" alt="" class="git-bash-img">
-        </div>
-        <div class="right-col">
-          <p>When we close VS Code and the rebasing starts, Git will ask as to give the new commit a message. The default message that it will show is the combination of the commit messages for all the commits that we are squashing. In general, since we squash commits that have changes that we should have made into a single commit to begin with, we should input a new message that reflects the changes done across all of the commits been squashed.</p>
-          <br>
-          <p>Now if we look at our log there is only one commit for all three sets of changes.</p>
-        </div>
-      </div>
-
-      <div class="example"></div>
-
-      <div class="row">
-        <div class="left-col">
-          <p>If we already know that the message for our squashed commit is the message for the oldest commit, then we can use the <em>fixup</em> option instead of the <em>squash</em> option. To see this in action, first we need to reset our repository to how it was before the last rebasing. So we bring up our reflog by running</p>
-          <div class="code">
-            <code>git reflog</code>
+          <div class="right-col">
+            <img
+              src="../assets/img/squashing-commits-1.png"
+              alt=""
+              class="git-bash-img"
+            />
           </div>
-          <p>and grab the commit ID to which the <span class="git-aqua">HEAD</span> pointer was pointing, before starting the rebase. In this case, commit <em>d038481</em> (which is the finish of the last rebase we did).</p>
         </div>
-        <div class="right-col">
-          <img src="../assets/img/squashing-commits-4.png" alt="" class="git-bash-img">
-        </div>
-      </div>
 
-      <div class="row">
-        <div class="left-col">
-          <img src="../assets/img/squashing-commits-5.png" alt="" class="git-bash-img">
-        </div>
-        <div class="right-col">
-          <p>Now we use</p>
-          <div class="code">
-            <code>git reset --hard d038481</code>
+        <div class="row">
+          <div class="single-col">
+            <p>
+              To squash two commits together we need to use the
+              <em>squash</em> option in VS Code. Notice how GitLens is not
+              showing us which commits will be squashed into which commit by
+              simplifying the commit tree. One thing to remember here is that
+              squashing is an operation that can only be performed between two
+              consecutive commits. So once the rebasing starts, Git will first
+              squash commit <em>7f4e64b</em> into commit <em>78af47a</em>, and
+              then squash commit <em>2a57b17</em> into the new commit that it
+              created for the first squashing. If we want to squash commits that
+              are not consecutive to one another, then we first need to reorder
+              the commits.
+            </p>
           </div>
-          <p>and our repository will be restored to the state before the last rebase. We can see this in our log.</p>
         </div>
-      </div>
 
-      <div class="row">
-        <div class="single-col">
-          <p>Now we restart the interactive rebase just as before, but when Git asks us which operation to perform to the commits to squash, we choose <em>fixup</em>. This will cause Git to ignore the commit messages from these commits, and thus default to the commit that they are being squashed into (the one with the <em>pick</em> operation).</p>
+        <div class="row">
+          <div class="single-col center">
+            <img
+              src="../assets/img/squashing-commits-2.png"
+              alt=""
+              class="vscode-img"
+            />
+          </div>
         </div>
-      </div>
 
-      <div class="row">
-        <div class="single-col center">
-          <img src="../assets/img/squashing-commits-6.png" alt="" class="vscode-img">
+        <div class="row">
+          <div class="left-col">
+            <img
+              src="../assets/img/squashing-commits-3.png"
+              alt=""
+              class="git-bash-img"
+            />
+          </div>
+          <div class="right-col">
+            <p>
+              When we close VS Code and the rebasing starts, Git will ask as to
+              give the new commit a message. The default message that it will
+              show is the combination of the commit messages for all the commits
+              that we are squashing. In general, since we squash commits that
+              have changes that we should have made into a single commit to
+              begin with, we should input a new message that reflects the
+              changes done across all of the commits been squashed.
+            </p>
+            <br />
+            <p>
+              Now if we look at our log there is only one commit for all three
+              sets of changes.
+            </p>
+          </div>
         </div>
-      </div>
 
-      <div class="row">
-        <div class="left-col">
-          <img src="../assets/img/squashing-commits-7.png" alt="" class="git-bash-img">
-        </div>
-        <div class="right-col">
-          <p>Since there are no conflicts for us to resolve, as soon as we save and close the file, Git will complete the rebasing process. If we now check the log, we can see that the commits have been squashed, and the message of the oldest commit was kept without us having to tell Git which message to use.</p>
-        </div>
-      </div>
+        <div class="example"></div>
 
-    </section>
-  </main>
-  
-  <footer>
-    <a class="go-home" href="../index.html"><i class="fas fa-home"></i></a>
-  </footer>
-  
-  <script src="https://kit.fontawesome.com/994cc6cf8e.js" crossorigin="anonymous"></script>
-</body>
+        <div class="row">
+          <div class="left-col">
+            <p>
+              If we already know that the message for our squashed commit is the
+              message for the oldest commit, then we can use the
+              <em>fixup</em> option instead of the <em>squash</em> option. To
+              see this in action, first we need to reset our repository to how
+              it was before the last rebasing. So we bring up our reflog by
+              running
+            </p>
+            <div class="code">
+              <code>git reflog</code>
+            </div>
+            <p>
+              and grab the commit ID to which the
+              <span class="git-aqua">HEAD</span> pointer was pointing, before
+              starting the rebase. In this case, commit <em>d038481</em> (which
+              is the finish of the last rebase we did).
+            </p>
+          </div>
+          <div class="right-col">
+            <img
+              src="../assets/img/squashing-commits-4.png"
+              alt=""
+              class="git-bash-img"
+            />
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="left-col">
+            <img
+              src="../assets/img/squashing-commits-5.png"
+              alt=""
+              class="git-bash-img"
+            />
+          </div>
+          <div class="right-col">
+            <p>Now we use</p>
+            <div class="code">
+              <code>git reset --hard d038481</code>
+            </div>
+            <p>
+              and our repository will be restored to the state before the last
+              rebase. We can see this in our log.
+            </p>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="single-col">
+            <p>
+              Now we restart the interactive rebase just as before, but when Git
+              asks us which operation to perform to the commits to squash, we
+              choose <em>fixup</em>. This will cause Git to ignore the commit
+              messages from these commits, and thus default to the commit that
+              they are being squashed into (the one with the
+              <em>pick</em> operation).
+            </p>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="single-col center">
+            <img
+              src="../assets/img/squashing-commits-6.png"
+              alt=""
+              class="vscode-img"
+            />
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="left-col">
+            <img
+              src="../assets/img/squashing-commits-7.png"
+              alt=""
+              class="git-bash-img"
+            />
+          </div>
+          <div class="right-col">
+            <p>
+              Since there are no conflicts for us to resolve, as soon as we save
+              and close the file, Git will complete the rebasing process. If we
+              now check the log, we can see that the commits have been squashed,
+              and the message of the oldest commit was kept without us having to
+              tell Git which message to use.
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <a class="go-home" href="../index.html"><i class="fas fa-home"></i></a>
+    </footer>
+
+    <script
+      src="https://kit.fontawesome.com/994cc6cf8e.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>

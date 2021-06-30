@@ -1,93 +1,144 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="../assets/css/light.css">
-  <link rel="shortcut icon" href="../assets/favicon/favicon.png" type="image/x-icon">  <title>Recovering commits</title>
-</head>
-<body>
-
-  <div class="floating-div">
-    <header>
-
-      <div class="btn">
-        <a href="06_reverting_commits.html" class="previous">&laquo; Previous</a>
-      </div>
-
-      <div class="title">
-        <h1>Recovering commits</h1>
-      </div>
-
-      <div class="btn">
-        <a href="08_amending_last_commit.html" class="next">Next &raquo;</a>
-      </div>
-
-    </header>
-  </div>
-
-  <main>
-    <section>
-
-      <div class="row">
-        <div class="left-col">
-          <p>Sometimes you might make a mistake while resetting the <span class="git-aqua">HEAD</span> and erase a commit you did not mean to erase. As an example, look at the Git Bash image. Here I've used a reset hard to 6 commits before the <span class="git-aqua">HEAD</span> pointer. To recover everything, we'll use the <span class="inline-code">git reflog</span> command.</p>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../assets/css/light.css" />
+    <link
+      rel="shortcut icon"
+      href="../assets/favicon/favicon.png"
+      type="image/x-icon"
+    />
+    <title>Recovering commits</title>
+  </head>
+  <body>
+    <div class="floating-div">
+      <header>
+        <div class="btn">
+          <a href="60_reverting_commits.html" class="previous">
+            &laquo; Previous
+          </a>
         </div>
-        <div class="right-col">
-          <img src="../assets/img/recovering-commits-1.png" alt="" class="git-bash-img">
-        </div>
-      </div>
 
-      <div class="row">
-        <div class="left-col">
-          <img src="../assets/img/recovering-commits-2.png" alt="" class="git-bash-img">
+        <div class="title">
+          <h1>Recovering commits</h1>
         </div>
-        <div class="right-col">
-          <p>To view the reflog, we run</p>
-          <div class="code">
-            <code>git reflog</code>
+
+        <div class="btn">
+          <a href="62_amending_last_commit.html" class="next">Next &raquo;</a>
+        </div>
+      </header>
+    </div>
+
+    <main>
+      <section>
+        <div class="row">
+          <div class="left-col">
+            <p>
+              Sometimes you might make a mistake while resetting the
+              <span class="git-aqua">HEAD</span> and erase a commit you did not
+              mean to erase. As an example, look at the Git Bash image. Here
+              I've used a reset hard to 6 commits before the
+              <span class="git-aqua">HEAD</span> pointer. To recover everything,
+              we'll use the <span class="inline-code">git reflog</span> command.
+            </p>
           </div>
-          <p>If we don't supply any other options, Git will show us how our <span class="git-aqua">HEAD</span> pointer has moved throughout the history of our repository. Every entry in the log has a unique identifier, starting from <span class="inline-code">HEAD@{0}</span> (the last position of the pointer) and moving up one each time the pointer moved.  Next to the identifier, there's a description of what happened in that entry. The commit ID to the left is the commit to which the pointer was pointing, after the operation in that entry. So, for example, after the last operation (which was a reset) the pointer is at commit <em>af26a96</em>.</p>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="left-col">
-          <p>In this case, to recover our lost commits, we can reset the <span class="git-aqua">HEAD</span> pointer to commit <em>3e3b5ed</em> (the second entry in our reflog). To do this, we run</p>
-          <div class="code">
-            <code>git reset --hard 3e3b5ed</code>
-          </div>
-          <p>We could also use the entry identifier. In that case, we should have used</p>
-          <div class="code">
-            <code>git reset --hast HEAD@{0}</code>
+          <div class="right-col">
+            <img
+              src="../assets/img/recovering-commits-1.png"
+              alt=""
+              class="git-bash-img"
+            />
           </div>
         </div>
-        <div class="right-col">
-          <img src="../assets/img/recovering-commits-3.png" alt="" class="git-bash-img">
-        </div>
-      </div>
 
-      <div class="row">
-        <div class="single-col">
-          <p>To see the reflog of other pointers we run</p>
-          <div class="code">
-            <code>git reflog show <em>pointer_name</em></code>
+        <div class="row">
+          <div class="left-col">
+            <img
+              src="../assets/img/recovering-commits-2.png"
+              alt=""
+              class="git-bash-img"
+            />
           </div>
-          <p>and Git will show us its history. Remember that each branch is a pointer in Git, so we could use it for branches. We can also use reflogs with time indications. So, for example</p>
-          <div class="code">
-            <code>git reflog master@{one.week.ago}</code>
+          <div class="right-col">
+            <p>To view the reflog, we run</p>
+            <div class="code">
+              <code>git reflog</code>
+            </div>
+            <p>
+              If we don't supply any other options, Git will show us how our
+              <span class="git-aqua">HEAD</span> pointer has moved throughout
+              the history of our repository. Every entry in the log has a unique
+              identifier, starting from
+              <span class="inline-code">HEAD@{0}</span> (the last position of
+              the pointer) and moving up one each time the pointer moved. Next
+              to the identifier, there's a description of what happened in that
+              entry. The commit ID to the left is the commit to which the
+              pointer was pointing, after the operation in that entry. So, for
+              example, after the last operation (which was a reset) the pointer
+              is at commit <em>af26a96</em>.
+            </p>
           </div>
-          <p>will show us where <span class="git-aqua">master</span> was, one week ago.</p>
         </div>
-      </div>
 
-    </section>
-  </main>
-  
-  <footer>
-    <a class="go-home" href="../index.html"><i class="fas fa-home"></i></a>
-  </footer>
-  
-  <script src="https://kit.fontawesome.com/994cc6cf8e.js" crossorigin="anonymous"></script>
-</body>
+        <div class="row">
+          <div class="left-col">
+            <p>
+              In this case, to recover our lost commits, we can reset the
+              <span class="git-aqua">HEAD</span> pointer to commit
+              <em>3e3b5ed</em> (the second entry in our reflog). To do this, we
+              run
+            </p>
+            <div class="code">
+              <code>git reset --hard 3e3b5ed</code>
+            </div>
+            <p>
+              We could also use the entry identifier. In that case, we should
+              have used
+            </p>
+            <div class="code">
+              <code>git reset --hast HEAD@{0}</code>
+            </div>
+          </div>
+          <div class="right-col">
+            <img
+              src="../assets/img/recovering-commits-3.png"
+              alt=""
+              class="git-bash-img"
+            />
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="single-col">
+            <p>To see the reflog of other pointers we run</p>
+            <div class="code">
+              <code>git reflog show <em>pointer_name</em></code>
+            </div>
+            <p>
+              and Git will show us its history. Remember that each branch is a
+              pointer in Git, so we could use it for branches. We can also use
+              reflogs with time indications. So, for example
+            </p>
+            <div class="code">
+              <code>git reflog master@{one.week.ago}</code>
+            </div>
+            <p>
+              will show us where <span class="git-aqua">master</span> was, one
+              week ago.
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <a class="go-home" href="../index.html"><i class="fas fa-home"></i></a>
+    </footer>
+
+    <script
+      src="https://kit.fontawesome.com/994cc6cf8e.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>

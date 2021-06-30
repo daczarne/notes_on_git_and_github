@@ -1,80 +1,134 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="../assets/css/light.css">
-  <link rel="stylesheet" href="../assets/css/05_11_releases.css">
-  <link rel="shortcut icon" href="../assets/favicon/favicon.png" type="image/x-icon">  <title>Releases</title>
-</head>
-<body>
-
-  <div class="floating-div">
-    <header>
-
-      <div class="btn">
-        <a href="10_sharing_tags.html" class="previous">&laquo; Previous</a>
-      </div>
-
-      <div class="title">
-        <h1>Releases</h1>
-      </div>
-
-      <div class="btn">
-        <a href="12_sharing_branches.html" class="next">Next &raquo;</a>
-      </div>
-
-    </header>
-  </div>
-
-  <main>
-    <section>
-
-      <div class="row">
-        <div class="left-col">
-          <p>Releases are a GitHub (not Git) feature that is built on top of tags (every release requires a tag). To create one, go to your repositories home page and, on the right-hand panel, click on <em>Releases</em>. You'll be directed to the releases page. Now click on <em>Create a new release</em>.</p>
-          <br>
-          <p>First, we need to give it a <em>Tag version</em>. If we already have tags we can use one of those. If we don't have a tag, when we create the release, GitHub will add it to the latest commit on the branch that we select.</p>
-          <br>
-          <p>Next, select the branch. Generally, programs are released based on the master branch, but you can select any other branch in your repository.</p>
-          <br>
-          <p>Then, write a <em>Release Title</em>. It can be anything you want. Here I use the tag name.</p>
-          <br>
-          <p>After that, we can include our release notes. You have to use Markdown syntax for it.</p>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../assets/css/light.css" />
+    <link rel="stylesheet" href="../assets/css/05_11_releases.css" />
+    <link
+      rel="shortcut icon"
+      href="../assets/favicon/favicon.png"
+      type="image/x-icon"
+    />
+    <title>Releases</title>
+  </head>
+  <body>
+    <div class="floating-div">
+      <header>
+        <div class="btn">
+          <a href="52_sharing_tags.html" class="previous">&laquo; Previous</a>
         </div>
-        <div class="right-col">
-          <img src="../assets/img/releases-1.png" alt="" class="github-img releases-img">
-        </div>
-      </div>
 
-      <div class="row">
-        <div class="single-col">
-          <p>Below that, you'll see the list of files GitHub will include in the release. By default, it will include all the source code up to that point in time, but you can add other files like binaries.</p>
-          <br>
-          <p>If your release is a pre-release (maybe your software is not stable yet) you can mark it as a pre-release. When done, just click on the <em>Publish release</em> button.</p>
+        <div class="title">
+          <h1>Releases</h1>
         </div>
-      </div>
 
-      <div class="row">
-        <div class="left-col">
-          <img src="../assets/img/releases-2.png" alt="" class="github-img releases-img">
+        <div class="btn">
+          <a href="54_sharing_branches.html" class="next">Next &raquo;</a>
         </div>
-        <div class="right-col">
-          <p>You'll be redirected to the releases panel. Here you can see all your releases and their notes. On the left-hand side, you can see the commit based on which the release was done. If you click on <em>Compare</em> you can compare the state of your code at different releases.</p>
-          <br>
-          <p>Next to your user name and the date on the central panel, GitHub will show you the number of commits that were pushed to that branch since that release. Currently is not showing anything because there aren't any new commits.</p>
-          <br>
-          <p>Finally, on the right-hand side, you can choose to <em>Edit</em> or <em>Delete</em> the release.</p>
-        </div>
-      </div>
+      </header>
+    </div>
 
-    </section>
-  </main>
-  
-  <footer>
-    <a class="go-home" href="../index.html"><i class="fas fa-home"></i></a>
-  </footer>
-  
-  <script src="https://kit.fontawesome.com/994cc6cf8e.js" crossorigin="anonymous"></script>
-</body>
+    <main>
+      <section>
+        <div class="row">
+          <div class="left-col">
+            <p>
+              Releases are a GitHub (not Git) feature that is built on top of
+              tags (every release requires a tag). To create one, go to your
+              repositories home page and, on the right-hand panel, click on
+              <em>Releases</em>. You'll be directed to the releases page. Now
+              click on <em>Create a new release</em>.
+            </p>
+            <br />
+            <p>
+              First, we need to give it a <em>Tag version</em>. If we already
+              have tags we can use one of those. If we don't have a tag, when we
+              create the release, GitHub will add it to the latest commit on the
+              branch that we select.
+            </p>
+            <br />
+            <p>
+              Next, select the branch. Generally, programs are released based on
+              the master branch, but you can select any other branch in your
+              repository.
+            </p>
+            <br />
+            <p>
+              Then, write a <em>Release Title</em>. It can be anything you want.
+              Here I use the tag name.
+            </p>
+            <br />
+            <p>
+              After that, we can include our release notes. You have to use
+              Markdown syntax for it.
+            </p>
+          </div>
+          <div class="right-col">
+            <img
+              src="../assets/img/releases-1.png"
+              alt=""
+              class="github-img releases-img"
+            />
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="single-col">
+            <p>
+              Below that, you'll see the list of files GitHub will include in
+              the release. By default, it will include all the source code up to
+              that point in time, but you can add other files like binaries.
+            </p>
+            <br />
+            <p>
+              If your release is a pre-release (maybe your software is not
+              stable yet) you can mark it as a pre-release. When done, just
+              click on the <em>Publish release</em> button.
+            </p>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="left-col">
+            <img
+              src="../assets/img/releases-2.png"
+              alt=""
+              class="github-img releases-img"
+            />
+          </div>
+          <div class="right-col">
+            <p>
+              You'll be redirected to the releases panel. Here you can see all
+              your releases and their notes. On the left-hand side, you can see
+              the commit based on which the release was done. If you click on
+              <em>Compare</em> you can compare the state of your code at
+              different releases.
+            </p>
+            <br />
+            <p>
+              Next to your user name and the date on the central panel, GitHub
+              will show you the number of commits that were pushed to that
+              branch since that release. Currently is not showing anything
+              because there aren't any new commits.
+            </p>
+            <br />
+            <p>
+              Finally, on the right-hand side, you can choose to
+              <em>Edit</em> or <em>Delete</em> the release.
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <a class="go-home" href="../index.html"><i class="fas fa-home"></i></a>
+    </footer>
+
+    <script
+      src="https://kit.fontawesome.com/994cc6cf8e.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>

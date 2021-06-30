@@ -1,61 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="../assets/css/light.css">
-  <link rel="shortcut icon" href="../assets/favicon/favicon.png" type="image/x-icon">  <title>What are branches?</title>
-</head>
-<body>
-
-  <div class="floating-div">
-    <header>
-
-      <div class="btn">
-        <a href="../03_browsing_history/15_tagging.html" class="previous">&laquo; Previous</a>
-      </div>
-
-      <div class="title">
-        <h1>What are branches?</h1>
-      </div>
-
-      <div class="btn">
-        <a href="04_working_with_branches.html" class="next">Next &raquo;</a>
-      </div>
-
-    </header>
-  </div>
-
-  <main>
-    <section>
-
-      <div class="row">
-        <div class="left-col">
-          <p>Branching allows us to divert from the main line of work, and work in something different in isolation. This allows us to develop new features without compromising the stability of our production code.</p>
-          <br>
-          <p>Branches in Git are fast and cheap because they are just pointers to different commits in a commit tree. Likewise, Git knows which branch we are working on by using another pointer called <em>HEAD</em>.</p>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../assets/css/light.css" />
+    <link
+      rel="shortcut icon"
+      href="../assets/favicon/favicon.png"
+      type="image/x-icon"
+    />
+    <title>What are branches?</title>
+  </head>
+  <body>
+    <div class="floating-div">
+      <header>
+        <div class="btn">
+          <a href="29_tagging.html" class="previous">&laquo; Previous</a>
         </div>
-        <div class="left-col">
-          <img src="../assets/img/what-are-branches-1.png" alt="what-are-branches-1" class="miro-img">
-        </div>
-      </div>
 
-      <div class="row">
-        <div class="left-col">
-          <img src="../assets/img/what-are-branches-2.png" alt="what-are-branches-1" class="miro-img">
+        <div class="title">
+          <h1>What are branches?</h1>
         </div>
-        <div class="right-col">
-          <p>When we move from one branch to the other, what Git does is to reposition the <em>HEAD</em> pointer to the pointer of that branch.</p>
-        </div>
-      </div>
 
-    </section>
-  </main>
-  
-  <footer>
-    <a class="go-home" href="../index.html"><i class="fas fa-home"></i></a>
-  </footer>
-  
-  <script src="https://kit.fontawesome.com/994cc6cf8e.js" crossorigin="anonymous"></script>
-</body>
+        <div class="btn">
+          <a href="31_working_with_branches.html" class="next">Next &raquo;</a>
+        </div>
+      </header>
+    </div>
+
+    <main>
+      <section>
+        <div class="row">
+          <div class="left-col">
+            <p>
+              Branching allows us to divert from the main line of work, and work
+              in something different in isolation. This allows us to develop new
+              features without compromising the stability of our production
+              code.
+            </p>
+            <br />
+            <p>
+              Branches in Git are fast and cheap because they are just pointers
+              to different commits in a commit tree. Likewise, Git knows which
+              branch we are working on by using another pointer called
+              <em>HEAD</em>.
+            </p>
+          </div>
+          <div class="left-col">
+            <img
+              src="../assets/img/what-are-branches-1.png"
+              alt="what-are-branches-1"
+              class="miro-img"
+            />
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="left-col">
+            <img
+              src="../assets/img/what-are-branches-2.png"
+              alt="what-are-branches-1"
+              class="miro-img"
+            />
+          </div>
+          <div class="right-col">
+            <p>
+              When we move from one branch to the other, what Git does is to
+              reposition the <em>HEAD</em> pointer to the pointer of that
+              branch.
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <a class="go-home" href="../index.html"><i class="fas fa-home"></i></a>
+    </footer>
+
+    <script
+      src="https://kit.fontawesome.com/994cc6cf8e.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>

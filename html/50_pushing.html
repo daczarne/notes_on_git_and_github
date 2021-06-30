@@ -1,68 +1,110 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="../assets/css/light.css">
-  <link rel="shortcut icon" href="../assets/favicon/favicon.png" type="image/x-icon">  <title>Pushing</title>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../assets/css/light.css" />
+    <link
+      rel="shortcut icon"
+      href="../assets/favicon/favicon.png"
+      type="image/x-icon"
+    />
+    <title>Pushing</title>
+  </head>
+  <body>
+    <div class="floating-div">
+      <header>
+        <div class="btn">
+          <a href="49_pulling.html" class="previous">&laquo; Previous</a>
+        </div>
 
-  <div class="floating-div">
-    <header>
+        <div class="title">
+          <h1>Pushing</h1>
+        </div>
 
-      <div class="btn">
-        <a href="07_pulling.html" class="previous">&laquo; Previous</a>
-      </div>
+        <div class="btn">
+          <a href="51_storing_credentials.html" class="next">Next &raquo;</a>
+        </div>
+      </header>
+    </div>
 
-      <div class="title">
-        <h1>Pushing</h1>
-      </div>
-
-      <div class="btn">
-        <a href="09_storing_credentials.html" class="next">Next &raquo;</a>
-      </div>
-
-    </header>
-  </div>
-
-  <main>
-    <section>
-
+    <main>
+      <section>
         <div class="row">
           <div class="left-col">
-            <p>Once we are finished making changes locally, you have to <span class="inline-code">push</span> them on to the remote repository so that others can see them too. To do this we run</p>
+            <p>
+              Once we are finished making changes locally, you have to
+              <span class="inline-code">push</span> them on to the remote
+              repository so that others can see them too. To do this we run
+            </p>
             <div class="code">
               <code>git push <em>remote</em> <em>branch</em> </code>
             </div>
-            <p>Here <em>branch</em> is the remote branch to which we want to push to. If we omit it, then Git will assume you want to push to the <span class="git-green">main</span> branch. <em>remote</em> refers to the remote repository to which you wish to push to. If omitted, Git will assume that you want to push onto origin.</p>
-            <br>
-            <p>If this is your first time pushing onto a remote, Git will ask for your GitHub credentials so that it can authenticate and make sure you have push access. We'll see how to store them next so that you don't have to supply them every time you push.</p>
-            <br>
-            <p>Sometimes, others will have pushed their changes before you. If so, Git will not let you push your changes until you update your local repository with the remote one. If this is the case, you just need to pull before you can push. Keep in mind that when pulling, you may encounter merge conflicts that you will have to resolve before being able to push.</p>
+            <p>
+              Here <em>branch</em> is the remote branch to which we want to push
+              to. If we omit it, then Git will assume you want to push to the
+              <span class="git-green">main</span> branch. <em>remote</em> refers
+              to the remote repository to which you wish to push to. If omitted,
+              Git will assume that you want to push onto origin.
+            </p>
+            <br />
+            <p>
+              If this is your first time pushing onto a remote, Git will ask for
+              your GitHub credentials so that it can authenticate and make sure
+              you have push access. We'll see how to store them next so that you
+              don't have to supply them every time you push.
+            </p>
+            <br />
+            <p>
+              Sometimes, others will have pushed their changes before you. If
+              so, Git will not let you push your changes until you update your
+              local repository with the remote one. If this is the case, you
+              just need to pull before you can push. Keep in mind that when
+              pulling, you may encounter merge conflicts that you will have to
+              resolve before being able to push.
+            </p>
           </div>
           <div class="right-col">
-            <img src="../assets/img/pushing-2.png" alt="" class="git-bash-img">
+            <img
+              src="../assets/img/pushing-2.png"
+              alt=""
+              class="git-bash-img"
+            />
           </div>
         </div>
 
         <div class="row">
           <div class="single-col">
-            <p>Some people online will tell you that when your changes get rejected, you should force push by running</p>
+            <p>
+              Some people online will tell you that when your changes get
+              rejected, you should force push by running
+            </p>
             <div class="code">
               <code>git push -f</code>
             </div>
-            <p>You should <a href="#" class="here">NEVER</a> <a href="#" class="here">EVER</a> <a href="#" class="here">EVER</a> <a href="#" class="here">EVER</a> force push onto a remote repository unless you have discussed it with your teammates and everyone is in line with this action. What a force push does is it tells GitHub that it should discard all commits ahead of your local repositories, and push yours. So you are throwing away your teammates work.</p>
+            <p>
+              You should <a href="#" class="here">NEVER</a>
+              <a href="#" class="here">EVER</a>
+              <a href="#" class="here">EVER</a>
+              <a href="#" class="here">EVER</a> force push onto a remote
+              repository unless you have discussed it with your teammates and
+              everyone is in line with this action. What a force push does is it
+              tells GitHub that it should discard all commits ahead of your
+              local repositories, and push yours. So you are throwing away your
+              teammates work.
+            </p>
           </div>
         </div>
+      </section>
+    </main>
 
-    </section>
-  </main>
-  
-  <footer>
-    <a class="go-home" href="../index.html"><i class="fas fa-home"></i></a>
-  </footer>
-  
-  <script src="https://kit.fontawesome.com/994cc6cf8e.js" crossorigin="anonymous"></script>
-</body>
+    <footer>
+      <a class="go-home" href="../index.html"><i class="fas fa-home"></i></a>
+    </footer>
+
+    <script
+      src="https://kit.fontawesome.com/994cc6cf8e.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>
