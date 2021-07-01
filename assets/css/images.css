@@ -1,0 +1,760 @@
+img {
+  border-radius: 15px;
+  justify-self: center;
+  align-self: center;
+}
+
+.git-bash-img:hover,
+.vscode-img:hover,
+.github-img:hover,
+.custom-img:hover {
+  box-shadow: var(--shadow-h-offset) var(--shadow-v-offset) var(--shadow-blur)
+    var(--git-bash);
+}
+
+.miro-img {
+  max-width: 600px;
+}
+
+.github-img {
+  max-width: 1200px;
+}
+
+/*! Special rules */
+
+/* Git workflow */
+
+#git-workflow-1 {
+  max-width: 1200px !important;
+  box-shadow: none;
+}
+
+/* Committing changes */
+
+#committing-changes-1 {
+  max-width: 900px;
+}
+
+/* Viewing the history */
+
+#viewing-the-history-3 {
+  max-width: 1400px;
+  max-height: 600px;
+}
+
+/* Stashing */
+
+.grid-container-stashing-explain {
+  display: grid;
+  grid-template-areas:
+    "stashing-step-one-explain"
+    "stashing-step-two-explain"
+    "stashing-step-three-explain";
+  grid-template-columns: 100%;
+}
+
+.stashing-step-one-explain {
+  grid-area: stashing-step-one-explain;
+  display: flex;
+  flex-direction: row;
+}
+
+.stashing-step-two-explain {
+  grid-area: stashing-step-two-explain;
+  display: flex;
+  flex-direction: row;
+}
+
+.stashing-step-three-explain {
+  grid-area: stashing-step-three-explain;
+  display: flex;
+  flex-direction: row;
+}
+
+.stashing-step-one-explain,
+.stashing-step-two-explain,
+.stashing-step-three-explain {
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.number-box {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.number-text {
+  background-color: var(--font-color-title);
+  color: var(--bg-color-main);
+  font-weight: bold;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+.number-text:hover {
+  background-color: var(--bg-color-title);
+  color: var(--btn-highlight);
+}
+
+.content-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.grid-container-stashing {
+  display: grid;
+  grid-template-areas:
+    "stashing-step-one stashing-step-two"
+    "stashing-step-four stashing-step-three";
+  grid-template-columns: 50%;
+}
+
+.stashing-img {
+  max-width: 100%;
+}
+
+.stashing-step-one {
+  grid-area: stashing-step-one;
+  border-right: var(--img-border-width) var(--img-border-style)
+    var(--border-color);
+  border-bottom: var(--img-border-width) var(--img-border-style)
+    var(--border-color);
+}
+
+.stashing-step-two {
+  grid-area: stashing-step-two;
+  border-left: var(--img-border-width) var(--img-border-style)
+    var(--border-color);
+  border-bottom: var(--img-border-width) var(--img-border-style)
+    var(--border-color);
+}
+
+.stashing-step-three {
+  grid-area: stashing-step-three;
+  border-left: var(--img-border-width) var(--img-border-style)
+    var(--border-color);
+  border-top: var(--img-border-width) var(--img-border-style)
+    var(--border-color);
+}
+
+.stashing-step-four {
+  grid-area: stashing-step-four;
+  border-right: var(--img-border-width) var(--img-border-style)
+    var(--border-color);
+  border-top: var(--img-border-width) var(--img-border-style)
+    var(--border-color);
+}
+
+@media (max-width: 1000px) {
+  .grid-container-stashing {
+    display: grid;
+    grid-template-areas:
+      "stashing-step-one"
+      "stashing-step-two"
+      "stashing-step-three"
+      "stashing-step-four";
+    grid-template-columns: 100%;
+  }
+
+  .stashing-step-one {
+    border: none;
+    border-bottom: var(--img-border-width) var(--img-border-style)
+      var(--border-color);
+  }
+
+  .stashing-step-two {
+    border: none;
+    border-top: var(--img-border-width) var(--img-border-style)
+      var(--border-color);
+    border-bottom: var(--img-border-width) var(--img-border-style)
+      var(--border-color);
+  }
+
+  .stashing-step-three {
+    border: none;
+    border-top: var(--img-border-width) var(--img-border-style)
+      var(--border-color);
+    border-bottom: var(--img-border-width) var(--img-border-style)
+      var(--border-color);
+  }
+
+  .stashing-step-four {
+    border: none;
+    border-top: var(--img-border-width) var(--img-border-style)
+      var(--border-color);
+  }
+}
+
+/* Merging */
+
+.grid-container-merging {
+  display: grid;
+  grid-template-areas:
+    "fast-step-one three-step-one"
+    "fast-step-two three-step-two"
+    "fast-step-three three-step-three";
+  grid-template-columns: 50%;
+}
+
+.merge-img {
+  max-width: 100%;
+}
+
+.fast-step-one {
+  grid-area: fast-step-one;
+  border-right: var(--img-border-width) var(--img-border-style)
+    var(--border-color);
+  border-bottom: var(--img-border-width) var(--img-border-style)
+    var(--border-color);
+}
+
+.fast-step-two {
+  grid-area: fast-step-two;
+  border-right: var(--img-border-width) var(--img-border-style)
+    var(--border-color);
+  border-bottom: var(--img-border-width) var(--img-border-style)
+    var(--border-color);
+  border-top: var(--img-border-width) var(--img-border-style)
+    var(--border-color);
+}
+
+.fast-step-three {
+  grid-area: fast-step-three;
+  border-right: var(--img-border-width) var(--img-border-style)
+    var(--border-color);
+  border-top: var(--img-border-width) var(--img-border-style)
+    var(--border-color);
+}
+
+.three-step-one {
+  grid-area: three-step-one;
+  border-left: var(--img-border-width) var(--img-border-style)
+    var(--border-color);
+  border-bottom: var(--img-border-width) var(--img-border-style)
+    var(--border-color);
+}
+
+.three-step-two {
+  grid-area: three-step-two;
+  border-left: var(--img-border-width) var(--img-border-style)
+    var(--border-color);
+  border-bottom: var(--img-border-width) var(--img-border-style)
+    var(--border-color);
+  border-top: var(--img-border-width) var(--img-border-style)
+    var(--border-color);
+}
+
+.three-step-three {
+  grid-area: three-step-three;
+  border-left: var(--img-border-width) var(--img-border-style)
+    var(--border-color);
+  border-top: var(--img-border-width) var(--img-border-style)
+    var(--border-color);
+}
+
+@media (max-width: 1000px) {
+  .grid-container-merging {
+    display: grid;
+    grid-template-areas:
+      "fast-step-one"
+      "fast-step-two"
+      "fast-step-three"
+      "three-step-one"
+      "three-step-two"
+      "three-step-three";
+    grid-template-columns: 100%;
+  }
+
+  .fast-step-one {
+    border: none;
+    border-bottom: var(--img-border-width) var(--img-border-style)
+      var(--border-color);
+  }
+
+  .fast-step-two {
+    border: none;
+    border-top: var(--img-border-width) var(--img-border-style)
+      var(--border-color);
+    border-bottom: var(--img-border-width) var(--img-border-style)
+      var(--border-color);
+  }
+
+  .fast-step-three {
+    border: none;
+    border-top: var(--img-border-width) var(--img-border-style)
+      var(--border-color);
+  }
+
+  .three-step-one {
+    border: none;
+    border-bottom: var(--img-border-width) var(--img-border-style)
+      var(--border-color);
+  }
+
+  .three-step-two {
+    border: none;
+    border-top: var(--img-border-width) var(--img-border-style)
+      var(--border-color);
+    border-bottom: var(--img-border-width) var(--img-border-style)
+      var(--border-color);
+  }
+
+  .three-step-three {
+    border: none;
+    border-top: var(--img-border-width) var(--img-border-style)
+      var(--border-color);
+  }
+}
+
+/* Merge conflicts */
+
+#vscode-merge-conflict {
+  max-width: 1000px;
+}
+
+/* Undoing a merge */
+
+.grid-containter-undoing-merge {
+  display: grid;
+  grid-template-areas:
+    "reset-one revert-one"
+    "reset-two revert-two";
+  grid-template-columns: 50%;
+}
+
+.undoing-merge-img {
+  max-width: 100%;
+}
+
+.reset-one {
+  grid-area: reset-one;
+  border-right: var(--img-border-width) var(--img-border-style)
+    var(--border-color);
+  border-bottom: var(--img-border-width) var(--img-border-style)
+    var(--border-color);
+}
+
+.reset-two {
+  grid-area: reset-two;
+  border-right: var(--img-border-width) var(--img-border-style)
+    var(--border-color);
+  border-top: var(--img-border-width) var(--img-border-style)
+    var(--border-color);
+}
+
+.revert-one {
+  grid-area: revert-one;
+  border-left: var(--img-border-width) var(--img-border-style)
+    var(--border-color);
+  border-bottom: var(--img-border-width) var(--img-border-style)
+    var(--border-color);
+}
+
+.revert-two {
+  grid-area: revert-two;
+  border-top: var(--img-border-width) var(--img-border-style)
+    var(--border-color);
+  border-left: var(--img-border-width) var(--img-border-style)
+    var(--border-color);
+}
+
+@media (max-width: 1000px) {
+  .grid-containter-undoing-merge {
+    display: grid;
+    grid-template-areas:
+      "reset-one"
+      "reset-two"
+      "revert-one"
+      "revert-two";
+    grid-template-columns: 100%;
+  }
+
+  .reset-one {
+    border: none;
+    border-bottom: var(--img-border-width) var(--img-border-style)
+      var(--border-color);
+  }
+
+  .reset-two {
+    border: none;
+    border-top: var(--img-border-width) var(--img-border-style)
+      var(--border-color);
+  }
+
+  .revert-one {
+    border: none;
+    border-bottom: var(--img-border-width) var(--img-border-style)
+      var(--border-color);
+  }
+
+  .revert-two {
+    border: none;
+    border-top: var(--img-border-width) var(--img-border-style)
+      var(--border-color);
+  }
+}
+
+/* Rebasing */
+
+.grid-container-rebasing {
+  display: grid;
+  grid-template-areas:
+    "rebase-title rebase-title"
+    "rebase-one rebase-two"
+    "rebase-three rebase-four";
+  grid-template-columns: 50% 50%;
+}
+
+.rebase-img {
+  max-width: 100%;
+}
+
+.rebase-title {
+  grid-area: rebase-title;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.rebase-title-text {
+  font-family: "Roboto";
+  font-size: 2.5rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+  background: #da0063;
+  color: #fff;
+  border-radius: 10px;
+  padding: 2px 10px;
+}
+
+.rebase-one {
+  grid-area: rebase-one;
+  border-right: var(--img-border-width) var(--img-border-style)
+    var(--border-color);
+  border-bottom: var(--img-border-width) var(--img-border-style)
+    var(--border-color);
+}
+
+.rebase-two {
+  grid-area: rebase-two;
+  border-bottom: var(--img-border-width) var(--img-border-style)
+    var(--border-color);
+  border-left: var(--img-border-width) var(--img-border-style)
+    var(--border-color);
+}
+
+.rebase-three {
+  grid-area: rebase-three;
+  border-right: var(--img-border-width) var(--img-border-style)
+    var(--border-color);
+  border-top: var(--img-border-width) var(--img-border-style)
+    var(--border-color);
+}
+
+.rebase-four {
+  grid-area: rebase-four;
+  border-left: var(--img-border-width) var(--img-border-style)
+    var(--border-color);
+  border-top: var(--img-border-width) var(--img-border-style)
+    var(--border-color);
+}
+
+@media (max-width: 1000px) {
+  .grid-container-rebasing {
+    display: grid;
+    grid-template-areas:
+      "rebase-title"
+      "rebase-one"
+      "rebase-two"
+      "rebase-three"
+      "rebase-four";
+    grid-template-columns: 100%;
+  }
+
+  .rebase-one {
+    border: none;
+    border-bottom: var(--img-border-width) var(--img-border-style)
+      var(--border-color);
+  }
+
+  .rebase-two {
+    border: none;
+    border-top: var(--img-border-width) var(--img-border-style)
+      var(--border-color);
+    border-bottom: var(--img-border-width) var(--img-border-style)
+      var(--border-color);
+  }
+
+  .rebase-three {
+    border: none;
+    border-top: var(--img-border-width) var(--img-border-style)
+      var(--border-color);
+    border-bottom: var(--img-border-width) var(--img-border-style)
+      var(--border-color);
+  }
+
+  .rebase-four {
+    border: none;
+    border-top: var(--img-border-width) var(--img-border-style)
+      var(--border-color);
+  }
+}
+
+/* Cherry picking */
+
+.grid-container-cherry-picking {
+  display: grid;
+  grid-template-areas:
+    "cherry-picking-title cherry-picking-title"
+    "cherry-picking-one cherry-picking-two";
+  grid-template-columns: 50% 50%;
+}
+
+.cherry-picking-img {
+  max-width: 100%;
+}
+
+.cherry-picking-title {
+  grid-area: cherry-picking-title;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.cherry-picking-title-text {
+  font-family: "Roboto";
+  font-size: 2.5rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+  background: #da0063;
+  color: #fff;
+  border-radius: 10px;
+  padding: 2px 10px;
+}
+
+.cherry-picking-one {
+  grid-area: cherry-picking-one;
+  border-right: var(--img-border-width) var(--img-border-style)
+    var(--border-color);
+}
+
+.cherry-picking-two {
+  grid-area: cherry-picking-two;
+  border-left: var(--img-border-width) var(--img-border-style)
+    var(--border-color);
+}
+
+@media (max-width: 1000px) {
+  .grid-container-cherry-picking {
+    display: grid;
+    grid-template-areas:
+      "cherry-picking-title"
+      "cherry-picking-one"
+      "cherry-picking-two";
+    grid-template-columns: 100%;
+  }
+
+  .cherry-picking-one {
+    border: none;
+    border-bottom: var(--img-border-width) var(--img-border-style)
+      var(--border-color);
+  }
+
+  .cherry-picking-two {
+    border: none;
+    border-top: var(--img-border-width) var(--img-border-style)
+      var(--border-color);
+  }
+}
+
+/* Collaboration workflows */
+
+.grid-container-collaboration-workflows {
+  display: grid;
+  grid-template-areas: "collaboration-workflows-one collaboration-workflows-two";
+  grid-template-columns: 50% 50%;
+}
+
+.collaboration-workflows-img {
+  max-width: 100%;
+}
+
+.collaboration-workflows-one {
+  grid-area: collaboration-workflows-one;
+  border-right: var(--img-border-width) var(--img-border-style)
+    var(--border-color);
+}
+
+.collaboration-workflows-two {
+  grid-area: collaboration-workflows-two;
+  border-left: var(--img-border-width) var(--img-border-style)
+    var(--border-color);
+}
+
+#collaboration-workflows-3 {
+  min-width: 100% !important;
+}
+
+@media (max-width: 1000px) {
+  .grid-container-collaboration-workflows {
+    display: grid;
+    grid-template-areas:
+      "collaboration-workflows-one"
+      "collaboration-workflows-two";
+    grid-template-columns: 100%;
+  }
+
+  .collaboration-workflows-one {
+    border: none;
+    border-bottom: var(--img-border-width) var(--img-border-style)
+      var(--border-color);
+  }
+
+  .collaboration-workflows-two {
+    border: none;
+    border-top: var(--img-border-width) var(--img-border-style)
+      var(--border-color);
+  }
+}
+
+/* Creating a GitHub repo */
+
+#new-repo-icon {
+  width: 2em;
+}
+
+/* Cloning */
+
+#clone-repo-icon {
+  width: 4em;
+}
+
+/* Fetching */
+
+.grid-container-fetching {
+  display: grid;
+  grid-template-areas:
+    "fetching-one fetching-two"
+    "fetching-three fetching-four";
+  grid-template-columns: 50% 50%;
+}
+
+.fetching-img {
+  width: 100%;
+}
+
+.fetching-gh-img {
+  max-width: 500px;
+}
+
+.fetching-one {
+  grid-area: fetching-one;
+  border-right: var(--img-border-width) var(--img-border-style)
+    var(--border-color);
+  border-bottom: var(--img-border-width) var(--img-border-style)
+    var(--border-color);
+}
+
+.fetching-two {
+  grid-area: fetching-two;
+  border-left: var(--img-border-width) var(--img-border-style)
+    var(--border-color);
+  border-bottom: var(--img-border-width) var(--img-border-style)
+    var(--border-color);
+}
+
+.fetching-three {
+  grid-area: fetching-three;
+  border-right: var(--img-border-width) var(--img-border-style)
+    var(--border-color);
+  border-top: var(--img-border-width) var(--img-border-style)
+    var(--border-color);
+}
+
+.fetching-four {
+  grid-area: fetching-four;
+  border-left: var(--img-border-width) var(--img-border-style)
+    var(--border-color);
+  border-top: var(--img-border-width) var(--img-border-style)
+    var(--border-color);
+}
+
+#commit-button {
+  width: 4em;
+}
+
+@media (max-width: 1000px) {
+  .grid-container-fetching {
+    display: grid;
+    grid-template-areas:
+      "fetching-one"
+      "fetching-two"
+      "fetching-three"
+      "fetching-four";
+    grid-template-columns: 100%;
+  }
+
+  .fetching-one {
+    border: none;
+    border-bottom: var(--img-border-width) var(--img-border-style)
+      var(--border-color);
+  }
+
+  .fetching-two {
+    border: none;
+    border-top: var(--img-border-width) var(--img-border-style)
+      var(--border-color);
+    border-bottom: var(--img-border-width) var(--img-border-style)
+      var(--border-color);
+  }
+
+  .fetching-three {
+    border: none;
+    border-top: var(--img-border-width) var(--img-border-style)
+      var(--border-color);
+    border-bottom: var(--img-border-width) var(--img-border-style)
+      var(--border-color);
+  }
+
+  .fetching-four {
+    border: none;
+    border-top: var(--img-border-width) var(--img-border-style)
+      var(--border-color);
+  }
+}
+
+/* Releases */
+
+.releases-img {
+  max-width: 900px !important;
+}
+
+/* Pull requests */
+
+.pr-img {
+  max-width: 1000px;
+}
+
+/* Rewriting history */
+
+#rewriting-history-1 {
+  min-width: 100% !important;
+  box-shadow: none;
+}
+
+.rh-li {
+  margin-bottom: 30px;
+}
+
+/* Undoing commits */
+
+.uc-li {
+  margin-bottom: 30px;
+}
