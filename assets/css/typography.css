@@ -1,0 +1,91 @@
+/*
+::selection {
+  background: var(--color-primary);
+  color: #fff;
+}
+*/
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "DM Mono", sans-serif;
+  font-size: 2.5rem;
+  background: var(--bg-color-main);
+  color: var(--font-color-main);
+}
+
+h1 {
+  font-size: 5rem;
+}
+
+h2 {
+  font-size: 4rem;
+}
+
+h3 {
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+p {
+  margin-top: 0;
+}
+
+@media screen and (min-width: 1024px) {
+  body {
+    font-size: 2.5rem;
+  }
+  h1 {
+    font-size: 8rem;
+  }
+  h2 {
+    font-size: 4rem;
+  }
+  h3 {
+    font-size: 2.4rem;
+  }
+}
+
+/* Stylized fonts */
+
+.code,
+.inline-code {
+  color: var(--code);
+}
+
+.code {
+  text-align: center;
+  margin: 20px;
+}
+
+.git-red {
+  color: var(--git-red);
+}
+
+.git-green {
+  color: var(--git-green);
+}
+
+.git-aqua {
+  color: var(--git-aqua);
+  text-shadow: var(--text-h-shadow) var(--text-v-shadow) var(--git-aqua);
+}
+
+.here {
+  text-decoration: none;
+  color: var(--link-color);
+  text-shadow: var(--text-h-shadow) var(--text-v-shadow) var(--link-color);
+}
+
+.here:hover {
+  background: var(--bg-color-title);
+  border-radius: 5px;
+}
+
+p a {
+  text-decoration: none;
+  color: var(--highlight);
+}

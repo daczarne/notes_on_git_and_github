@@ -24,12 +24,13 @@ li > em {
 }
 
 .jump-to-links {
-  height: 2300px;
+  height: 1900px;
+  padding: 1rem 1.5rem;
 }
 
 .link-item {
   border-radius: 10px;
-  font-size: 2rem;
+  font-size: 3rem;
   margin: 0.5rem;
   padding: 0.5rem;
   transition: all 0.3s;

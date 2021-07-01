@@ -1,0 +1,21 @@
+img {
+  border-radius: 15px;
+  justify-self: center;
+  align-self: center;
+}
+
+.git-bash-img:hover,
+.vscode-img:hover,
+.github-img:hover,
+.custom-img:hover {
+  box-shadow: var(--shadow-h-offset) var(--shadow-v-offset) var(--shadow-blur)
+    var(--git-bash);
+}
+
+.miro-img {
+  max-width: 600px;
+}
+
+.github-img {
+  max-width: 1200px;
+}
