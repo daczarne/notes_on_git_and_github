@@ -12,6 +12,7 @@ footer {
   text-emphasis: none;
   text-decoration: none;
   color: var(--font-color-title);
+  transition: all 0.3s;
 }
 
 .go-home:hover {
