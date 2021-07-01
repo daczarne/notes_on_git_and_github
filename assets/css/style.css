@@ -1,0 +1,56 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500;700&display=swap");
+/*@import "./normalize.css";*/
+@import url("./typography.css");
+@import url("./links.css");
+@import url("./header.css");
+@import url("./main.css");
+@import url("./images.css");
+@import url("./footer.css");
+
+:root {
+  /* Colors */
+  --bg-color-main: #f5f5f5;
+  --bg-color-title: #212338;
+  --bg-color-btn: #fc4364;
+  --font-color-main: #000;
+  --font-color-title: #fc4364;
+  --highlight: #fc4364;
+  --btn-highlight: #f8c821;
+  --code: #4c3edc;
+  --git-bash: #b40099;
+  --git-green: #00a700;
+  --git-red: #9f0000;
+  --git-aqua: #00bfba;
+  --link-color: #fc4364;
+  --border-color: #fc4364;
+
+  /* Shadows */
+  --shadow-h-offset: 0;
+  --shadow-v-offset: 0;
+  --text-h-shadow: 1px;
+  --text-v-shadow: 1px;
+  --shadow-blur: 20px;
+
+  /* Borders */
+  --img-border-width: 1px;
+  --img-border-style: solid;
+  --separation-borders: 3px;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  height: 100vh;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}

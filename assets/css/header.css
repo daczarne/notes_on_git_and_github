@@ -1,0 +1,66 @@
+.floating-div {
+  position: sticky;
+  top: 0;
+}
+
+header {
+  align-items: center;
+  background: var(--bg-color-title);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding: 20px;
+  width: 100%;
+}
+
+.btn {
+  width: 25%;
+}
+
+header .title {
+  width: 100%;
+}
+
+.title {
+  align-items: center;
+  color: var(--font-color-title);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.btn {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding: 8px 16px;
+}
+
+.btn a {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  height: 55px;
+  justify-content: space-around;
+  text-decoration: none;
+  width: 170px;
+}
+
+.previous,
+.next {
+  background-color: var(--bg-color-btn);
+  color: var(--bg-color-main);
+}
+
+.previous:hover,
+.next:hover {
+  background-color: var(--btn-highlight);
+  color: var(--font-color-main);
+}
+
+.btn-disabled:hover {
+  background-color: var(--bg-color-btn);
+  color: var(--bg-color-main);
+  cursor: auto;
+}
