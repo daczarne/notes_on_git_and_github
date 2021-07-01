@@ -51,6 +51,7 @@ header .title {
 .next {
   background-color: var(--bg-color-btn);
   color: var(--bg-color-main);
+  transition: all 0.3s;
 }
 
 .previous:hover,
