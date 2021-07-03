@@ -19,17 +19,14 @@
             &laquo; Previous
           </a>
         </div>
-
         <div class="title">
           <h1>Dropping commits</h1>
         </div>
-
         <div class="btn">
           <a href="65_rewording_commits.html" class="next">Next &raquo;</a>
         </div>
       </header>
     </div>
-
     <main>
       <section>
         <div class="row">
@@ -41,13 +38,13 @@
             </p>
             <br />
             <p>
-              If we take a look at the content of that commit, we see that
-              commit we introduced a new file called <em>terms.txt</em>. When we
-              drop this commit we have two possible scenarios that we need to be
-              careful of. If a commit after that one touches that file, and we
-              drop the commit where the file was introduced, then we will get a
-              conflict when the rebasing operation reaches that point in which
-              the file is edited and we will have to resolve it.
+              If we take a look at the content of that commit, we see that in
+              that commit we introduced a new file called <em>terms.txt</em>.
+              When we drop this commit we have two possible scenarios that we
+              need to be careful of. If a commit after that one touches that
+              file, and we drop the commit where the file was introduced, then
+              we will get a conflict when the rebasing operation reaches that
+              point in which the file is edited and we will have to resolve it.
             </p>
             <br />
             <p>
@@ -75,7 +72,6 @@
             />
           </div>
         </div>
-
         <div class="row">
           <div class="single-col">
             <p>
@@ -89,7 +85,6 @@
             </p>
           </div>
         </div>
-
         <div class="row">
           <div class="single-col center">
             <img
@@ -99,7 +94,6 @@
             />
           </div>
         </div>
-
         <div class="row">
           <div class="left-col">
             <img
@@ -126,7 +120,6 @@
             </p>
           </div>
         </div>
-
         <div class="row">
           <div class="left-col">
             <p>To solve this conflict we will use the mergetool. So we run</p>
@@ -149,7 +142,7 @@
               previous commit). Notice that there's a new file called
               <em>terms.txt.orig</em>. This is a file created by the merge tool.
               Some delete them automatically, but even if the merge tool we are
-              using does not, we can always so ourselves.
+              using does not, we can always do so ourselves.
             </p>
             <br />
             <p>Since all conflicts have been resolved, when we run</p>
@@ -166,7 +159,6 @@
             />
           </div>
         </div>
-
         <div class="row">
           <div class="left-col">
             <img
@@ -190,11 +182,9 @@
         </div>
       </section>
     </main>
-
     <footer>
       <a class="go-home" href="../index.html"><i class="fas fa-home"></i></a>
     </footer>
-
     <script
       src="https://kit.fontawesome.com/994cc6cf8e.js"
       crossorigin="anonymous"
