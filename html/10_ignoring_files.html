@@ -15,27 +15,24 @@
     <div class="floating-div">
       <header>
         <div class="btn">
-          <a href="09_renaming_or_moving_files.html" class="previous"
-            >&laquo; Previous</a
-          >
+          <a href="09_renaming_or_moving_files.html" class="previous">
+            &laquo; Previous
+          </a>
         </div>
-
         <div class="title">
           <h1>Ignoring files</h1>
         </div>
-
         <div class="btn">
           <a href="11_short_status.html" class="next">Next &raquo;</a>
         </div>
       </header>
     </div>
-
     <main>
       <section>
         <div class="row">
           <div class="single-col">
             <p>
-              Sometimes we want Git not to track certain files. To handle this
+              Sometimes we don't want Git to track certain files. To handle this
               we use a special file "called" <em>.gitignore</em>. This file has
               no name, only an extension. We should place it at the root of our
               project. To create it we run
@@ -52,15 +49,15 @@
             </div>
             <p>
               If we already have a <em>.gitignore</em> file and we want to add a
-              new file to it (ie we want to append the
+              new file to it (i.e. we want to append the
               <em>.gitignore</em> file), we run
             </p>
             <div class="code">
               <code>echo <em>new_file_name.ext</em> >> .gitignore</code>
             </div>
-            <p>If we want to ignore an entire subdirectory, we run</p>
+            <p>If we want to ignore an entire sub-directory, we run</p>
             <div class="code">
-              <code>echo <em>dir_name/</em> >> .gitignore</code>
+              <code>echo <em>sub-dir_name/</em> >> .gitignore</code>
             </div>
             <p>
               Once we've created our <em>.gitignore</em> file, we can inspect it
@@ -71,21 +68,19 @@
             </div>
           </div>
         </div>
-
         <div class="example"></div>
-
         <div class="row">
           <div class="left-col">
             <p>
               As an example, let's create a <em>logs</em> sub-directory and add
-              it to our gitignore file. First, we create the sub-dir and a file
-              inside that sub-dir with
+              it to our <em>.gitignore</em> file. First, we create the sub-dir
+              and a file inside that sub-dir with
             </p>
             <div class="code">
               <code>mkdir logs && echo hello > logs/dev.log</code>
             </div>
             <p>
-              Now we add it to (and create) the <em>.gitignore</em> file by
+              Next, we add it to (and create) the <em>.gitignore</em> file by
               running
             </p>
             <div class="code">
@@ -93,12 +88,12 @@
             </div>
             <p>
               Now, if we run a <span class="inline-code">git status</span>,
-              we'll see that the <em>.gitignore</em> file is only in the Working
-              Directory, so we'll
+              we'll see that the <em>.gitignore</em> file is only in the
+              <em> Working Directory</em>, so we'll
               <span class="inline-code">git add .gitignore</span> and
-              <span class="inline-code"
-                >git commit -m "Add gitignore file"</span
-              >
+              <span class="inline-code">
+                git commit -m "Add .gitignore file"
+              </span>
               to commit it to our Repository. But notice that we didn't stage
               nor committed our <em>logs</em> sub-dir.
             </p>
@@ -111,9 +106,7 @@
             />
           </div>
         </div>
-
         <div class="example"></div>
-
         <div class="row">
           <div class="single-col">
             <p>
@@ -131,7 +124,6 @@
             </p>
           </div>
         </div>
-
         <div class="row">
           <div class="single-col">
             <p>
@@ -155,11 +147,9 @@
         </div>
       </section>
     </main>
-
     <footer>
       <a class="go-home" href="../index.html"><i class="fas fa-home"></i></a>
     </footer>
-
     <script
       src="https://kit.fontawesome.com/994cc6cf8e.js"
       crossorigin="anonymous"
