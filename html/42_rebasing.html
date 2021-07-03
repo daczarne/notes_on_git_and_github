@@ -17,17 +17,14 @@
         <div class="btn">
           <a href="41_squash_merging.html" class="previous">&laquo; Previous</a>
         </div>
-
         <div class="title">
           <h1>Rebasing</h1>
         </div>
-
         <div class="btn">
           <a href="43_cherry_picking.html" class="next">Next &raquo;</a>
         </div>
       </header>
     </div>
-
     <main>
       <section>
         <div class="row">
@@ -53,7 +50,6 @@
             </p>
           </div>
         </div>
-
         <div class="row">
           <div class="right-col">
             <div class="grid-container-rebasing">
@@ -91,9 +87,7 @@
             </div>
           </div>
         </div>
-
         <div class="example"></div>
-
         <div class="row">
           <div class="left-col">
             <p>
@@ -115,7 +109,7 @@
               commit that our <span class="git-aqua">master</span> branch was at
               when we created the <span class="git-aqua">feature</span> branch),
               to commit <em>4104ec7</em> (which is the commit where
-              <span class="git-aqua">master</span> is today).
+              <span class="git-aqua">master</span> is now).
             </p>
           </div>
           <div class="right-col">
@@ -126,7 +120,6 @@
             />
           </div>
         </div>
-
         <div class="row">
           <div class="left-col">
             <img
@@ -159,11 +152,10 @@
               branches, Git will do a simple fast-forward merge. But take a
               close look at the commit IDs. Before the rebase, the tip of our
               branch was at commit <em>9795f10</em>, now it's at commit
-              <em>6f25ebf</em>. This is a new commit.
+              <em>6f25ebf</em>. This is a new commit!
             </p>
           </div>
         </div>
-
         <div class="row">
           <div class="left-col">
             <p>
@@ -181,7 +173,6 @@
             />
           </div>
         </div>
-
         <div class="row">
           <div class="left-col">
             <img
@@ -200,16 +191,15 @@
             </p>
           </div>
         </div>
-
         <div class="row">
           <div class="single-col">
             <p>
               A few comments about rebasing conflicts. When Git tries to rebase,
               it will start by taking the oldest commit in the current branch
-              and add it to the tip of the target branch. If there's a conflict
-              we'll have to open VS Code and solve it the same way we would
-              solve a merge conflict. But because Git does a rebase one commit
-              at a time, when we are done, we need to run
+              and adding it to the tip of the target branch. If there's a
+              conflict we'll have to open VS Code and solve it the same way we
+              would solve a merge conflict. But because Git does a rebase one
+              commit at a time, when we are done, we need to run
             </p>
             <div class="code">
               <code>git rebase --continue</code>
@@ -237,11 +227,9 @@
         </div>
       </section>
     </main>
-
     <footer>
       <a class="go-home" href="../index.html"><i class="fas fa-home"></i></a>
     </footer>
-
     <script
       src="https://kit.fontawesome.com/994cc6cf8e.js"
       crossorigin="anonymous"

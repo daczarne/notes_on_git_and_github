@@ -15,21 +15,18 @@
     <div class="floating-div">
       <header>
         <div class="btn">
-          <a href="32_comparing_branches.html" class="previous"
-            >&laquo; Previous</a
-          >
+          <a href="32_comparing_branches.html" class="previous">
+            &laquo; Previous
+          </a>
         </div>
-
         <div class="title">
           <h1>Stashing</h1>
         </div>
-
         <div class="btn">
           <a href="34_merging.html" class="next">Next &raquo;</a>
         </div>
       </header>
     </div>
-
     <main>
       <section>
         <div class="row">
@@ -37,24 +34,24 @@
             <p>
               Suppose we are working on a new feature and we realize that we
               forgot to create a new branch before starting. We could throw away
-              our and create a new branch. But that would
+              our work and create a new branch. But that would
               involve...well...throwing away our work. We can solve this
               situation by <em>stashing</em> our work.
             </p>
             <br />
             <p>
               As an example, suppose we created the new <em>calc.py</em> on
-              <span class="git-aqua">(master)</span> and now we want to move it
+              <span class="git-aqua">master</span> and now we want to move it
               into a new branch called
-              <span class="git-aqua">(calc-functions)</span>. First we need to
-              stash our untracked file. To so we run
+              <span class="git-aqua">calc-functions</span>. First we need to
+              stash our un-tracked file. To so we run
             </p>
             <div class="code">
               <code>git stash push -u -m "calc functions"</code>
             </div>
             <p>
               We use the <span class="inline-code">-u</span> option here because
-              our file was untracked. More on that below. Now that we've stash
+              our file was un-tracked. More on that below. Now that we've stash
               our changes, we can switch into a new branch with
             </p>
             <div class="code">
@@ -63,9 +60,9 @@
             <p>
               This will create a new branch called
               <span class="git-aqua">calc-functions</span> and the
-              <span class="inline-code">-b</span> option with tell Git to also
+              <span class="inline-code">-C</span> option with tell Git to also
               <span class="inline-code">switch</span> into it. Now that we are
-              into the new branch, we can unpack our stashed changes by running
+              in the new branch, we can unpack our stashed changes by running
             </p>
             <div class="code">
               <code>git stash pop</code>
@@ -80,7 +77,6 @@
             />
           </div>
         </div>
-
         <div class="row">
           <div class="single-col">
             <p>
@@ -89,7 +85,6 @@
             </p>
           </div>
         </div>
-
         <div class="row">
           <div class="single-col">
             <div class="grid-container-stashing-explain">
@@ -108,8 +103,10 @@
                     <a
                       href="https://www.atlassian.com/git/tutorials/saving-changes/git-stash#:~:text=Invoking%20git%20stash%20encodes%20any,files%20as%20an%20additional%20commit."
                       class="here"
-                      >here</a
-                    >).
+                    >
+                      here
+                    </a>
+                    ).
                   </p>
                 </div>
               </div>
@@ -139,7 +136,6 @@
             </div>
           </div>
         </div>
-
         <div class="row">
           <div class="single-col">
             <div class="grid-container-stashing">
@@ -158,7 +154,6 @@
             </div>
           </div>
         </div>
-
         <div class="row">
           <div class="single-col">
             <p>
@@ -171,7 +166,6 @@
             </p>
           </div>
         </div>
-
         <div class="row">
           <div class="left-col">
             <p>
@@ -184,12 +178,12 @@
               Git keeps track of which stash was added first and which one was
               added last. The stash at the top of the list is the one that was
               added last. When we run
-              <span class="inline-code">git stash apply</span> (or pop) this is
-              the stash that will be applied by default. But each stash has a
-              unique identifier called <em>stash@{n}</em> where <em>n</em> is
-              it's position on the stash stack. You can use this identifiers (or
-              just the <em>n</em> number) to reference them when poping or
-              applying.
+              <span class="inline-code">git stash apply</span> (or
+              <span class="inline-code">pop</span>) this is the stash that will
+              be applied by default. But each stash has a unique identifier
+              called <em>stash@{n}</em> where <em>n</em> is its position on the
+              stash stack. You can use these identifiers (or just the
+              <em>n</em> number) to reference them when popping or applying.
             </p>
           </div>
           <div class="right-col">
@@ -200,7 +194,6 @@
             />
           </div>
         </div>
-
         <div class="row">
           <div class="left-col">
             <img
@@ -211,7 +204,7 @@
           </div>
           <div class="right-col">
             <p>
-              One place in which this references come in handly is when viewing
+              One place in which this references come in handy is when viewing
               the changes of a stash. When we have more than one stash we should
               check what's in a stash before applying in to the working
               directory. To do this we run
@@ -245,11 +238,9 @@
         </div>
       </section>
     </main>
-
     <footer>
       <a class="go-home" href="../index.html"><i class="fas fa-home"></i></a>
     </footer>
-
     <script
       src="https://kit.fontawesome.com/994cc6cf8e.js"
       crossorigin="anonymous"
