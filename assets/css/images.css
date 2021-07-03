@@ -526,10 +526,7 @@ img {
 }
 
 .cherry-picking-title-text {
-  font-family: "Roboto";
   font-size: 2.5rem;
-  font-weight: bold;
-  letter-spacing: 2px;
   background: #da0063;
   color: #fff;
   border-radius: 10px;
