@@ -17,17 +17,14 @@
         <div class="btn">
           <a href="10_ignoring_files.html" class="previous">&laquo; Previous</a>
         </div>
-
         <div class="title">
           <h1>Short status</h1>
         </div>
-
         <div class="btn">
           <a href="12_viewing_changes.html" class="next">Next &raquo;</a>
         </div>
       </header>
     </div>
-
     <main>
       <section>
         <div class="row">
@@ -65,7 +62,6 @@
             />
           </div>
         </div>
-
         <div class="row">
           <div class="left-col">
             <img
@@ -80,13 +76,12 @@
               <span class="inline-code">git status -s</span> again, we see that
               now <em>file1.txt</em> has a green
               <span class="git-green">M</span> on the left column. This means
-              that all the changes we had in the working area are not in the
+              that all the changes we had in the working area are now in the
               staging area. The right column is now empty because we don't have
               any other changes to add.
             </p>
           </div>
         </div>
-
         <div class="row">
           <div class="left-col">
             <p>
@@ -95,9 +90,12 @@
               is now showing a green <span class="git-green">M</span> on the
               left-hand column and a red <span class="git-red">M</span> on the
               right-hand column. This means that there are staged changes and
-              unstaged changes. To add the new changes to the staging area we
-              just run <span class="inline-code">git add file1.txt</span>.
+              un-staged changes. To add the new changes to the staging area we
+              just run
             </p>
+            <div class="code">
+              <code>git add file1.txt</code>
+            </div>
           </div>
           <div class="right-col">
             <img
@@ -107,7 +105,6 @@
             />
           </div>
         </div>
-
         <div class="row">
           <div class="left-col">
             <img
@@ -119,9 +116,9 @@
           <div class="right-col">
             <p>
               Now let's take a look at <em>file2.txt</em>. This file has two red
-              <span class="git-red">??</span> because its a new file. To add it
+              <span class="git-red">??</span> because it's a new file. To add it
               to the staging area we just run
-              <span class="inline-code">git add file2.txt</span>. Now the git
+              <span class="inline-code">git add file2.txt</span>. Now the Git
               status has a green <span class="git-green">A</span> on the
               left-hand side column. This means that the file is new, and it's
               in the staging area. We can go ahead and commit it if we are
@@ -132,7 +129,6 @@
             </div>
           </div>
         </div>
-
         <div class="row">
           <div class="left-col">
             <p>
@@ -158,11 +154,9 @@
         </div>
       </section>
     </main>
-
     <footer>
       <a class="go-home" href="../index.html"><i class="fas fa-home"></i></a>
     </footer>
-
     <script
       src="https://kit.fontawesome.com/994cc6cf8e.js"
       crossorigin="anonymous"
