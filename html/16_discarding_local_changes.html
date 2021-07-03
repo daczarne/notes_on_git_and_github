@@ -15,27 +15,24 @@
     <div class="floating-div">
       <header>
         <div class="btn">
-          <a href="15_unstaging_files.html" class="previous"
-            >&laquo; Previous</a
-          >
+          <a href="15_unstaging_files.html" class="previous">
+            &laquo; Previous
+          </a>
         </div>
-
         <div class="title">
           <h1>Discarding local changes</h1>
         </div>
-
         <div class="btn">
           <a href="17_restoring_a_file.html" class="next">Next &raquo;</a>
         </div>
       </header>
     </div>
-
     <main>
       <section>
         <div class="row">
           <div class="left-col">
             <p>
-              To discard local changes (ie changes in our working directory)
+              To discard local changes (i.e. changes in our working directory)
               from a file that is already been tracked, we run
             </p>
             <div class="code">
@@ -65,28 +62,25 @@
             />
           </div>
         </div>
-
         <div class="row">
           <div class="single-col">
             <p>
               The <span class="inline-code">-fd</span> switch is necessary
-              because by default Git will not allow us to delete untracked files
-              (since they can not be recovered). The
+              because by default Git will not allow us to delete un-tracked
+              files (since they can not be recovered). The
               <span class="inline-code">f</span> switch is mandatory here and it
               means <span class="inline-code">force</span>. So we are forcing
               Git to go ahead with the removal. The
               <span class="inline-code">d</span> switch is necessary for
-              deleting entire untracked subdirectories.
+              deleting entire un-tracked sub-directories.
             </p>
           </div>
         </div>
       </section>
     </main>
-
     <footer>
       <a class="go-home" href="../index.html"><i class="fas fa-home"></i></a>
     </footer>
-
     <script
       src="https://kit.fontawesome.com/994cc6cf8e.js"
       crossorigin="anonymous"

@@ -15,38 +15,35 @@
     <div class="floating-div">
       <header>
         <div class="btn">
-          <a href="19_filtering_the_history.html" class="previous"
-            >&laquo; Previous</a
-          >
+          <a href="19_filtering_the_history.html" class="previous">
+            &laquo; Previous
+          </a>
         </div>
-
         <div class="title">
           <h1>Aliases</h1>
         </div>
-
         <div class="btn">
           <a href="21_viewing_a_commit.html" class="next">Next &raquo;</a>
         </div>
       </header>
     </div>
-
     <main>
       <section>
         <div class="row">
           <div class="left-col">
             <p>
-              We can create personal Git commands using aliases. First let's
+              We can create personal Git commands using aliases. First, let's
               take a look at how to format the output. For this, suppose you
-              don't like the outpur of neither the
+              don't like the output of neither the
               <span class="inline-code">git log</span> command, nor the output
               of <span class="inline-code">git log --oneline</span>. We can
               create a personalized output like this:
             </p>
             <div class="code">
-              <code
-                >git log --pretty=format:'%Cgreen%an%Creset committed
-                %Cgreen%h%Creset on %Cgreen%cd%Creset'</code
-              >
+              <code>
+                git log --pretty=format:'%Cgreen%an%Creset committed
+                %Cgreen%h%Creset on %Cgreen%cd%Creset'
+              </code>
             </div>
             <p>
               Here <span class="inline-code">%an</span> stands for
@@ -55,10 +52,11 @@
               <span class="inline-code">%cd</span> stands for
               <em>commit date</em>. <span class="inline-code">%C</span> is for
               setting and resetting the color. You can check the complete list
-              of posible placeholders and styles
-              <a class="here" href="https://git-scm.com/docs/pretty-formats"
-                >here</a
-              >.
+              of possible placeholders and styles
+              <a class="here" href="https://git-scm.com/docs/pretty-formats">
+                here
+              </a>
+              .
             </p>
           </div>
           <div class="right-col">
@@ -69,7 +67,6 @@
             />
           </div>
         </div>
-
         <div class="row">
           <div class="left-col">
             <img
@@ -88,11 +85,11 @@
               configuration. So we run:
             </p>
             <div class="code">
-              <code
-                >git config --global alias.lg "log
+              <code>
+                git config --global alias.lg "log
                 --pretty=format:'%Cgreen%an%Creset committed %Cgreen%h%Creset on
-                %Cgreen%cd%Creset'"</code
-              >
+                %Cgreen%cd%Creset'"
+              </code>
             </div>
             <p>
               Here <span class="inline-code">lg</span> will be the name of our
@@ -101,20 +98,18 @@
             </p>
           </div>
         </div>
-
         <div class="row">
           <div class="single-col center">
             <img src="../assets/img/aliases-3.png" alt="" class="vscode-img" />
           </div>
         </div>
-
         <div class="row">
           <div class="left-col">
-            <p>Now we can define an alias for unstaging files.</p>
+            <p>Now we can define an alias for un-staging files.</p>
             <div class="code">
-              <code
-                >git config --global alias.unstage 'restore --staged .'</code
-              >
+              <code>
+                git config --global alias.unstage 'restore --staged .'
+              </code>
             </div>
             <p>
               With it we can restore all the files in the staging area with one
@@ -134,11 +129,9 @@
         </div>
       </section>
     </main>
-
     <footer>
       <a class="go-home" href="../index.html"><i class="fas fa-home"></i></a>
     </footer>
-
     <script
       src="https://kit.fontawesome.com/994cc6cf8e.js"
       crossorigin="anonymous"
