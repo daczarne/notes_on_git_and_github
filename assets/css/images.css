@@ -423,10 +423,7 @@ img {
 }
 
 .rebase-title-text {
-  font-family: "Roboto";
-  font-size: 2.5rem;
-  font-weight: bold;
-  letter-spacing: 2px;
+  font-size: 3rem;
   background: #da0063;
   color: #fff;
   border-radius: 10px;
