@@ -9,37 +9,34 @@
       href="../assets/favicon/favicon.png"
       type="image/x-icon"
     />
-    <title>Unstaging files</title>
+    <title>Un-staging files</title>
   </head>
   <body>
     <div class="floating-div">
       <header>
         <div class="btn">
-          <a href="14_viewing_a_commit.html" class="previous"
-            >&laquo; Previous</a
-          >
+          <a href="14_viewing_a_commit.html" class="previous">
+            &laquo; Previous
+          </a>
         </div>
-
         <div class="title">
-          <h1>Unstaging files</h1>
+          <h1>Un-staging files</h1>
         </div>
-
         <div class="btn">
-          <a href="16_discarding_local_changes.html" class="next"
-            >Next &raquo;</a
-          >
+          <a href="16_discarding_local_changes.html" class="next">
+            Next &raquo;
+          </a>
         </div>
       </header>
     </div>
-
     <main>
       <section>
         <div class="row">
           <div class="left-col">
             <p>
-              Suppose that we've added some changes to the staging area but we
-              now realize that we shouldn't have. We want to un-stage our file
-              and get it back to the working area. To solve this we run
+              Suppose that we've added some changes to the staging area, but we
+              now realize that we shouldn't have. We want to un-stage our
+              file(s) and get it back to the working area. To solve this we run
             </p>
             <div class="code">
               <code>git restore --staged <em>file_name.ext</em></code>
@@ -53,7 +50,6 @@
             />
           </div>
         </div>
-
         <div class="row">
           <div class="single-col">
             <p>
@@ -70,7 +66,6 @@
             </p>
           </div>
         </div>
-
         <div class="row">
           <div class="left-col">
             <img
@@ -85,17 +80,15 @@
               didn't exist at the last commit. If we
               <span class="inline-code">restore</span> this file, Git will take
               the staging area version of it, and place it in the working
-              directory as a new untracked file.
+              directory as a new un-tracked file.
             </p>
           </div>
         </div>
       </section>
     </main>
-
     <footer>
       <a class="go-home" href="../index.html"><i class="fas fa-home"></i></a>
     </footer>
-
     <script
       src="https://kit.fontawesome.com/994cc6cf8e.js"
       crossorigin="anonymous"
