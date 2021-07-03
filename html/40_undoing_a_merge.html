@@ -19,17 +19,14 @@
             &laquo; Previous
           </a>
         </div>
-
         <div class="title">
           <h1>Undoing a merge</h1>
         </div>
-
         <div class="btn">
           <a href="41_squash_merging.html" class="next">Next &raquo;</a>
         </div>
       </header>
     </div>
-
     <main>
       <section>
         <div class="row">
@@ -37,9 +34,9 @@
             <p>
               Sometimes we do a merge and realize that our program stopped
               working and we want to undo it. Here we have two options: 1)
-              undoing the commit as if had never been there (called resetting),
-              2) create a new commit that cancels out all the changes in our
-              merge commit (called reverting).
+              undoing the commit as if it had never been there (called
+              resetting), 2) create a new commit that cancels out all the
+              changes in our merge commit (called reverting).
             </p>
             <br />
             <p>
@@ -82,7 +79,6 @@
             </p>
           </div>
         </div>
-
         <div class="row">
           <div class="single-col">
             <div class="grid-containter-undoing-merge">
@@ -117,15 +113,14 @@
             </div>
           </div>
         </div>
-
         <div class="row">
           <div class="left-col">
             <p>
-              Before we start, let's take a look at our log. We'll do both
-              operations on commit <em>3a485a4</em>, which is our last merge
-              commit. Before starting an operation like this, it's always
-              recommended that you write down the ID for the commit you are
-              going to revert or reset. You can delete it once done.
+              Before we start with an example, let's take a look at our log.
+              We'll do both operations on commit <em>3a485a4</em>, which is our
+              last merge commit. Before starting an operation like this, it's
+              always recommended that you write down the ID for the commit you
+              are going to revert or reset. You can delete it once done.
             </p>
           </div>
           <div class="right-col">
@@ -136,9 +131,7 @@
             />
           </div>
         </div>
-
         <div class="example"></div>
-
         <div class="row">
           <div class="single-col">
             <p>
@@ -155,7 +148,7 @@
               </li>
               <li>
                 <span class="inline-code">--mixed</span>: Git will take the new
-                snapshot and put it in the index as well. This is de default
+                snapshot and put it in the index as well. This is the default
                 option so we don't need to specify it.
               </li>
               <li>
@@ -168,7 +161,6 @@
             </ul>
           </div>
         </div>
-
         <div class="row">
           <div class="left-col">
             <img
@@ -188,7 +180,7 @@
             </div>
             <p>
               We can see that both <span class="git-aqua">HEAD</span> and
-              <spna class="git-green">master</spna> are now at commit
+              <span class="git-green">master</span> are now at commit
               <em>b03190d</em>, and the merge commit has disappeared from our
               tree. The commit is still in our repository thou, and we can
               recover it (until the <em>Garbage Collector</em> takes it away for
@@ -196,11 +188,10 @@
             </p>
           </div>
         </div>
-
         <div class="row">
           <div class="left-col">
             <p>
-              If we want to reset to the point before resetting (ie a point
+              If we want to reset to the point before resetting (i.e. a point
               where the merge is still there) we run
             </p>
             <div class="code">
@@ -221,9 +212,7 @@
             />
           </div>
         </div>
-
         <div class="example"></div>
-
         <div class="row">
           <div class="left-col">
             <img
@@ -259,11 +248,9 @@
         </div>
       </section>
     </main>
-
     <footer>
       <a class="go-home" href="../index.html"><i class="fas fa-home"></i></a>
     </footer>
-
     <script
       src="https://kit.fontawesome.com/994cc6cf8e.js"
       crossorigin="anonymous"
