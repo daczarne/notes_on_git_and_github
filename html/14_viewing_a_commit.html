@@ -15,28 +15,25 @@
     <div class="floating-div">
       <header>
         <div class="btn">
-          <a href="13_viewing_history.html" class="previous"
-            >&laquo; Previous</a
-          >
+          <a href="13_viewing_history.html" class="previous">
+            &laquo; Previous
+          </a>
         </div>
-
         <div class="title">
           <h1>Viewing a commit</h1>
         </div>
-
         <div class="btn">
           <a href="15_unstaging_files.html" class="next">Next &raquo;</a>
         </div>
       </header>
     </div>
-
     <main>
       <section>
         <div class="row">
           <div class="left-col">
             <p>
-              Now, suppose we want to look at one specific commit in our
-              history. To do this we'll the
+              Suppose now that we want to look at one specific commit in our
+              history. To do this we'll use the
               <span class="inline-code">git show</span> command. We need to
               specify the commit that we want to inspect. There are two ways in
               which we can reference a commit: 1) by the commit ID, 2) as the
@@ -45,10 +42,10 @@
             </p>
             <br />
             <p>
-              The image on the right shows the commit history of our
-              <em>Moon</em> repository. If we want to view the commit previous
-              to the <span class="inline-code">HEAD</span> pointer of our
-              repository we can run either one of the following commands
+              Here's an example (image). If we want to view the commit previous
+              to the
+              <span class="inline-code">HEAD</span> pointer of our repository we
+              can run either one of the following commands
             </p>
             <div class="code">
               <code>git show 292c34d</code>
@@ -58,8 +55,8 @@
             </div>
             <p>
               If we use the commit ID we don't have to pass all the first 7
-              characters of the ID. We can pass Git fewer characters as long as
-              it doesn't generate ambiguity. If we instead go with the second
+              characters of the ID. We can pass fewer characters as long as it
+              doesn't generate ambiguity. If we instead go with the second
               option, the number after the tilde is how many steps back from the
               <span class="inline-code">HEAD</span> pointer we wish to go. Not
               including the tilde and number means that we wish Git to show the
@@ -74,7 +71,6 @@
             />
           </div>
         </div>
-
         <div class="row">
           <div class="single-col">
             <p>
@@ -86,13 +82,12 @@
             <div class="code">
               <code>git show HEAD~1:<em>file_name.ext</em></code>
             </div>
-            <p>or, if the file is in a subdirectory</p>
+            <p>or, if the file is in a sub-directory</p>
             <div class="code">
               <code>git show HEAD~1:<em>path/file_name.ext</em></code>
             </div>
           </div>
         </div>
-
         <div class="row">
           <div class="left-col">
             <img
@@ -112,9 +107,9 @@
             <p>
               This will print the list of the objects that were present in our
               repository at the time of the commit that we specified. Elements
-              of type <span class="inline-code">blob</span> as files and
+              of type <span class="inline-code">blob</span> are files and
               elements of type <span class="inline-code">tree</span> are
-              subdirectories within our project.
+              sub-directories within our project.
             </p>
             <br />
             <p>
@@ -126,12 +121,11 @@
             </div>
           </div>
         </div>
-
         <div class="row">
           <div class="left-col">
             <p>
-              If we want to inspect the <em>main.txt</em> file inside the
-              <em>src</em> subdirectory, we run
+              For example, if we want to inspect the <em>main.txt</em> file
+              inside the <em>src</em> sub-directory, we run
             </p>
             <div class="code">
               <code>git ls-tree HEAD~1:src/</code>
