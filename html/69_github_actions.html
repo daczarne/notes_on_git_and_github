@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../assets/css/style.css" />
+    <link
+      rel="shortcut icon"
+      href="../assets/favicon/favicon.png"
+      type="image/x-icon"
+    />
+    <title>GitHub Actions</title>
+  </head>
+  <body>
+    <div class="floating-div">
+      <header>
+        <div class="btn">
+          <a href="68_splitting_a_commit.html" class="previous">
+            &laquo; Previous
+          </a>
+        </div>
+        <div class="title">
+          <h1>GitHub Actions</h1>
+        </div>
+        <div class="btn">
+          <a href="69_github_actions.html" class="next">Next &raquo;</a>
+        </div>
+      </header>
+    </div>
+    <main>
+      <section>
+        <div class="row">
+          <div class="single-col center">
+            <p>
+              GitHub Actions is a tool that allows you to automate development
+              workflows. Each task is called an <em>action</em>. A combination
+              of tasks is called a <em>workflow</em>. Workflows can be triggered
+              in different ways: push, pull requests (opened and/or merged),
+              issues (created, closed, etc), on a specific schedule, or due to
+              external events.
+            </p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="single-col center">
+            <p>
+              The workflows will be run in a virtual machine on the GitHub
+              servers. A workflow can contain one or more <em>jobs</em>, and
+              each job will run in its own virtual machine. These virtual
+              machines can use Linux, Windows, or MacOS, and have different
+              tools installed, and even run Docker Containers. Jobs can be run
+              in parallel, or we can specify dependencies between them.
+            </p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="single-col center">
+            <p>
+              A <em>runner</em> is any virtual machine with the GitHub actions
+              application installed. The runner is responsible for running the
+              job whenever the triggering conditions are met, and for displaying
+              back the results. You can use GitHub's runners, or host your own
+              ones. GitHub hosted runners are maintained by GitHub, but we
+              cannot customize the hardware configurations. They also come with
+              some pre-installed tools like <i>curl</i>, <i>git</i>, <i>npm</i>,
+              <i>yarn</i>, <i>pip</i>, etc, and languages and tools like Python,
+              Ruby, node.JS, etc.
+            </p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="single-col center">
+            <p>
+              Workflows must be written in YAML and placed inside
+              <em>.github/workflows</em> directory in the root of the project.
+              This files are composed of key:value pairs, with keys separated
+              from values by colons <em>:</em>. To nest objects inside of other
+              objects in YAML we just need to indent the keys of the child
+              object with 2 or 4 spaces with respect to the keys of its parent
+              object.
+            </p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="single-col center">
+            <p>
+              Each YAML file in the <em>workflows</em> directory contains the
+              instructions for one workflow. The first key that we have to
+              specify is <em>name</em>. The value we pass to it will become the
+              name of the workflow and GitHub will display it in the Actions
+              tab.
+            </p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="left-col">
+            <p>
+              After the <em>name</em> we'll specify the dispatch mode of the
+              action using the <em>on</em> key. The value of the <em>on</em> key
+              can be a single value (for example, use <em>push</em> for a
+              workflow that needs to be dispatched with every push), an array of
+              values (for example, use <em>[workflow_dispatch, push]</em> for a
+              workflow that needs to be dispatched with every push, but also
+              needs to be able to be manually dispatched), or an object
+              specifying more complex conditions or to alter the behavior of a
+              pre-defined dispatch mode.
+            </p>
+          </div>
+          <div class="right-col">
+            <img
+              src="../assets/img/069_github_actions_intro_01.png"
+              alt=""
+              height="400px"
+              class="github-img"
+            />
+          </div>
+        </div>
+        <div class="row">
+          <div class="left-col">
+            <img
+              src="../assets/img/069_github_actions_intro_02.png"
+              class="github-img"
+              alt=""
+            />
+          </div>
+          <div class="right-col">
+            <p>
+              After the <em>name</em> and <em>on</em> keys, we need to start
+              defining the jobs in our workflow. To do so we use the
+              <em>jobs</em> key. To it we'll need to supply an array of objects
+              (each element in the array representing a job) where the first key
+              is the name of the job and takes as its value an object containing
+              all the specifications of the job.
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <a class="go-home" href="../index.html"><i class="fas fa-home"></i></a>
+    </footer>
+    <script
+      src="https://kit.fontawesome.com/994cc6cf8e.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
