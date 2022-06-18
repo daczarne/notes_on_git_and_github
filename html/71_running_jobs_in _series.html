@@ -9,23 +9,19 @@
       href="../assets/favicon/favicon.png"
       type="image/x-icon"
     />
-    <title>Shells</title>
+    <title>Running jobs in series</title>
   </head>
   <body>
     <div class="floating-div">
       <header>
         <div class="btn">
-          <a href="69_github_actions.html" class="previous">
-            &laquo; Previous
-          </a>
+          <a href="70_shells.html" class="previous"> &laquo; Previous </a>
         </div>
         <div class="title">
-          <h1>Shells</h1>
+          <h1>Running jobs in series</h1>
         </div>
         <div class="btn">
-          <a href="71_running_jobs_in _series.html" class="next">
-            Next &raquo;
-          </a>
+          <!-- <a href="70_shells.html" class="next">Next &raquo;</a> -->
         </div>
       </header>
     </div>
@@ -34,11 +30,10 @@
         <div class="row">
           <div class="single-col">
             <p>
-              GitHub actions can use different shells: <em>bash</em>,
-              <em>powershell</em>, <em>cmd</em>, etc. To change the shell from
-              the default (bash for Linux and MacOS, powershell for Windows) to
-              a different one, we need to specify it after the run keyword,
-              using the <em>shell</em> keyword.
+              By default, jobs will run in parallel. If we want jobs to run in
+              series we need to specify the <em>needs</em> key. This key takes
+              as its value an array of job names. The job will only run once all
+              jobs in the array have finished successfully.
             </p>
           </div>
         </div>
