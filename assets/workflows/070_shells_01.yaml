@@ -1,0 +1,26 @@
+name: CLI commands
+on: push
+jobs:
+  run-shell-command:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Shell command
+        run: |
+          node -v
+          npm -v
+  run-python-command:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Python command
+        shell: python
+        run: |
+          import platform
+          print(platform.processor())
+  run-windows-command:
+    runs-on: windows-latest
+    steps:
+      - name: Powershell command
+        run: Get-Location
+      - name: Bash command
+        shell: bash
+        run: pwd
