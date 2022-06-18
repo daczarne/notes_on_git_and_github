@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../../assets/css/style.css" />
+    <link
+      rel="shortcut icon"
+      href="../../assets/favicon/favicon.png"
+      type="image/x-icon"
+    />
+    <title>Aliases</title>
+  </head>
+  <body>
+    <div class="floating-div">
+      <header>
+        <div class="btn">
+          <a
+            href="../019_filtering_the_history/019_filtering_the_history.html"
+            class="previous"
+          >
+            &laquo; Previous
+          </a>
+        </div>
+        <div class="title">
+          <h1>Aliases</h1>
+        </div>
+        <div class="btn">
+          <a
+            href="../021_viewing_a_commit/021_viewing_a_commit.html"
+            class="next"
+          >
+            Next &raquo;
+          </a>
+        </div>
+      </header>
+    </div>
+    <main>
+      <section>
+        <div class="row">
+          <div class="left-col">
+            <p>
+              We can create personal Git commands using aliases. First, let's
+              take a look at how to format the output. For this, suppose you
+              don't like the output of neither the
+              <span class="inline-code">git log</span> command, nor the output
+              of <span class="inline-code">git log --oneline</span>. We can
+              create a personalized output like this:
+            </p>
+            <div class="code">
+              <code>
+                git log --pretty=format:'%Cgreen%an%Creset committed
+                %Cgreen%h%Creset on %Cgreen%cd%Creset'
+              </code>
+            </div>
+            <p>
+              Here <span class="inline-code">%an</span> stands for
+              <em>author name</em>, <span class="inline-code">%h</span> stands
+              for <em>short hash</em>, and
+              <span class="inline-code">%cd</span> stands for
+              <em>commit date</em>. <span class="inline-code">%C</span> is for
+              setting and resetting the color. You can check the complete list
+              of possible placeholders and styles
+              <a class="here" href="https://git-scm.com/docs/pretty-formats">
+                here
+              </a>
+              .
+            </p>
+          </div>
+          <div class="right-col">
+            <img
+              src="020_aliases_01.png"
+              alt="Aliases 1"
+              class="git-bash-img"
+            />
+          </div>
+        </div>
+        <div class="row">
+          <div class="left-col">
+            <img
+              src="020_aliases_02.png"
+              alt="Aliases 2"
+              class="git-bash-img"
+            />
+          </div>
+          <div class="right-col">
+            <p>
+              Of course typing all of this every time we want to use the command
+              is very time consuming. But in Git we can set up aliases for any
+              command we want (even the built in ones). First we need to define
+              a new property in the
+              <span class="inline-code">alias</span> section of the Git
+              configuration. So we run:
+            </p>
+            <div class="code">
+              <code>
+                git config --global alias.lg "log
+                --pretty=format:'%Cgreen%an%Creset committed %Cgreen%h%Creset on
+                %Cgreen%cd%Creset'"
+              </code>
+            </div>
+            <p>
+              Here <span class="inline-code">lg</span> will be the name of our
+              custom command, and in between quotes we type our command. We can
+              see (and edit) our command in VS Code.
+            </p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="single-col center">
+            <img src="020_aliases_03.png" alt="Aliases 3" class="vscode-img" />
+          </div>
+        </div>
+        <div class="row">
+          <div class="left-col">
+            <p>Now we can define an alias for un-staging files.</p>
+            <div class="code">
+              <code>
+                git config --global alias.unstage 'restore --staged .'
+              </code>
+            </div>
+            <p>
+              With it we can restore all the files in the staging area with one
+              simple command.
+            </p>
+            <div class="code">
+              <code>git unstage</code>
+            </div>
+          </div>
+          <div class="right-col">
+            <img
+              src="020_aliases_04.png"
+              alt="Aliases 4"
+              class="git-bash-img"
+            />
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <a class="go-home" href="../index.html"><i class="fas fa-home"></i></a>
+    </footer>
+    <script
+      src="https://kit.fontawesome.com/994cc6cf8e.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
