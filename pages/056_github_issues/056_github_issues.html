@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../../assets/css/style.css" />
+    <link
+      rel="shortcut icon"
+      href="../../assets/favicon/favicon.png"
+      type="image/x-icon"
+    />
+    <title>GitHub issues</title>
+  </head>
+  <body>
+    <div class="floating-div">
+      <header>
+        <div class="btn">
+          <a
+            href="../055_pull_requests/055_pull_requests.html"
+            class="previous"
+          >
+            &laquo; Previous
+          </a>
+        </div>
+        <div class="title">
+          <h1>GitHub issues</h1>
+        </div>
+        <div class="btn">
+          <a href="../057_forks/057_forks.html" class="next">Next &raquo;</a>
+        </div>
+      </header>
+    </div>
+    <main>
+      <section>
+        <div class="row">
+          <div class="single-col">
+            <p>
+              GitHub issues are a tool for collaboration. We can use issues to
+              document bugs or to start discussions with our team. Every issue
+              needs a clear title and a description of what the issue is about.
+              Also, on the right-hand side menu, we can assign issues to people
+              (or to ourselves), label issues, assign them as parts of projects,
+              or milestones. We can also link issues with PRs. Issues that are
+              linked to PRs will be closed when the PR is merged.
+            </p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="single-col center">
+            <img
+              src="056_github_issues_01.png"
+              alt="GitHub issues 1"
+              class="github-img"
+            />
+          </div>
+        </div>
+        <div class="row">
+          <div class="left-col">
+            <p>
+              Here I've created an example issue. Once someone creates an issue,
+              others con post to the conversation or share their reactions to
+              what is being said.
+            </p>
+            <br />
+            <p>
+              If we mention an issue in a commit message, it will be shown on
+              the issue thread.
+            </p>
+            <br />
+            <img
+              src="056_github_issues_03.png"
+              alt="GitHub issues 3"
+              class="git-bash-img"
+            />
+          </div>
+          <div class="right-col">
+            <img
+              src="056_github_issues_02.png"
+              alt="GitHub issues 2"
+              class="github-img"
+            />
+          </div>
+        </div>
+        <div class="row">
+          <div class="left-col">
+            <img
+              src="056_github_issues_04.png"
+              alt="GitHub issues 4"
+              class="github-img"
+            />
+          </div>
+          <div class="left-col">
+            <p>
+              Alternatively, if we think that the issue can be closed after we
+              push certain changes, we can do so from the commit message. In
+              order to do so, our commit message must include the pattern
+              <span class="inline-code">keyword #issue</span>. The valid
+              keywords are: close, closes, closed, fix, fixes, fixed, resolve,
+              resolves, resolved. We can close multiple issues with one commit
+              by using commas to separate them. If we want to include a more
+              comprehensive message we can do so with a semicolon.
+            </p>
+            <div class="code">
+              <code>
+                git commit -m "fixes #1, closes #2, resolves #3; Commit message"
+              </code>
+            </div>
+            <br />
+            <img
+              src="056_github_issues_05.png"
+              alt="GitHub issues 5"
+              class="git-bash-img"
+            />
+          </div>
+        </div>
+        <div class="row">
+          <div class="single-col">
+            <p>
+              Notice that, even though this was our first issue, GitHub gave it
+              a number two. That is because issues and PRs use the same counter.
+              Every time we create a new issue or PR, the counter moves up by
+              one.
+            </p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="left-col">
+            <p>
+              I've created a new issue with the <em>bug</em> label. In the label
+              tab, we can see all the default labels that all GitHub
+              repositories come with. We can edit these labels or create new
+              ones. On the labels tab GitHub will also show us the number of
+              open issues or PRs that have that label.
+            </p>
+            <br />
+            <p>We can assign more than one label per issue.</p>
+          </div>
+          <div class="right-col">
+            <img
+              src="056_github_issues_06.png"
+              alt="GitHub issues 6"
+              class="github-img"
+            />
+          </div>
+        </div>
+        <div class="row">
+          <div class="left-col">
+            <img
+              src="056_github_issues_07.png"
+              alt="GitHub issues 7"
+              class="github-img"
+            />
+          </div>
+          <div class="left-col">
+            <p>
+              A related concept to that of issues is <em>milestones</em>. We use
+              milestones for tasks that are composed of more than one issue. To
+              create milestones go to the milestones tab (next to the issues
+              tab). Milestones need a title and can optionally have a due date
+              and a description.
+            </p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="left-col">
+            <p>
+              Once we've created a milestone, we can also create issues and
+              assign them to the corresponding milestone. We can also create a
+              label that refers to this milestone.
+            </p>
+          </div>
+          <div class="right-col">
+            <img
+              src="056_github_issues_08.png"
+              alt="GitHub issues 8"
+              class="github-img"
+            />
+          </div>
+        </div>
+        <div class="row">
+          <div class="left-col">
+            <img
+              src="056_github_issues_09.png"
+              alt="GitHub issues 9"
+              class="github-img"
+            />
+          </div>
+          <div class="left-col">
+            <p>
+              As we work on the new milestone and close issues, GitHub will
+              update the progress of our milestone.
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <a class="go-home" href="../../index.html"><i class="fas fa-home"></i></a>
+    </footer>
+    <script
+      src="https://kit.fontawesome.com/994cc6cf8e.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

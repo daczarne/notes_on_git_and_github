@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../../assets/css/style.css" />
+    <link
+      rel="shortcut icon"
+      href="../../assets/favicon/favicon.png"
+      type="image/x-icon"
+    />
+    <title>Undoing a merge</title>
+  </head>
+  <body>
+    <div class="floating-div">
+      <header>
+        <div class="btn">
+          <a
+            href="../039_aborting_a_merge/039_aborting_a_merge.html"
+            class="previous"
+          >
+            &laquo; Previous
+          </a>
+        </div>
+        <div class="title">
+          <h1>Undoing a merge</h1>
+        </div>
+        <div class="btn">
+          <a href="../041_squash_merging/041_squash_merging.html" class="next">
+            Next &raquo;
+          </a>
+        </div>
+      </header>
+    </div>
+    <main>
+      <section>
+        <div class="row">
+          <div class="left-col">
+            <p>
+              Sometimes we do a merge and realize that our program stopped
+              working and we want to undo it. Here we have two options: 1)
+              undoing the commit as if it had never been there (called
+              resetting), 2) create a new commit that cancels out all the
+              changes in our merge commit (called reverting).
+            </p>
+            <br />
+            <p>
+              When resetting we have to be very careful because we are
+              re-writing history. If the changes only exist on our local
+              repository that is OK. But if we have already shared the changes
+              with the rest of our team we should
+              <span class="here">NEVER</span> re-write history.
+            </p>
+            <br />
+            <p>
+              The diagrams below explain the two situations. In both of them, we
+              begin from the same starting point: a merger commit has taken
+              place, merging a branch called
+              <span class="git-aqua">new-feature</span> into
+              <span class="git-aqua">master</span>. The difference is that when
+              we use <em>reset</em> we move the
+              <span class="git-green">master</span> pointer back to its parent
+              commit (the commit with a red border that is before the merge
+              commit, and in the <span class="git-green">master</span> branch).
+              Because there are now no commits or pointers pointing to our
+              merger commit, Git will <em>Garbage Collect</em> this commit and
+              throw it away.
+            </p>
+            <br />
+            <p>
+              On the other hand, when we use a <em>revert</em> we are creating a
+              new commit that comes after the merge commit, and moving the
+              <span class="git-green">HEAD</span> pointer onto this new commit
+              (shown in blue with white border on the diagram). This commit
+              makes all the opposite changes as those that were done on the
+              merge commit. One thing to consider when reverting mergers is that
+              the merge commit actually has two parent commits: one on
+              <span class="git-green">master</span> and one on
+              <span class="git-green">new-feature</span>. We'll have to specify
+              Git which commit to revert to and, since we'll do it from the
+              <span class="git-green">master</span> branch (because it's the
+              branch that was modified with the merger), we'll revert to the
+              parent commit on this branch.
+            </p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="single-col">
+            <div class="grid-containter-undoing-merge">
+              <div class="reset-one">
+                <img
+                  src="040_undoing_a_merge_01.png"
+                  alt="Undoing a merge 1"
+                  class="undoing-merge-img"
+                />
+              </div>
+              <div class="reset-two">
+                <img
+                  src="040_undoing_a_merge_02.png"
+                  alt="Undoing a merge 2"
+                  class="undoing-merge-img"
+                />
+              </div>
+              <div class="revert-one">
+                <img
+                  src="040_undoing_a_merge_03.png"
+                  alt="Undoing a merge 3"
+                  class="undoing-merge-img"
+                />
+              </div>
+              <div class="revert-two">
+                <img
+                  src="040_undoing_a_merge_04.png"
+                  alt="Undoing a merge 4"
+                  class="undoing-merge-img"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="left-col">
+            <p>
+              Before we start with an example, let's take a look at our log.
+              We'll do both operations on commit <em>3a485a4</em>, which is our
+              last merge commit. Before starting an operation like this, it's
+              always recommended that you write down the ID for the commit you
+              are going to revert or reset. You can delete it once done.
+            </p>
+          </div>
+          <div class="right-col">
+            <img
+              src="040_undoing_a_merge_05.png"
+              alt="Undoing a merge 5"
+              class="git-bash-img"
+            />
+          </div>
+        </div>
+        <div class="example"></div>
+        <div class="row">
+          <div class="single-col">
+            <p>
+              We'll start with the <em>reset</em> option. But before we do we
+              need to clarify some terminology. The
+              <span class="inline-code">git reset</span> command has three
+              options:
+            </p>
+            <ul>
+              <li>
+                <span class="inline-code">--soft</span>: Git will have our
+                repository point to a different commit, but our index and
+                working tree will not be affected.
+              </li>
+              <li>
+                <span class="inline-code">--mixed</span>: Git will take the new
+                snapshot and put it in the index as well. This is the default
+                option so we don't need to specify it.
+              </li>
+              <li>
+                <span class="inline-code">--hard</span>: Git will take the new
+                snapshot and copy it to both the index and the working tree.
+                This means that all environments will look the same. It also
+                means that all local changes in our working-tree will be lost,
+                so make sure to stash them before resetting.
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="row">
+          <div class="left-col">
+            <img
+              src="040_undoing_a_merge_06.png"
+              alt="Undoing a merge 6"
+              class="git-bash-img"
+            />
+          </div>
+          <div class="right-col">
+            <p>
+              To reset our repository, index, and working tree in the
+              <span class="git-aqua">master</span> branch to the commit previous
+              to the merge we run
+            </p>
+            <div class="code">
+              <code>git reset --hard HEAD~1</code>
+            </div>
+            <p>
+              We can see that both <span class="git-aqua">HEAD</span> and
+              <span class="git-green">master</span> are now at commit
+              <em>b03190d</em>, and the merge commit has disappeared from our
+              tree. The commit is still in our repository thou, and we can
+              recover it (until the <em>Garbage Collector</em> takes it away for
+              good).
+            </p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="left-col">
+            <p>
+              If we want to reset to the point before resetting (i.e. a point
+              where the merge is still there) we run
+            </p>
+            <div class="code">
+              <code>git reset --hard 3a485a4</code>
+            </div>
+            <p>
+              We can now check our log and see that our merge commit is back.
+              Keep in mind that if you close Git Bash, the
+              <em>Garbage Collector</em> will be run and the commit will be lost
+              forever.
+            </p>
+          </div>
+          <div class="right-col">
+            <img
+              src="040_undoing_a_merge_07.png"
+              alt="Undoing a merge 7"
+              class="git-bash-img"
+            />
+          </div>
+        </div>
+        <div class="example"></div>
+        <div class="row">
+          <div class="left-col">
+            <img
+              src="040_undoing_a_merge_08.png"
+              alt="Undoing a merge 8"
+              class="git-bash-img"
+            />
+          </div>
+          <div class="right-col">
+            <p>Now let's take a look at reverting. To do so we run</p>
+            <div class="code">
+              <code>git revert -m 1 HEAD</code>
+            </div>
+            <p>
+              Here we are telling Git that it should revert the
+              <span class="inline-code">HEAD</span> pointer to the previous
+              commit on the <span class="git-green">master</span> branch. The
+              <span class="inline-code">-m 1</span> means
+              <em>first parent commit</em>.
+            </p>
+            <br />
+            <p>
+              Git will open VS Code so that we can edit our message, but here
+              we'll accept the default and close it. When we do, Git will
+              complete the reverting process.
+            </p>
+            <br />
+            <p>
+              We can check our log now and see that a new commit has been added
+              and its message says that it has reverted the merge.
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <a class="go-home" href="../../index.html"><i class="fas fa-home"></i></a>
+    </footer>
+    <script
+      src="https://kit.fontawesome.com/994cc6cf8e.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
