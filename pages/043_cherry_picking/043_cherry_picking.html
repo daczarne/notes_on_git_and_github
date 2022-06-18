@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../../assets/css/style.css" />
+    <link
+      rel="shortcut icon"
+      href="../../assets/favicon/favicon.png"
+      type="image/x-icon"
+    />
+    <title>Cherry picking</title>
+  </head>
+  <body>
+    <div class="floating-div">
+      <header>
+        <div class="btn">
+          <a href="../042_rebasing/042_rebasing.html" class="previous">
+            &laquo; Previous
+          </a>
+        </div>
+        <div class="title">
+          <h1>Cherry picking</h1>
+        </div>
+        <div class="btn">
+          <a
+            href="../044_picking_a_file_from_another_branch/044_picking_a_file_from_another_branch.html"
+            class="next"
+          >
+            Next &raquo;
+          </a>
+        </div>
+      </header>
+    </div>
+    <main>
+      <section>
+        <div class="row">
+          <div class="single-col">
+            <p>
+              Suppose we are working on a new feature on its own branch, but
+              there's a commit on that branch that we would like to have on
+              another branch (say <span class="git-aqua">master</span>), but we
+              are not ready to merge the entire branch. This is where
+              <em>cherry-picking</em> comes in. The <em>cherry-picking</em> tool
+              allows us to grab a commit from another branch, and apply it to
+              the tip of our current branch.
+            </p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="single-col">
+            <div class="grid-container-cherry-picking">
+              <div class="cherry-picking-title">
+                <p class="cherry-picking-title-text">Cherry-picking</p>
+              </div>
+              <div class="cherry-picking-one">
+                <img
+                  src="043_cherry_picking_01.png"
+                  alt="Cherry-picking 1"
+                  class="cherry-picking-img"
+                />
+              </div>
+              <div class="cherry-picking-two">
+                <img
+                  src="043_cherry_picking_02.png"
+                  alt="Cherry-picking 2"
+                  class="cherry-picking-img"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="example"></div>
+        <div class="row">
+          <div class="left-col">
+            <p>
+              As an example, take a look at the git log. Here I've added two
+              commits to the <span class="git-aqua">feature</span> branch (<em
+                >f88ecdc</em
+              >
+              and <em>fc6e687</em>), and one commit to the
+              <span class="git-aqua">master</span> branch (<em>88c4524</em>).
+              Now suppose that we want to get the changes made in commit
+              <em>f88ecdc</em> and apply them to the tip of the
+              <span class="git-aqua">master</span> branch. To cherry-pick this
+              commit we run
+            </p>
+            <div class="code">
+              <code>git cherry-pick f88ecdc</code>
+            </div>
+            <p>
+              Before cherry-picking commits, be sure to check your current
+              branch. Your current branch should be the branch into which you
+              want to bring the target commit.
+            </p>
+          </div>
+          <div class="right-col">
+            <img
+              src="043_cherry_picking_03.png"
+              alt="Cherry-picking 3"
+              class="git-bash-img"
+            />
+          </div>
+        </div>
+        <div class="row">
+          <div class="left-col">
+            <img
+              src="043_cherry_picking_04.png"
+              alt="Cherry-picking 4"
+              class="git-bash-img"
+            />
+          </div>
+          <div class="right-col">
+            <p>
+              If we take a look at the log we can see that all previous commits
+              still exist, but the tip of the
+              <span class="git-aqua">master</span> branch is now
+              <em>86bf257</em> which is a copy of <em>f88ecdc</em>.
+            </p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="single-col">
+            <p>
+              During a cherry-pick, you might run into conflicts. These
+              conflicts are no different than a
+              <a href="11_merge_conflicts.html">merge conflict</a>. Solve them
+              using VS Code and then stage and commit your changes.
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <a class="go-home" href="../../index.html"><i class="fas fa-home"></i></a>
+    </footer>
+    <script
+      src="https://kit.fontawesome.com/994cc6cf8e.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
