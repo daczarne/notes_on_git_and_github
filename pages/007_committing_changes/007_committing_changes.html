@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../assets/css/style.css" />
+    <link
+      rel="shortcut icon"
+      href="../assets/favicon/favicon.png"
+      type="image/x-icon"
+    />
+    <title>Committing changes</title>
+  </head>
+  <body>
+    <div class="floating-div">
+      <header>
+        <div class="btn">
+          <a
+            href="../006_staging_files/006_staging_files.html"
+            class="previous"
+          >
+            &laquo; Previous
+          </a>
+        </div>
+        <div class="title">
+          <h1>Committing changes</h1>
+        </div>
+        <div class="btn">
+          <a href="08_removing_files.html" class="next">Next &raquo;</a>
+        </div>
+      </header>
+    </div>
+    <main>
+      <section>
+        <div class="row">
+          <div class="single-col">
+            <p>
+              Now we have a snapshot in the <em>Staging Area</em> that is ready
+              to be permanently saved in the <em>Repository</em>. To do this we
+              run
+            </p>
+            <div class="code">
+              <code>git commit -m "Commit Message"</code>
+            </div>
+            <p>
+              Here the <span class="inline-code">-m</span> flag means that we
+              are providing a message. The message itself is what we type in
+              quotes. This will only let us write a short one-line message. If
+              we need longer messages we omit the flag, and Git will open our
+              text editor, where we can enter a more detailed message.
+            </p>
+            <div class="code">
+              <code>git commit</code>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="left-col">
+            <img
+              class="vscode-img"
+              src="007_committing_changes_01.png"
+              alt="Committing changes 1"
+              id="committing-changes-1"
+            />
+          </div>
+          <div class="right-col">
+            <p>
+              Now on VS Code, we can write our
+              <span class="inline-code">commit</span> message. On the first
+              line, we should write the title of our commit or a short
+              description of it. This description should not exceed 80
+              characters.
+            </p>
+            <br />
+            <p>
+              Then we write a long description that explains what was changed,
+              deleted, or added in this <span class="inline-code">commit</span>.
+              When done, we save the changes and close VS Code. Keep in mind
+              that when we close VS Code the
+              <span class="inline-code">commit</span> command is executed, so
+              make sure to double-check your message and make sure you included
+              everything that needs to be included.
+            </p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="left-col">
+            <p>
+              Back in Git Bash, we'll see a message with basic statistics of
+              what was changed. Here it says that two files were changed:
+              <em>file1.txt</em> and <em>file2.txt</em>. It also says that there
+              were three insertions (one for each time we added
+              <em>hello</em> to each file and one for when we added
+              <em>world</em> to <em>file1.txt</em>).
+            </p>
+          </div>
+          <div class="right-col">
+            <img
+              class="git-bash-img"
+              src="007_committing_changes_02.png"
+              alt="Committing changes 2"
+            />
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <a class="go-home" href="../index.html"><i class="fas fa-home"></i></a>
+    </footer>
+    <script
+      src="https://kit.fontawesome.com/994cc6cf8e.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
