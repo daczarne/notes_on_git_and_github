@@ -1,0 +1,12 @@
+name: Actions workflow
+on:
+  workflow_dispatch:
+  repository_dispatch:
+    types:
+      - build
+jobs:
+  run-github-actions:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Payload
+        run: echo ${{ github.event.client_payload.env }}

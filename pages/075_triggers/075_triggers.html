@@ -166,6 +166,44 @@
               needs to be a JSON object with an <em>event_type</em> that matches
               at least one activity type for that trigger.
             </p>
+            <br />
+            <p>
+              These requests need to be authenticated. This requires that the
+              request has some authorization header with a valid PAT. The PAT
+              must have a repo scope.
+            </p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="left-col">
+            <p>
+              We can also add some <em>client_payload</em> for the workflow.
+              This payload could, for example, be inputs needed during the jobs.
+            </p>
+            <br />
+            <p>
+              This payload will be available in the <em>github</em> object on
+              the workflow. To access it, we use the
+              <em>event.client_payload.key</em> attribute.
+            </p>
+            <br />
+            <p>
+              This can be very useful when we want to trigger workflows in one
+              repository, based on workflows from another repository.
+            </p>
+          </div>
+          <div class="right-col">
+            <img
+              src="075_triggers_07.png"
+              alt="Triggers 5"
+              class="vscode-img"
+            />
+            <br />
+            <img
+              src="075_triggers_08.png"
+              alt="Triggers 6"
+              class="vscode-img"
+            />
           </div>
         </div>
       </section>
