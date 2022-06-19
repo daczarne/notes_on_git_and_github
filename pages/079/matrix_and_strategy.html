@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../../assets/css/style.css" />
+    <link
+      rel="shortcut icon"
+      href="../../assets/favicon/favicon.png"
+      type="image/x-icon"
+    />
+    <title>Matrix and strategy</title>
+  </head>
+  <body>
+    <div class="floating-div">
+      <header>
+        <div class="btn">
+          <a href="../078/timeout_minutes.html" class="previous">
+            &laquo; Previous
+          </a>
+        </div>
+        <div class="title">
+          <h1>Matrix and strategy</h1>
+        </div>
+        <div class="btn">
+          <!-- <a href="" class="next"> Next &raquo; </a> -->
+        </div>
+      </header>
+    </div>
+    <main>
+      <section>
+        <div class="row">
+          <div class="left-col">
+            <p>
+              The <em>strategy</em> key will allow us to set up an environment
+              <em>matrix</em>. GitHub will then run the job in every possible
+              combination of environments set-ups specified on our matrix. To
+              set up a strategy we need to include the <em>strategy</em> key in
+              our job. Inside this key we also need to add the
+              <em>matrix</em> key. The value of the <em>matrix</em> key needs to
+              be an object. The keys of this object can be whatever we like.
+              These keys basically act as parameters. Each value is an array of
+              the different values that we want to pass to our job for that
+              parameter.
+            </p>
+            <br />
+            <p>
+              Under the <em>strategy</em> key we can also add the
+              <em>fail-fast</em> key. By default this key has a value of true.
+              This means that under this job, if one step fails, all other steps
+              of the job will be stopped.
+            </p>
+            <br />
+            <p>
+              We can also add the <em>max-parallel</em> keyword. This key takes
+              as its value an integer that specifies how many values of the
+              matrix can run in parallel. By default, GitHub will try to
+              maximize the number of jobs running in parallel.
+            </p>
+            <br />
+            <p>
+              To reference the values of our matrix we need to use an expression
+              that invokes the matrix context. Using dot notation, we pass the
+              context and the parameter key that we defined in our matrix.
+              GitHub will run the job once with each possible combination of
+              parameter values.
+            </p>
+          </div>
+          <div class="right-col">
+            <img
+              src="matrix_and_strategy_01.png"
+              alt="Matrix and strategy 1"
+              class="vscode-img"
+            />
+          </div>
+        </div>
+        <div class="row">
+          <div class="left-col">
+            <img
+              src="matrix_and_strategy_02.png"
+              alt="Matrix and strategy 2"
+              class="vscode-img"
+            />
+          </div>
+          <div class="right-col">
+            <p>
+              If we want to exclude a particular combination in our matrix, we
+              can use the <em>exclude</em> key to specify an array of values
+              (one per key) to exclude.
+            </p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="left-col">
+            <p>
+              There's also an <em>include</em> key, but it's not the opposite of
+              the <em>exclude</em> key. This key also takes an array of objects
+              with all the parameters of the matrix, but we use it to specify
+              additional configurations or variables that are needed for that
+              combination only.
+            </p>
+          </div>
+          <div class="right-col">
+            <img
+              src="matrix_and_strategy_03.png"
+              alt="Matrix and strategy 3"
+              class="vscode-img"
+            />
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <a class="go-home" href="../../index.html"><i class="fas fa-home"></i></a>
+    </footer>
+    <script
+      src="https://kit.fontawesome.com/994cc6cf8e.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
