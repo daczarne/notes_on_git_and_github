@@ -92,6 +92,7 @@
             <img
               src="075_triggers_03.png"
               alt="Triggers 3"
+              width="350px"
               class="github-img"
             />
           </div>
@@ -109,6 +110,64 @@
           </div>
         </div>
         <div class="example"></div>
+        <div class="row">
+          <div class="left-col">
+            <p>
+              To trigger workflows on a certain schedule we can use
+              <em>cron jobs</em> scheduling. Scheduling needs to be added by
+              passing the <em>schedule</em> value to the <em>on</em> key. This
+              should be an array. Each element of the array needs to contain an
+              object with the key <em>cron</em>. The value of this key needs to
+              be a string representing a cron expression. You can use
+              <a href="https://crontab.guru/" class="here">crontab guru</a> to
+              create cron expressions.
+            </p>
+          </div>
+          <div class="right-col">
+            <img
+              src="075_triggers_04.png"
+              alt="Triggers 4"
+              width="400px"
+              class="github-img"
+            />
+          </div>
+        </div>
+        <div class="example"></div>
+        <div class="row">
+          <div class="left-col">
+            <img
+              src="075_triggers_05.png"
+              alt="Triggers 5"
+              class="vscode-img"
+            />
+            <br />
+            <img
+              src="075_triggers_06.png"
+              alt="Triggers 6"
+              class="vscode-img"
+            />
+          </div>
+          <div class="right-col">
+            <p>
+              We can also trigger workflows on external events. To do so we need
+              to use the <em>repository_dispatch</em> value, and specify which
+              activity types should trigger the workflow.
+            </p>
+            <br />
+            <p>These dispatch requests need to come to the API endpoint</p>
+            <div class="code">
+              http://api.github/repos/<em>user_name</em>/<em>repo_name</em>/dispatches
+            </div>
+            <p>
+              They need to be <em>POST</em> requests with the
+              <span class="inline-code">HEADERS</span>
+              <em>Accept: application/vmd.github.everest-preview+json</em>, and
+              <em>Content-Type: application/json</em>. The body of the request
+              needs to be a JSON object with an <em>event_type</em> that matches
+              at least one activity type for that trigger.
+            </p>
+          </div>
+        </div>
       </section>
     </main>
     <footer>
