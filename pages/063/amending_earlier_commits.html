@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../../assets/css/style.css" />
+    <link
+      rel="shortcut icon"
+      href="../../assets/favicon/favicon.png"
+      type="image/x-icon"
+    />
+    <title>Amending earlier commits</title>
+  </head>
+  <body>
+    <div class="floating-div">
+      <header>
+        <div class="btn">
+          <a href="../062/amending_last_commit.html" class="previous">
+            &laquo; Previous
+          </a>
+        </div>
+        <div class="title">
+          <h1>Amending earlier commits</h1>
+        </div>
+        <div class="btn">
+          <a href="../064/dropping_commits.html" class="next"> Next &raquo; </a>
+        </div>
+      </header>
+    </div>
+    <main>
+      <section>
+        <div class="row">
+          <div class="left-col">
+            <p>
+              Now suppose we want to amend a previous commit. To do this we need
+              to use <em>interactive rebasing</em>. Remember that with rebasing
+              we can replay a bunch of commits on top of other commits. The
+              interactive part of the name means that we want to give Git
+              instructions while doing it.
+            </p>
+            <br />
+            <p>
+              As an example, suppose we want to amend commit <em>8441b05</em>.
+              To do so, we need to supply its parent commit to Git. That is
+              <em>8527033</em>. So we run
+            </p>
+            <div class="code">
+              <code>git rebase -i 8527033</code>
+            </div>
+          </div>
+          <div class="right-col">
+            <img
+              src="amending_earlier_commits_01.png"
+              alt="Amending earlier commits"
+              class="git-bash-img"
+            />
+          </div>
+        </div>
+        <div class="row">
+          <div class="single-col">
+            <p>
+              Git will open VS Code in a script that looks like the one below.
+              In this script we can tell Git which operation we want to do for
+              each commit. If you are using the GitLens extension then commits
+              will appear in the same order as they would when running
+              <span class="inline-code">git log</span>. So at the top you'll see
+              the latest commit and at the bottom the commit we want to edit.
+              Otherwise, at the top you'll see the commit that we want to edit
+              and, at the bottom, the latest commit in this branch.
+            </p>
+            <br />
+            <p>
+              For each commit you can give an instruction. For this demo, we'll
+              just edit one commit. So, we select the edit option from the
+              dropdown menu.
+            </p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="single-col center">
+            <img
+              src="amending_earlier_commits_02.png"
+              alt="Amending earlier commits 2"
+              class="vscode-img"
+            />
+          </div>
+        </div>
+        <div class="row">
+          <div class="left-col">
+            <p>
+              When we close the VS Code window (or click on
+              <em>Start Rebase</em> if you are using GitLens) the rebase
+              operation will start.
+            </p>
+            <br />
+            <p>
+              Because we told Git that we wanted to edit commit
+              <em>8441b05</em>, Git stopped at that commit so that we can make
+              our changes. We can amend this commit now.
+            </p>
+            <br />
+            <p>
+              In this case, we are just making changes to one file, but we could
+              add or delete files if we needed to. When we are done, we stage
+              our changes and commit them by running
+            </p>
+            <div class="code">
+              <code>git commit --amend</code>
+            </div>
+            <p>just as we would if we were amending the last commit.</p>
+          </div>
+          <div class="right-col">
+            <img
+              src="amending_earlier_commits_03.png"
+              alt="Amending earlier commits 3"
+              class="git-bash-img"
+            />
+          </div>
+        </div>
+        <div class="row">
+          <div class="left-col">
+            <img
+              src="amending_earlier_commits_04.png"
+              alt="Amending earlier commits 4"
+              class="git-bash-img"
+            />
+          </div>
+          <div class="right-col">
+            <p>
+              If we take a look at the log, we see that we now have two
+              branches. One with all the old commits that we are now rebasing
+              (at its tip you can see the
+              <span class="git-aqua">master</span> pointer). The other branch is
+              the one that we are creating with the interactive rebase.
+            </p>
+            <br />
+            <p>
+              Because we told Git that we wanted to edit this commit, the
+              rebasing operation is waiting for us to tell it to continue. When
+              we do, Git will replay all the other commits involved in the
+              rebase on top of the new commit.
+            </p>
+            <br />
+            <p>To continue with the rebase, we run</p>
+            <div class="code">
+              <code>git rebase --continue</code>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="left-col">
+            <p>
+              Since at the start of the rebase we told Git that we only wanted
+              to edit that one commit, when we run continue, Git automatically
+              took care of the other commits.
+            </p>
+            <br />
+            <p>
+              Once done rebasing all commits, Git moved the pointer of our
+              branch (in this case <span class="git-aqua">master</span>) to the
+              tip of the new branch.
+            </p>
+          </div>
+          <div class="right-col">
+            <img
+              src="amending_earlier_commits_05.png"
+              alt="Amending earlier commits 5"
+              class="git-bash-img"
+            />
+          </div>
+        </div>
+        <div class="row">
+          <div class="single-col">
+            <p>
+              If at any pause during the rebase operation you decide that you
+              don't want to go through with it, you can run
+            </p>
+            <div class="code">
+              <code>git rebase --abort</code>
+            </div>
+            <p>
+              and Git will restore everything to the state before starting the
+              rebase.
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <a class="go-home" href="../../index.html"><i class="fas fa-home"></i></a>
+    </footer>
+    <script
+      src="https://kit.fontawesome.com/994cc6cf8e.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

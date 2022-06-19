@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../../assets/css/style.css" />
+    <link
+      rel="shortcut icon"
+      href="../../assets/favicon/favicon.png"
+      type="image/x-icon"
+    />
+    <title>Cloning a repository</title>
+  </head>
+  <body>
+    <div class="floating-div">
+      <header>
+        <div class="btn">
+          <a href="../046/creating_a_github_repository.html" class="previous">
+            &laquo; Previous
+          </a>
+        </div>
+        <div class="title">
+          <h1>Cloning a repository</h1>
+        </div>
+        <div class="btn">
+          <a href="../048/fetching.html" class="next"> Next &raquo; </a>
+        </div>
+      </header>
+    </div>
+    <main>
+      <section>
+        <div class="row">
+          <div class="left-col">
+            <p>
+              To start working on our repository, we first need to clone it to
+              our local machine. To do so, click on the
+              <img
+                src="cloning_a_repository_02.png"
+                alt="Clone repository icon"
+                id="clone-repo-icon"
+              />
+              button and copy the URL.
+            </p>
+          </div>
+          <div class="right-col">
+            <img
+              src="cloning_a_repository_01.png"
+              alt="Cloning a repository 1"
+              class="github-img"
+            />
+          </div>
+        </div>
+        <div class="row">
+          <div class="left-col">
+            <img
+              src="cloning_a_repository_03.png"
+              alt="Cloning a repository 3"
+              class="git-bash-img"
+            />
+          </div>
+          <div class="right-col">
+            <p>Now, open the Git Bash and run</p>
+            <div class="code">
+              <code>git clone <em>url</em> <em>directory_name</em></code>
+            </div>
+            <p>
+              where <em>url</em> is the URL you copied from GitHub and the
+              <em>directory_name</em> is optional (by default Git will create a
+              directory with the same name as your repository).
+            </p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="left-col">
+            <p>
+              Now, <span class="inline-code">cd</span> into the directory and
+              check the log. Here you'll see the two pointers you are already
+              familiar with, <span class="git-aqua">HEAD</span> and
+              <span class="git-green">main</span> (remember,
+              <span class="git-green">main</span> and
+              <span class="git-green">master</span> are the same thing). But
+              there are also two new pointers
+              <span class="git-red">origin/main</span> and
+              <span class="git-red">origin/HEAD</span>.
+            </p>
+            <br />
+            <p>
+              The <span class="git-red">origin</span> part refers to the GitHub
+              repository. It's just how Git names it. So,
+              <span class="git-red">origin/master</span> is telling us where the
+              <span class="git-green">master</span> branch was in that
+              repository the last time we checked (in this case the last time we
+              checked was when we <span class="inline-code">cloned</span> the
+              repository). The same happens with
+              <span class="git-red">HEAD</span>, but it tells us where the
+              <span class="git-aqua">HEAD</span> was the last time we checked.
+            </p>
+          </div>
+          <div class="right-col">
+            <img
+              src="cloning_a_repository_04.png"
+              alt="Cloning a repository 4"
+              class="git-bash-img"
+            />
+          </div>
+        </div>
+        <div class="row">
+          <div class="single-col">
+            <p>
+              Technically these are called <em>Remote tracking branches</em>.
+              But they don't work like regular branches. You can't
+              <span class="inline-code">git switch</span> into them, or
+              <span class="inline-code">commit</span> to them.
+            </p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="left-col">
+            <img
+              src="cloning_a_repository_05.png"
+              alt="Cloning a repository 5"
+              class="git-bash-img"
+            />
+          </div>
+          <div class="right-col">
+            <p>You can check the list of remotes by running</p>
+            <div class="code">
+              <code>git remote -v</code>
+            </div>
+            <p>
+              A <em>remote</em> is any repository that is not on the current
+              working directory. Currently, we only have one remote (the origin
+              on GitHub). The <span class="inline-code">-v</span> option tells
+              Git to show us the URLs. These are the URLs that will be used when
+              talking to that remote.
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <a class="go-home" href="../../index.html"><i class="fas fa-home"></i></a>
+    </footer>
+    <script
+      src="https://kit.fontawesome.com/994cc6cf8e.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

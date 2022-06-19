@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../../assets/css/style.css" />
+    <link
+      rel="shortcut icon"
+      href="../../assets/favicon/favicon.png"
+      type="image/x-icon"
+    />
+    <title>Actions</title>
+  </head>
+  <body>
+    <div class="floating-div">
+      <header>
+        <div class="btn">
+          <a href="../072/running_jobs_in_series.html" class="previous">
+            &laquo; Previous
+          </a>
+        </div>
+        <div class="title">
+          <h1>Actions</h1>
+        </div>
+        <div class="btn">
+          <a href="../074/the_checkout_action.html" class="next">
+            Next &raquo;
+          </a>
+        </div>
+      </header>
+    </div>
+    <main>
+      <section>
+        <div class="row">
+          <div class="single-col">
+            <p>
+              Actions are pieces of code that you or someone else has written to
+              run some task. Actions need to be written in JavaScript.
+            </p>
+            <br />
+            <p>
+              To use an action we specify it with the <em>uses</em> key. Actions
+              can be included in the same repository as the workflow is by
+              passing the path to it as a value, or they can be published in
+              public GitHub repositories. To use an action that has been
+              published in a public GitHub repository the value of the uses key
+              needs to be <em>user_name/repo_name@branch_name</em>. We can also
+              target a released version with
+              <em>user_name/repo_name@tag_name</em>. We can reference a commit
+              with <em>user_name/repo_name@commit_sha</em>. The preferred method
+              it to use the tag name, since the tip of a branch might change in
+              the future and introduce breaking changes. If the version
+              references only a mayor, then the latest minor of that mayor will
+              be used. Same logic with patches.
+            </p>
+            <br />
+            <p>
+              Actions might require/allow inputs. The inputs need to be passed
+              by name (key) as child elements of the <em>with</em> key.
+            </p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="single-col center">
+            <img src="actions_01.png" alt="Actions 1" class="github-img" />
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <a class="go-home" href="../../index.html"><i class="fas fa-home"></i></a>
+    </footer>
+    <script
+      src="https://kit.fontawesome.com/994cc6cf8e.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

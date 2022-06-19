@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../../assets/css/style.css" />
+    <link
+      rel="shortcut icon"
+      href="../../assets/favicon/favicon.png"
+      type="image/x-icon"
+    />
+    <title>Blaming</title>
+  </head>
+  <body>
+    <div class="floating-div">
+      <header>
+        <div class="btn">
+          <a href="../027/restoring_a_deleted_file.html" class="previous">
+            &laquo; Previous
+          </a>
+        </div>
+        <div class="title">
+          <h1>Blaming</h1>
+        </div>
+        <div class="btn">
+          <a href="../029/tagging.html" class="next"> Next &raquo; </a>
+        </div>
+      </header>
+    </div>
+    <main>
+      <section>
+        <div class="row">
+          <div class="left-col">
+            <p>
+              We use <span class="inline-code">blame</span> to find the author
+              of a particular line. To do so we run
+            </p>
+            <div class="code">
+              <code>git blame <em>file_path/file_name.ext</em></code>
+            </div>
+            <p>
+              Git will display the entire file, line by line, with the commit ID
+              in which that line was last changed and the name of the person who
+              changed it. We could add the email with the
+              <span class="inline-code">-e</span> option.
+            </p>
+            <br />
+            <p>
+              If we don't want to see all the lines in the file we use the
+              <span class="inline-code">-L</span> option and supply the line
+              numbers from where to start and end.
+            </p>
+            <div class="code">
+              <code>
+                git blame -L <em>start_line</em>,<em>end_line</em>
+                <em>file_path/file_name.ext</em>
+              </code>
+            </div>
+          </div>
+          <div class="right-col">
+            <img src="blaming_01.png" alt="Blaming 1" class="git-bash-img" />
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <a class="go-home" href="../../index.html"><i class="fas fa-home"></i></a>
+    </footer>
+    <script
+      src="https://kit.fontawesome.com/994cc6cf8e.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

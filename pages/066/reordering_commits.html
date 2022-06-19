@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../../assets/css/style.css" />
+    <link
+      rel="shortcut icon"
+      href="../../assets/favicon/favicon.png"
+      type="image/x-icon"
+    />
+    <title>Reordering commits</title>
+  </head>
+  <body>
+    <div class="floating-div">
+      <header>
+        <div class="btn">
+          <a href="../065/rewording_commits.html" class="previous">
+            &laquo; Previous
+          </a>
+        </div>
+        <div class="title">
+          <h1>Reordering commits</h1>
+        </div>
+        <div class="btn">
+          <a href="../067/squashing_commits.html" class="next">
+            Next &raquo;
+          </a>
+        </div>
+      </header>
+    </div>
+    <main>
+      <section>
+        <div class="row">
+          <div class="left-col">
+            <p>
+              Suppose now that we want to reorder commits. In our example,
+              commit <em>099c06d</em> should come before commit
+              <em>23b2c04</em>, so we need to change their order. Once again, we
+              use interactive rebasing to achieve this. So we run
+            </p>
+            <div class="code">
+              <code>git rebase -i 70ef834</code>
+            </div>
+            <p>
+              since commit <em>70ef834</em> is the parent commit of the oldest
+              of the two commits that we want to reorder.
+            </p>
+          </div>
+          <div class="right-col">
+            <img
+              src="reordering_commits_01.png"
+              alt="Reordering commits 1"
+              class="git-bash-img"
+            />
+          </div>
+        </div>
+        <div class="row">
+          <div class="single-col">
+            <p>
+              Now in GitLens we can grab and drag the commits that we want to
+              reorder, and drop them in their final destination on the commit
+              tree. If you are not using GitLens you can move lines around in VS
+              Code with Alt + arrow (up or down as needed).
+            </p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="single-col center">
+            <img
+              src="reordering_commits_02.png"
+              alt="Reordering commits 2"
+              class="vscode-img"
+            />
+          </div>
+        </div>
+        <div class="row">
+          <div class="left-col">
+            <img
+              src="reordering_commits_03.png"
+              alt="Reordering commits 3"
+              class="git-bash-img"
+            />
+          </div>
+          <div class="right-col">
+            <p>
+              Since there were no conflicts or actions for us to make, Git took
+              care of everything as soon as we closed the VS Code file. If we
+              check the log now, we'll see that the commit is where we wanted it
+              to be.
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <a class="go-home" href="../../index.html"><i class="fas fa-home"></i></a>
+    </footer>
+    <script
+      src="https://kit.fontawesome.com/994cc6cf8e.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

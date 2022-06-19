@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../../assets/css/style.css" />
+    <link
+      rel="shortcut icon"
+      href="../../assets/favicon/favicon.png"
+      type="image/x-icon"
+    />
+    <title>Squash merging</title>
+  </head>
+  <body>
+    <div class="floating-div">
+      <header>
+        <div class="btn">
+          <a href="../040/undoing_a_merge.html" class="previous">
+            &laquo; Previous
+          </a>
+        </div>
+        <div class="title">
+          <h1>Squash merging</h1>
+        </div>
+        <div class="btn">
+          <a href="../042/rebasing.html" class="next"> Next &raquo; </a>
+        </div>
+      </header>
+    </div>
+    <main>
+      <section>
+        <div class="row">
+          <div class="left-col">
+            <p>
+              Suppose we have a branch called
+              <span class="git-aqua">bugfix</span> where we fixed a bug in a
+              hurry. In this branch, we did two commits: <em>B1</em> and
+              <em>B2</em>. But because we were in a hurry, these are not very
+              good commits. So now we need to merge them into
+              <span class="git-aqua">master</span> but instead of using a
+              three-way merge, we are going to create a <em>squash merge</em>.
+              In this type of merge, we create a new commit which is the
+              combination of all the commits in our branch but has no ancestry
+              to the tip of the branch (in this example, commit <em>B2</em>).
+            </p>
+            <br />
+            <p>
+              Once we squash merge we can (and should) delete the
+              <span class="git-aqua">bugfix</span> branch. Though this technique
+              produces clean linear histories on the
+              <span class="git-aqua">master</span> branch, it should only be
+              used for short-lived branches with small changes and dirty commit
+              histories.
+            </p>
+          </div>
+          <div class="right-col">
+            <img
+              src="squash_merging_01.png"
+              alt="Squash merging 1"
+              class="miro-img"
+              id="squash-merging-1"
+            />
+          </div>
+        </div>
+        <div class="example"></div>
+        <div class="row">
+          <div class="left-col">
+            <img
+              src="squash_merging_02.png"
+              alt="Squash merging 2"
+              class="git-bash-img"
+            />
+          </div>
+          <div class="right-col">
+            <p>
+              As an example, let's create a new branch called
+              <span class="git-aqua">bugfix</span>. In this branch, we'll create
+              two new commits, one that modifies <em>audience.txt</em> and one
+              that modifies <em>toc.txt</em>.
+            </p>
+            <br />
+            <p>
+              Now we switch onto the
+              <span class="git-aqua">master</span> branch. In order to merge the
+              <span class="git-aqua">bugfix</span> branch onto
+              <span class="git-aqua">master</span>, we run
+            </p>
+            <div class="code">
+              <code>git merge --squash bugfix</code>
+            </div>
+            <p>
+              If we check the status of our repository we see that our changes
+              are now available on <span class="git-aqua">master</span>, but
+              they are not committed. We need to create a commit with these
+              changes, and give it a meaningful message that explains the merge.
+            </p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="left-col">
+            <p>
+              If we check the log now, we will see that our
+              <span class="git-aqua">bugfix</span> branch has two commits:
+              <em>3accc2f</em> and <em>2de4c95</em>. Our
+              <span class="git-aqua">master</span> branch is at commit
+              <em>6166e28</em> which is our squash merge commit, but this commit
+              is not connected to the tip of the
+              <span class="git-aqua">bugfix</span> branch.
+            </p>
+            <br />
+            <p>
+              Since the branch was not merged on to
+              <span class="git-aqua">master</span>, it is very important that we
+              delete it. Otherwise, it will cause confusion in the future once
+              we have moved on from this bug and no one even remembers what that
+              branch was supposed to do.
+            </p>
+          </div>
+          <div class="right-col">
+            <img
+              src="squash_merging_03.png"
+              alt="Squash merging 3"
+              class="git-bash-img"
+            />
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <a class="go-home" href="../../index.html"><i class="fas fa-home"></i></a>
+    </footer>
+    <script
+      src="https://kit.fontawesome.com/994cc6cf8e.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

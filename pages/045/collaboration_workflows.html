@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../../assets/css/style.css" />
+    <link
+      rel="shortcut icon"
+      href="../../assets/favicon/favicon.png"
+      type="image/x-icon"
+    />
+    <title>Collaboration workflows</title>
+  </head>
+  <body>
+    <div class="floating-div">
+      <header>
+        <div class="btn">
+          <a
+            href="../044/picking_a_file_from_another_branch.html"
+            class="previous"
+          >
+            &laquo; Previous
+          </a>
+        </div>
+        <div class="title">
+          <h1>Collaboration workflows</h1>
+        </div>
+        <div class="btn">
+          <a href="../046/creating_a_github_repository.html" class="next">
+            Next &raquo;
+          </a>
+        </div>
+      </header>
+    </div>
+    <main>
+      <section>
+        <div class="row">
+          <div class="single-col">
+            <p>
+              When working in collaboration with other people we use hosting
+              services like GitHub to host a centralized version of the
+              repository. There are two possible workflows that we can use:
+              <em>Centralized Workflow</em> or
+              <em>Integration-Manager Workflow</em>.
+            </p>
+            <br />
+            <p>
+              In the <em>Centralized Workflow</em>, all collaborators have push
+              authorization and can thus write changes to the central
+              repository. They all start by
+              <span class="inline-code">cloning</span> the central repository to
+              get a local copy of it on their machines. To keep their copy
+              up-to-date with what's on the central repository, they use the
+              <span class="inline-code">pull</span> command. To send their local
+              changes to the central repository they use the
+              <span class="inline-code">push</span> command.
+            </p>
+            <br />
+            <p>
+              In the <em>Integration-Manager Workflow</em>, only some people
+              (known as <em>Maintainers</em>) have <em>push access</em> to the
+              central repository. In order to contribute to these projects,
+              <em>Contributors</em> need to first
+              <span class="inline-code">fork</span> the central repository. This
+              creates a copy of the central repository on GitHub to which they
+              have <em>push access</em>. Then they must
+              <span class="inline-code">clone</span> this
+              <span class="inline-code">forked</span> repository to get a local
+              copy on their machines. Once they are done with their proposed
+              changes, they <span class="inline-code">push</span> them into
+              their <span class="inline-code">forked</span> copy of the
+              centralized repository, and from it, send a
+              <span class="inline-code">pull request</span> to the
+              <em>Maintainer</em> of the original centralized repository.
+              <em>Maintainers</em> then review the changes and decide whether
+              they want to <span class="inline-code">pull</span> the changes
+              into the repository or not.
+            </p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="single-col">
+            <div class="grid-container-collaboration-workflows">
+              <div class="collaboration-workflows-one">
+                <img
+                  src="collaboration_workflows_01.png"
+                  class="collaboration-workflows-img"
+                />
+              </div>
+              <div class="collaboration-workflows-two">
+                <img
+                  src="collaboration_workflows_02.png"
+                  class="collaboration-workflows-img"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="single-col">
+            <p>
+              The <em>Centralized Workflow</em> is the workflow we commonly use
+              for projects with people we know. The
+              <em>Integration-Manager Workflow</em> is the one commonly used for
+              open-source projects where anyone can contribute.
+            </p>
+            <br />
+            <p>
+              Many companies use a hybrid workflow. In this workflow, there are
+              two roles: the team manager and the contributors, and the
+              repository is organized in at least three branches. The
+              <span class="git-aqua">master</span> branch is where the
+              production code lives. The team manager is in charge of
+              maintaining this branch and of merging Pull Requests. Other team
+              members work on the <span class="git-aqua">staging</span> and
+              <span class="git-aqua">feature</span> branches. When someone needs
+              to start working on a new feature, they start by creating a new
+              branch from the <span class="git-aqua">staging</span> branch. Once
+              they are done working, they send a
+              <span class="inline-code">pull request</span> from the
+              <span class="git-aqua">feature</span> branch to the
+              <span class="git-aqua">staging</span>. Another team member must
+              approve it before it can be merged on to the
+              <span class="git-aqua">staging</span> branch.
+            </p>
+            <br />
+            <p>
+              There's usually a server that runs the code in the
+              <span class="git-aqua">staging</span> branch called a
+              <em>staging server</em>. Once code reaches this branch (and thus
+              this server) it is presented to clients and/or stakeholders for
+              approval. If approved, the team manager merges the
+              <span class="git-aqua">staging</span> branch into the
+              <span class="git-aqua">master</span> branch and creates a new
+              <span class="git-aqua">release</span> tag. Code that makes it to
+              the <span class="git-aqua">master</span> branch is run on the
+              <em>production server</em> and makes up the application or program
+              that can be accessed by the final users.
+            </p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="single-col">
+            <img
+              src="collaboration_workflows_03.png"
+              alt="Collaboration workflows 3"
+              class="miro-img"
+              id="collaboration-workflows-3"
+            />
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <a class="go-home" href="../../index.html"><i class="fas fa-home"></i></a>
+    </footer>
+    <script
+      src="https://kit.fontawesome.com/994cc6cf8e.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

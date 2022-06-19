@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../../assets/css/style.css" />
+    <link
+      rel="shortcut icon"
+      href="../../assets/favicon/favicon.png"
+      type="image/x-icon"
+    />
+    <title>Amending the last commit</title>
+  </head>
+  <body>
+    <div class="floating-div">
+      <header>
+        <div class="btn">
+          <a href="../061/recovering_commits.html" class="previous">
+            &laquo; Previous
+          </a>
+        </div>
+        <div class="title">
+          <h1>Amending the last commit</h1>
+        </div>
+        <div class="btn">
+          <a href="../063/amending_earlier_commits.html" class="next">
+            Next &raquo;
+          </a>
+        </div>
+      </header>
+    </div>
+    <main>
+      <section>
+        <div class="row">
+          <div class="left-col">
+            <p>
+              Suppose we make a commit and then realize that we made a mistake.
+              If we haven't yet pushed that commit onto a remote repository, we
+              can make the new changes and then run
+            </p>
+            <div class="code">
+              <code>git commit --amend</code>
+            </div>
+            <p>
+              Git will open VS Code and we can write a new message or keep the
+              original one. If we already know that we want to change the
+              message, we can run
+            </p>
+            <div class="code">
+              <code>git commit --amend -m "New commit message"</code>
+            </div>
+            <p>
+              Keep in mind that we are not really changing the last commit, we
+              are creating a new one and dropping the last one. So don't amend
+              commits that you have already pushed onto a remote repository.
+            </p>
+          </div>
+          <div class="right-col">
+            <img
+              src="amending_last_commit_01.png"
+              alt="Amending the last commit 1"
+              class="git-bash-img"
+            />
+          </div>
+        </div>
+        <div class="row">
+          <div class="left-col">
+            <img
+              src="amending_last_commit_02.png"
+              alt="Amending the last commit 2"
+              class="git-bash-img"
+            />
+          </div>
+          <div class="right-col">
+            <p>
+              Amending also works if we forgot to include a file in the last
+              commit. Just stage the changes and then run
+            </p>
+            <div class="code">
+              <code>git commit --amend</code>
+            </div>
+            <p>Now the last commit also includes the new file.</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="left-col">
+            <p>
+              If, on the other hand, we included a file that we shouldn't have,
+              then we can use a <span class="inline-code">--mixed</span> reset.
+              This will undo the last commit, and place all changes in our
+              working directory. We can now choose which files we want to
+              include and commit again.
+            </p>
+          </div>
+          <div class="right-col">
+            <img
+              src="amending_last_commit_02.png"
+              alt="Amending the last commit 3"
+              class="git-bash-img"
+            />
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <a class="go-home" href="../../index.html"><i class="fas fa-home"></i></a>
+    </footer>
+    <script
+      src="https://kit.fontawesome.com/994cc6cf8e.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

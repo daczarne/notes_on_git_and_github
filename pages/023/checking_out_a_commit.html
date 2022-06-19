@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../../assets/css/style.css" />
+    <link
+      rel="shortcut icon"
+      href="../../assets/favicon/favicon.png"
+      type="image/x-icon"
+    />
+    <title>Checking out a commit</title>
+  </head>
+  <body>
+    <div class="floating-div">
+      <header>
+        <div class="btn">
+          <a
+            href="../022/viewing_the_changes_across_commits.html"
+            class="previous"
+          >
+            &laquo; Previous
+          </a>
+        </div>
+        <div class="title">
+          <h1>Checking out a commit</h1>
+        </div>
+        <div class="btn">
+          <a href="../024/bisect.html" class="next">Next &raquo;</a>
+        </div>
+      </header>
+    </div>
+    <main>
+      <section>
+        <div class="row">
+          <div class="left-col">
+            <p>
+              Suppose we want to see the snapshot of the complete project at a
+              certain point in time. We can
+              <span class="inline-code">checkout</span> a specific commit, and
+              Git will restore our project to that point in time.
+            </p>
+            <div class="code">
+              <code>git checkout <em>commit_hash</em></code>
+            </div>
+            <p>
+              When we run this, Git will throw a message saying that we are
+              <span class="inline-code">in 'detached HEAD' state</span>.
+            </p>
+          </div>
+          <div class="right-col">
+            <img
+              src="checking_out_a_commit_01.png"
+              alt="Checking out a commit 1"
+              class="git-bash-img"
+            />
+          </div>
+        </div>
+        <div class="row">
+          <div class="left-col">
+            <img
+              src="checking_out_a_commit_02.png"
+              alt="Checking out a commit 2"
+              class="miro-img"
+            />
+          </div>
+          <div class="right-col">
+            <p>
+              Imagine the image to our left represents our repository. The way
+              Git can keep track of things is by using pointers. If your
+              background is not in software engineering, just think about
+              pointers like...well...that...things that point to other things.
+              An instruction a program needs (in this case Git) that tells him
+              where he needs to go to find something. Each commit points to its
+              previous commit.
+            </p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="left-col">
+            <p>
+              All the commits that we've created so far are part of the
+              <span class="inline-code">master</span> branch. Side note here:
+              Git started calling this branch the
+              <span class="inline-code">main</span> branch in mid-2020, but
+              there are still lots (probably most) repositories that haven't
+              been changed yet.
+            </p>
+            <br />
+            <p>
+              The way Git keeps track of the different branches is with pointers
+              too. So, in this example, the
+              <span class="inline-code">master</span> branch (i.e. the pointer
+              that tells Git where the
+              <span class="inline-code">master</span> branch is) is pointing at
+              our last commit.
+            </p>
+          </div>
+          <div class="right-col">
+            <img
+              src="checking_out_a_commit_03.png"
+              alt="Checking out a commit 3"
+              class="miro-img"
+            />
+          </div>
+        </div>
+        <div class="row">
+          <div class="left-col">
+            <img
+              src="checking_out_a_commit_04.png"
+              alt="Checking out a commit 4"
+              class="miro-img"
+            />
+          </div>
+          <div class="right-col">
+            <p>
+              Because we can work in different branches, Git also needs to know
+              in which branch we are working on. To do this, Git uses another
+              pointer called <span class="inline-code">HEAD</span>.
+            </p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="left-col">
+            <p>
+              This is why when we run, for example,
+              <span class="inline-code">git log --oneline</span> the last commit
+              (the first one shown) starts with
+              <span class="inline-code"
+                >(<span class="git-aqua">HEAD -></span>
+                <span class="git-green">master</span>)</span
+              >. That's just Git's way of telling us that the
+              <span class="inline-code">master</span> branch is pointing to our
+              last commit and that we are currently (the
+              <span class="inline-code">HEAD</span>) pointing to it.
+            </p>
+          </div>
+          <div class="right-col">
+            <img
+              src="checking_out_a_commit_05.png"
+              alt="Checking out a commit 5"
+              class="git-bash-img"
+            />
+          </div>
+        </div>
+        <div class="row">
+          <div class="left-col">
+            <img
+              src="checking_out_a_commit_06.png"
+              alt="Checking out a commit 6"
+              class="miro-img"
+            />
+          </div>
+          <div class="right-col">
+            <p>
+              So, long story short, what that
+              <span class="inline-code">'detached HEAD' state</span> message is
+              telling us is that our <span class="inline-code">HEAD</span> is
+              not attached to a branch anymore, but pointing to a specific
+              commit.
+            </p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="left-col">
+            <p>
+              You can see this in the image to the right. While
+              <span class="inline-code">master</span> is at commit
+              <em>8eec1d2</em>, <span class="inline-code">HEAD</span> is at
+              commit <em>fa1b75e</em> (the one we checked out to). Also, notice
+              that Git Bash no longer says
+              <span class="git-aqua">(master)</span>, but is instead displaying
+              the commit hash.
+            </p>
+            <br />
+            <p>
+              Side note here. When inspecting the log while in a
+              <span class="inline-code">detached HEAD</span> we need to add the
+              <span class="inline-code">--all</span> option. Otherwise, Git will
+              only show us the commits prior to the commit where our
+              <span class="inline-code">HEAD</span> is at.
+            </p>
+          </div>
+          <div class="right-col">
+            <img
+              src="checking_out_a_commit_07.png"
+              alt="Checking out a commit 7"
+              class="git-bash-img"
+            />
+          </div>
+        </div>
+        <div class="row">
+          <div class="left-col">
+            <img
+              src="checking_out_a_commit_08.png"
+              alt="Checking out a commit 8"
+              class="miro-img"
+            />
+          </div>
+          <div class="right-col">
+            <p>
+              One very important consequence of this that we need to always keep
+              in mind is that we shouldn't create new commits in this state. If
+              we do so, that new commit will point to our old commit, and our
+              <span class="inline-code">HEAD</span> will now point to the new
+              commit.
+            </p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="left-col">
+            <p>
+              But once we move our <span class="inline-code">HEAD</span> back to
+              the <span class="inline-code">master</span> (or any other branch),
+              this commit will not be reachable from any commit or pointer. It's
+              a dead commit. Git checks for commits like this and deletes them.
+              So all changes left there will be lost.
+            </p>
+          </div>
+          <div class="right-col">
+            <img
+              src="checking_out_a_commit_09.png"
+              alt="Checking out a commit 9"
+              class="miro-img"
+            />
+          </div>
+        </div>
+        <div class="row">
+          <div class="left-col">
+            <img
+              src="checking_out_a_commit_10.png"
+              alt="Checking out a commit 10"
+              class="git-bash-img"
+            />
+          </div>
+          <div class="right-col">
+            <p>
+              To take the <span class="inline-code">HEAD</span> back to the
+              <span class="inline-code">master</span> we just run
+            </p>
+            <div class="code">
+              <code>git checkout master</code>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <a class="go-home" href="../../index.html"><i class="fas fa-home"></i></a>
+    </footer>
+    <script
+      src="https://kit.fontawesome.com/994cc6cf8e.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

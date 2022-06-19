@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../../assets/css/style.css" />
+    <link
+      rel="shortcut icon"
+      href="../../assets/favicon/favicon.png"
+      type="image/x-icon"
+    />
+    <title>Viewing a commit</title>
+  </head>
+  <body>
+    <div class="floating-div">
+      <header>
+        <div class="btn">
+          <a href="../020/aliases.html" class="previous"> &laquo; Previous </a>
+        </div>
+        <div class="title">
+          <h1>Viewing a commit</h1>
+        </div>
+        <div class="btn">
+          <a href="../022/viewing_the_changes_across_commits.html" class="next">
+            Next &raquo;
+          </a>
+        </div>
+      </header>
+    </div>
+    <main>
+      <section>
+        <div class="row">
+          <div class="left-col">
+            <p>
+              We can view commits with the
+              <span class="inline-code">git show</span> command. When doing so,
+              we can reference a commit hash, or we can use the
+              <span class="inline-code">HEAD</span> pointer. For example, to see
+              the commit twice removed from the repository
+              <span class="inline-code">HEAD</span> we run
+            </p>
+            <div class="code">
+              <code>git show HEAD~2</code>
+            </div>
+            <p>
+              Git will show all the information about that commit. If instead we
+              only want to see the final version of a file in the that commit we
+              run
+            </p>
+            <div class="code">
+              <code>git show HEAD~2:<em>file_path/file_name.ext</em></code>
+            </div>
+            <p>
+              Keep in mind that if the file is not in the root of our project,
+              we need to supply the entire path and the filename.
+            </p>
+          </div>
+          <div class="right-col">
+            <img
+              src="viewing_a_commit_01.png"
+              alt="Viewing a commit 1"
+              class="git-bash-img"
+            />
+          </div>
+        </div>
+        <div class="row">
+          <div class="left-col">
+            <img
+              src="viewing_a_commit_02.png"
+              alt="Viewing a commit 2"
+              class="git-bash-img"
+            />
+          </div>
+          <div class="right-col">
+            <p>
+              If we only want to see the files that were modified in a commit,
+              we use the <span class="inline-code">--name-only</span> option
+            </p>
+            <div class="code">
+              <code>git show HEAD~2 --name-only</code>
+            </div>
+            <p>
+              With this option, we can only see the names of the files. If we
+              also want to see what was done to those files (added, delete,
+              modified), we use the
+              <span class="inline-code">--name-status</span> option
+            </p>
+            <div class="code">
+              <code>git show HEAD~2 --name-status</code>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <a class="go-home" href="../../index.html"><i class="fas fa-home"></i></a>
+    </footer>
+    <script
+      src="https://kit.fontawesome.com/994cc6cf8e.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

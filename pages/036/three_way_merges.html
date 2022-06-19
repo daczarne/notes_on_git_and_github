@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../../assets/css/style.css" />
+    <link
+      rel="shortcut icon"
+      href="../../assets/favicon/favicon.png"
+      type="image/x-icon"
+    />
+    <title>Three-way merging</title>
+  </head>
+  <body>
+    <div class="floating-div">
+      <header>
+        <div class="btn">
+          <a href="../035/fast_forward_merging.html" class="previous">
+            &laquo; Previous
+          </a>
+        </div>
+        <div class="title">
+          <h1>Three-way merging</h1>
+        </div>
+        <div class="btn">
+          <a href="../037/viewing_branches.html" class="next"> Next &raquo; </a>
+        </div>
+      </header>
+    </div>
+    <main>
+      <section>
+        <div class="row">
+          <div class="left-col">
+            <p>
+              To see how three-way merges work, first we'll create a new branch
+              called <span class="git-aqua">new-feature</span> and create a new
+              file there called <em>main.js</em>. After staging and committing
+              <em>main.js</em> we switch back to
+              <span class="git-aqua">master</span>. Here we'll update
+              <em>toc.txt</em> and again, we'll stage and commit the changes.
+            </p>
+            <br />
+            <p>
+              Now we are in the situation described in the three-way merge
+              scenario. Our target branch (in this case
+              <span class="git-aqua">master</span>) is one commit ahead of the
+              commit it was when we created the objective branch (in this case
+              <span class="git-aqua">new-feature</span>). Thus, Git can't just
+              move the <span class="inline-code">master</span> pointer to the
+              tip of the <span class="git-aqua">new-feature</span> branch
+              because there's a commit in
+              <span class="git-aqua">master</span> that cannot be reached from
+              <span class="git-aqua">new-feature</span>.
+            </p>
+            <br />
+            <p>
+              To run a three-way merge we proceed as before and start by
+              switching into the <span class="git-aqua">master</span> branch.
+              Now we run
+            </p>
+            <div class="code">
+              <code>git merge new-feature</code>
+            </div>
+            <p>
+              VS Code will be launched where we can edit our commit message (if
+              necessary). When we close it, Git will conclude the merge process.
+            </p>
+          </div>
+          <div class="right-col">
+            <img
+              src="three_way_merges_01.png"
+              alt="Three-way merges 1"
+              class="git-bash-img"
+            />
+          </div>
+        </div>
+        <div class="row">
+          <div class="left-col">
+            <img
+              src="three_way_merges_02.png"
+              alt="Three-way merges 2"
+              class="git-bash-img"
+            />
+          </div>
+          <div class="right-col">
+            <p>
+              We can see our merges in the
+              <span class="inline-code">log</span> more clearly by using the
+              <span class="inline-code">--graph</span> option
+            </p>
+            <div class="code">
+              <code>git log --oneline --all --graph -10</code>
+            </div>
+            <p>
+              Starting from the bottom and moving up, the first merge we see is
+              the fast-forward merge from the now-deleted
+              <span class="git-green">bugfix</span> branch onto
+              <span class="git-green">master</span>. This branch was created
+              from commit <em>d106b04</em>. On it, we created commit
+              <em>e6614d7</em>. Because at the time of merge
+              <span class="git-green">master</span> was still at commit
+              <em>d106b04</em> and we used a
+              <span class="inline-code">--no-ff</span> option, the merge commit
+              <em>4188bbb</em> was created. Git shows this merge as a triangle
+              where each commit is a vertex.
+            </p>
+            <br />
+            <p>
+              On the other hand, for our three-way merge, Git is displaying a
+              trapezoid, since there's a commit on
+              <span class="git-green">master</span> (<em>2aa25c1</em>) that was
+              created after the
+              <span class="git-green">new-feature</span> branch was created.
+              Both branches merged at commit <em>9a4b466</em>.
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <a class="go-home" href="../../index.html"><i class="fas fa-home"></i></a>
+    </footer>
+    <script
+      src="https://kit.fontawesome.com/994cc6cf8e.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
