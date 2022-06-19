@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../../assets/css/style.css" />
+    <link
+      rel="shortcut icon"
+      href="../../assets/favicon/favicon.png"
+      type="image/x-icon"
+    />
+    <title>Triggers</title>
+  </head>
+  <body>
+    <div class="floating-div">
+      <header>
+        <div class="btn">
+          <a
+            href="../074_evnironment_variables/074_evnironment_variables.html"
+            class="previous"
+          >
+            &laquo; Previous
+          </a>
+        </div>
+        <div class="title">
+          <h1>Triggers</h1>
+        </div>
+        <div class="btn">
+          <!-- <a href="" class="next">Next &raquo;</a> -->
+        </div>
+      </header>
+    </div>
+    <main>
+      <section>
+        <div class="row">
+          <div class="left-col">
+            <p>
+              Workflows can be triggered with different events. These events can
+              be any GitHub event: push, pull-requests opened or closed,
+              comments, etc. Triggers must be specified with the
+              <em>on</em> keyword of the yaml file. We can pass a single value:
+            </p>
+          </div>
+          <div class="right-col">
+            <img
+              src="075_triggers_01.png"
+              alt="Triggers 1"
+              height="100px"
+              class="github-img"
+            />
+          </div>
+        </div>
+        <div class="row">
+          <div class="left-col">
+            <img
+              src="075_triggers_02.png"
+              alt="Triggers 2"
+              height="100px"
+              class="github-img"
+            />
+          </div>
+          <div class="right-col">
+            <p>
+              If we want the same workflow to trigger on different events we can
+              pass an array of GitHub events to the <em>on</em> keyword. The
+              workflow will then trigger whenever at least one of the triggers
+              is met.
+            </p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="left-col">
+            <p>
+              Some events have <em>activity types</em>. To use the activities
+              the value that we pass to the <em>on</em> keyword must be an
+              object. Each attribute in this object must be itself an object
+              named after a valid GitHub event (like push, pull_request, etc).
+              Inside each of these object we can define the <em>types</em> key
+              and pass to it an array of event activity types on which the
+              workflow should trigger.
+            </p>
+            <br />
+            <p>
+              Events that have activity types will have some of those set by
+              default. For example, if we trigger a workflow
+              <span class="inline-code">on: pull_request</span>, the workflow
+              will be triggered on <em>opened</em>, <em>synchronized</em>, or
+              <em>reopened</em> by default.
+            </p>
+          </div>
+          <div class="right-col">
+            <img
+              src="075_triggers_03.png"
+              alt="Triggers 3"
+              class="github-img"
+            />
+          </div>
+        </div>
+        <div class="row">
+          <div class="single-col">
+            <p>
+              The complete list of events and activity types can be found
+              <a
+                class="here"
+                href="https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows"
+                >here</a
+              >.
+            </p>
+          </div>
+        </div>
+        <div class="example"></div>
+      </section>
+    </main>
+    <footer>
+      <a class="go-home" href="../../index.html"><i class="fas fa-home"></i></a>
+    </footer>
+    <script
+      src="https://kit.fontawesome.com/994cc6cf8e.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

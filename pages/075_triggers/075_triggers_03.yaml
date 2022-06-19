@@ -1,0 +1,5 @@
+name: Actions workflow
+on:
+  push:
+  pull_request:
+    types: [assigned, opened, synchronized, reopened]
