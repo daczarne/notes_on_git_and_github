@@ -29,6 +29,7 @@
     </div>
     <main>
       <section>
+        <!-- Built-in environment variables -->
         <div class="row">
           <div class="single-col">
             <p>
@@ -53,26 +54,139 @@
                 the workspace directory in the runner.
               </li>
             </ul>
+            <br />
+            <p>
+              You can see the complete list of built-in environment variables
+              <a
+                href="https://docs.github.com/en/actions/learn-github-actions/environment-variables"
+                class="here"
+                >here</a
+              >.
+            </p>
           </div>
         </div>
+        <!-- Custom environment variables -->
+        <div class="example"></div>
+        <div class="row">
+          <div class="left-col">
+            <p>
+              We can define our own environment variables as well. To declare a
+              variable we need to use the <em>env</em> key at the start of our
+              workflow. This key takes as its value a list of key:value pairs,
+              where the keys are the names of the environment variables that we
+              are declaring, and its values are the values of the variables.
+            </p>
+            <br />
+            <p>
+              After that we can just write our jobs as we would normally do. To
+              access the variables we just need to use the
+              <em>${ VAR_NAME }</em> syntax.
+            </p>
+            <br />
+            <p>
+              Variables declared this way will be available to the whole
+              workflow. Variables that need to only be available to a specific
+              job in the workflow are declared and used in the same way, but
+              using the <em>env</em> in that specific job.
+            </p>
+            <br />
+            <p>
+              Likewise, if we want a variable to only be available in a step of
+              a job, we use declare and use it in that step.
+            </p>
+          </div>
+          <div class="right-col">
+            <img
+              src="environment_variables_01.png"
+              alt="Environment variables 1"
+              class="vscode-img"
+            />
+          </div>
+        </div>
+        <!-- Secrets -->
+        <div class="example"></div>
+        <div class="row">
+          <div class="left-col">
+            <img
+              src="environment_variables_02.png"
+              alt="Environment variables 2"
+              class="vscode-img"
+            />
+          </div>
+          <div class="right-col">
+            <p>
+              Some variables need to be encrypted. To do so, we just need to add
+              the variable value in
+              <i>Settings > Secrets > Actions > New repository secret</i>. Give
+              it a name and a value, and save it. These variables will be
+              available in a workflow using an object called secrets.
+            </p>
+            <br />
+            <p>
+              One secret that is automatically available on workflows is
+              <em>secrets.GITHUB_TOKEN</em>. This token can be used to access
+              the GitHub API, or to push something to the repo, etc. Basically,
+              any time that the action needs to interact with the repository it
+              will need authentication, and we can use this variable to do it.
+            </p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="left-col">
+            <p>
+              Secrets can be safely logged because GitHub will never expose them
+              to the logs. It will print them as asterisks.
+            </p>
+            <br />
+            <p>
+              The authentication token can also be accessed via the
+              <em>github</em> object. This object is automatically set for us by
+              GitHub and contains several other values too. More on that object
+              latter.
+            </p>
+          </div>
+          <div class="right-col">
+            <img
+              src="environment_variables_03.png"
+              alt="Environment variables 3"
+              class="github-img"
+            />
+          </div>
+        </div>
+        <!-- Encrypting environment variables -->
         <div class="example"></div>
         <div class="row">
           <div class="single-col">
             <p>
-              Similar to the steps object, we have an object called
-              <em>github</em>, that will be automatically set for us, and
-              contains more values that we might need. For example,
-              <em>"${{ github.token }}"</em> will return a token that we can use
-              to authenticate with the repository.
+              Secrets are useful but they have a limit of 6kbs. Likewise, we
+              might be using some CLI commands in a workflow that uses some
+              secrets that need to be stored in a JSON file. We can push
+              encrypted versions of those files and then include a decryption
+              step in our jobs.
+            </p>
+            <br />
+            <p>
+              To encrypt the file locally we can use tools like
+              <a href="https://www.gnupg.org/" class="here">GPG</a>. For details
+              on how to use this tool, refer to the encrypted secrets
+              documentation
+              <a
+                href="https://docs.github.com/en/actions/security-guides/encrypted-secrets"
+                class="here"
+                >here</a
+              >. Since this files require a passphrase to be decrypted, that
+              passphrase needs to be added as a repository secret. And since the
+              encrypted file itself needs to be available in the runner,
+              workflows that require them must first include a checkout step.
             </p>
           </div>
         </div>
         <div class="row">
           <div class="single-col center">
             <img
-              src="environment_variables_01.png"
-              alt="Environment variables 1"
-              class="github-img"
+              src="environment_variables_04.png"
+              alt="Environment variables 4"
+              class="vscode-img"
             />
           </div>
         </div>
