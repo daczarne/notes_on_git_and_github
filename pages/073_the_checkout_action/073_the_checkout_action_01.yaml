@@ -1,0 +1,16 @@
+name: Checkout action
+on: workflow_dispatch
+jobs:
+  run-github-actions:
+    runs-on: ubuntu-latest
+    steps:
+      - name: List files before checkout
+        run: |
+          pwd
+          ls -a
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: List files after checkout
+        run: |
+          pwd
+          ls -a
