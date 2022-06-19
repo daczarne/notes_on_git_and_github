@@ -63,8 +63,8 @@
             <p>
               If we want the same workflow to trigger on different events we can
               pass an array of GitHub events to the <em>on</em> keyword. The
-              workflow will then trigger whenever at least one of the triggers
-              is met.
+              workflow will then trigger whenever at least one of the triggering
+              conditions is met.
             </p>
           </div>
         </div>
@@ -109,6 +109,72 @@
             </p>
           </div>
         </div>
+        <br />
+        <div class="row">
+          <div class="left-col">
+            <img
+              src="075_triggers_04.png"
+              alt="Triggers 4"
+              width="350px"
+              class="vscode-img"
+            />
+          </div>
+          <div class="right-col">
+            <p>
+              Workflow triggers can be filtered so that they only run when
+              certain branches, files (paths), tags, etc are affected. To
+              achieve this we need to add more key:value pairs to the
+              <em>on</em> key.
+            </p>
+            <br />
+            <p>
+              Branches don't necessarily need to be specified by names. They can
+              also be patterns. Patterns of the form
+              <span class="inline-code">'something/*'</span> will only match
+              branches that start with
+              <span class="inline-code">something</span>, followed by a slash,
+              <span class="inline-code">/</span>, followed by some other text,
+              but not by additional slashes. To match this branches we need to
+              use <span class="inline-code">'something/**'</span>.
+            </p>
+            <br />
+            <p>
+              We can also set the trigger to ignore branches by using the
+              <em>branches-ignore</em> key. We cannot have <em>branches</em> and
+              <em>branches-ignore</em> at the same time. But we can ignore
+              specific branches by adding an exclamation mark, <em>!</em> in the
+              <em>branches</em> key.
+            </p>
+            <br />
+            <p>
+              We can also target specific tags in the same way as we do with
+              branches. We can use the <em>tags</em> and
+              <em>tags-ignore</em> keys to specify tags or patterns of tags to
+              include or ignore, and we can use the exclamation sign to exclude
+              specific tags.
+            </p>
+            <br />
+            <p>
+              Finally, we can filter the triggers by paths (files), and ignore
+              them using the <em>paths-ignore</em> key. We cannot use both keys
+              in the same workflow, but can also use the exclamation mark here
+              to ignore.
+            </p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="single-col">
+            <p>
+              You can find all possible patters
+              <a
+                href="https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#filter-pattern-cheat-sheet"
+                class="here"
+                >here</a
+              >.
+            </p>
+          </div>
+        </div>
+        <!-- Triggering on schedules -->
         <div class="example"></div>
         <div class="row">
           <div class="left-col">
@@ -125,25 +191,26 @@
           </div>
           <div class="right-col">
             <img
-              src="075_triggers_04.png"
-              alt="Triggers 4"
+              src="075_triggers_05.png"
+              alt="Triggers 5"
               width="400px"
               class="github-img"
             />
           </div>
         </div>
+        <!-- Triggering on external events -->
         <div class="example"></div>
         <div class="row">
           <div class="left-col">
             <img
-              src="075_triggers_05.png"
-              alt="Triggers 5"
+              src="075_triggers_06.png"
+              alt="Triggers 6"
               class="vscode-img"
             />
             <br />
             <img
-              src="075_triggers_06.png"
-              alt="Triggers 6"
+              src="075_triggers_07.png"
+              alt="Triggers 7"
               class="vscode-img"
             />
           </div>
@@ -194,14 +261,14 @@
           </div>
           <div class="right-col">
             <img
-              src="075_triggers_07.png"
-              alt="Triggers 5"
+              src="075_triggers_08.png"
+              alt="Triggers 8"
               class="vscode-img"
             />
             <br />
             <img
-              src="075_triggers_08.png"
-              alt="Triggers 6"
+              src="075_triggers_09.png"
+              alt="Triggers 9"
               class="vscode-img"
             />
           </div>

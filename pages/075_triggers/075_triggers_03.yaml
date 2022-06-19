@@ -1,4 +1,4 @@
-name: Actions workflow
+name: Triggers
 on:
   push:
   pull_request:

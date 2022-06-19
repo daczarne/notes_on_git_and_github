@@ -1,11 +1,16 @@
-name: Actions workflow
+name: Triggers
 on:
-  schedule:
-    - cron: "0/5 * * * *"
-    - cron: "0/6 * * * *"
+  push:
+    branches:
+      - 'feature/**'
+    tags:
+      - v1
+      - v1.*
+      - '!v2'
+    paths:
+      - '**.js'
+      - '!file/path.js'
   pull_request:
-    types:
-      - assigned
-      - opened
-      - synchronized
-      - reopened
+    branches-ignore:
+      - main
+

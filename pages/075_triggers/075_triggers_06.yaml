@@ -1,0 +1,6 @@
+name: Triggers
+on:
+  workflow_dispatch:
+  repository_dispatch:
+    types:
+      - build

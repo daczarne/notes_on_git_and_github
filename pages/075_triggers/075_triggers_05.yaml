@@ -1,6 +1,12 @@
-name: Actions workflow
+name: Triggers
 on:
-  workflow_dispatch:
-  repository_dispatch:
+  schedule:
+    - cron: "0/5 * * * *"
+    - cron: "0/6 * * * *"
+  pull_request:
     types:
-      - build
+      - assigned
+      - opened
+      - synchronized
+      - reopened
+
