@@ -9,21 +9,26 @@
       href="../../assets/favicon/favicon.png"
       type="image/x-icon"
     />
-    <title>Running jobs in series</title>
+    <title>Shells</title>
   </head>
   <body>
     <div class="floating-div">
       <header>
         <div class="btn">
-          <a href="../070_shells/070_shells.html" class="previous">
+          <a href="../070_triggers/070_triggers.html" class="previous">
             &laquo; Previous
           </a>
         </div>
         <div class="title">
-          <h1>Running jobs in series</h1>
+          <h1>Shells</h1>
         </div>
         <div class="btn">
-          <!-- <a href="70_shells.html" class="next">Next &raquo;</a> -->
+          <a
+            href="../072_running_jobs_in_series/072_running_jobs_in_series.html"
+            class="next"
+          >
+            Next &raquo;
+          </a>
         </div>
       </header>
     </div>
@@ -32,26 +37,23 @@
         <div class="row">
           <div class="single-col">
             <p>
-              By default, jobs will run in parallel. If we want jobs to run in
-              series we need to specify the <em>needs</em> key. This key takes
-              as its value an array of job names. The job will only run once all
-              jobs in the array have finished successfully.
+              GitHub actions can use different shells: <em>bash</em>,
+              <em>powershell</em>, <em>cmd</em>, etc. To change the shell from
+              the default (bash for Linux and MacOS, powershell for Windows) to
+              a different one, we need to specify it after the run keyword,
+              using the <em>shell</em> keyword.
             </p>
           </div>
         </div>
         <div class="row">
           <div class="single-col center">
-            <img
-              src="071_running_jobs_in_series_01.png"
-              alt="Running jobs in series"
-              class="github-img"
-            />
+            <img src="071_shells_01.png" alt="Shells 1" class="github-img" />
           </div>
         </div>
       </section>
     </main>
     <footer>
-      <a class="go-home" href="../index.html"><i class="fas fa-home"></i></a>
+      <a class="go-home" href="../../index.html"><i class="fas fa-home"></i></a>
     </footer>
     <script
       src="https://kit.fontawesome.com/994cc6cf8e.js"

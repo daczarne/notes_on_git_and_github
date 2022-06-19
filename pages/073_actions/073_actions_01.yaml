@@ -1,0 +1,10 @@
+name: Actions workflow
+on: workflow_dispatch
+jobs:
+  run-github-actions:
+    runs-on: ubuntu-latest
+    steps:
+      - name: JavaScript action
+        uses: actions/hello-world-javascript-action@v1
+        with:
+          who-to-greet: Daniel

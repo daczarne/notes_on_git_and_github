@@ -1,0 +1,16 @@
+name: Triggers
+on:
+  push:
+    branches:
+      - 'feature/**'
+    tags:
+      - v1
+      - v1.*
+      - '!v2'
+    paths:
+      - '**.js'
+      - '!file/path.js'
+  pull_request:
+    branches-ignore:
+      - main
+
