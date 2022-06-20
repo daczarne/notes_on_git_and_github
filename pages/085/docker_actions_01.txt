@@ -1,0 +1,18 @@
+project_directory
+  |
+  |_ .github
+  |   |
+  |   |_ actions
+  |   |   |
+  |   |   |_action_name
+  |   |       |_ Dockerfile
+  |   |       |_ action.yml
+  |   |       |_ entrypoint.sh
+  |   |       |_ ...
+  |   |
+  |   |_ workflows
+  |   |   |_ ...
+  |   |
+  |   |_ ...
+  |
+  |_ ...

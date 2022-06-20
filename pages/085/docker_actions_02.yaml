@@ -1,0 +1,16 @@
+name: Greeting
+author: Daniel
+description: An action that greets
+inputs:
+  who-to-greet:
+    description: 'Who to greet'
+    required: true
+    default: 'Human'
+outputs:
+  time:
+    description: Greeting time
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.who-to-greet }}
