@@ -1,0 +1,17 @@
+project_directory
+  |
+  |_ .github
+  |   |
+  |   |_ actions
+  |   |   |
+  |   |   |_action_name
+  |   |       |_ action.yml
+  |   |       |_ ...
+  |   |
+  |   |_ workflows
+  |   |   |_ ...
+  |   |
+  |   |_ ...
+  |
+  |_ ...
+

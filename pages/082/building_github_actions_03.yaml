@@ -1,0 +1,16 @@
+name: Greeting action
+on: workflow_dispatch
+jobs:
+  greeting:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v2
+      - name: Say hello
+        id: hello
+        uses: ./.github/actions/greeting
+        with:
+          who-to-greet: 'World'
+      - name: Verify action run
+        run: |
+          echo "Time: ${{ steps.hello.outputs.time }}"
