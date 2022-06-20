@@ -1,12 +1,17 @@
-name: Environment variables
+name: Environment Variables
 on: workflow_dispatch
+env:
+  WF_ENV: Available to all jobs
 jobs:
-  run-github-actions:
+  log-env:
     runs-on: ubuntu-latest
+    env:
+      JOB_ENV: Available to steps in our log-env job
     steps:
-      - name: Print environment variables
+      - name: Log environment variables
+        env:
+          STEP_ENV: Available only in this step
         run: |
-          echo $GITHUB_SHA
-          echo $GITHUB_REPOSITORY
-          echo $GITHUB_WORKSPACE
-          echo "${{ github.token }}"
+          echo "WF_ENV: ${WF_ENV}"
+          echo "JOB_ENV: ${JOB_ENV}"
+          echo "STEP_ENV: ${STEP_ENV}"

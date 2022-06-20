@@ -1,0 +1,15 @@
+name: Executable file
+on: workflow_dispatch
+jobs:
+  docker-steps:
+    runs-on: ubuntu-latest
+    container:
+      image: node:10.18.0-jessie
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v2
+      - name: Executable file
+        uses: docker://node:12.14.1-alpine3.10
+        with:
+          entrypoint: ./script.sh
+          args: "Some string"

@@ -1,0 +1,19 @@
+name: Docker
+on: workflow_dispatch
+jobs:
+  node-docker:
+    runs-on: ubuntu-latest
+    services:
+      app:
+        image: <name_of_the_image_we_published>
+        ports:
+          - 3001:3000
+      mongo:
+        image: mongo
+        ports:
+          - "27017:27017"
+    steps:
+      - name: POST a user
+        run: "curl -X POST http://mongo:3001/api/user -H 'Content-Type: application/json' -d '{\"username\": \"hello\",\"address\": \"world\"}'"
+      - name: GET users
+        run: curl http://mongo:3001/api/users

@@ -1,0 +1,23 @@
+name: GitHub functions
+on: workflow_dispatch
+jobs:
+  conditional-job:
+    runs-on: ubuntu-latest
+    if: github.event_name == 'workflow_dispatch'
+    steps:
+      - name: Dump GitHub context
+          env:
+            GITHUB_CONTEXT: ${{ toJSON(github) }}
+          run: echo "$GITHUB_CONTEXT"
+  job-with-conditional-step:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Step that will fail
+        run: eccho "Hello, world!"
+      - name: Step that needs to run regardless of status of previous step
+        if: failure()
+        run: echo "Hello, failure!"
+      - name: Step that needs to always run
+        if: always()
+        run: echo "Hello, always!"
+

@@ -5,6 +5,8 @@
     "dictionaries": [],
     "words": [],
     "ignoreWords": [
+        "Czarnievicz",
+        "Dockerfiles",
         "Hamedani",
         "Shafer"
     ],

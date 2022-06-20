@@ -1,0 +1,11 @@
+name: Secrets
+on: workflow_dispatch
+env:
+  SECRET_ENV_VARIABLE: ${{ secrets.SECRET_ENV_VARIABLE }}
+jobs:
+  log-env:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Log ENV variables
+        run: |
+          echo "SECRET_ENV_VARIABLE: ${SECRET_ENV_VARIABLE}"

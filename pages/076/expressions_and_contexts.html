@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../../assets/css/style.css" />
+    <link
+      rel="shortcut icon"
+      href="../../assets/favicon/favicon.png"
+      type="image/x-icon"
+    />
+    <title>Expressions and contexts</title>
+  </head>
+  <body>
+    <div class="floating-div">
+      <header>
+        <div class="btn">
+          <a href="../075/environment_variables.html" class="previous">
+            &laquo; Previous
+          </a>
+        </div>
+        <div class="title">
+          <h1>Expressions and contexts</h1>
+        </div>
+        <div class="btn">
+          <a href="../077/continue_on_error.html" class="next">
+            Next &raquo;
+          </a>
+        </div>
+      </header>
+    </div>
+    <main>
+      <section>
+        <!-- Expressions and contexts -->
+        <div class="row">
+          <div class="single-col">
+            <p>
+              We've been using the <em>${{ }}</em> syntax. Whatever we write
+              inside the <em>${{ }}</em> is called an <em>expression</em>. These
+              expressions can be anything that needs to be evaluated, included
+              literals like numbers, booleans, strings, and even operators (=,
+              >, >=, <, <=).
+            </p>
+            <br />
+            <p>
+              Objects that contain some information about the workflow are
+              called <em>contexts</em>. For example, the <em>github</em> context
+              contains information about the GitHub repository, the
+              <em>secrets</em> context contains all repository secrets. You can
+              find all the contexts
+              <a
+                href="https://docs.github.com/en/actions/learn-github-actions/contexts"
+                class="here"
+                >here</a
+              >.
+            </p>
+          </div>
+        </div>
+        <!-- Functions -->
+        <div class="example"></div>
+        <div class="row">
+          <div class="single-col">
+            <p>
+              GitHub comes with a list of functions for some basic operations.
+              Expressions can be GitHub functions. You can find the complete
+              list of available functions
+              <a
+                href="https://docs.github.com/en/actions/learn-github-actions/expressions#functions"
+                class="here"
+                >here</a
+              >.
+            </p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="single-col center">
+            <img
+              src="expressions_and_contexts_01.png"
+              alt="Expressions and contexts 1"
+              class="vscode-img"
+            />
+          </div>
+        </div>
+        <!-- Job status functions -->
+        <div class="example"></div>
+        <div class="row">
+          <div class="single-col">
+            <p>
+              One group of GitHub functions that are particularly useful are the
+              <em>Job status functions</em>. These return information on what
+              the status of a job is (at the moment of their invocation). They
+              are commonly used with the <em>if</em> key. This will cause the
+              steps in the job (or a certain step) to only run if a certain
+              expression evaluates to true (like, for example, a previous job
+              being successful). GitHub will treat anything in the
+              <em>if</em> key as an expression already, so we don't need to use
+              the <em>${{ }}</em> syntax.
+            </p>
+            <br />
+            <p>
+              The default Job check status is
+              <span class="inline-code">success()</span> and it will be applied
+              unless other functions are specified.
+            </p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="single-col center">
+            <img
+              src="expressions_and_contexts_02.png"
+              alt="Expressions and contexts"
+              class="vscode-img"
+            />
+          </div>
+        </div>
+        <div class="row">
+          <div class="single-col">
+            <p>
+              You can find all Job status functions
+              <a
+                href="https://docs.github.com/en/actions/learn-github-actions/expressions#status-check-functions"
+                class="here"
+                >here</a
+              >.
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <a class="go-home" href="../../index.html"><i class="fas fa-home"></i></a>
+    </footer>
+    <script
+      src="https://kit.fontawesome.com/994cc6cf8e.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

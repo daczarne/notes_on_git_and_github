@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../../assets/css/style.css" />
+    <link
+      rel="shortcut icon"
+      href="../../assets/favicon/favicon.png"
+      type="image/x-icon"
+    />
+    <title>Docker actions</title>
+  </head>
+  <body>
+    <div class="floating-div">
+      <header>
+        <div class="btn">
+          <a href="../084/github_toolkit.html" class="previous">
+            &laquo; Previous
+          </a>
+        </div>
+        <div class="title">
+          <h1>Docker actions</h1>
+        </div>
+        <div class="btn">
+          <!-- <a href="" class="next"> Next &raquo; </a> -->
+        </div>
+      </header>
+    </div>
+    <main>
+      <section>
+        <div class="row">
+          <div class="left-col">
+            <p>
+              Docker actions don't run directly on the virtual machine in the
+              GitHub Action runner, but rather in the container defined by the
+              Docker build. It will be slower, but allows us to use tools that
+              are otherwise not available in the GitHub servers.
+            </p>
+            <br />
+            <p>
+              The basic directory organization is the same. Create a
+              sub-directory in the <em>.github/actions</em> directory, and place
+              the <em>action.yml</em> file in there. We also need to add in this
+              directory all other files needed for the action (e.g. Dockerfile,
+              executable files, etc).
+            </p>
+          </div>
+          <div class="right-col">
+            <img
+              src="docker_actions_01.png"
+              alt="Docker actions 1"
+              class="vscode-img"
+            />
+          </div>
+        </div>
+        <div class="row">
+          <div class="left-col">
+            <img
+              src="docker_actions_02.png"
+              alt="Docker actions 2"
+              class="vscode-img"
+            />
+          </div>
+          <div class="right-col">
+            <p>
+              The <em>action.yml</em> file follows the same structure as before,
+              but the <em>using</em> key needs to be set to docker, and instead
+              of <em>main</em> we need to supply an <em>image</em>. This can be
+              either an image from DockerHub, or one that we create ourselves.
+            </p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="left-col">
+            <p>
+              The <em>Dockerfile</em> needs to be placed inside the action
+              directory. When using Docker actions, we need to define the inputs
+              in the <em>inputs</em> object, but also pass them to the
+              <em>args array</em>. This way, arguments will be supplied to the
+              <em>entrypoint</em>.
+            </p>
+            <br />
+            <p>
+              Dockerfiles in Github actions do have certain limitations. You can
+              check them
+              <a
+                href="https://docs.github.com/en/enterprise-cloud@latest/actions/creating-actions/dockerfile-support-for-github-actions"
+                class="here"
+                >here</a
+              >.
+            </p>
+          </div>
+          <div class="right-col">
+            <img
+              src="dockerfile.png"
+              alt="Docker actions 3"
+              class="vscode-img"
+            />
+            <br />
+            <img
+              src="entrypoint.png"
+              alt="Docker actions 3"
+              class="vscode-img"
+            />
+          </div>
+        </div>
+        <div class="row">
+          <div class="single-col">
+            <p>
+              To set environment variables when creating actions in Docker
+              containers we use the syntax
+            </p>
+            <div class="code">
+              echo "{environment_variable_name}={value}" >> $GITHUB_ENV
+            </div>
+            <p>as part of the <em>run</em> keyword in our job's step.</p>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <a class="go-home" href="../../index.html"><i class="fas fa-home"></i></a>
+    </footer>
+    <script
+      src="https://kit.fontawesome.com/994cc6cf8e.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

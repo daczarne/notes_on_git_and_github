@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../../assets/css/style.css" />
+    <link
+      rel="shortcut icon"
+      href="../../assets/favicon/favicon.png"
+      type="image/x-icon"
+    />
+    <title>Continue on error</title>
+  </head>
+  <body>
+    <div class="floating-div">
+      <header>
+        <div class="btn">
+          <a href="../076/expressions_and_contexts.html" class="previous">
+            &laquo; Previous
+          </a>
+        </div>
+        <div class="title">
+          <h1>Continue on error</h1>
+        </div>
+        <div class="btn">
+          <a href="../078/timeout_minutes.html" class="next"> Next &raquo; </a>
+        </div>
+      </header>
+    </div>
+    <main>
+      <section>
+        <div class="row">
+          <div class="single-col">
+            <p>
+              The <em>if: failure()</em> option was good to force a downstream
+              step to run even if the previous one had failed. But any step
+              coming after that immediate failed one, will still not run. If we
+              need to make sure that all downstream steps do run, we can add the
+              <span class="inline-code">continue-on-error: true</span> key:value
+              pair to the job that might fail. By default this key's value is
+              set to false.
+            </p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="single-col center">
+            <img
+              src="continue_on_error_01.png"
+              alt="Continue on error 1"
+              class="vscode-img"
+            />
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <a class="go-home" href="../../index.html"><i class="fas fa-home"></i></a>
+    </footer>
+    <script
+      src="https://kit.fontawesome.com/994cc6cf8e.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
