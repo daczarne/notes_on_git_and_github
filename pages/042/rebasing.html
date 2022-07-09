@@ -212,6 +212,35 @@
             </p>
           </div>
         </div>
+        <div class="example"></div>
+        <div class="row">
+          <div class="single-col">
+            <p>
+              If before starting a rebase we already know that we always want to
+              keep the changes as they are in the
+              <span class="git-aqua">feature</span> branch, we can run the
+              rebase with the <span class="inline-code">-Xtheirs</span> option.
+            </p>
+            <div class="code">
+              <code>git rebase -Xtheirs <i>NEW_BASE_BRANCH</i></code>
+            </div>
+            <p>
+              Likewise, if before starting the rebase we already know that we
+              wish to keep the changes in the
+              <span class="git-aqua">master</span> branch, the we use the
+              <span class="inline-code">-Xours</span> option.
+            </p>
+            <div class="code">
+              <code>git rebase -Xours <i>NEW_BASE_BRANCH</i></code>
+            </div>
+            <p>
+              This <span class="inline-code">-X</span> option is called the
+              <em>strategy option</em>. You should keep in mind that when we
+              supply a strategy to be used by default, said strategy is used in
+              all commits that are being rebased.
+            </p>
+          </div>
+        </div>
       </section>
     </main>
     <footer>
