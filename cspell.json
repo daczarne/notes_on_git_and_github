@@ -7,14 +7,20 @@
         "**/.git/**",
     ],
     "dictionaryDefinitions": [
-      {
-        "name": "names",
-        "path": "./.cspell/names.txt",
-        "addWords": true,
-      },
+        {
+            "name": "git",
+            "path": "./.cspell/git.txt",
+            "addWords": true,
+        },
+        {
+            "name": "names",
+            "path": "./.cspell/names.txt",
+            "addWords": true,
+        },
     ],
     "dictionaries": [
-      "names",
+        "git",
+        "names",
     ],
     "words": [],
     "ignoreWords": [
