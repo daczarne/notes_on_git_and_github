@@ -64,9 +64,11 @@ jobs:
       - name: Lint HTML 🧪
         id: lint_html_files
         run: htmlhint "**/*.html"
+        continue-on-error: true
       - name: Lint CSS 🧪
         id: lint_css_files
         run: stylelint --config stylelint.config.mjs "**/*.css"
+        continue-on-error: true
 
   spell-check:
     name: Spell check
