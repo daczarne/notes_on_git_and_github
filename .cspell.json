@@ -24,6 +24,7 @@
     ],
     "words": [],
     "ignoreWords": [
+        "eccho",
         "Dockerfiles",
     ],
     "overrides": [

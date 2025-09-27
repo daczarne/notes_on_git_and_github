@@ -13,6 +13,9 @@ indent_style = space
 [*.{html}]
 trim_trailing_whitespace = false
 
+[*.{json}]
+indent_size = 4
+
 # YAML, CSS, JavaScript, JSON
 [*.{yaml, yml, css, js, json}]
 trim_trailing_whitespace = true
