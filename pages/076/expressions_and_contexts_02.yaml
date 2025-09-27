@@ -6,9 +6,9 @@ jobs:
     if: github.event_name == 'workflow_dispatch'
     steps:
       - name: Dump GitHub context
-          env:
-            GITHUB_CONTEXT: ${{ toJSON(github) }}
-          run: echo "$GITHUB_CONTEXT"
+        env:
+          GITHUB_CONTEXT: ${{ toJSON(github) }}
+        run: echo "$GITHUB_CONTEXT"
   job-with-conditional-step:
     runs-on: ubuntu-latest
     steps:
@@ -20,4 +20,3 @@ jobs:
       - name: Step that needs to always run
         if: always()
         run: echo "Hello, always!"
-
