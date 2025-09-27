@@ -1,0 +1,30 @@
+content:
+  - changed-files:
+      - any-glob-to-any-file:
+          - assets/**
+          - pages/**
+docs:
+  - changed-files:
+      - any-glob-to-any-file:
+          - docs/**
+          - README.md
+tools:
+  - changed-files:
+      - any-glob-to-any-file:
+          - .cspell.json
+          - .editorconfig
+          - .gitattributes
+          - .gitignore
+          - .markdownlint-cli2.yaml
+          - .markdownlint.yaml
+          - .prettierrc.yaml
+          - .yamlignore
+          - .yamllint.yaml
+vs-code-settings:
+  - changed-files:
+      - any-glob-to-any-file:
+          - .vscode/**
+workflows:
+  - changed-files:
+      - any-glob-to-any-file:
+          - .github/**
