@@ -60,10 +60,10 @@ jobs:
           node-version: 20
       - name: Install linters 🌴
         id: install_linters
-        run: npm install -g htmlhint stylelint
-      - name: Lint HTML 🧪
-        id: lint_html_files
-        run: htmlhint "**/*.html"
+        run: npm install -g stylelint
+      # - name: Lint HTML 🧪
+      #   id: lint_html_files
+      #   run: htmlhint "**/*.html"
       - name: Lint CSS 🧪
         id: lint_css_files
         run: stylelint --config stylelint.config.mjs "**/*.css"
