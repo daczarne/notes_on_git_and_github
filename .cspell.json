@@ -29,8 +29,8 @@
     ],
     "overrides": [
         {
-            "filename": "**/*.py",
-            "languageId": "python",
+            "filename": "**/*.html",
+            "languageId": "html",
         },
         {
             "filename": "**/*.yaml",
