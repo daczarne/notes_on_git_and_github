@@ -1,4 +1,17 @@
-# Mac files
-.DS_Store
 .git/
+
+# Node modules
 node_modules
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# Package manager logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# macOS files
+.DS_Store
