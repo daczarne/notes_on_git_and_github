@@ -32,18 +32,15 @@
         <div class="row">
           <div class="left-col">
             <p>
-              Suppose we got a bug report. To fix this bug we should first
-              create a new branch. This way any changes that we do to our code
-              can be tested before we merge them into production. To create a
-              new branch we run
+              Suppose we got a bug report. To fix this bug we should first create a new branch. This way any changes
+              that we do to our code can be tested before we merge them into production. To create a new branch we run
             </p>
             <div class="code">
               <code>git branch <em>new_branch_name</em></code>
             </div>
             <p>
-              If we run <span class="inline-code">git branch</span>, Git will
-              return a list of the branches our project has. The branch we are
-              currently in will have an asterisk next to its name.
+              If we run <span class="inline-code">git branch</span>, Git will return a list of the branches our project
+              has. The branch we are currently in will have an asterisk next to its name.
             </p>
             <br />
             <p>To switch branches we run</p>
@@ -65,32 +62,29 @@
           </div>
           <div class="right-col">
             <p>
-              Now that we are in the new branch, we can work on fixing the bug.
-              Once we are done, we need to stage and commit our changes.
+              Now that we are in the new branch, we can work on fixing the bug. Once we are done, we need to stage and
+              commit our changes.
             </p>
             <br />
             <p>
-              Suppose we've done all that. If we take a look at the log now
-              we'll see that our bugfix branch is ahead of the master branch. If
-              we switch back to the master branch, we'll see that the bug is
-              still there. We still need to merge our branches.
+              Suppose we've done all that. If we take a look at the log now we'll see that our bugfix branch is ahead of
+              the master branch. If we switch back to the master branch, we'll see that the bug is still there. We still
+              need to merge our branches.
             </p>
           </div>
         </div>
         <div class="row">
           <div class="left-col">
             <p>
-              Once we are done with a branch, we should delete it. To do so we
-              run
+              Once we are done with a branch, we should delete it. To do so we run
             </p>
             <div class="code">
               <code>git branch -d <em>branch_name</em></code>
             </div>
             <p>
-              Keep in mind that if the changes that you did in that branch have
-              not been merged into the master branch, Git will complain about
-              this action. This is to protect you from accidentally deleting
-              work you still need. To override this protection we use
+              Keep in mind that if the changes that you did in that branch have not been merged into the master branch,
+              Git will complain about this action. This is to protect you from accidentally deleting work you still
+              need. To override this protection we use
             </p>
             <div class="code">
               <code>git branch -D <em>branch_name</em></code>

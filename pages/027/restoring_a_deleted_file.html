@@ -30,31 +30,25 @@
         <div class="row">
           <div class="left-col">
             <p>
-              We can restore files that we deleted in previous commits. Suppose
-              that we accidentally removed <em>app.py</em> and now we need it
-              back. The first thing that we need to do is find the last commit
-              where that file was not deleted. To do that we run
+              We can restore files that we deleted in previous commits. Suppose that we accidentally removed
+              <em>app.py</em> and now we need it back. The first thing that we need to do is find the last commit where
+              that file was not deleted. To do that we run
             </p>
             <div class="code">
               <code>git log --oneline -- app.py</code>
             </div>
             <p>
-              So far nothing new. Now, since the file will show up on the commit
-              in which we delete it, the last commit were the file was not
-              deleted is the second commit from the top: commit
-              <em>8eec1d2</em>. What we need to do now is to
-              <span class="inline-code">git checkout</span> just that file from
-              that commit. So we run
+              So far nothing new. Now, since the file will show up on the commit in which we delete it, the last commit
+              were the file was not deleted is the second commit from the top: commit <em>8eec1d2</em>. What we need to
+              do now is to <span class="inline-code">git checkout</span> just that file from that commit. So we run
             </p>
             <div class="code">
               <code>git checkout 8eec1d2 app.py</code>
             </div>
             <p>
-              Git will take the file as it was at that point in time and place
-              it in our staging area. That is why if we run a
-              <span class="inline-code">git status -s</span> we can see that the
-              file has an <span class="git-green">A</span> on the left column.
-              Lastly, we commit the file to the repository.
+              Git will take the file as it was at that point in time and place it in our staging area. That is why if we
+              run a <span class="inline-code">git status -s</span> we can see that the file has an
+              <span class="git-green">A</span> on the left column. Lastly, we commit the file to the repository.
             </p>
           </div>
           <div class="right-col">

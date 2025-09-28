@@ -30,34 +30,28 @@
         <div class="row">
           <div class="left-col">
             <p>
-              Once our project has reached a stable version, we will release it.
-              That doesn't mean we'll never work on it again. A common and
-              recommended practice is to bookmark the commit where a release
-              happened. To do so we use a <span class="inline-code">tag</span>.
+              Once our project has reached a stable version, we will release it. That doesn't mean we'll never work on
+              it again. A common and recommended practice is to bookmark the commit where a release happened. To do so
+              we use a <span class="inline-code">tag</span>.
             </p>
             <br />
             <p>
-              Now, suppose we want to create a release for our project right
-              before the point in which we introduced <em>app.py</em>. We check
-              the log and see that this means creating a
-              <span class="inline-code">tag</span> at commit <em>a642e12</em>.
-              To do so we run
+              Now, suppose we want to create a release for our project right before the point in which we introduced
+              <em>app.py</em>. We check the log and see that this means creating a <span class="inline-code">tag</span>
+              at commit <em>a642e12</em>. To do so we run
             </p>
             <div class="code">
               <code>git tag v1.0 a642e12</code>
             </div>
             <p>
-              This will tell Git that we want to make a
-              <span class="inline-code">tag</span> called <em>v1.0</em> at
-              commit <em>a642e12</em>. If we check the log now, we will see that
-              Git has added that tag at that commit.
+              This will tell Git that we want to make a <span class="inline-code">tag</span> called <em>v1.0</em> at
+              commit <em>a642e12</em>. If we check the log now, we will see that Git has added that tag at that commit.
             </p>
             <br />
             <p>
-              These type of <span class="inline-code">tag</span>s are called
-              <em>lightweight</em> tags because they are just pointers to a
-              specific commit. A better way is to use <em>annotated tags</em>.
-              These tags take a release message too.
+              These type of <span class="inline-code">tag</span>s are called <em>lightweight</em> tags because they are
+              just pointers to a specific commit. A better way is to use <em>annotated tags</em>. These tags take a
+              release message too.
             </p>
           </div>
           <div class="right-col">
@@ -70,25 +64,22 @@
           </div>
           <div class="right-col">
             <p>
-              First, let's delete the lightweight tag. To do this we use the
-              <span class="inline-code">-d</span> option and supply the tag
-              name, like so
+              First, let's delete the lightweight tag. To do this we use the <span class="inline-code">-d</span> option
+              and supply the tag name, like so
             </p>
             <div class="code">
               <code>git tag -d v1.0</code>
             </div>
             <p>
-              You can check the log now and you'll see that the tag is not there
-              anymore.
+              You can check the log now and you'll see that the tag is not there anymore.
             </p>
           </div>
         </div>
         <div class="row">
           <div class="left-col">
             <p>
-              To create an <em>annotated tag</em> we use the
-              <span class="inline-code">-a</span> option and supply it a message
-              with the <span class="inline-code">-m</span> option
+              To create an <em>annotated tag</em> we use the <span class="inline-code">-a</span> option and supply it a
+              message with the <span class="inline-code">-m</span> option
             </p>
             <div class="code">
               <code>git tag -a v1.0 -m "Version 1.0" a642e12</code>
@@ -98,17 +89,14 @@
               <code>git tag -a v2.0 -m "Version 2.0" c674d68</code>
             </div>
             <p>
-              Our log now shows that we have two tags pointing at different
-              commits.
+              Our log now shows that we have two tags pointing at different commits.
             </p>
             <br />
             <p>
-              But <em>v2.0</em> had a bug which we fixed in our last commit. So
-              we'll release a new version of our program. The difference is that
-              since we now only fixed a bug instead of introducing new
-              functionality, we'll increment the tag minor instead of the major.
-              Since we are releasing a tag at the last commit, we don't need to
-              supply a commit ID
+              But <em>v2.0</em> had a bug which we fixed in our last commit. So we'll release a new version of our
+              program. The difference is that since we now only fixed a bug instead of introducing new functionality,
+              we'll increment the tag minor instead of the major. Since we are releasing a tag at the last commit, we
+              don't need to supply a commit ID
             </p>
             <div class="code">
               <code>git tag -a v2.1 -m "Version 2.1"</code>
@@ -128,19 +116,16 @@
               <code>git tag -n</code>
             </div>
             <p>
-              Once we have tags, we can checkout to those points in our commit
-              history by name instead of using the commit ID. For example,
-              running
+              Once we have tags, we can checkout to those points in our commit history by name instead of using the
+              commit ID. For example, running
             </p>
             <div class="code">
               <code>git checkout v1.0</code>
             </div>
             <p>
-              moves the <span class="inline-code">HEAD</span> to the
-              <em>v1.0</em> tag. Keep in mind that you are in a
-              <span class="inline-code">'detached HEAD' state</span> now, so
-              you'll need to <span class="inline-code">checkout</span> to
-              <span class="git-aqua">master</span> again when done.
+              moves the <span class="inline-code">HEAD</span> to the <em>v1.0</em> tag. Keep in mind that you are in a
+              <span class="inline-code">'detached HEAD' state</span> now, so you'll need to
+              <span class="inline-code">checkout</span> to <span class="git-aqua">master</span> again when done.
             </p>
           </div>
         </div>
