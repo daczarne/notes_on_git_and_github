@@ -45,7 +45,7 @@
               sub-directory that we want to add to it, we can use
             </p>
             <div class="code">
-              <code>echo <em>file_name.ext</em> > .gitignore</code>
+              <code>echo <em>file_name.ext</em> &gt .gitignore</code>
             </div>
             <p>
               If we already have a <em>.gitignore</em> file and we want to add a
@@ -53,11 +53,11 @@
               <em>.gitignore</em> file), we run
             </p>
             <div class="code">
-              <code>echo <em>new_file_name.ext</em> >> .gitignore</code>
+              <code>echo <em>new_file_name.ext</em> &gt&gt .gitignore</code>
             </div>
             <p>If we want to ignore an entire sub-directory, we run</p>
             <div class="code">
-              <code>echo <em>sub-dir_name/</em> >> .gitignore</code>
+              <code>echo <em>sub-dir_name/</em> &gt&gt .gitignore</code>
             </div>
             <p>
               Once we've created our <em>.gitignore</em> file, we can inspect it
@@ -77,14 +77,14 @@
               and a file inside that sub-dir with
             </p>
             <div class="code">
-              <code>mkdir logs && echo hello > logs/dev.log</code>
+              <code>mkdir logs && echo hello &gt logs/dev.log</code>
             </div>
             <p>
               Next, we add it to (and create) the <em>.gitignore</em> file by
               running
             </p>
             <div class="code">
-              <code>echo logs/ > .gitignore</code>
+              <code>echo logs/ &gt .gitignore</code>
             </div>
             <p>
               Now, if we run a <span class="inline-code">git status</span>,

@@ -13,11 +13,7 @@ header {
   width: 100%;
 }
 
-.btn {
-  width: 25%;
-}
-
-header .title {
+.title header {
   width: 100%;
 }
 
@@ -30,6 +26,7 @@ header .title {
 }
 
 .btn {
+  width: 25%;
   align-items: center;
   display: flex;
   flex-direction: row;
