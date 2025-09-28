@@ -32,17 +32,16 @@
         <div class="row">
           <div class="left-col">
             <p>
-              Suppose now that we want to reorder commits. In our example,
-              commit <em>099c06d</em> should come before commit
-              <em>23b2c04</em>, so we need to change their order. Once again, we
-              use interactive rebasing to achieve this. So we run
+              Suppose now that we want to reorder commits. In our example, commit <em>099c06d</em> should come before
+              commit <em>23b2c04</em>, so we need to change their order. Once again, we use interactive rebasing to
+              achieve this. So we run
             </p>
             <div class="code">
               <code>git rebase -i 70ef834</code>
             </div>
             <p>
-              since commit <em>70ef834</em> is the parent commit of the oldest
-              of the two commits that we want to reorder.
+              since commit <em>70ef834</em> is the parent commit of the oldest of the two commits that we want to
+              reorder.
             </p>
           </div>
           <div class="right-col">
@@ -52,10 +51,9 @@
         <div class="row">
           <div class="single-col">
             <p>
-              Now in GitLens we can grab and drag the commits that we want to
-              reorder, and drop them in their final destination on the commit
-              tree. If you are not using GitLens you can move lines around in VS
-              Code with Alt + arrow (up or down as needed).
+              Now in GitLens we can grab and drag the commits that we want to reorder, and drop them in their final
+              destination on the commit tree. If you are not using GitLens you can move lines around in VS Code with Alt
+              + arrow (up or down as needed).
             </p>
           </div>
         </div>
@@ -70,10 +68,8 @@
           </div>
           <div class="right-col">
             <p>
-              Since there were no conflicts or actions for us to make, Git took
-              care of everything as soon as we closed the VS Code file. If we
-              check the log now, we'll see that the commit is where we wanted it
-              to be.
+              Since there were no conflicts or actions for us to make, Git took care of everything as soon as we closed
+              the VS Code file. If we check the log now, we'll see that the commit is where we wanted it to be.
             </p>
           </div>
         </div>

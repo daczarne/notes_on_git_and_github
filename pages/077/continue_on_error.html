@@ -30,13 +30,10 @@
         <div class="row">
           <div class="single-col">
             <p>
-              The <em>if: failure()</em> option was good to force a downstream
-              step to run even if the previous one had failed. But any step
-              coming after that immediate failed one, will still not run. If we
-              need to make sure that all downstream steps do run, we can add the
-              <span class="inline-code">continue-on-error: true</span> key:value
-              pair to the job that might fail. By default this key's value is
-              set to false.
+              The <em>if: failure()</em> option was good to force a downstream step to run even if the previous one had
+              failed. But any step coming after that immediate failed one, will still not run. If we need to make sure
+              that all downstream steps do run, we can add the <span class="inline-code">continue-on-error: true</span>
+              key:value pair to the job that might fail. By default this key's value is set to false.
             </p>
           </div>
         </div>

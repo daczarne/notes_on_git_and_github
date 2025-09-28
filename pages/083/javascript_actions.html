@@ -34,26 +34,21 @@
           </div>
           <div class="right-col">
             <p>
-              We place actions in the
-              <span class="inline-code">.github/actions</span> directory. Each
-              action should have its own sub-directory.
+              We place actions in the <span class="inline-code">.github/actions</span> directory. Each action should
+              have its own sub-directory.
             </p>
             <br />
             <p>
-              Each action requires an <em>action.yml</em> file. In this file
-              we'll declare the <em>name</em>, <em>author</em>, and
-              <em>description</em> of the action. Next we can add objects to the
-              <em>inputs</em> and <em>outputs</em> keywords. Each elements of
-              the <em>inputs</em> object is itself an object too, with a
-              <em>description</em>, <em>required</em> flag, and a
-              <em>default</em> value. Each element of the outputs object takes a
-              <em>description</em>.
+              Each action requires an <em>action.yml</em> file. In this file we'll declare the <em>name</em>,
+              <em>author</em>, and <em>description</em> of the action. Next we can add objects to the <em>inputs</em>
+              and <em>outputs</em> keywords. Each elements of the <em>inputs</em> object is itself an object too, with a
+              <em>description</em>, <em>required</em> flag, and a <em>default</em> value. Each element of the outputs
+              object takes a <em>description</em>.
             </p>
             <br />
             <p>
-              Below that we need to include the <em>runs</em> keyword. In it we
-              specify the version of node in the <em>using</em> keyword, and the
-              location of the file with the action in the <em>main</em> keyword.
+              Below that we need to include the <em>runs</em> keyword. In it we specify the version of node in the
+              <em>using</em> keyword, and the location of the file with the action in the <em>main</em> keyword.
             </p>
           </div>
         </div>
@@ -61,26 +56,21 @@
         <div class="row">
           <div class="left-col">
             <p>
-              To include this action in a workflow, first we'll need to checkout
-              the repository and then pass the action path to the
-              <em>uses</em> keyword.
+              To include this action in a workflow, first we'll need to checkout the repository and then pass the action
+              path to the <em>uses</em> keyword.
             </p>
             <br />
             <p>
-              When our actions use external packages we need to compile our code
-              so that the packages are available in the virtual machine. To do
-              this, we can use the <em>vercel/ncc</em> package. To install it
-              locally we run
-              <span class="inline-code">npm i -D @vercel/ncc</span>. Once
-              installed we can use it by running
+              When our actions use external packages we need to compile our code so that the packages are available in
+              the virtual machine. To do this, we can use the <em>vercel/ncc</em> package. To install it locally we run
+              <span class="inline-code">npm i -D @vercel/ncc</span>. Once installed we can use it by running
             </p>
             <div class="code">
               npx ncc build path/to/file.js -o path/to/output/dist
             </div>
             <p>
-              Once the <i>dist</i> is generated we just have to update the
-              <em>main</em> keyword in our workflow so that it points to it (for
-              example <span class="inline-code">main: 'dist/index.js'</span>).
+              Once the <i>dist</i> is generated we just have to update the <em>main</em> keyword in our workflow so that
+              it points to it (for example <span class="inline-code">main: 'dist/index.js'</span>).
             </p>
           </div>
           <div class="right-col">

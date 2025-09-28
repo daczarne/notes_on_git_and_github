@@ -28,10 +28,9 @@
         <div class="row">
           <div class="left-col">
             <p>
-              By default, jobs will run in parallel. If we want jobs to run in
-              series we need to specify the <em>needs</em> key. This key takes
-              as its value an array of job names. The job will only run once all
-              jobs in the array have finished successfully.
+              By default, jobs will run in parallel. If we want jobs to run in series we need to specify the
+              <em>needs</em> key. This key takes as its value an array of job names. The job will only run once all jobs
+              in the array have finished successfully.
             </p>
           </div>
           <div class="right-col">
@@ -42,20 +41,17 @@
         <div class="row">
           <div class="left-col">
             <p>
-              We can also create actions that capture output. To do so we must
-              <em>echo</em> the output of a previous step. We access it by
-              referencing it with
+              We can also create actions that capture output. To do so we must <em>echo</em> the output of a previous
+              step. We access it by referencing it with
             </p>
             <div class="code">
               <em>"${{ steps.step_id.outputs.output_element }}"</em>
             </div>
             <p>
-              The <em>steps</em> variable is created by GitHub. The step
-              <em>id</em> we need to define it ourselves in the action that we
-              want to reference. The <em>outputs</em> attribute is created by
-              GitHub, and the <em>output_element</em> is defined by the creator
-              of the action. Check the action's documentation to find which
-              elements can be output, and their names.
+              The <em>steps</em> variable is created by GitHub. The step <em>id</em> we need to define it ourselves in
+              the action that we want to reference. The <em>outputs</em> attribute is created by GitHub, and the
+              <em>output_element</em> is defined by the creator of the action. Check the action's documentation to find
+              which elements can be output, and their names.
             </p>
           </div>
           <div class="right-col">

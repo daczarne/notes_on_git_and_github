@@ -33,25 +33,22 @@
         <div class="row">
           <div class="single-col">
             <p>
-              Some environment variables are set up automatically by GitHub (in
-              the runner). We can use these variables in our workflows by
-              referencing them with <em>$VARIABLE_NAME</em>.
+              Some environment variables are set up automatically by GitHub (in the runner). We can use these variables
+              in our workflows by referencing them with <em>$VARIABLE_NAME</em>.
             </p>
             <br />
             <p>Some of them are:</p>
             <ul>
               <li class="uc-li">
-                <span class="inline-code">$GITHUB_SHA</span> will return the SHA
-                of the commit that triggered the workflow
+                <span class="inline-code">$GITHUB_SHA</span> will return the SHA of the commit that triggered the
+                workflow
               </li>
               <li class="uc-li">
-                <span class="inline-code">$GITHUB_REPOSITORY</span> will return
-                the <em>user_name/repo_name</em> in which the workflow is
-                running
+                <span class="inline-code">$GITHUB_REPOSITORY</span> will return the <em>user_name/repo_name</em> in
+                which the workflow is running
               </li>
               <li class="uc-li">
-                <span class="inline-code">$GITHUB_WORKSPACE</span> will return
-                the workspace directory in the runner.
+                <span class="inline-code">$GITHUB_WORKSPACE</span> will return the workspace directory in the runner
               </li>
             </ul>
             <br />
@@ -67,29 +64,26 @@
         <div class="row">
           <div class="left-col">
             <p>
-              We can define our own environment variables as well. To declare a
-              variable we need to use the <em>env</em> key at the start of our
-              workflow. This key takes as its value a list of key:value pairs,
-              where the keys are the names of the environment variables that we
-              are declaring, and its values are the values of the variables.
+              We can define our own environment variables as well. To declare a variable we need to use the <em>env</em>
+              key at the start of our workflow. This key takes as its value a list of key:value pairs, where the keys
+              are the names of the environment variables that we are declaring, and its values are the values of the
+              variables.
             </p>
             <br />
             <p>
-              After that we can just write our jobs as we would normally do. To
-              access the variables we just need to use the
-              <em>${ VAR_NAME }</em> syntax.
+              After that we can just write our jobs as we would normally do. To access the variables we just need to use
+              the <em>${ VAR_NAME }</em> syntax.
             </p>
             <br />
             <p>
-              Variables declared this way will be available to the whole
-              workflow. Variables that need to only be available to a specific
-              job in the workflow are declared and used in the same way, but
-              using the <em>env</em> in that specific job.
+              Variables declared this way will be available to the whole workflow. Variables that need to only be
+              available to a specific job in the workflow are declared and used in the same way, but using the
+              <em>env</em> in that specific job.
             </p>
             <br />
             <p>
-              Likewise, if we want a variable to only be available in a step of
-              a job, we use declare and use it in that step.
+              Likewise, if we want a variable to only be available in a step of a job, we use declare and use it in that
+              step.
             </p>
           </div>
           <div class="right-col">
@@ -104,34 +98,29 @@
           </div>
           <div class="right-col">
             <p>
-              Some variables need to be encrypted. To do so, we just need to add
-              the variable value in
-              <i>Settings &gt Secrets &gt Actions &gt New repository secret</i>. Give
-              it a name and a value, and save it. These variables will be
-              available in a workflow using an object called secrets.
+              Some variables need to be encrypted. To do so, we just need to add the variable value in <i>Settings &gt
+                Secrets &gt Actions &gt New repository secret</i>. Give it a name and a value, and save it. These
+              variables will be available in a workflow using an object called secrets.
             </p>
             <br />
             <p>
-              One secret that is automatically available on workflows is
-              <em>secrets.GITHUB_TOKEN</em>. This token can be used to access
-              the GitHub API, or to push something to the repo, etc. Basically,
-              any time that the action needs to interact with the repository it
-              will need authentication, and we can use this variable to do it.
+              One secret that is automatically available on workflows is <em>secrets.GITHUB_TOKEN</em>. This token can
+              be used to access the GitHub API, or to push something to the repo, etc. Basically, any time that the
+              action needs to interact with the repository it will need authentication, and we can use this variable to
+              do it.
             </p>
           </div>
         </div>
         <div class="row">
           <div class="left-col">
             <p>
-              Secrets can be safely logged because GitHub will never expose them
-              to the logs. It will print them as asterisks.
+              Secrets can be safely logged because GitHub will never expose them to the logs. It will print them as
+              asterisks.
             </p>
             <br />
             <p>
-              The authentication token can also be accessed via the
-              <em>github</em> object. This object is automatically set for us by
-              GitHub and contains several other values too. More on that object
-              latter.
+              The authentication token can also be accessed via the <em>github</em> object. This object is automatically
+              set for us by GitHub and contains several other values too. More on that object later.
             </p>
           </div>
           <div class="right-col">
@@ -143,23 +132,18 @@
         <div class="row">
           <div class="single-col">
             <p>
-              Secrets are useful but they have a limit of 6kbs. Likewise, we
-              might be using some CLI commands in a workflow that uses some
-              secrets that need to be stored in a JSON file. We can push
-              encrypted versions of those files and then include a decryption
-              step in our jobs.
+              Secrets are useful but they have a limit of 6kbs. Likewise, we might be using some CLI commands in a
+              workflow that uses some secrets that need to be stored in a JSON file. We can push encrypted versions of
+              those files and then include a decryption step in our jobs.
             </p>
             <br />
             <p>
-              To encrypt the file locally we can use tools like
-              <a href="https://www.gnupg.org/" class="here">GPG</a>. For details
-              on how to use this tool, refer to the encrypted secrets
-              documentation
+              To encrypt the file locally we can use tools like <a href="https://www.gnupg.org/" class="here">GPG</a>.
+              For details on how to use this tool, refer to the encrypted secrets documentation
               <a href="https://docs.github.com/en/actions/security-guides/encrypted-secrets" class="here">here</a>.
-              Since this files require a passphrase to be decrypted, that
-              passphrase needs to be added as a repository secret. And since the
-              encrypted file itself needs to be available in the runner,
-              workflows that require them must first include a checkout step.
+              Since this files require a passphrase to be decrypted, that passphrase needs to be added as a repository
+              secret. And since the encrypted file itself needs to be available in the runner, workflows that require
+              them must first include a checkout step.
             </p>
           </div>
         </div>
