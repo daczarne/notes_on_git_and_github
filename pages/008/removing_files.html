@@ -34,43 +34,37 @@
         <div class="row">
           <div class="single-col">
             <p>
-              To remove a file (say <em>file2.txt</em>) from our repository we
-              could use <span class="inline-code">rm file2.txt</span>. The
-              problem with this command is that is not a
-              <span class="inline-code">git</span> command. So the file will be
-              removed from the <em>Working Directory</em>, but not from the
-              <em>Staging Area</em>. It's OK to do it this way, just remember
-              that since the file is still in the <em>Staging Area</em>, you'll
-              need to <span class="inline-code">git add</span> it and then
-              <span class="inline-code">git commit</span> it. Since this is such
-              a common operation, there's a Git version of the remove command
-              that does everything in one step.
+              To remove a file (say <em>file2.txt</em>) from our repository we could use
+              <span class="inline-code">rm file2.txt</span>. The problem with this command is that is not a
+              <span class="inline-code">git</span> command. So the file will be removed from the
+              <em>Working Directory</em>, but not from the <em>Staging Area</em>. It's OK to do it this way, just
+              remember that since the file is still in the <em>Staging Area</em>, you'll need to
+              <span class="inline-code">git add</span> it and then <span class="inline-code">git commit</span> it.
+              Since this is such a common operation, there's a Git version of the remove command that does everything
+              in one step.
             </p>
           </div>
         </div>
         <div class="row">
           <div class="left-col">
             <p>
-              You can check which files are in the <em>Staging Area</em> by
-              running
+              You can check which files are in the <em>Staging Area</em> by running
             </p>
             <div class="code">
               <code>git ls-files</code>
             </div>
             <p>
-              You should see both files in there: <em>file1.txt</em> and
-              <em>file2.txt</em>. Now to delete <em>file2.txt</em> we use
+              You should see both files in there: <em>file1.txt</em> and <em>file2.txt</em>. Now to delete
+              <em>file2.txt</em> we use
             </p>
             <div class="code">
               <code>git rm file2.txt</code>
             </div>
             <p>
-              If you run <span class="inline-code">git ls-files</span> again,
-              you should see that <em>file2.txt</em> is no longer in the
-              <em>Staging Area</em>. And if you run
-              <span class="inline-code">ls</span> you'll see that neither is
-              <em>file2.txt</em> in the <em>Working Directory</em>. We have
-              successfully delete <em>file2.txt</em> in one command.
+              If you run <span class="inline-code">git ls-files</span> again, you should see that <em>file2.txt</em> is
+              no longer in the <em>Staging Area</em>. And if you run <span class="inline-code">ls</span> you'll see
+              that neither is <em>file2.txt</em> in the <em>Working Directory</em>. We have successfully delete
+              <em>file2.txt</em> in one command.
             </p>
           </div>
           <div class="right-col">
@@ -86,9 +80,6 @@
     <footer>
       <a class="go-home" href="../../index.html"><i class="fas fa-home"></i></a>
     </footer>
-    <script
-      src="https://kit.fontawesome.com/994cc6cf8e.js"
-      crossorigin="anonymous"
-    ></script>
+    <script src="https://kit.fontawesome.com/994cc6cf8e.js" crossorigin="anonymous"></script>
   </body>
 </html>
