@@ -1,16 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../../assets/css/style.css" />
-    <link
-      rel="shortcut icon"
-      href="../../assets/favicon/favicon.png"
-      type="image/x-icon"
-    />
+    <link rel="shortcut icon" href="../../assets/favicon/favicon.png" type="image/x-icon" />
     <title>Viewing changes across commits</title>
   </head>
+
   <body>
     <div class="floating-div">
       <header>
@@ -34,43 +32,33 @@
         <div class="row">
           <div class="left-col">
             <p>
-              Suppose we want to see what has changed over the last 3 commits.
-              To do that we use the
+              Suppose we want to see what has changed over the last 3 commits. To do that we use the
               <span class="inline-code">git diff</span> command
             </p>
             <div class="code">
               <code>git diff HEAD~3 HEAD</code>
             </div>
             <p>
-              If we only want to see the changes to a particular file, we can
-              add the filename at the end of the command
+              If we only want to see the changes to a particular file, we can add the filename at the end of the command
             </p>
             <div class="code">
               <code>git diff HEAD~3 HEAD <em>file_path/file_name.ext</em></code>
             </div>
           </div>
           <div class="right-col">
-            <img
-              src="viewing_the_changes_across_commits_01.png"
-              alt="Viewing the changes across commits"
-              class="git-bash-img"
-            />
+            <img src="viewing_the_changes_across_commits_01.png" alt="Viewing the changes across commits"
+              class="git-bash-img" />
           </div>
         </div>
         <div class="row">
           <div class="left-col">
-            <img
-              src="viewing_the_changes_across_commits_02.png"
-              alt="Viewing the changes across commits 2"
-              class="git-bash-img"
-            />
+            <img src="viewing_the_changes_across_commits_02.png" alt="Viewing the changes across commits 2"
+              class="git-bash-img" />
           </div>
           <div class="right-col">
             <p>
-              Here too we can use options like
-              <span class="inline-code">--name-only</span> or
-              <span class="inline-code">--name-status</span> to see only the
-              list of files that have been changed.
+              Here too we can use options like <span class="inline-code">--name-only</span> or
+              <span class="inline-code">--name-status</span> to see only the list of files that have been changed.
             </p>
             <div class="code">
               <code>git diff HEAD~5 HEAD~2 --name-only</code>
@@ -85,9 +73,7 @@
     <footer>
       <a class="go-home" href="../../index.html"><i class="fas fa-home"></i></a>
     </footer>
-    <script
-      src="https://kit.fontawesome.com/994cc6cf8e.js"
-      crossorigin="anonymous"
-    ></script>
+    <script src="https://kit.fontawesome.com/994cc6cf8e.js" crossorigin="anonymous"></script>
   </body>
+
 </html>

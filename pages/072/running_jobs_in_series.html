@@ -1,16 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../../assets/css/style.css" />
-    <link
-      rel="shortcut icon"
-      href="../../assets/favicon/favicon.png"
-      type="image/x-icon"
-    />
+    <link rel="shortcut icon" href="../../assets/favicon/favicon.png" type="image/x-icon" />
     <title>Running jobs in series</title>
   </head>
+
   <body>
     <div class="floating-div">
       <header>
@@ -30,46 +28,34 @@
         <div class="row">
           <div class="left-col">
             <p>
-              By default, jobs will run in parallel. If we want jobs to run in
-              series we need to specify the <em>needs</em> key. This key takes
-              as its value an array of job names. The job will only run once all
-              jobs in the array have finished successfully.
+              By default, jobs will run in parallel. If we want jobs to run in series we need to specify the
+              <em>needs</em> key. This key takes as its value an array of job names. The job will only run once all jobs
+              in the array have finished successfully.
             </p>
           </div>
           <div class="right-col">
-            <img
-              src="running_jobs_in_series_01.png"
-              alt="Running jobs in series"
-              class="github-img"
-            />
+            <img src="running_jobs_in_series_01.png" alt="Running jobs in series" class="github-img" />
           </div>
         </div>
         <div class="example"></div>
         <div class="row">
           <div class="left-col">
             <p>
-              We can also create actions that capture output. To do so we must
-              <em>echo</em> the output of a previous step. We access it by
-              referencing it with
+              We can also create actions that capture output. To do so we must <em>echo</em> the output of a previous
+              step. We access it by referencing it with
             </p>
             <div class="code">
               <em>"${{ steps.step_id.outputs.output_element }}"</em>
             </div>
             <p>
-              The <em>steps</em> variable is created by GitHub. The step
-              <em>id</em> we need to define it ourselves in the action that we
-              want to reference. The <em>outputs</em> attribute is created by
-              GitHub, and the <em>output_element</em> is defined by the creator
-              of the action. Check the action's documentation to find which
-              elements can be output, and their names.
+              The <em>steps</em> variable is created by GitHub. The step <em>id</em> we need to define it ourselves in
+              the action that we want to reference. The <em>outputs</em> attribute is created by GitHub, and the
+              <em>output_element</em> is defined by the creator of the action. Check the action's documentation to find
+              which elements can be output, and their names.
             </p>
           </div>
           <div class="right-col">
-            <img
-              src="running_jobs_in_series_02.png"
-              alt="Running jobs in series 2"
-              class="github-img"
-            />
+            <img src="running_jobs_in_series_02.png" alt="Running jobs in series 2" class="github-img" />
           </div>
         </div>
       </section>
@@ -77,9 +63,7 @@
     <footer>
       <a class="go-home" href="../../index.html"><i class="fas fa-home"></i></a>
     </footer>
-    <script
-      src="https://kit.fontawesome.com/994cc6cf8e.js"
-      crossorigin="anonymous"
-    ></script>
+    <script src="https://kit.fontawesome.com/994cc6cf8e.js" crossorigin="anonymous"></script>
   </body>
+
 </html>

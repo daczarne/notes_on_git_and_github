@@ -1,16 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../../assets/css/style.css" />
-    <link
-      rel="shortcut icon"
-      href="../../assets/favicon/favicon.png"
-      type="image/x-icon"
-    />
+    <link rel="shortcut icon" href="../../assets/favicon/favicon.png" type="image/x-icon" />
     <title>Staging files</title>
   </head>
+
   <body>
     <div class="floating-div">
       <header>
@@ -34,18 +32,15 @@
         <div class="row">
           <div class="single-col">
             <p>
-              Before we can <span class="inline-code">stage</span> a file, we
-              need to create one. To do so, we run
+              Before we can <span class="inline-code">stage</span> a file, we need to create one. To do so, we run
             </p>
             <div class="code">
               <code>echo hello &gt file1.txt</code>
             </div>
             <p>
-              This will create a new file called <em>file1.txt</em> and write
-              the word <em>hello</em> into this file.
-              <span class="inline-code">echo</span> is not a Git command, it's
-              just a good ol' system command. Now let's create a second file,
-              using the same command
+              This will create a new file called <em>file1.txt</em> and write the word <em>hello</em> into this file.
+              <span class="inline-code">echo</span> is not a Git command, it's just a good ol' system command. Now
+              let's create a second file, using the same command
             </p>
             <div class="code">
               <code>echo hello &gt file2.txt</code>
@@ -55,81 +50,57 @@
         <div class="row">
           <div class="left-col">
             <p>
-              Git will not start tracking your files on its own. To check the
-              status of the project's files run
+              Git will not start tracking your files on its own. To check the status of the project's files run
             </p>
             <div class="code">
               <code>git status</code>
             </div>
             <p>
-              Here we can see that our two files are un-tracked. We also see
-              that they are not in the <em>Staging Area</em> because they are
-              <span class="git-red">red</span>. In order to add them to the
-              <em>Staging Area</em>, we use the
-              <span class="inline-code">git add</span> command and the name of
-              the file(s). Here we can pass one file or more, separated by a
-              space. We can also use patterns (all files matching this pattern
-              will be added), or a period (all files in the directory will be
-              added).
+              Here we can see that our two files are un-tracked. We also see that they are not in the
+              <em>Staging Area</em> because they are <span class="git-red">red</span>. In order to add them to the
+              <em>Staging Area</em>, we use the <span class="inline-code">git add</span> command and the name of the
+              file(s). Here we can pass one file or more, separated by a space. We can also use patterns (all files
+              matching this pattern will be added), or a period (all files in the directory will be added).
             </p>
             <div class="code">
               <code>git add *.txt</code>
             </div>
           </div>
           <div class="right-col">
-            <img
-              class="git-bash-img"
-              src="staging_files_01.png"
-              alt="Staging files 1"
-            />
+            <img class="git-bash-img" src="staging_files_01.png" alt="Staging files 1" />
           </div>
         </div>
         <div class="row">
           <div class="left-col">
-            <img
-              class="git-bash-img"
-              src="staging_files_02.png"
-              alt="Staging files 2"
-            />
+            <img class="git-bash-img" src="staging_files_02.png" alt="Staging files 2" />
           </div>
           <div class="right-col">
             <p>
-              Now if we run <span class="inline-code">git status</span> again,
-              you'll see that the files changed to
-              <span class="git-green">green</span> because they are in the
-              <em>Staging Area</em>.
+              Now if we run <span class="inline-code">git status</span> again, you'll see that the files changed to
+              <span class="git-green">green</span> because they are in the <em>Staging Area</em>.
             </p>
           </div>
         </div>
         <div class="row">
           <div class="left-col">
             <p>
-              Now let's modify <em>file1.txt</em> by appending the word
-              <em>world</em> to it. To do this, we run the same command as for
-              creating it but with a double greater-than symbol:
+              Now let's modify <em>file1.txt</em> by appending the word <em>world</em> to it. To do this, we run the
+              same command as for creating it but with a double greater-than symbol:
             </p>
             <div class="code">
               <code>echo world &gt&gt file1.txt</code>
             </div>
             <p>
-              And let's run <span class="inline-code">git status</span> again.
-              See that now <em>file1.txt</em> is both in the
-              <em>Staging Area</em> and in the <em>Working Directory</em>. This
-              is because when we <span class="inline-code">staged</span> the
-              files, Git took a snapshot of <em>file1.txt</em> and placed it in
-              the <em>Staging Area</em>. So the version of
-              <em>file1.txt</em> that exists in the
-              <em>Staging Area</em> differs from the one that exists in the
-              <em>Working Directory</em>. We can sync them up by running
-              <span class="inline-code">git add file1.txt</span> again.
+              And let's run <span class="inline-code">git status</span> again. See that now <em>file1.txt</em> is both
+              in the <em>Staging Area</em> and in the <em>Working Directory</em>. This is because when we
+              <span class="inline-code">staged</span> the files, Git took a snapshot of <em>file1.txt</em> and placed
+              it in the <em>Staging Area</em>. So the version of <em>file1.txt</em> that exists in the
+              <em>Staging Area</em> differs from the one that exists in the <em>Working Directory</em>. We can sync
+              them up by running <span class="inline-code">git add file1.txt</span> again.
             </p>
           </div>
           <div class="right-col">
-            <img
-              class="git-bash-img"
-              src="staging_files_03.png"
-              alt="Staging files 3"
-            />
+            <img class="git-bash-img" src="staging_files_03.png" alt="Staging files 3" />
           </div>
         </div>
       </section>
@@ -137,9 +108,7 @@
     <footer>
       <a class="go-home" href="../../index.html"><i class="fas fa-home"></i></a>
     </footer>
-    <script
-      src="https://kit.fontawesome.com/994cc6cf8e.js"
-      crossorigin="anonymous"
-    ></script>
+    <script src="https://kit.fontawesome.com/994cc6cf8e.js" crossorigin="anonymous"></script>
   </body>
+
 </html>

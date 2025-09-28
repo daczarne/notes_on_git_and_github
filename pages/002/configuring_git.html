@@ -1,16 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../../assets/css/style.css" />
-    <link
-      rel="shortcut icon"
-      href="../../assets/favicon/favicon.png"
-      type="image/x-icon"
-    />
+    <link rel="shortcut icon" href="../../assets/favicon/favicon.png" type="image/x-icon" />
     <title>Configuring Git</title>
   </head>
+
   <body>
     <div class="floating-div">
       <header>
@@ -42,26 +40,16 @@
             </ul>
             <p>Settings can be specified at three different levels</p>
             <ul>
-              <li>
-                <strong>System</strong>: settings at the system level apply to
-                all users of the computer.
-              </li>
-              <li>
-                <strong>Global</strong>: the settings here apply to all
-                repositories of the current user.
-              </li>
-              <li>
-                <strong>Local</strong>: the settings here apply to the current
-                repository.
-              </li>
+              <li><strong>System</strong>: settings at the system level apply to all users of the computer.</li>
+              <li><strong>Global</strong>: the settings here apply to all repositories of the current user.</li>
+              <li><strong>Local</strong>: the settings here apply to the current repository.</li>
             </ul>
           </div>
         </div>
         <div class="row">
           <div class="single-col">
             <p>
-              To configure the settings, open the Git Bash (Bash = "Bourne Again
-              Shell") or Terminal. You can specify the name with:
+              To configure the settings, open the terminal. You can specify the name with:
             </p>
             <div class="code">
               <code>git config --global user.name "User Name"</code>
@@ -75,16 +63,15 @@
               <code>git config --global core.editor "code --wait"</code>
             </div>
             <p>
-              All these configuration settings are stored in a text file that we
-              can access and edit with our default editor. You can open it with:
+              All these configuration settings are stored in a text file that we can access and edit with our default
+              editor. You can open it with:
             </p>
             <div class="code">
               <code>git config --global -e</code>
             </div>
             <p>
-              This will open the <em>.gitconfig</em> file where you can edit
-              configurations. When you go back to Git Bash you'll see a message
-              that says
+              This will open the <em>.gitconfig</em> file where you can edit configurations. When you go back to the
+              terminal you'll see a message that says
             </p>
             <div class="code">
               <code>hint: Waiting for your editor to close the file...</code>
@@ -95,13 +82,11 @@
         <div class="row">
           <div class="single-col">
             <p>
-              Now we need to configure how Git will handle the end-of-line. On
-              Windows, the end-of-line are marked with two special characters:
-              <span class="inline-code">\r</span> for <em>Carriage Return</em>,
-              and <span class="inline-code">\n</span> for <em>Line Feed</em>. On
-              macOS and Linux, the end-of-line is indicated with
-              <span class="inline-code">\n</span>. We have to configure a
-              property called <em>core.autocrlf</em>. On Windows use:
+              Now we need to configure how Git will handle the end-of-line. On Windows, the end-of-line are marked with
+              two special characters: <span class="inline-code">\r</span> for <em>Carriage Return</em>, and
+              <span class="inline-code">\n</span> for <em>Line Feed</em>. On macOS and Linux, the end-of-line is
+              indicated with <span class="inline-code">\n</span>. We have to configure a property called
+              <em>core.autocrlf</em>. On Windows use:
             </p>
             <div class="code">
               <code>git config --global core.autocrlf true</code>
@@ -117,9 +102,7 @@
     <footer>
       <a class="go-home" href="../../index.html"><i class="fas fa-home"></i></a>
     </footer>
-    <script
-      src="https://kit.fontawesome.com/994cc6cf8e.js"
-      crossorigin="anonymous"
-    ></script>
+    <script src="https://kit.fontawesome.com/994cc6cf8e.js" crossorigin="anonymous"></script>
   </body>
+
 </html>

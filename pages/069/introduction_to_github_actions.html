@@ -1,16 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../../assets/css/style.css" />
-    <link
-      rel="shortcut icon"
-      href="../../assets/favicon/favicon.png"
-      type="image/x-icon"
-    />
+    <link rel="shortcut icon" href="../../assets/favicon/favicon.png" type="image/x-icon" />
     <title>GitHub Actions</title>
   </head>
+
   <body>
     <div class="floating-div">
       <header>
@@ -32,165 +30,123 @@
         <div class="row">
           <div class="single-col">
             <p>
-              GitHub Actions is a tool that allows you to automate development
-              workflows. Each task is called an <em>action</em>. A combination
-              of tasks is called a <em>workflow</em>. Workflows can be triggered
-              in different ways: push, pull requests (opened and/or merged),
-              issues (created, closed, etc), on a specific schedule, or due to
-              external events.
+              GitHub Actions is a tool that allows you to automate development workflows. Each task is called an
+              <em>action</em>. A combination of tasks is called a <em>workflow</em>. Workflows can be triggered in
+              different ways: push, pull requests (opened and/or merged), issues (created, closed, etc), on a specific
+              schedule, or due to external events.
             </p>
             <br />
             <p>
-              The workflows will be run in a virtual machine on the GitHub
-              servers. A workflow can contain one or more <em>jobs</em>, and
-              each job will run in its own virtual machine. These virtual
-              machines can use Linux, Windows, or MacOS, and have different
-              tools installed, and even run Docker Containers. Jobs can be run
+              The workflows will be run in a virtual machine on the GitHub servers. A workflow can contain one or more
+              <em>jobs</em>, and each job will run in its own virtual machine. These virtual machines can use Linux,
+              Windows, or MacOS, and have different tools installed, and even run Docker Containers. Jobs can be run
               in parallel, or we can specify dependencies between them.
             </p>
             <br />
             <p>
-              A <em>runner</em> is any virtual machine with the GitHub actions
-              application installed. The runner is responsible for running the
-              job whenever the triggering conditions are met, and for displaying
-              back the results. You can use GitHub's runners, or host your own
-              ones. GitHub hosted runners are maintained by GitHub, but we
-              cannot customize the hardware configurations. They also come with
-              some pre-installed tools like <i>curl</i>, <i>git</i>, <i>npm</i>,
-              <i>yarn</i>, <i>pip</i>, etc, and languages and tools like Python,
-              Ruby, node.JS, etc.
+              A <em>runner</em> is any virtual machine with the GitHub actions application installed. The runner is
+              responsible for running the job whenever the triggering conditions are met, and for displaying back the
+              results. You can use GitHub's runners, or host your own ones. GitHub hosted runners are maintained by
+              GitHub, but we cannot customize the hardware configurations. They also come with some pre-installed tools
+              like <i>curl</i>, <i>git</i>, <i>npm</i>, <i>yarn</i>, <i>pip</i>, etc, and languages and tools like
+              Python, Ruby, node.JS, etc.
             </p>
           </div>
         </div>
         <div class="row">
           <div class="left-col">
             <p>
-              Workflows must be written in YAML and placed inside
-              <em>.github/workflows</em> directory in the root of the project.
-              This files are composed of key:value pairs, with keys separated
-              from values by colons, <em>:</em>. To nest objects inside of other
-              objects in YAML we just need to indent the keys of the child
-              object with 2 or 4 spaces with respect to the keys of its parent
-              object.
+              Workflows must be written in YAML and placed inside <em>.github/workflows</em> directory in the root of
+              the project. These files are composed of key:value pairs, with keys separated from values by colons,
+              <em>:</em>. To nest objects inside of other objects in YAML we just need to indent the keys of the child
+              object with 2 or 4 spaces with respect to the keys of its parent object.
             </p>
             <br />
             <p>
-              Each YAML file in the <em>workflows</em> directory contains the
-              instructions for one workflow. The first key that we have to
-              specify is <em>name</em>. The value we pass to it will become the
-              name of the workflow and GitHub will display it in the Actions
-              tab.
+              Each YAML file in the <em>workflows</em> directory contains the instructions for one workflow. The first
+              key that we have to specify is <em>name</em>. The value we pass to it will become the name of the workflow
+              and GitHub will display it in the Actions tab.
             </p>
             <br />
           </div>
           <div class="right-col">
-            <img
-              src="introduction_to_github_actions_01.png"
-              alt="Introduction to GitHub Actions 1"
-              height="400px"
-              class="github-img"
-            />
+            <img src="introduction_to_github_actions_01.png" alt="Introduction to GitHub Actions 1" height="400px"
+              class="github-img" />
           </div>
         </div>
         <div class="row">
           <div class="left-col">
-            <img
-              src="introduction_to_github_actions_02.png"
-              alt="Introduction to GitHub Actions 2"
-              class="github-img"
-            />
+            <img src="introduction_to_github_actions_02.png" alt="Introduction to GitHub Actions 2"
+              class="github-img" />
           </div>
           <div class="right-col">
             <p>
-              After the <em>name</em> we'll specify the dispatch mode of the
-              action using the <em>on</em> key. The value of the <em>on</em> key
-              can be a single value (for example, use <em>push</em> for a
-              workflow that needs to be dispatched with every push), an array of
-              values (for example, use <em>[workflow_dispatch, push]</em> for a
-              workflow that needs to be dispatched with every push, but also
-              needs to be able to be manually dispatched), or an object
-              specifying more complex conditions or to alter the behavior of a
-              pre-defined dispatch mode.
+              After the <em>name</em> we'll specify the dispatch mode of the action using the <em>on</em> key. The value
+              of the <em>on</em> key can be a single value (for example, use <em>push</em> for a workflow that needs to
+              be dispatched with every push), an array of values (for example, use <em>[workflow_dispatch, push]</em>
+              for a workflow that needs to be dispatched with every push, but also needs to be able to be manually
+              dispatched), or an object specifying more complex conditions or to alter the behavior of a pre-defined
+              dispatch mode.
             </p>
             <br />
             <p>
-              After the <em>name</em> and <em>on</em> keys, we need to start
-              defining the jobs in our workflow. To do so we use the
-              <em>jobs</em> key. To it we'll need to supply an array of objects
-              (each element in the array representing a job) where the first key
-              is the name of the job and takes as its value an object containing
+              After the <em>name</em> and <em>on</em> keys, we need to start defining the jobs in our workflow. To do so
+              we use the <em>jobs</em> key. To it we'll need to supply an array of objects (each element in the array
+              representing a job) where the first key is the name of the job and takes as its value an object containing
               all the specifications of the job.
             </p>
             <br />
             <p>
-              The first key of every job is <em>runs-on</em>. The value of this
-              key needs to be the operating system in which the job is going to
-              run. We can specify a version of the OS, or just use the key
-              <em>{os}-latest</em> to have GitHub use the latest version of the
-              OS.
+              The first key of every job is <em>runs-on</em>. The value of this key needs to be the operating system in
+              which the job is going to run. We can specify a version of the OS, or just use the key
+              <em>{os}-latest</em> to have GitHub use the latest version of the OS.
             </p>
             <br />
             <p>
-              Next comes the <em>steps</em> key, where we can specify the
-              different steps of the job. We can specify a name for each step
-              using the <em>name</em> key. After that we use the
-              <em>run</em> key to specify what needs to be run on this step.
+              Next comes the <em>steps</em> key, where we can specify the different steps of the job. We can specify a
+              name for each step using the <em>name</em> key. After that we use the <em>run</em> key to specify what
+              needs to be run on this step.
             </p>
           </div>
         </div>
         <div class="row">
           <div class="single-col">
             <p>
-              The first and last step are automatically created by GitHub. The
-              first one sets up the job, and the last one cleans up after
-              finishing. You can configure GitHub to send notifications after
-              each workflow run by going to
-              <i> Profile &gt Settings &gt Notifications &gt Actions </i>.
+              The first and last step are automatically created by GitHub. The first one sets up the job, and the last
+              one cleans up after finishing. You can configure GitHub to send notifications after each workflow run by
+              going to <i> Profile &gt Settings &gt Notifications &gt Actions </i>.
             </p>
             <br />
             <p>
-              We can cancel a workflow while it's still running by pressing the
-              <i>Cancel check suite</i> button on the top right corner of the
-              <i>Actions</i> tab. We can also explore the steps, including their
-              output, buy pressing the arrows left of the step name. We can use
-              the search bar to explore the logs. If the job failed, we can
-              trigger a re-run.
+              We can cancel a workflow while it's still running by pressing the <i>Cancel check suite</i> button on the
+              top right corner of the <i>Actions</i> tab. We can also explore the steps, including their output, buy
+              pressing the arrows left of the step name. We can use the search bar to explore the logs. If the job
+              failed, we can trigger a re-run.
             </p>
             <br />
             <p>
-              For each job we can define <em>artifacts</em>. In a nut shell, an
-              artifact is a file generated by the job. An artifact that gets
-              generated by default is the log archive. We can download this file
-              from the Actions console. The log consists of one <i>.txt</i> file
-              for each step of the job. It is useful for debugging.
+              For each job we can define <em>artifacts</em>. In a nut shell, an artifact is a file generated by the job.
+              An artifact that gets generated by default is the log archive. We can download this file from the Actions
+              console. The log consists of one <i>.txt</i> file for each step of the job. It is useful for debugging.
             </p>
             <br />
             <p>
-              To see more information on the logs, we need to set the
-              <em>ACTIONS_RUNNER_DEBUG</em> and
-              <em>ACTIONS_STEP_DEBUG</em> secrets to <em>true</em>. To do so, we
-              need to navigate to the <i>Settings</i> tab on the repo, and to
-              the <i>Secrets</i> option on the left side menu, and click on the
-              <i> New repository secret </i> button on the top right corner.
+              To see more information on the logs, we need to set the <em>ACTIONS_RUNNER_DEBUG</em> and
+              <em>ACTIONS_STEP_DEBUG</em> secrets to <em>true</em>. To do so, we need to navigate to the <i>Settings</i>
+              tab on the repo, and to the <i>Secrets</i> option on the left side menu, and click on the <i> New
+                repository secret </i> button on the top right corner.
             </p>
           </div>
         </div>
         <div class="row">
           <div class="single-col center">
-            <img
-              src="introduction_to_github_actions_03.png"
-              alt="Introduction to GitHub Actions 3"
-              class="github-img"
-            />
+            <img src="introduction_to_github_actions_03.png" alt="Introduction to GitHub Actions 3"
+              class="github-img" />
           </div>
         </div>
         <div class="row">
           <div class="single-col center">
-            <img
-              src="introduction_to_github_actions_04.png"
-              alt="Introduction to GitHub Actions"
-              class="github-img"
-            />
+            <img src="introduction_to_github_actions_04.png" alt="Introduction to GitHub Actions" class="github-img" />
           </div>
         </div>
       </section>
@@ -198,9 +154,7 @@
     <footer>
       <a class="go-home" href="../../index.html"><i class="fas fa-home"></i></a>
     </footer>
-    <script
-      src="https://kit.fontawesome.com/994cc6cf8e.js"
-      crossorigin="anonymous"
-    ></script>
+    <script src="https://kit.fontawesome.com/994cc6cf8e.js" crossorigin="anonymous"></script>
   </body>
+
 </html>

@@ -1,16 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../../assets/css/style.css" />
-    <link
-      rel="shortcut icon"
-      href="../../assets/favicon/favicon.png"
-      type="image/x-icon"
-    />
+    <link rel="shortcut icon" href="../../assets/favicon/favicon.png" type="image/x-icon" />
     <title>Docker</title>
   </head>
+
   <body>
     <div class="floating-div">
       <header>
@@ -33,15 +31,12 @@
         <div class="row">
           <div class="left-col">
             <p>
-              We can specify Docker containers for our jobs to run by using the
-              <em>container</em> key. To it we pass an object with an
-              <em>image</em> key, its value being the image that we will be
-              using. Additionally, we can specify the <em>env</em> (for
-              environment variables that need to be available in the container),
-              <em>ports</em> (to specify ports to be exposed in the container),
-              <em>volumes</em>, <em>options</em> (to be used in the Docker
-              create command). All steps in the job will run in de container,
-              and not on the virtual machine.
+              We can specify Docker containers for our jobs to run by using the <em>container</em> key. To it we pass an
+              object with an <em>image</em> key, its value being the image that we will be using. Additionally, we can
+              specify the <em>env</em> (for environment variables that need to be available in the container),
+              <em>ports</em> (to specify ports to be exposed in the container), <em>volumes</em>, <em>options</em> (to
+              be used in the Docker create command). All steps in the job will run in de container, and not on the
+              virtual machine.
             </p>
           </div>
           <div class="right-col">
@@ -54,20 +49,17 @@
           </div>
           <div class="right-col">
             <p>
-              We can also specify multiple containers. To specify multiple
-              containers we pass an object to the <em>services</em> key. Each
-              element of that object is the key that identifies each one of our
-              services. In order to communicate between the two containers we
-              can use the <em>service</em> key (name) as a host name.
+              We can also specify multiple containers. To specify multiple containers we pass an object to the
+              <em>services</em> key. Each element of that object is the key that identifies each one of our services. In
+              order to communicate between the two containers we can use the <em>service</em> key (name) as a host name.
             </p>
           </div>
         </div>
         <div class="row">
           <div class="left-col">
             <p>
-              We can specify different containers for different steps. To do so,
-              we simply pass the Docker image to <em>uses</em> keyword of the
-              respective steps.
+              We can specify different containers for different steps. To do so, we simply pass the Docker image to
+              <em>uses</em> keyword of the respective steps.
             </p>
           </div>
           <div class="right-col">
@@ -79,9 +71,7 @@
     <footer>
       <a class="go-home" href="../../index.html"><i class="fas fa-home"></i></a>
     </footer>
-    <script
-      src="https://kit.fontawesome.com/994cc6cf8e.js"
-      crossorigin="anonymous"
-    ></script>
+    <script src="https://kit.fontawesome.com/994cc6cf8e.js" crossorigin="anonymous"></script>
   </body>
+
 </html>

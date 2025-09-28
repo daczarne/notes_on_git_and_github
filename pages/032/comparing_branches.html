@@ -1,16 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../../assets/css/style.css" />
-    <link
-      rel="shortcut icon"
-      href="../../assets/favicon/favicon.png"
-      type="image/x-icon"
-    />
+    <link rel="shortcut icon" href="../../assets/favicon/favicon.png" type="image/x-icon" />
     <title>Comparing branches</title>
   </head>
+
   <body>
     <div class="floating-div">
       <header>
@@ -32,61 +30,48 @@
         <div class="row">
           <div class="left-col">
             <p>
-              At some point, we'll have to merge our branches to master. To get
-              a list of the commits that will be merged into the master branch
-              when we do so, we use
+              At some point, we'll have to merge our branches to master. To get a list of the commits that will be
+              merged into the master branch when we do so, we use
             </p>
             <div class="code">
               <code>git log <em>master</em>..<em>branch_name</em></code>
             </div>
             <p>
-              With this, Git will give us a list of all the commits that are in
-              the other branch, but not in master. Just as before, we can use
-              the <span class="inline-code">--oneline</span> option to make the
-              output more concise.
+              With this, Git will give us a list of all the commits that are in the other branch, but not in master.
+              Just as before, we can use the <span class="inline-code">--oneline</span> option to make the output more
+              concise.
             </p>
           </div>
           <div class="right-col">
-            <img
-              src="comparing_branches_01.png"
-              alt="Comparing branches 1"
-              class="git-bash-img"
-            />
+            <img src="comparing_branches_01.png" alt="Comparing branches 1" class="git-bash-img" />
           </div>
         </div>
         <div class="row">
           <div class="left-col">
-            <img
-              src="comparing_branches_02.png"
-              alt="Comparing branches 2"
-              class="git-bash-img"
-            />
+            <img src="comparing_branches_02.png" alt="Comparing branches 2" class="git-bash-img" />
           </div>
           <div class="right-col">
             <p>
-              If want to see the actual changes we use the
-              <span class="inline-code">diff</span> command
+              If want to see the actual changes we use the <span class="inline-code">diff</span> command
             </p>
             <div class="code">
               <code>git diff <em>master</em>..<em>branch_name</em></code>
             </div>
             <p>
-              Here Git will show us the <span class="inline-code">diff</span> of
-              the different files that will be affected by the merge.
+              Here Git will show us the <span class="inline-code">diff</span> of the different files that will be
+              affected by the merge.
             </p>
             <br />
             <p>
-              When diffing branches we don't always have to type both branches.
-              If we want to see the
-              <span class="inline-code">diff</span> between the branch we are
-              currently in and another branch we just run
+              When diffing branches we don't always have to type both branches. If we want to see the
+              <span class="inline-code">diff</span> between the branch we are currently in and another branch we just
+              run
             </p>
             <div class="code">
               <code>git diff <em>branch_name</em></code>
             </div>
             <p>
-              If we only want a list of the files that will change and the type
-              of change, we can use the
+              If we only want a list of the files that will change and the type of change, we can use the
               <span class="inline-code">--name-status</span> option
             </p>
             <div class="code">
@@ -99,9 +84,7 @@
     <footer>
       <a class="go-home" href="../../index.html"><i class="fas fa-home"></i></a>
     </footer>
-    <script
-      src="https://kit.fontawesome.com/994cc6cf8e.js"
-      crossorigin="anonymous"
-    ></script>
+    <script src="https://kit.fontawesome.com/994cc6cf8e.js" crossorigin="anonymous"></script>
   </body>
+
 </html>

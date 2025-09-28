@@ -1,16 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../../assets/css/style.css" />
-    <link
-      rel="shortcut icon"
-      href="../../assets/favicon/favicon.png"
-      type="image/x-icon"
-    />
+    <link rel="shortcut icon" href="../../assets/favicon/favicon.png" type="image/x-icon" />
     <title>Bisect</title>
   </head>
+
   <body>
     <div class="floating-div">
       <header>
@@ -32,18 +30,15 @@
         <div class="row">
           <div class="left-col">
             <p>
-              Suppose our project looks like the one on the right and we found a
-              bug we didn't know existed or what caused it. We could check every
-              single commit one-by-one until we find it, but that is
-              time-consuming. <span class="inline-code">bisect</span> is a Git
-              tool for finding bugs in our code.
+              Suppose our project looks like the one on the right and we found a bug we didn't know existed or what
+              caused it. We could check every single commit one-by-one until we find it, but that is time-consuming.
+              <span class="inline-code">bisect</span> is a Git tool for finding bugs in our code.
             </p>
             <br />
             <p>
-              In a nutshell, it works by doing a binary search throughout our
-              repository. We'll tell Git of a <em>good</em> commit, and a
-              <em>bad</em> commit and Git will help us zero-in the commit that
-              caused the bug so that we can fix it.
+              In a nutshell, it works by doing a binary search throughout our repository. We'll tell Git of a
+              <em>good</em> commit, and a <em>bad</em> commit and Git will help us zero-in the commit that caused the
+              bug so that we can fix it.
             </p>
           </div>
           <div class="right-col">
@@ -53,10 +48,9 @@
         <div class="row">
           <div class="left-col">
             <p>
-              So, imagine <em>8eec1d2</em> (our
-              <span class="inline-code">HEAD</span>) is a bad commit (we found a
-              bug here), and <em>ca49180</em> (our initial commit) will be our
-              first good commit (a commit that we know did not have the issue).
+              So, imagine <em>8eec1d2</em> (our <span class="inline-code">HEAD</span>) is a bad commit (we found a bug
+              here), and <em>ca49180</em> (our initial commit) will be our first good commit (a commit that we know did
+              not have the issue).
             </p>
             <br />
             <p>
@@ -66,31 +60,25 @@
               <code>git bisect start</code>
             </div>
             <p>
-              Notice that Git Bash changed from
-              <span class="git-aqua">(master)</span> to
-              <span class="git-aqua">(master | BISECTING)</span>. Right now our
-              <span class="inline-code">HEAD</span> is at the bad commit (the
-              last one), so we need to tell Git that this is a bad commit. To do
-              that, we run
+              Notice that Git Bash changed from <span class="git-aqua">(master)</span> to
+              <span class="git-aqua">(master | BISECTING)</span>. Right now our <span class="inline-code">HEAD</span> is
+              at the bad commit (the last one), so we need to tell Git that this is a bad commit. To do that, we run
             </p>
             <div class="code">
               <code>git bisect bad</code>
             </div>
             <p>
-              Now we need to give Git a good commit. If you didn't write down
-              the hash for a good commit before starting the
-              <span class="inline-code">bisect</span> process don't worry, you
-              can run <span class="inline-code">git log --oneline</span> and get
-              it now. So we run
+              Now we need to give Git a good commit. If you didn't write down the hash for a good commit before starting
+              the <span class="inline-code">bisect</span> process don't worry, you can run
+              <span class="inline-code">git log --oneline</span> and get it now. So we run
             </p>
             <div class="code">
               <code>git bisect good ca49180</code>
             </div>
             <p>
-              Now Git is telling us that we have 7 revisions left (7 commits to
-              check instead of the total 16), and it's also telling us that we
-              can get it done in 3 steps. Notice that Git Bash changed again and
-              is not at commit <em>24e86ee</em> anymore.
+              Now Git is telling us that we have 7 revisions left (7 commits to check instead of the total 16), and it's
+              also telling us that we can get it done in 3 steps. Notice that Git Bash changed again and is not at
+              commit <em>24e86ee</em> anymore.
             </p>
           </div>
           <div class="right-col">
@@ -100,21 +88,14 @@
         <div class="row">
           <div class="single-col">
             <p>
-              If we now run
-              <span class="inline-code">git log --oneline --all</span> we see
-              that <span class="git-green">master</span> is at the top and it's
-              referenced as a bad commit. At the bottom of the log, we see that
-              there's a second reference for our bad commit. Our
-              <span class="git-aqua">HEAD</span> is at commit <em>24e86ee</em>.
-              This means that our working directory has been restored to this
-              point in time. Therefore, we can test and see if the bug is here
-              already. If it is, that means that the bug was introduced
-              somewhere between <em>ca49180</em> and
-              <span class="git-aqua">HEAD</span>. If it is not, then the bug was
-              introduced somewhere between
-              <span class="git-aqua">HEAD</span> and
-              <span class="git-green">master</span>. Either way, we eliminated
-              half of all possible commits in one try.
+              If we now run <span class="inline-code">git log --oneline --all</span> we see that
+              <span class="git-green">master</span> is at the top and it's referenced as a bad commit. At the bottom of
+              the log, we see that there's a second reference for our bad commit. Our <span class="git-aqua">HEAD</span>
+              is at commit <em>24e86ee</em>. This means that our working directory has been restored to this point in
+              time. Therefore, we can test and see if the bug is here already. If it is, that means that the bug was
+              introduced somewhere between <em>ca49180</em> and <span class="git-aqua">HEAD</span>. If it is not, then
+              the bug was introduced somewhere between <span class="git-aqua">HEAD</span> and
+              <span class="git-green">master</span>. Either way, we eliminated half of all possible commits in one try.
             </p>
             <br />
             <p>For this demo, let's tell Git that this is a good commit</p>
@@ -129,44 +110,39 @@
           </div>
           <div class="right-col">
             <p>
-              Now Git is telling us that there are 3 revisions left and that it
-              will take 2 steps to inspect them. Our
-              <span class="git-aqua">HEAD</span> has now moved to commit
-              <em>50db987</em>. If we look at the log again, we see that it has
-              moved up. Our repository has once again been checked out to this
-              commit. So we can test our application here and see if the bug is
-              there or not. Again for this demo, we'll tell Git that this is a
-              good commit. So again we run
+              Now Git is telling us that there are 3 revisions left and that it will take 2 steps to inspect them. Our
+              <span class="git-aqua">HEAD</span> has now moved to commit <em>50db987</em>. If we look at the log again,
+              we see that it has moved up. Our repository has once again been checked out to this commit. So we can test
+              our application here and see if the bug is there or not. Again for this demo, we'll tell Git that this is
+              a good commit. So again we run
             </p>
             <div class="code">
               <code>git bisect good</code>
             </div>
             <p>
-              And we'll do it one more time so that it moves to the commit prior
-              to <span class="git-green">master</span>.
+              And we'll do it one more time so that it moves to the commit prior to
+              <span class="git-green">master</span>.
             </p>
           </div>
         </div>
         <div class="row">
           <div class="left-col">
             <p>
-              Now we are at commit <em>e22efe7</em> and suppose that we found
-              the bug here. We'll tell Git that this is a bad commit
+              Now we are at commit <em>e22efe7</em> and suppose that we found the bug here. We'll tell Git that this is
+              a bad commit
             </p>
             <div class="code">
               <code>git bisect bad</code>
             </div>
             <p>
-              Now Git knows which one was the first bad commit and it's giving
-              us all the information about that commit: author, date, a summary
-              of changes.
+              Now Git knows which one was the first bad commit and it's giving us all the information about that commit:
+              author, date, a summary of changes.
             </p>
             <br />
             <p>
-              Now we can inspect and test our code here and find the bug. Once
-              we know how to fix it, we can move our
-              <span class="inline-code">HEAD</span> back to
-              <span class="inline-code">master</span> and implement the fix.
+              Now we can inspect and test our code here and find the bug. Once we know how to fix it, we can move our
+              <span class="inline-code">HEAD</span> back to <span class="inline-code">master</span> and implement the
+              fix.
             </p>
             <div class="code">
               <code>git bisect reset</code>
@@ -181,9 +157,7 @@
     <footer>
       <a class="go-home" href="../../index.html"><i class="fas fa-home"></i></a>
     </footer>
-    <script
-      src="https://kit.fontawesome.com/994cc6cf8e.js"
-      crossorigin="anonymous"
-    ></script>
+    <script src="https://kit.fontawesome.com/994cc6cf8e.js" crossorigin="anonymous"></script>
   </body>
+
 </html>

@@ -1,16 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../../assets/css/style.css" />
-    <link
-      rel="shortcut icon"
-      href="../../assets/favicon/favicon.png"
-      type="image/x-icon"
-    />
+    <link rel="shortcut icon" href="../../assets/favicon/favicon.png" type="image/x-icon" />
     <title>Triggers</title>
   </head>
+
   <body>
     <div class="floating-div">
       <header>
@@ -32,130 +30,89 @@
         <div class="row">
           <div class="left-col">
             <p>
-              Workflows can be triggered with different events. These events can
-              be any GitHub event: push, pull-requests opened or closed,
-              comments, etc. Triggers must be specified with the
-              <em>on</em> keyword of the yaml file. We can pass a single value:
+              Workflows can be triggered with different events. These events can be any GitHub event: push,
+              pull-requests opened or closed, comments, etc. Triggers must be specified with the <em>on</em> keyword of
+              the yaml file. We can pass a single value:
             </p>
           </div>
           <div class="right-col">
-            <img
-              src="triggers_01.png"
-              alt="Triggers 1"
-              height="100px"
-              class="github-img"
-            />
+            <img src="triggers_01.png" alt="Triggers 1" height="100px" class="github-img" />
           </div>
         </div>
         <div class="row">
           <div class="left-col">
-            <img
-              src="triggers_02.png"
-              alt="Triggers 2"
-              height="100px"
-              class="github-img"
-            />
+            <img src="triggers_02.png" alt="Triggers 2" height="100px" class="github-img" />
           </div>
           <div class="right-col">
             <p>
-              If we want the same workflow to trigger on different events we can
-              pass an array of GitHub events to the <em>on</em> keyword. The
-              workflow will then trigger whenever at least one of the triggering
-              conditions is met.
+              If we want the same workflow to trigger on different events we can pass an array of GitHub events to the
+              <em>on</em> keyword. The workflow will then trigger whenever at least one of the triggering conditions is
+              met.
             </p>
           </div>
         </div>
         <div class="row">
           <div class="left-col">
             <p>
-              Some events have <em>activity types</em>. To use the activities
-              the value that we pass to the <em>on</em> keyword must be an
-              object. Each attribute in this object must be itself an object
-              named after a valid GitHub event (like push, pull_request, etc).
-              Inside each of these object we can define the <em>types</em> key
-              and pass to it an array of event activity types on which the
-              workflow should trigger.
+              Some events have <em>activity types</em>. To use the activities the value that we pass to the <em>on</em>
+              keyword must be an object. Each attribute in this object must be itself an object named after a valid
+              GitHub event (like push, pull_request, etc). Inside each of these object we can define the <em>types</em>
+              key and pass to it an array of event activity types on which the workflow should trigger.
             </p>
             <br />
             <p>
-              Events that have activity types will have some of those set by
-              default. For example, if we trigger a workflow
-              <span class="inline-code">on: pull_request</span>, the workflow
-              will be triggered on <em>opened</em>, <em>synchronized</em>, or
-              <em>reopened</em> by default.
+              Events that have activity types will have some of those set by default. For example, if we trigger a
+              workflow <span class="inline-code">on: pull_request</span>, the workflow will be triggered on
+              <em>opened</em>, <em>synchronized</em>, or <em>reopened</em> by default.
             </p>
           </div>
           <div class="right-col">
-            <img
-              src="triggers_03.png"
-              alt="Triggers 3"
-              width="350px"
-              class="github-img"
-            />
+            <img src="triggers_03.png" alt="Triggers 3" width="350px" class="github-img" />
           </div>
         </div>
         <div class="row">
           <div class="single-col">
             <p>
               The complete list of events and activity types can be found
-              <a
-                class="here"
-                href="https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows"
-                >here</a
-              >.
+              <a class="here"
+                href="https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows">here</a>.
             </p>
           </div>
         </div>
         <br />
         <div class="row">
           <div class="left-col">
-            <img
-              src="triggers_04.png"
-              alt="Triggers 4"
-              width="350px"
-              class="vscode-img"
-            />
+            <img src="triggers_04.png" alt="Triggers 4" width="350px" class="vscode-img" />
           </div>
           <div class="right-col">
             <p>
-              Workflow triggers can be filtered so that they only run when
-              certain branches, files (paths), tags, etc are affected. To
-              achieve this we need to add more key:value pairs to the
-              <em>on</em> key.
+              Workflow triggers can be filtered so that they only run when certain branches, files (paths), tags, etc
+              are affected. To achieve this we need to add more key:value pairs to the <em>on</em> key.
             </p>
             <br />
             <p>
-              Branches don't necessarily need to be specified by names. They can
-              also be patterns. Patterns of the form
-              <span class="inline-code">'something/*'</span> will only match
-              branches that start with
-              <span class="inline-code">something</span>, followed by a slash,
-              <span class="inline-code">/</span>, followed by some other text,
-              but not by additional slashes. To match this branches we need to
-              use <span class="inline-code">'something/**'</span>.
+              Branches don't necessarily need to be specified by names. They can also be patterns. Patterns of the form
+              <span class="inline-code">'something/*'</span> will only match branches that start with
+              <span class="inline-code">something</span>, followed by a slash, <span class="inline-code">/</span>,
+              followed by some other text, but not by additional slashes. To match these branches we need to use
+              <span class="inline-code">'something/**'</span>.
             </p>
             <br />
             <p>
-              We can also set the trigger to ignore branches by using the
-              <em>branches-ignore</em> key. We cannot have <em>branches</em> and
-              <em>branches-ignore</em> at the same time. But we can ignore
-              specific branches by adding an exclamation mark, <em>!</em> in the
-              <em>branches</em> key.
+              We can also set the trigger to ignore branches by using the <em>branches-ignore</em> key. We cannot have
+              <em>branches</em> and <em>branches-ignore</em> at the same time. But we can ignore specific branches by
+              adding an exclamation mark, <em>!</em> in the <em>branches</em> key.
             </p>
             <br />
             <p>
-              We can also target specific tags in the same way as we do with
-              branches. We can use the <em>tags</em> and
-              <em>tags-ignore</em> keys to specify tags or patterns of tags to
-              include or ignore, and we can use the exclamation sign to exclude
-              specific tags.
+              We can also target specific tags in the same way as we do with branches. We can use the <em>tags</em> and
+              <em>tags-ignore</em> keys to specify tags or patterns of tags to include or ignore, and we can use the
+              exclamation sign to exclude specific tags.
             </p>
             <br />
             <p>
-              Finally, we can filter the triggers by paths (files), and ignore
-              them using the <em>paths-ignore</em> key. We cannot use both keys
-              in the same workflow, but can also use the exclamation mark here
-              to ignore.
+              Finally, we can filter the triggers by paths (files), and ignore them using the <em>paths-ignore</em> key.
+              We cannot use both keys in the same workflow, but can also use the exclamation mark here to ignore.
             </p>
           </div>
         </div>
@@ -163,11 +120,8 @@
           <div class="single-col">
             <p>
               You can find all possible patters
-              <a
-                href="https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#filter-pattern-cheat-sheet"
-                class="here"
-                >here</a
-              >.
+              <a href="https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#filter-pattern-cheat-sheet"
+                class="here">here</a>.
             </p>
           </div>
         </div>
@@ -176,23 +130,15 @@
         <div class="row">
           <div class="left-col">
             <p>
-              To trigger workflows on a certain schedule we can use
-              <em>cron jobs</em> scheduling. Scheduling needs to be added by
-              passing the <em>schedule</em> value to the <em>on</em> key. This
-              should be an array. Each element of the array needs to contain an
-              object with the key <em>cron</em>. The value of this key needs to
-              be a string representing a cron expression. You can use
-              <a href="https://crontab.guru/" class="here">crontab guru</a> to
-              create cron expressions.
+              To trigger workflows on a certain schedule we can use <em>cron jobs</em> scheduling. Scheduling needs to
+              be added by passing the <em>schedule</em> value to the <em>on</em> key. This should be an array. Each
+              element of the array needs to contain an object with the key <em>cron</em>. The value of this key needs to
+              be a string representing a cron expression. You can use <a href="https://crontab.guru/"
+                class="here">crontab guru</a> to create cron expressions.
             </p>
           </div>
           <div class="right-col">
-            <img
-              src="triggers_05.png"
-              alt="Triggers 5"
-              width="400px"
-              class="github-img"
-            />
+            <img src="triggers_05.png" alt="Triggers 5" width="400px" class="github-img" />
           </div>
         </div>
         <!-- Triggering on external events -->
@@ -205,9 +151,8 @@
           </div>
           <div class="right-col">
             <p>
-              We can also trigger workflows on external events. To do so we need
-              to use the <em>repository_dispatch</em> value, and specify which
-              activity types should trigger the workflow.
+              We can also trigger workflows on external events. To do so we need to use the <em>repository_dispatch</em>
+              value, and specify which activity types should trigger the workflow.
             </p>
             <br />
             <p>These dispatch requests need to come to the API endpoint</p>
@@ -215,37 +160,33 @@
               http://api.github/repos/<em>user_name</em>/<em>repo_name</em>/dispatches
             </div>
             <p>
-              They need to be <em>POST</em> requests with the
-              <span class="inline-code">HEADERS</span>
-              <em>Accept: application/vmd.github.everest-preview+json</em>, and
-              <em>Content-Type: application/json</em>. The body of the request
-              needs to be a JSON object with an <em>event_type</em> that matches
-              at least one activity type for that trigger.
+              They need to be <em>POST</em> requests with the <span class="inline-code">HEADERS</span>
+              <em>Accept: application/vmd.github.everest-preview+json</em>, and <em>Content-Type: application/json</em>.
+              The body of the request needs to be a JSON object with an <em>event_type</em> that matches at least one
+              activity type for that trigger.
             </p>
             <br />
             <p>
-              These requests need to be authenticated. This requires that the
-              request has some authorization header with a valid PAT. The PAT
-              must have a repo scope.
+              These requests need to be authenticated. This requires that the request has some authorization header with
+              a valid PAT. The PAT must have a repo scope.
             </p>
           </div>
         </div>
         <div class="row">
           <div class="left-col">
             <p>
-              We can also add some <em>client_payload</em> for the workflow.
-              This payload could, for example, be inputs needed during the jobs.
+              We can also add some <em>client_payload</em> for the workflow. This payload could, for example, be inputs
+              needed during the jobs.
             </p>
             <br />
             <p>
-              This payload will be available in the <em>github</em> object on
-              the workflow. To access it, we use the
+              This payload will be available in the <em>github</em> object on the workflow. To access it, we use the
               <em>event.client_payload.key</em> attribute.
             </p>
             <br />
             <p>
-              This can be very useful when we want to trigger workflows in one
-              repository, based on workflows from another repository.
+              This can be very useful when we want to trigger workflows in one repository, based on workflows from
+              another repository.
             </p>
           </div>
           <div class="right-col">
@@ -259,9 +200,7 @@
     <footer>
       <a class="go-home" href="../../index.html"><i class="fas fa-home"></i></a>
     </footer>
-    <script
-      src="https://kit.fontawesome.com/994cc6cf8e.js"
-      crossorigin="anonymous"
-    ></script>
+    <script src="https://kit.fontawesome.com/994cc6cf8e.js" crossorigin="anonymous"></script>
   </body>
+
 </html>
