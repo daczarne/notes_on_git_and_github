@@ -1,16 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../../assets/css/style.css" />
-    <link
-      rel="shortcut icon"
-      href="../../assets/favicon/favicon.png"
-      type="image/x-icon"
-    />
+    <link rel="shortcut icon" href="../../assets/favicon/favicon.png" type="image/x-icon" />
     <title>Rebasing</title>
   </head>
+
   <body>
     <div class="floating-div">
       <header>
@@ -39,11 +37,10 @@
               commit of a branch (that is the parent commit of <em>F1</em>). The
               problem with rebasing is that this is not true. Commits are
               immutable. So what Git actually does is to create new commits (in
-              this example, <em>F1<sup>*</sup></em> and <em>F2<sup>*</sup></em
-              >) that come after the
+              this example, <em>F1<sup>*</sup></em> and <em>F2<sup>*</sup></em>) that come after the
               <span class="git-aqua">master</span> pointer, and moves the branch
-              pointer from <em>F2</em> to <em>F2<sup>*</sup></em
-              >. Now there are no pointers or commits pointing to <em>F2</em> so
+              pointer from <em>F2</em> to <em>F2<sup>*</sup></em>. Now there are no pointers or commits pointing to
+              <em>F2</em> so
               Git will delete them on the next
               <em>Garbage Collection</em> cycle. This might be OK if this branch
               is local (only you have it on your computer), but if other people
@@ -59,32 +56,16 @@
                 <p class="rebase-title-text">Rebasing</p>
               </div>
               <div class="rebase-one">
-                <img
-                  src="rebasing_01.png"
-                  alt="Rebasing 1"
-                  class="rebase-img"
-                />
+                <img src="rebasing_01.png" alt="Rebasing 1" class="rebase-img" />
               </div>
               <div class="rebase-two">
-                <img
-                  src="rebasing_02.png"
-                  alt="Rebasing 2"
-                  class="rebase-img"
-                />
+                <img src="rebasing_02.png" alt="Rebasing 2" class="rebase-img" />
               </div>
               <div class="rebase-three">
-                <img
-                  src="rebasing_03.png"
-                  alt="Rebasing 3"
-                  class="rebase-img"
-                />
+                <img src="rebasing_03.png" alt="Rebasing 3" class="rebase-img" />
               </div>
               <div class="rebase-four">
-                <img
-                  src="rebasing_04.png"
-                  alt="Rebasing 4"
-                  class="rebase-img"
-                />
+                <img src="rebasing_04.png" alt="Rebasing 4" class="rebase-img" />
               </div>
             </div>
           </div>
@@ -246,9 +227,7 @@
     <footer>
       <a class="go-home" href="../../index.html"><i class="fas fa-home"></i></a>
     </footer>
-    <script
-      src="https://kit.fontawesome.com/994cc6cf8e.js"
-      crossorigin="anonymous"
-    ></script>
+    <script src="https://kit.fontawesome.com/994cc6cf8e.js" crossorigin="anonymous"></script>
   </body>
+
 </html>
