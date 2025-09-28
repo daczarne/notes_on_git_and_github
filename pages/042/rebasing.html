@@ -30,22 +30,16 @@
         <div class="row">
           <div class="left-col">
             <p>
-              In Git we can change the base commit of a branch by using a
-              technique called <span class="inline-code">rebasing</span>.
-              Suppose we have a repository that looks like the one on the
-              diagram. The way rebasing seems to work is by moving the base
-              commit of a branch (that is the parent commit of <em>F1</em>). The
-              problem with rebasing is that this is not true. Commits are
-              immutable. So what Git actually does is to create new commits (in
-              this example, <em>F1<sup>*</sup></em> and <em>F2<sup>*</sup></em>) that come after the
-              <span class="git-aqua">master</span> pointer, and moves the branch
-              pointer from <em>F2</em> to <em>F2<sup>*</sup></em>. Now there are no pointers or commits pointing to
-              <em>F2</em> so
-              Git will delete them on the next
-              <em>Garbage Collection</em> cycle. This might be OK if this branch
-              is local (only you have it on your computer), but if other people
-              created commits on top of <em>F2</em> their work will be lost
-              too!! So be very careful when rebasing.
+              In Git we can change the base commit of a branch by using a technique called
+              <span class="inline-code">rebasing</span>. Suppose we have a repository that looks like the one on the
+              diagram. The way rebasing seems to work is by moving the base commit of a branch (that is the parent
+              commit of <em>F1</em>). The problem with rebasing is that this is not true. Commits are immutable. So what
+              Git actually does is to create new commits (in this example, <em>F1<sup>*</sup></em> and
+              <em>F2<sup>*</sup></em>) that come after the <span class="git-aqua">master</span> pointer, and moves the
+              branch pointer from <em>F2</em> to <em>F2<sup>*</sup></em>. Now there are no pointers or commits pointing
+              to <em>F2</em> so Git will delete them on the next <em>Garbage Collection</em> cycle. This might be OK if
+              this branch is local (only you have it on your computer), but if other people created commits on top of
+              <em>F2</em> their work will be lost too!! So be very careful when rebasing.
             </p>
           </div>
         </div>
@@ -74,25 +68,19 @@
         <div class="row">
           <div class="left-col">
             <p>
-              To see an example of rebasing, I've created a new branch called
-              <span class="git-aqua">feature</span>. In this branch, I've
-              updated the <em>toc.txt</em>. Back in the
-              <span class="git-aqua">master</span> branch, I've updated the
-              <em>main.js</em> file. If we look at the log we can see that both
-              branches have diverged. The new
-              <span class="git-aqua">feature</span> branch is at
-              <em>9795f10</em>, <span class="git-aqua">master</span> is at
-              <em>4104ec7</em>, and their last common ancestor is
+              To see an example of rebasing, I've created a new branch called <span class="git-aqua">feature</span>. In
+              this branch, I've updated the <em>toc.txt</em>. Back in the <span class="git-aqua">master</span> branch,
+              I've updated the <em>main.js</em> file. If we look at the log we can see that both branches have diverged.
+              The new <span class="git-aqua">feature</span> branch is at <em>9795f10</em>,
+              <span class="git-aqua">master</span> is at <em>4104ec7</em>, and their last common ancestor is
               <em>6166e28</em>.
             </p>
             <br />
             <p>
-              When we rebase the <span class="git-aqua">feature</span> branch we
-              will change its base commit from <em>6166e28</em> (which was the
-              commit that our <span class="git-aqua">master</span> branch was at
-              when we created the <span class="git-aqua">feature</span> branch),
-              to commit <em>4104ec7</em> (which is the commit where
-              <span class="git-aqua">master</span> is now).
+              When we rebase the <span class="git-aqua">feature</span> branch we will change its base commit from
+              <em>6166e28</em> (which was the commit that our <span class="git-aqua">master</span> branch was at
+              when we created the <span class="git-aqua">feature</span> branch), to commit <em>4104ec7</em> (which is
+              the commit where <span class="git-aqua">master</span> is now).
             </p>
           </div>
           <div class="right-col">
@@ -105,39 +93,33 @@
           </div>
           <div class="right-col">
             <p>
-              To rebase, make sure that you are on the target branch, in this
-              case, <span class="git-aqua">feature</span>. Now we run
+              To rebase, make sure that you are on the target branch, in this case,
+              <span class="git-aqua">feature</span>. Now we run
             </p>
             <div class="code">
               <code>git rebase master</code>
             </div>
             <p>
-              This is telling Git to change the base of the current branch (in
-              this case <span class="git-aqua">feature</span>) with the tip of
-              the branch that we supply (in this case
-              <span class="git-aqua">master</span>). Usually, when rebasing
-              there will be conflicts that we must resolve the same way that we
-              resolve merge conflicts.
+              This is telling Git to change the base of the current branch (in this case
+              <span class="git-aqua">feature</span>) with the tip of the branch that we supply (in this case
+              <span class="git-aqua">master</span>). Usually, when rebasing there will be conflicts that we must resolve
+              the same way that we resolve merge conflicts.
             </p>
             <br />
             <p>
-              Now if we check our log we can see that there's a linear path from
-              <span class="git-aqua">master</span> to our
-              <span class="git-aqua">feature</span> branch. If we merge these
-              branches, Git will do a simple fast-forward merge. But take a
-              close look at the commit IDs. Before the rebase, the tip of our
-              branch was at commit <em>9795f10</em>, now it's at commit
-              <em>6f25ebf</em>. This is a new commit!
+              Now if we check our log we can see that there's a linear path from <span class="git-aqua">master</span> to
+              our <span class="git-aqua">feature</span> branch. If we merge these branches, Git will do a simple
+              fast-forward merge. But take a close look at the commit IDs. Before the rebase, the tip of our branch was
+              at commit <em>9795f10</em>, now it's at commit <em>6f25ebf</em>. This is a new commit!
             </p>
           </div>
         </div>
         <div class="row">
           <div class="left-col">
             <p>
-              We can checkout to the old commit <em>9795f10</em> and use the log
-              to see the graph. The new tip of the rebased branch is in fact an
-              entirely new commit. The old one still exists. But there are no
-              pointers pointing to it, Git will Garbage Collect it.
+              We can checkout to the old commit <em>9795f10</em> and use the log to see the graph. The new tip of the
+              rebased branch is in fact an entirely new commit. The old one still exists. But there are no pointers
+              pointing to it, Git will Garbage Collect it.
             </p>
           </div>
           <div class="right-col">
@@ -150,11 +132,9 @@
           </div>
           <div class="right-col">
             <p>
-              Back on the <span class="git-aqua">master</span> branch, we can
-              now merge the <span class="git-aqua">feature</span> branch onto it
-              and Git will resolve it with a fast-forward merge. If we check out
-              the log again, we'll see that both branches are now pointing to
-              the same commit.
+              Back on the <span class="git-aqua">master</span> branch, we can now merge the
+              <span class="git-aqua">feature</span> branch onto it and Git will resolve it with a fast-forward merge. If
+              we check out the log again, we'll see that both branches are now pointing to the same commit.
             </p>
           </div>
         </div>
@@ -162,34 +142,29 @@
         <div class="row">
           <div class="single-col">
             <p>
-              A few comments about rebasing conflicts. When Git tries to rebase,
-              it will start by taking the oldest commit in the current branch
-              and adding it to the tip of the target branch. If there's a
-              conflict we'll have to open VS Code and solve it the same way we
-              would solve a merge conflict. But because Git does a rebase one
-              commit at a time, when we are done, we need to run
+              A few comments about rebasing conflicts. When Git tries to rebase, it will start by taking the oldest
+              commit in the current branch and adding it to the tip of the target branch. If there's a conflict we'll
+              have to open VS Code and solve it the same way we would solve a merge conflict. But because Git does a
+              rebase one commit at a time, when we are done, we need to run
             </p>
             <div class="code">
               <code>git rebase --continue</code>
             </div>
             <p>
-              This will let Git know that it can continue to the next commit. If
-              we wish to skip one commit, we run
+              This will let Git know that it can continue to the next commit. If we wish to skip one commit, we run
             </p>
             <div class="code">
               <code>git rebase --skip</code>
             </div>
             <p>
-              Git will not create a copy of that commit and move on to the next
-              one. If at any point in time we wish to stop the rebase all
-              together, we run
+              Git will not create a copy of that commit and move on to the next one. If at any point in time we wish to
+              stop the rebase all together, we run
             </p>
             <div class="code">
               <code>git rebase --abort</code>
             </div>
             <p>
-              This will tell Git to stop the rebase and revert everything back
-              to before we even started.
+              This will tell Git to stop the rebase and revert everything back to before we even started.
             </p>
           </div>
         </div>
@@ -197,28 +172,25 @@
         <div class="row">
           <div class="single-col">
             <p>
-              If before starting a rebase we already know that we always want to
-              keep the changes as they are in the
-              <span class="git-aqua">feature</span> branch, we can run the
-              rebase with the <span class="inline-code">-Xtheirs</span> option.
+              If before starting a rebase we already know that we always want to keep the changes as they are in the
+              <span class="git-aqua">feature</span> branch, we can run the rebase with the
+              <span class="inline-code">-Xtheirs</span> option.
             </p>
             <div class="code">
               <code>git rebase -Xtheirs <i>NEW_BASE_BRANCH</i></code>
             </div>
             <p>
-              Likewise, if before starting the rebase we already know that we
-              wish to keep the changes in the
-              <span class="git-aqua">master</span> branch, the we use the
-              <span class="inline-code">-Xours</span> option.
+              Likewise, if before starting the rebase we already know that we wish to keep the changes in the
+              <span class="git-aqua">master</span> branch, the we use the <span class="inline-code">-Xours</span>
+              option.
             </p>
             <div class="code">
               <code>git rebase -Xours <i>NEW_BASE_BRANCH</i></code>
             </div>
             <p>
-              This <span class="inline-code">-X</span> option is called the
-              <em>strategy option</em>. You should keep in mind that when we
-              supply a strategy to be used by default, said strategy is used in
-              all commits that are being rebased.
+              This <span class="inline-code">-X</span> option is called the <em>strategy option</em>. You should keep in
+              mind that when we supply a strategy to be used by default, said strategy is used in all commits that are
+              being rebased.
             </p>
           </div>
         </div>

@@ -30,27 +30,23 @@
         <div class="row">
           <div class="single-col">
             <p>
-              When merging branches, three different types of conflicts may
-              arise
+              When merging branches, three different types of conflicts may arise
             </p>
             <ul>
               <li>
-                The same line of code was changed in different ways in the two
-                merging branches.
+                The same line of code was changed in different ways in the two merging branches.
               </li>
               <li>
-                A file was changed in one branch but deleted in the other
-                branch.
+                A file was changed in one branch but deleted in the other branch.
               </li>
               <li>
-                The same file is added in different branches, but the content of
-                the file is different in the two branches.
+                The same file is added in different branches, but the content of the file is different in the two
+                branches.
               </li>
             </ul>
             <p>
-              Whenever there's a conflict Git will not know how to merge the
-              branches and it's going to ask us to solve the conflicts manually
-              before staging and committing the merge.
+              Whenever there's a conflict Git will not know how to merge the branches and it's going to ask us to solve
+              the conflicts manually before staging and committing the merge.
             </p>
           </div>
         </div>
@@ -58,18 +54,14 @@
         <div class="row">
           <div class="left-col">
             <p>
-              To see an example of the first scenario, let's create a new branch
-              called <span class="git-aqua">bugfix</span> and change the
-              <em>toc.txt</em> file. In this file, we'll delete all its content
-              and on the first line write <em>Changes from bugfix branch</em>.
-              Now stage it and commit it.
+              To see an example of the first scenario, let's create a new branch called
+              <span class="git-aqua">bugfix</span> and change the <em>toc.txt</em> file. In this file, we'll delete all
+              its content and on the first line write <em>Changes from bugfix branch</em>. Now stage it and commit it.
             </p>
             <br />
             <p>
-              Next, we'll switch back to <span class="git-aqua">master</span>.
-              Open the <em>toc.txt</em> file. Delete all its content, and in the
-              first row write <em>Changes from master branch</em>. Stage it.
-              Commit it.
+              Next, we'll switch back to <span class="git-aqua">master</span>. Open the <em>toc.txt</em> file. Delete
+              all its content, and in the first row write <em>Changes from master branch</em>. Stage it. Commit it.
             </p>
             <br />
             <p>Now we'll run</p>
@@ -77,11 +69,9 @@
               <code>git merge bugfix</code>
             </div>
             <p>
-              Now Git is telling us that there is a conflict and that the
-              automatic merge process failed. Notice that Git Bash has changed
-              from <span class="git-aqua">master</span> to
-              <span class="git-aqua">master|MERGING</span>. This tells us that
-              Git is in the middle of a merge process.
+              Now Git is telling us that there is a conflict and that the automatic merge process failed. Notice that
+              Git Bash has changed from <span class="git-aqua">master</span> to
+              <span class="git-aqua">master|MERGING</span>. This tells us that Git is in the middle of a merge process.
             </p>
           </div>
           <div class="right-col">
@@ -98,10 +88,8 @@
               <code>git status</code>
             </div>
             <p>
-              Here we can see where the merge conflict is under the unmerged
-              paths. Git is telling us that both branches have changes to
-              <em>toc.txt</em>. So let's open <em>toc.txt</em> in VS Code by
-              running
+              Here we can see where the merge conflict is under the unmerged paths. Git is telling us that both branches
+              have changes to <em>toc.txt</em>. So let's open <em>toc.txt</em> in VS Code by running
             </p>
             <div class="code">
               <code>code toc.txt</code>
@@ -111,12 +99,10 @@
         <div class="row">
           <div class="left-col">
             <p>
-              The image to the right is what you'll see in VS Code. What we see
-              are markers that represent the changes in the current branch
-              (green) and the changes in the other branch (blue). In between
-              them there's a divider marked by equal signs, <em>=======</em>.
-              This syntax will be repeated throughout the file as many times as
-              there are conflicts.
+              The image to the right is what you'll see in VS Code. What we see are markers that represent the changes
+              in the current branch (green) and the changes in the other branch (blue). In between them there's a
+              divider marked by equal signs, <em>=======</em>. This syntax will be repeated throughout the file as many
+              times as there are conflicts.
             </p>
           </div>
           <div class="right-col">
@@ -129,63 +115,51 @@
           </div>
           <div class="right-col">
             <p>
-              On top of the <span class="git-green">HEAD</span> marker, there
-              are three buttons. We need to choose one. If we select
-              <em>Accept Current Change</em> then the changes from the current
-              branch will be kept and the incoming ones will be discarded. If
-              the select <em>Accept Incoming Changes</em> the incoming changes
-              will be kept and the current ones will be discarded. If we select
-              <em>Accept Both Changes</em> then both changes will be kept, in
-              the order in which VS Code is showing them.
+              On top of the <span class="git-green">HEAD</span> marker, there are three buttons. We need to choose one.
+              If we select <em>Accept Current Change</em> then the changes from the current branch will be kept and the
+              incoming ones will be discarded. If the select <em>Accept Incoming Changes</em> the incoming changes will
+              be kept and the current ones will be discarded. If we select <em>Accept Both Changes</em> then both
+              changes will be kept, in the order in which VS Code is showing them.
             </p>
             <br />
             <p>
-              For this demo, I'll go with <em>Accept Both Changes</em> and the
-              file will change to what you see on the image to the left.
+              For this demo, I'll go with <em>Accept Both Changes</em> and the file will change to what you see on the
+              image to the left.
             </p>
           </div>
         </div>
         <div class="row">
           <div class="single-col">
             <p>
-              Three brief comments before we move on. There's a fourth button
-              that reads <em>Compare Changes</em>. If you click on it, VS Code
-              will open the file in diff mode (that is, showing the changes side
-              by side).
+              Three brief comments before we move on. There's a fourth button that reads <em>Compare Changes</em>. If
+              you click on it, VS Code will open the file in diff mode (that is, showing the changes side by side).
             </p>
             <br />
             <p>
-              If you selected an option and wish to change it, even if you have
-              already saved it, just press Ctrl + z (undo). Git will not
-              continue with the merge process until we manually create a merge
-              commit.
+              If you selected an option and wish to change it, even if you have already saved it, just press Ctrl + z
+              (undo). Git will not continue with the merge process until we manually create a merge commit.
             </p>
             <br />
             <p>
-              You can always edit the file by hand. To do so, you'll need to
-              remove the markers and the separation. Try not to include new
-              changes on the merge commit (that is, new code or new lines of any
-              sort). But sometimes this is not possible because of the kind of
-              merge conflict that we are faced with. We refer to merge commits
-              that add new code as <em>evil commits</em>.
+              You can always edit the file by hand. To do so, you'll need to remove the markers and the separation. Try
+              not to include new changes on the merge commit (that is, new code or new lines of any sort). But sometimes
+              this is not possible because of the kind of merge conflict that we are faced with. We refer to merge
+              commits that add new code as <em>evil commits</em>.
             </p>
           </div>
         </div>
         <div class="row">
           <div class="left-col">
             <p>
-              Now that we have resolved all merge conflicts, we can stage our
-              changes with <span class="inline-code">git add toc.txt</span>. If
-              we run
+              Now that we have resolved all merge conflicts, we can stage our changes with
+              <span class="inline-code">git add toc.txt</span>. If we run
             </p>
             <div class="code">
               <code>git status</code>
             </div>
             <p>
-              we'll see that now there are no more unmerged paths. Therefore,
-              there are no more changes. At this point, we can commit our
-              changes. Since this is a merge commit, we will not introduce a
-              commit message. So we run
+              we'll see that now there are no more unmerged paths. Therefore, there are no more changes. At this point,
+              we can commit our changes. Since this is a merge commit, we will not introduce a commit message. So we run
             </p>
             <div class="code">
               <code>git commit</code>
@@ -198,13 +172,10 @@
         <div class="row">
           <div class="single-col">
             <p>
-              Because we didn't provide a commit message, Git will open VS Code.
-              In general, we accept the default short-message but add a
-              description explaining how the merge conflicts were resolved. Once
-              done, we save our changes and close VS Code. Now Git will complete
-              the merge process. You can see that Git Bash has changed from
-              <span class="git-aqua">master|MERGING</span> to
-              <span class="git-aqua">master</span>.
+              Because we didn't provide a commit message, Git will open VS Code. In general, we accept the default
+              short-message but add a description explaining how the merge conflicts were resolved. Once done, we save
+              our changes and close VS Code. Now Git will complete the merge process. You can see that Git Bash has
+              changed from <span class="git-aqua">master|MERGING</span> to <span class="git-aqua">master</span>.
             </p>
           </div>
         </div>
