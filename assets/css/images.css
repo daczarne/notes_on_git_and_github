@@ -1,7 +1,10 @@
 img {
   border-radius: 15px;
-  justify-self: center;
-  align-self: center;
+  place-self: center;
+}
+
+.github-img {
+  max-width: 1200px;
 }
 
 .git-bash-img:hover,
@@ -14,10 +17,6 @@ img {
 
 .miro-img {
   max-width: 600px;
-}
-
-.github-img {
-  max-width: 1200px;
 }
 
 /*! Special rules */

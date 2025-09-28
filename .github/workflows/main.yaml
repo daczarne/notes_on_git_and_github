@@ -44,6 +44,32 @@ jobs:
           echo "ALL_LABELS: ${{ env.ALL_LABELS }}"
           echo "NEW_LABELS: ${{ env.NEW_LABELS }}"
 
+  lint:
+    name: Lint
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout 🛎️
+        id: checkout
+        uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
+      - name: Set up Node.js 🌴
+        id: setup_node
+        uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5.0.0
+        with:
+          node-version: 20
+      - name: Install linters 🌴
+        id: install_linters
+        run: npm install -g htmlhint stylelint stylelint-config-standard
+      - name: Lint HTML 🧪
+        id: lint_html_files
+        if: steps.install_linters.outcome == 'success'
+        run: htmlhint "**/*.html"
+      - name: Lint CSS 🧪
+        id: lint_css_files
+        if: always() && steps.install_linters.outcome == 'success'
+        run: stylelint --config stylelint.config.mjs "**/*.css"
+
   spell-check:
     name: Spell check
     runs-on: ubuntu-latest
@@ -71,6 +97,7 @@ jobs:
     runs-on: ubuntu-latest
     needs:
       - label-pr
+      - lint
       - spell-check
     permissions: {}
     steps:
