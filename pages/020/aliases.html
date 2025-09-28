@@ -36,10 +36,7 @@
               personalized output like this:
             </p>
             <div class="code">
-              <code>
-                git log --pretty=format:'%Cgreen%an%Creset committed
-                %Cgreen%h%Creset on %Cgreen%cd%Creset'
-              </code>
+              <code>git log --pretty=format:'%Cgreen%an%Creset committed %Cgreen%h%Creset on %Cgreen%cd%Creset'</code>
             </div>
             <p>
               Here <span class="inline-code">%an</span> stands for <em>author name</em>,
@@ -84,9 +81,7 @@
           <div class="left-col">
             <p>Now we can define an alias for un-staging files.</p>
             <div class="code">
-              <code>
-                git config --global alias.unstage 'restore --staged .'
-              </code>
+              <code>git config --global alias.unstage 'restore --staged .'</code>
             </div>
             <p>
               With it we can restore all the files in the staging area with one simple command.
