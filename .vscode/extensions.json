@@ -1,0 +1,13 @@
+{
+    "recommendations": [
+        "aaron-bond.better-comments",
+        "davidanson.vscode-markdownlint",
+        "editorconfig.editorconfig",
+        "esbenp.prettier-vscode",
+        "pranaygp.vscode-css-peek",
+        "redhat.vscode-yaml",
+        "ritwickdey.liveserver",
+        "streetsidesoftware.code-spell-checker",
+        "yzhang.markdown-all-in-one",
+    ]
+}
