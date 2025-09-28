@@ -63,12 +63,12 @@ jobs:
         run: npm install -g htmlhint stylelint stylelint-config-standard
       - name: Lint HTML 🧪
         id: lint_html_files
+        if: steps.install_linters.outcome == 'success'
         run: htmlhint "**/*.html"
-        continue-on-error: true
       - name: Lint CSS 🧪
         id: lint_css_files
+        if: steps.install_linters.outcome == 'success'
         run: stylelint --config stylelint.config.mjs "**/*.css"
-        continue-on-error: true
 
   spell-check:
     name: Spell check
