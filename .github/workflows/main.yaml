@@ -67,7 +67,7 @@ jobs:
         run: htmlhint "**/*.html"
       - name: Lint CSS 🧪
         id: lint_css_files
-        if: steps.install_linters.outcome == 'success'
+        if: always() && steps.install_linters.outcome == 'success'
         run: stylelint --config stylelint.config.mjs "**/*.css"
 
   spell-check:
