@@ -13,11 +13,8 @@ header {
   width: 100%;
 }
 
-.title header {
-  width: 100%;
-}
-
 .title {
+  width: 100%;
   align-items: center;
   color: var(--font-color-title);
   display: flex;
